@@ -1,0 +1,1 @@
+Base.getScript(pub+"/JS/LotteryFun.js?date=141210");

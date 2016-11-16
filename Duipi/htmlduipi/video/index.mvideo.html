@@ -1,0 +1,36 @@
+﻿<include file="./mobile/index.header"/>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+        <title>所有视频</title>
+        <meta content="app-id=518966501" name="apple-itunes-app" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0" />
+        <meta content="yes" name="apple-mobile-web-app-capable" />
+        <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+        <meta content="telephone=no" name="format-detection" />
+        <link href="__PUBLIC__/css/comm.css" rel="stylesheet" type="text/css" />
+        <link href="__PUBLIC__/css/goods.css" rel="stylesheet" type="text/css" />
+        <script src="__PUBLIC__/js/jquery190.js" language="javascript" type="text/javascript"></script>
+
+    </head>
+    <body id="loadingPicBlock" class="g-acc-bg" fnav="3">
+        <input name="hidOrderFlag" type="hidden" id="hidOrderFlag" value="10" />
+        <input name="hidsortid" type="hidden" id="hidsortid" value="{$_GET[sort]}" />
+
+
+       
+        <div class="weixin-mask" style="display: none;"></div>
+        <div class="marginB">
+            <div class="goodList"></div>
+            <div id="divLoading" class="loading clearfix"><b></b>正在加载</div>
+        </div>
+
+        <input id="hidPageType" type="hidden" value="-2" />
+    <include file="./mobile/index.footer" />
+    <script src="__PUBLIC__/JS/BottomFun.js?v=140815" language="javascript" type="text/javascript"></script>
+    <script src="__PUBLIC__/JS/VideoList.js?v=140815" language="javascript" type="text/javascript"></script>
+</div>
+</body>
+</html>

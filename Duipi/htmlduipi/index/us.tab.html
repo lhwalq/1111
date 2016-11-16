@@ -1,0 +1,23 @@
+<div class="subnav">
+	<ul>
+		
+		<if condition="$bb eq 'uname'">
+		<li class="poa-4"><a class="cur">TA的主页<s></s></a></li>
+		<else />
+		<li class="poa-4"><a href="__ROOT__/user/uname/tab/uname/d/{:R('base/idjia',array($huiyuan1['uid']))}.html" >TA的主页<s></s></a></li>
+		</if>
+		<if condition="$bb eq 'userbuy'">
+		<li class="poa-4"><a class="cur">云购记录<s></s></a></li>
+		<else />
+		<li class="poa-4"><a href="__ROOT__/user/uname/tab/userbuy/d/{:R('base/idjia',array($huiyuan1['uid']))}.html" >云购记录<s></s></a></li>
+		</if>
+		<if condition="$bb eq 'userraffle'">
+		<li class="poa-4"><a class="cur">获得的商品<s></s></a></li>
+		<else />
+		<li class="poa-4"><a href="__ROOT__/user/uname/tab/userraffle/d/{:R('base/idjia',array($huiyuan1['uid']))}.html" >获得的商品<s></s></a></li>
+		</if>
+		
+		
+		
+		
+	</ul></div>

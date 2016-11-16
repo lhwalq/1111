@@ -1,0 +1,371 @@
+<include file="./index/index.header"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/piyungou/css/Comm.css"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/piyungou/css/MyCart.css"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/piyungou/css/style.css"/>
+
+<script type="text/javascript" src="__PUBLIC__/plugin/style/global/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/piyungou/js/jquery.cookie.js"></script>
+<style> 
+.yeepay_bank img{ border:1px solid #eee; padding:2px; width:130px; height:35px; }
+</style>
+
+<div class="logo">
+	<div class="float">
+		<span class="logo_pic">
+			确认支付方式
+		</span>
+		<ul class="ui-step" style='float:right;margin-top:10px'>
+			<li class="ui-step-start ui-step-active">
+				<div class="ui-step-line" style="color:#28b726;background: #28b726;">-</div>
+				<div class="ui-step-icon">
+					<i class="ui-step-number">提交</i>
+					<span class="ui-step-text">&nbsp;</span>
+				</div>
+			</li>
+			<li class="ui-step-center ui-step-active">
+				<div class="ui-step-line">-</div>
+				<div class="ui-step-icon">
+					<i class="ui-step-number">支付</i>
+					<span class="ui-step-text">&nbsp;</span>
+				</div>
+			</li>
+			<li class="ui-step-center">
+				<div class="ui-step-line">-</div>
+				<div class="ui-step-icon">
+					<i class="ui-step-number">开奖</i>
+					<span class="ui-step-text">&nbsp;</span>
+				</div>
+			</li>
+			<li class="ui-step-end">
+				<div class="ui-step-line">-</div>
+				<div class="ui-step-icon">
+					<i class="ui-step-number">揭晓</i>
+					<span class="ui-step-text">&nbsp;</span>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<form id="form_paysubmit" action="__ROOT__/pay/paysubmit" method="post">
+<div class="shop_payment">
+	<div class="payment_Con">
+		<ul class="order_list">
+			<li class="top">
+				<span class="name">商品名称</span>
+				<span class="moneys">价值</span>
+				<span class="money">云购价</span>
+				<span class="num">云购人次</span>
+				<span class="all">小计</span>
+				<if condition="$MoenyCount">
+				<span style="width:50px">备注</span>
+				</if>
+			</li>               
+                        <foreach name="yyslist" item="shops" >
+                            <if condition="$shops['cart_shenyu'] neq '0'">
+					<li class="end">
+					<span class="name">
+	               		<a class="blue" href="__ROOT__/goods/items/goodsId/{$shops['id']}.html">{$shops['title']}</a>
+	                </span>
+					<span class="moneys">{$shops['money']}</span>
+					<span class="money"><span class="color">￥<b>{$shops['yunjiage']}</b></span></span>
+					<span class="num orange Fb">{$shops['cart_gorenci']}</span>
+					<span class="all">{$shops['cart_xiaoji']}</span>
+					<if condition="$shops['pay_ygb'] eq 1">
+					<span style="color:red;width:180px" >此商品只限福分消费</span>
+					</if>
+				<li>
+				<else/>
+				</if>
+			</foreach>          
+			<li class="payment_Total">
+				<div class="payment_List_Lc"><a href="__ROOT__/goods/cartlist" class="form_ReturnBut">返回购物车修改订单</a></div>
+				<p class="payment_List_Rc">商品合计：<span class="orange F20">{$MoenyCount}</span> 元</p>
+							<input type="hidden" class="tongjizhi" name="money" value="{$MoenyCount}">
+			</li>
+			<!-- 福分 -->
+            <if condition="$MoenyCount">
+			 <li id="liPayByPoints" class="point_out">
+					<div class="payment_List_Lc">
+					<input type="checkbox"  class="input_choice juandanji"  id="shop_score" name="shop_score" value="1" checked/>使用福分抵扣现金：您的夺宝币({$huiyuan['score']})本次消费最多可抵扣现金
+                    <span class="orange Fb">{$fufen_dikou}.00</span>元)，我要使用 
+					<input type="hidden" value="{$fufen_yuan}" name="fufenv"/>
+                    <input type="text" maxlength="8" class="pay_input_text_gray yungoubixiaoguo" id="shop_score_num" value="0" money="{$fufen_yuan}" name="shop_score_num"/> 福分, 1元 = {$fufen_yuan} 夺宝币  <p style="color:red">夺宝币只限指定商品使用</p></div>
+                    <p id="pPointsTip" class="pay_Value" style="display:none;"></p>
+                    <p class="payment_List_Rc">福分付：<span id="pay_yungou" class="orange F20">0.00</span> 元</p>
+             </li>
+             <else/>
+              <li id="liPayByPoints" class="point_out point_gray">
+					<div class="payment_List_Lc">
+					<input type="checkbox" class="input_choice" disabled="disabled"/>使用福分抵扣现金：您的夺宝({$huiyuan['score']})本次消费最多可抵扣现金
+                    <span class="orange Fb">{$fufen_dikou}.00</span>元)，我要使用 
+                    <input type="text" maxlength="8" class="pay_input_text_gray yungoubixiaoguo" name="costPoint"  disabled="disabled"/> 福分</div>
+                    <p id="pPointsTip" class="pay_Value" style="display:none;"></p>
+                          <p class="payment_List_Rc">福分付：<span id="pay_yungou" class="orange F20">0.00</span> 元</p>
+              </li>
+             </if>
+             <!-- 福分 -->
+            <!-- 余额支付 start-->
+            <if condition="$MoenyCount gt $Money">
+            <li class="point_in" id="liPayByBalance">
+				<div class="payment_List_Lc">					
+					<input type="checkbox" name="moneycheckbox" id="MoneyCheckbox" disabled="disabled" class="input_choice"/>使用账户余额支付，账户余额：
+					<span class="green F18">{$Money}</span>元
+				</div>
+				<p style="" class="pay_Value" id="pBalanceTip">
+				<span>◆</span><em>◆</em>账户余额支付更快捷，
+				<a class="blue" target="_blank" href="__ROOT__/user/userrecharge">立即充值</a></p>
+				<p class="payment_List_Rc">余额支付：<span id="pay_money" class="orange F20">{$Money}</span> 元</p>
+			</li>
+            <!-- 余额支付 end--> 
+			<!-- {if $MoenyCount<=$Money}
+			{else}
+			{if:end} -->
+			<li id="liPayByOther" class="point_in point_bank" style="display:list-item;">
+				<div class="payment_List_Lc gary01 Fb">您的账户余额不足，请您先充值</div>
+				<p class="payment_List_Rc">还差支付：<span id="pay_bankmoney" class="orange F20">{$MoenyCount-$Money}</span> 元</p>
+			</li>
+ 
+			<else/>
+			<li class="point_in" id="liPayByBalance">
+				<div class="payment_List_Lc">					
+					<input type="checkbox" name="moneycheckbox" id="MoneyCheckbox" disabled="disabled" class="input_choice" checked/>使用账户余额支付，账户余额：
+					<span class="green F18">{$Money}</span>元
+				</div>
+				<p style="" class="pay_Value" id="pBalanceTip">
+				<span>◆</span><em>◆</em>账户余额支付更快捷，
+				<a class="blue" target="_blank" href="__ROOT__/user/userrecharge">立即充值</a></p>
+				<p class="payment_List_Rc">余额支付：<span id="pay_money" class="orange F20">{$MoenyCount}</span> 元</p>
+			</li>
+			</if>
+			
+            
+		</ul>
+	</div>
+    
+	<div class="pay_bankC" id="divBankList" style="display:block;">
+		<div class="bank_arrow"><span>◆</span><em>◆</em></div>
+		<?php 
+		
+        	$bank1 = D("linshi")->where(array("key"=>"pay_bank_type"))->find();
+                $bank2 = D("payment")->where(array("pay_class"=>"$bank1[value]"))->find();
+                if($bank1 && $bank2['pay_start'] ==1){
+            
+		 ?>
+        <if condition="$bank1['value'] eq 'tenpay'">
+		 <h2>银行支付：</h2>
+            <ul class="bank_logo click_img">
+            	<input type="hidden" name="pay_bank" value="tenpay"  />
+                <li><input type="radio" value="CMB" name="account" checked="checked" /><label for="bankType1001"><span class="zh_bank"></span></label></li>
+                <li><input type="radio" value="ICBC" name="account"/><label for="bankType1002"><span class="gh_bank"></span></label></li>
+                <li><input type="radio" value="CCB" name="account" /><label for="bankType1003"><span class="jh_bank"></span></label></li>
+                <li><input type="radio" value="ABC" name="account" /><label for="bankType1005"><span class="nh_bank"></span></label></li>
+                <li><input type="radio" value="SPDB" name="account" /><label for="bankType1004"><span class="pf_bank"></span></label></li>   
+                    
+                <li><input type="radio" value="SDB" name="account" /><label for="bankType1008"><span class="sf_bank"></span></label></li>
+                <li><input type="radio" value="CIB" name="account" /><label for="bankType1009"><span class="xy_bank"></span></label></li>
+                <li><input type="radio" value="BOB" name="account" /><label for="bankType1032"><span class="bj_bank"></span></label></li>
+                <li><input type="radio" value="CEB" name="account" /><label for="bankType1022"><span class="gd_bank"></span></label></li>
+                <li><input type="radio" value="CMBC" name="account" /><label for="bankType1006"><span class="ms_bank"></span></label></li>
+                    
+                <li><input type="radio" value="CITIC" name="account" /><label for="bankType1021"><span class="zx_bank"></span></label></li>
+                <li><input type="radio" value="GDB" name="account" /><label for="bankType1027"><span class="gf_bank"></span></label></li>
+                <li><input type="radio" value="PAB" name="account" /><label for="bankType1010"><span class="pa_bank"></span></label></li>
+                <li><input type="radio" value="BOC" name="account" /><label for="bankType1052"><span class="zg_bank"></span></label></li>
+                <li><input type="radio" value="COMM" name="account"/><label for="bankType1020"><span class="jt_bank"></span></label></li>
+            </ul> 
+            		<h3 class="bor">支付平台支付：</h3>
+            		<ul class="click_img">
+                    	<foreach name="paylist" item="pay" >
+            			<li class="{$pay['pay_class']}tj" >
+                        <input type="radio" value="{$pay['pay_id']}" name="account" id="Tenpay">
+                        <img style="border:1px solid #eee; padding:1px" height="35px" width="120px" src="__PUBLIC__/uploads/{$pay['pay_thumb']}">
+                        </li>   
+                        </foreach>
+            		</ul>
+            </if>
+                 <if condition="$bank1['value'] eq 'yeepay'">
+          	<h2>银行支付：</h2>
+            <ul class="bank_logo yeepay_bank click_img">
+            <input type="hidden" name="pay_bank" value="yeepay"  />
+     		<li><input type="radio" value="ICBC-NET-B2C" name="account" checked="checked" /><img src="__PUBLIC__/piyungou/images/bank/ICBC.png"></li>
+            <li><input type="radio" value="CCB-NET-B2C" name="account" /><img src="__PUBLIC__/piyungou/images/bank/CCB.png"></li>
+            <li><input type="radio" value="ABC-NET-B2C" name="account"  /><img src="__PUBLIC__/piyungou/images/bank/ABC.png"></li>
+         	<li><input type="radio" value="CMBCHINA-NET-B2C" name="account" /><img src="__PUBLIC__/piyungou/images/bank/CMBCHINA.png"></li>
+            <li><input type="radio" value="BOC-NET-B2C" name="account" /><img src="__PUBLIC__/piyungou/images/bank/BOC.png"></li>
+            <li><input type="radio" value="BOCO-NET-B2C" name="account" /><img src="__PUBLIC__/piyungou/images/bank/JIAOTONG.png"></li>
+            
+            
+            <li><input type="radio" value="CEB-NET-B2C" name="account" /><img src="__PUBLIC__/piyungou/images/bank/CEB.png"></li>
+            <li><input type="radio" value="GDB-NET-B2C" name="account" /><img src="__PUBLIC__/piyungou/images/bank/GDB.png"></li>
+            <li><input type="radio" value="POST-NET-B2C" name="account" /><img src="__PUBLIC__/piyungou/images/bank/PSBC.png"></li>
+            <li><input type="radio" value="CMBC-NET-B2C" name="account" /><img src="__PUBLIC__/piyungou/images/bank/CMBC.png"></li>
+            <li><input type="radio" value="PINGANBANK-NET" name="account" /><img src="__PUBLIC__/piyungou/images/bank/SZPA.png"></li>
+            <li><input type="radio" value="BCCB-NET-B2C" name="account" /><img src="__PUBLIC__/piyungou/images/bank/BCCB.png"></li>
+            </ul> 
+            		<h3 class="bor">支付平台支付：</h3>
+            		<ul class="click_img">
+                    	<foreach name="paylist" item="pay" >
+            			<li class="{$pay['pay_class']}tj" >
+                        <input type="radio" value="{$pay['pay_id']}" name="account" id="Tenpay">
+                        <img style="border:1px solid #eee; padding:1px" height="35px" width="120px" src="__PUBLIC__/uploads/{$pay['pay_thumb']}">
+                        </li>   
+                        </foreach>
+            		</ul>
+            </if>
+            <if condition="$bank1['value'] eq 'bofpay'">
+     	    <div class="payment_but " style="margin:15px 0 0 0;">
+     		<img src="__PUBLIC__/piyungou/images/payzhifu.png">
+     		<input class="shop_pay_zhifu" type="button" name="submit" value="1" style="padding-left:690px; padding-top:-100px; margin-bottom:20px;">
+     		</div>
+            </if>
+            <if condition="$bank1['value'] eq 'hocpay'">
+     	    <div class="payment_but " style="margin:15px 0 0 0;">
+     		<img src="__PUBLIC__/piyungou/images/payzhifu.png">
+     		<input class="shop_pay_zhifu" type="button" name="submit" value="1" style="padding-left:690px; padding-top:-100px; margin-bottom:20px;">
+     		</div>
+            </if>
+                 <if condition="$bank1['value'] eq 'hcpay'">
+				 <h2>银行支付：</h2>
+          	  <ul class="bank_logo click_img">
+            	<input type="hidden" name="pay_bank" value="hcpay"  />
+                <li class="hcyhxx"><input type="radio" value="CMB" name="fbvalue"  /><label for="bankType1001"><span class="zh_bank"></span></label></li>
+                <li class="hcyhxx"><input type="radio" value="ICBC" name="fbvalue" /><label for="bankType1002"><span class="gh_bank"></span></label></li>
+                <li class="hcyhxx"><input type="radio" value="CCB" name="fbvalue"  /><label for="bankType1003"><span class="jh_bank"></span></label></li>
+                <li class="hcyhxx"><input type="radio" value="ABC" name="fbvalue" /><label for="bankType1005"><span class="nh_bank"></span></label></li>
+                <li class="hcyhxx"><input type="radio" value="SPDB" name="fbvalue" /><label for="bankType1004"><span class="pf_bank"></span></label></li>   
+                <li class="hcyhxx"><input type="radio" value="SDB" name="fbvalue" /><label for="bankType1008"><span class="sf_bank"></span></label></li>
+                <li class="hcyhxx"><input type="radio" value="CIB" name="fbvalue" /><label for="bankType1009"><span class="xy_bank"></span></label></li>
+                <li class="hcyhxx"><input type="radio" value="BOB" name="fbvalue" /><label for="bankType1032"><span class="bj_bank"></span></label></li>
+                <li class="hcyhxx"><input type="radio" value="CEB" nname="fbvalue"/><label for="bankType1022"><span class="gd_bank"></span></label></li>
+                <li class="hcyhxx"><input type="radio" value="CMBC" name="fbvalue" /><label for="bankType1006"><span class="ms_bank"></span></label></li>       
+                <li class="hcyhxx"><input type="radio" value="CITIC" name="fbvalue" /><label for="bankType1021"><span class="zx_bank"></span></label></li>
+                <li class="hcyhxx"><input type="radio" value="GDB" name="fbvalue" /><label for="bankType1027"><span class="gf_bank"></span></label></li>
+                <li class="hcyhxx"><input type="radio" value="PAB" name="fbvalue" /><label for="bankType1010"><span class="pa_bank"></span></label></li>
+                <li class="hcyhxx"><input type="radio" value="BOC" name="fbvalue" /><label for="bankType1052"><span class="zg_bank"></span></label></li>
+                <li class="hcyhxx"><input type="radio" value="COMM" name="fbvalue"/><label for="bankType1020"><span class="jt_bank"></span></label></li>
+            </ul> 
+            </if>
+			<?php 
+				}
+			 ?>
+ 
+		
+	</div>
+    <div class="payment_but" style="margin:15px 0 0 0;">
+			<input type="hidden" name="submitcode" value="{$submitcode}">
+			<input type="hidden"  name="money" value="{$MoenyCount}">
+			<input id="submit_ok" class="shop_pay_but" type="submit" name="submit" value="">
+	</div>
+    </form>
+	<!-- <div class="answer">
+		<h6><span></span>付款遇到问题</h6>
+		<ul class="answer_list">
+			<li>1、如您未开通网上银行，即可以使用储蓄卡快捷支付轻松完成付款；</li>
+			<li>2、如果您没有网银，可以使用银联在线支付，银联有支持无需开通网银的快捷支付和储值卡支付；</li>
+			<li>3、如果您有财付通或快钱、手机支付账户，可将款项先充入相应账户内，然后使用账户余额进行一次性支付；</li>
+			<li>4、如果银行卡已经扣款，但您的账户中没有显示，有可能因为网络原因导致，将在第二个工作日恢复。</li>
+			<li class="more"><a href="__ROOT__/help/liaojie">更多帮助</a>&nbsp;&nbsp;<a href="__ROOT__/member/home">进入我的云宝购中心&gt;&gt;</a></li>
+		</ul>
+	</div> -->
+    <div style='height:50px'></div>
+</div><!--payment_Con end-->
+<script>
+$(function(){
+var mmmmm=document.getElementById("shop_score_num").getAttribute("money");
+
+var money="{$Money}";
+var MoenyCount="{$MoenyCount}";
+var shoplen="{$shoplen}";
+var info={
+    money:money,
+    MoenyCount:MoenyCount,
+    shoplen:shoplen
+};
+var gong='';
+$("#shop_score_num").blur(function(){
+			var fufens = parseInt($(this).val());
+			
+    if(fufens/mmmmm==parseInt(fufens/mmmmm)){
+if(info['MoenyCount']>=fufens/mmmmm){
+gong=info['MoenyCount']-fufens/mmmmm;
+var hhh=info['MoenyCount']-fufens/mmmmm-info['money'];
+			$("#pay_money").text(info['MoenyCount']-fufens/mmmmm+'.00');
+			$("#pay_yungou").text(fufens/mmmmm+'.00');
+			
+			if(hhh>=0){
+			$("#pay_bankmoney").text(info['MoenyCount']-fufens/mmmmm-info['money']+'.00');
+			}
+		}
+		}
+			
+	});
+	$("#shop_score_num").blur(function(){
+	
+			var fufen = parseInt($(this).val());
+	
+			var money = parseInt($(this).attr("money"));
+			$(this).val(Math.floor(fufen/money)*money);
+					
+	});
+	if(info['money'] >= info['MoenyCount']){
+		$("#divBankList").hide();
+		$("#liPayByOther").hide();
+		$("#MoneyCheckbox").attr("checked",true);
+		$("#MoneyCheckbox").attr("disabled",true);
+	}
+	
+	if(info['money']==0){
+			$("#liPayByBalance").addClass("point_gray");
+			$("#MoneyCheckbox").attr("disabled",true);
+	}
+	if(info['money'] < info['MoenyCount']){		
+		$("#MoneyCheckbox").attr("checked",true);
+		$("#pay_money").text(info['money']);
+		$("#pay_bankmoney").text(info['MoenyCount']-info['money']+'.00');
+		$("#MoneyCheckbox").click(function(){
+			if(this.checked){
+				$("#pay_money").text(info['money']+'.00');
+				$("#pay_bankmoney").text(info['MoenyCount']-info['money']+'.00');
+			}else{
+				$("#pay_money").text('0.00');
+				$("#pay_bankmoney").text(info['MoenyCount']+'.00');	
+			} 
+		});
+	}
+	$("#submit_ok").click(function(){	
+             //2016/3/10   新增加选购商品
+                var chooselist = localStorage.getItem("chooselist");
+                chooselist = chooselist ? $.evalJSON(chooselist) : null;
+               
+                var str = "";
+                if (chooselist) {
+                    $.each(chooselist, function (i, val) {
+                        str += '<input type="hidden" name="chooseid[]" value="' + i + '">';
+                        str += '<input type="hidden" name="code[]" value="' + val['code'] + '">';
+
+                    });
+                }
+                
+                $("#form_paysubmit").append(str);
+		if(!this.cc){
+			this.cc = 1;		
+			return true;
+		}else{		
+			return false;
+		}		
+		return false;
+	});
+	$("#shop_score_num").blur(function(){
+			var fufen = parseInt($(this).val());
+			var money = parseInt($(this).attr("money"));
+			$(this).val(Math.floor(fufen/money)*money);			
+	});
+	$(".click_img li>img").click(function(){			
+			$(this).prev().attr("checked",'checked');
+	});
+	
+});
+</script>
+<!--footer 开始-->
+<include file="./index/index.footer"/>

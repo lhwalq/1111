@@ -1,0 +1,45 @@
+<include file="./index/index.header"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/piyungou/css/pager.css"></link>
+<style>
+    .w_goods_details {
+    border: 1px solid #ddd;
+    margin-top: -1px;
+    margin-left: -1px;
+    float: left;
+    width: 264px;
+    padding: 10px 18px 20px;
+    position: relative;
+    height: 388px;
+    position: relative;
+}
+</style>
+<!-- 导航   end  --> 
+<div class="w_con"> 
+    <h4 class="w_guide"><a href="__ROOT__/index">首页</a><a class="w_accord" >{:R("Base/huode_user_name",array($uid))}的网盘</a></h4> 
+    <div class="w_goods_nav"> 
+        <!--商品列表--> 
+        <div class="w_goods_con">
+            <ul class="w_goods_one">
+                <?php	$ii=0;?>
+                <if condition="!empty($geshu[0])">
+                <foreach name="geshu" item="shop" >
+                    <li class="w_goods_details ">
+                        <div class="w_imgOut" data-gid="{$shop['id']}" data-pid="{$shop['zongrenshu']}">
+                            <a data-gid="{$shop['id']}" data-pid="{$shop['zongrenshu']}" target="_blank" class="w_goods_img" href="__PUBLIC__/uploads/{$shop}"><img style="display: inline;" src="__PUBLIC__/uploads/{$shop}" id="img_<?php echo $ii; ?>" data-gid="{$shop['id']}" data-pid="{$shop['zongrenshu']}" class="lazy1" data-original="__PUBLIC__/uploads/{$shop}" />
+                                <noscript>
+                                <img src="__PUBLIC__/uploads/{$shop}" alt="" />
+                                </noscript></a>
+                    </li>
+                </foreach>
+                <else />
+                <h4 class="w_guide"><a class="w_accord">用户{:R("Base/huode_user_name",($uid))}未上传网盘内容</a></h4>
+                </if>
+            </ul>
+
+        </div> 
+        <if condition="$zongji gt $num"> 
+            <div class="pagesx"><?php echo $fenye->show("two"); ?></div>
+        </if>
+    </div> 
+    <!-- 底部 --> 
+    <include file="./index/index.footer"/>

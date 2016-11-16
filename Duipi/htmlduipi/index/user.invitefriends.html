@@ -1,0 +1,76 @@
+<include file="./index/index.header"/>
+<div class="main-content clearfix">
+<include file="./index/member.left"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/piyungou/css/layout-records.css"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/piyungou/css/layout-invitation.css"/>
+<script type="text/javascript" src="__PUBLIC__/piyungou/js/ZeroClipboard.js"></script>
+
+         <div class="R-content">
+            <div class="member-t"><h2>邀请好友</h2></div>
+            
+		        <div id="divInvited" class="success-invitation gray02"  >
+			        <p>复制链接邀请好友拿四重大礼！ <a target="_blank" href="__ROOT__/index/pleasereg" class="blue">详情&gt;&gt;</a></p>
+			        <span><b></b><input id="txtInfo"  style="width:500px;height:20px; "  value="{$lianjie[0][title]} {$friednsURL}" onpaste="return false" type="text"></span>
+				  <div class="d_clip_copy"></div>
+				   <div id="d_clip_container" style="position:relative;">									
+					<div id="d_clip_button" class="bluebut" onClick="copyUrl()" style="text-align:center;margin-top:24px"  >复制</div>
+				</div>
+		        </div>
+		  佣金邀请二维码<br>	
+		  <img src=__ROOT__/index/ers width=320 height=480>  
+		
+            <div id="divInviteInfo" class="get-tips gray01" style="">成功邀请 <span class="orange">{$involvedtotal}</span> 位会员注册，已有 <span class="orange">{$involvednum}</span> 位会员参与云购</div>
+            <div id="divList" class="list-tab SuccessCon"><ul class="listTitle"><li class="w200">用户名</li><li class="w200">时间</li><li class="w180">邀请编号</li><li>消费状态</li></ul>
+			
+			<if condition="$involvedtotal neq 0">
+			
+			<foreach name="invifriends" item="val" key="key">
+			  <ul><li class="w200">  <a href="__ROOT__/user/uname/tab/uname/d/{:R('base/idjia',array($val['uid']))}.html" target="_blank" class="blue">{$val['sqlname']}</a></li>
+			  <li class="w200">{$val['time']|date="Y-m-d H:i:s",###}</li>
+			  <li class="w180">{:R("base/idjia",array($val['uid']))}</li>
+			  <li>{$records[$val['uid']]}</li></ul>
+			</foreach>
+            <else />
+			 <div class="tips-con"><i></i>您还未有邀请谁哦</div></div>
+			</if>			
+			</div>
+            <div id="divPageNav" class="page_nav"></div>
+        </div>
+	</div>	
+	 
+ <style type="text/css">
+#d_clip_container,.my_clip_button,.d_clip_copy{margin:0;width:65px; height:22px;   text-align:center;}
+#d_clip_container{top:-45px;left:508px;}
+#fe_text{resize:none;margin-bottom:10px;}
+.my_clip_button {position:absolute; border:1px solid #999; background-color:#1ba3fa; cursor:default; font-size:9pt; }
+.my_clip_button.hover { background-color:#1ba3fa; }
+.my_clip_button.active { background-color:#1ba3fa; }
+.d_clip_copy{ font-size:14px;color:#000;}
+  
+</style>  
+
+<style>
+  .goods_show li{
+    color:#7D7D7D;
+	float:left;
+	width:194px;  
+  }
+ .goods_show li a{
+    color:#22AAFF;
+	border-bottom:1px solid #22AAFF;
+  }
+</style>
+<script>
+
+	function copyUrl()
+	{
+	var Url=document.getElementById("txtInfo");
+	Url.select(); // 选择对象
+	document.execCommand("Copy"); // 执行浏览器复制命令
+	alert("您可以分享给您朋友了哦");
+	}
+
+
+</script>
+</div>
+<include file="./index/index.footer"/>

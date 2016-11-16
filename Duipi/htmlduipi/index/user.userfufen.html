@@ -1,0 +1,61 @@
+<include file="./index/index.header"/>
+<div class="main-content clearfix">
+<include file="./index/member.left"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/piyungou/css/layout-recharge.css"/>
+<div class="R-content">
+	<div class="member-t"><h2>账户福分</h2></div>
+	<div class="last">
+		<ul>
+			<li><h3>可用福分：</h3><b class="orange">{$huiyuan['score']}</b>	</li>
+			<li>			
+				<h3>可用金钱：</h3>	<b class="orange">
+				<?php
+					$conf = C("fufen_yuan");
+					
+					$fufen_to_money  = intval($huiyuan['score'] / $conf);			
+					
+				?>
+				{$huiyuan['score']}福分 / {$conf}福分<h3>(1元={$conf}福分)</h3>	 = 
+				{$fufen_to_money}元<h3>(取整)</h3>	
+				</b>
+			</li>
+		</ul>
+	</div>
+	<div id="divList0" class="list-tab recordList">
+	<ul class="listTitle">
+		<li class="leftTitle">时间</li>
+		<li class="price">渠道</li>
+		<li class="regard">获得/支出</li>
+	</ul>
+	
+	<foreach name="account" item="at" >
+	<ul>
+		<li class="leftTitle fontAri">{$at['time']|date="Y-m-d",###}</li>
+		<li class="price">{$at['content']}</li>
+		<li class="regard">
+		
+		<if condition="$at['type'] eq 1"> 
+			<font color="#0c0">+ {$at['money']}</font>
+		<else />
+			<font color="red">- {$at['money']}</font>
+		</if>
+		</li>
+	</ul>
+	</foreach>
+	</div>
+          <style>
+			#divPageNav{ padding-top:10px;text-align:right}
+			#divPageNav li a{ padding:5px;}
+		</style>
+		<div id="divPageNav" class="page_nav">
+        	<?php echo $fenye->show("one"); ?> <li>共 {$zongji} 条</li>
+        </div>
+	<div id="divPageNav0" class="page_nav" style="display: none;"></div>
+	<div id="divList1" class="list-tab recordList" style="display:none;"></div>
+	<div id="divPageNav1" class="page_nav" style="display:none;"></div>
+	<div id="divDetailInfo" class="count" style="display:none;"></div>
+	<div id="divbuyDetail" class="list-tab recordList buyDetail" style="display:none;"></div>
+</div>
+
+</div>
+<include file="./index/index.footer"/>

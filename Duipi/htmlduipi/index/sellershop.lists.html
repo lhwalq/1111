@@ -1,0 +1,91 @@
+<include file="./index/index.header"/>
+<div class="main-content clearfix">
+<include file="./index/member.left"/>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>商品列表</title>
+
+<link rel="stylesheet" href="__PUBLIC__/plugin/style/global/css/style.css" type="text/css">
+
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/plugin/calendar/calendar.js"></script>
+<script src="__PUBLIC__/plugin/style/global/js/jquery-1.8.3.min.js"></script>
+<style>
+.header{height:40px; overflow:hidden;     border: 1px solid #fff; background: #fff;
+        zoom: 1;
+        position: relative;
+        z-index: 21;
+        height: 155px;
+        margin-top: 0px;
+    padding-left: 0px;
+}
+body {
+    background-color: #ffffff; 
+}
+td{
+    text-align: center;
+    vertical-align: middle;
+}
+</style>
+</head>
+<body style="overflow-y:hidden">
+    <div class="R-content" style="width: 1000px; margin-top: 20px;">
+<div class="header-data lr10" style="margin-bottom: 20px;">
+	<b>提示:</b> 已经购买过的商品不能在修改，点击查看往期可以查看该商品的所有期数商品！
+	<br/>
+	<b>提示:</b> 因为商品添加后云购码已经生成成功,所以不能在本期内修改价格了.
+</div>
+
+
+<form action="#" method="post" name="myform">
+<div class="table-list lr10">
+	
+    <table width="100%" cellspacing="0" >
+     	<thead>
+        		<tr>
+                    <th width="5%">ID</th>        
+                    <th width="25%">商品标题</th>    
+                    <th width="8%">所属栏目</th>             
+                    <th width="10%">已参与/总需</th>
+                    <th width="5%">单价/元</th>
+                    <th width="10%">期数/最大期数</th>
+                    <th width="15%">管理</th>
+				</tr>
+        </thead>
+        <tbody>	
+		<foreach name="yyslist" item="v" >
+  
+            <tr>
+                <td>{$v['id']}</td>
+                <td><span style="">{:R("Base/strcut",array($v['title'],30))}</span></td>
+                <td>{$categorys[$v['cateid']]['name']}</a></td>
+                <td><font color="#ff0000">{$v['canyurenshu']}</font> / {$v['zongrenshu']}</td>
+                <td>{$v['yunjiage']}</td>
+                <td>{$v['qishu']}/{$v['maxqishu']}</td>
+                <td class="action">
+				<if condition="$type">
+
+                [<a href="__ROOT__/seller/goods_edit/id/{$v['id']}/type/1">修改</a>] 
+                [<a href="__ROOT__/seller/goods_del/id/{$v['id']}/type/1" onclick="return confirm('是否真的删除该商品！');">删除</a>]  
+
+<else />
+		[<a href="__ROOT__/seller/goods_set_money/id/{$v['id']}">重置价格</a>]  
+                [<a href="__ROOT__/seller/goods_edit/id/{$v['id']}">修改</a>]              
+                [<a href="__ROOT__/seller/qishu_list/id/{$v['id']}">查看往期</a>]
+</if> 
+				</td>
+            </tr>
+            </foreach>
+        </tbody>
+     </table>     
+    </form>
+	
+  
+  </div>
+    	<div id="pages"><ul><li>共 {$zongji} 条</li><?php echo $fenye->show('two','li');  ?></ul></div>
+</div>
+</div>
+</body>
+</html> 
+<include file="./index/index.footer"/>

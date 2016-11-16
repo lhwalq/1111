@@ -1,0 +1,21 @@
+﻿@charset "utf-8";
+body,p,h1,h2,h3,h4,h5,h6,form,input,ul,li,dd,dl,textarea{
+  padding:0;margin:0;
+  list-style-type:none;
+  font-weight:normal;
+  font-style:normal;
+}
+a{
+  text-decoration:none;
+  font-size:14px;
+}
+img{
+  border:0;
+}
+input:focus,textarea:focus,select:focus{outline:none;}
+@font-face{font-family:HelveticaNeueLt;
+src:url(/style/css/img/helveticaneuelt.eot);
+src:url(/style/css/img/helveticaneuelt.eot?#iefix)format('embedded-opentype'),
+url(/style/css/img/helveticaneuelt.woff)format('woff'),
+url(/style/css/img/helveticaneuelt.ttf)format('truetype'),
+url(/style/css/img/helveticaneuelt.svg)format('svg');font-weight:400;font-style:normal;}

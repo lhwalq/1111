@@ -1,0 +1,1 @@
+Base.getScript(pub+"/JS/GoodsPostFun.js?v=151106");

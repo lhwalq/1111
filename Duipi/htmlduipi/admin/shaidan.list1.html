@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>未晒单</title>
+        <link rel="stylesheet" href="__PUBLIC__/plugin/style/global/css/global.css" type="text/css"/>
+        <link rel="stylesheet" href="__PUBLIC__/plugin/style/global/css/style.css" type="text/css"/>
+        <style>
+            body{ background-color:#fff}
+        </style>
+    </head>
+    <body>
+        <div class="header lr10">
+            {:R('admin/headerment',array($ment))}
+        </div>
+        <div class="bk10"></div>
+        <div class="table-list lr10">
+            <table width="100%" cellspacing="0">
+                <thead>
+                    <tr align="center">
+                        <th width="5%" height="30">商品ID</th>
+                        <th width="15%">商品标题</th>
+                        <th width="10%">编辑</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($shaidingdan as $v) { ?>
+                    <tr align="center" class="mgr_tr">
+                        <td height="30"><?php echo $v['shopid'];?></td>
+                        <td><?php echo "第".$v['shopqishu']."期";?>{:R('base/strcut',array($v['shopname'],30))}</td>
+
+                        <td><?php
+
+                            echo "<a href='".C("URL_DOMAIN")."order/editShaidan/id/".$v['shopid']."'>编辑</a>";
+
+                            ?>
+                        </td>
+
+                    </tr>
+                    <?php } ?> 
+                </tbody>
+            </table>
+            <?php if($zongji>$num) {?> 
+
+            <div id="pages"><ul><li>共 <?php echo $zongji; ?> 条</li><?php echo $fenye->show('one','li'); ?></ul></div>
+
+            <?php } ?> 	
+
+        </div><!--table_list end-->
+
+    </body>
+</html> 

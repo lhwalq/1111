@@ -1,0 +1,174 @@
+﻿
+<include file="./index/index.header"/>
+<link rel="stylesheet" href="/public/video/vcss/video_list.css"/>
+
+<link rel="stylesheet" href="/public/video/vcss/page.css"/>
+
+		<div class="list_center">
+			<div class="list_center_in">
+				<div class="list_title">
+					<ul>
+													<li class="click_lia">全部视频</li>
+													</ul>
+				</div>
+				<div class="center_list_box">
+					<div class="center_list_boxs" style="display:block !important;" id="videos">
+						
+						<!-- 视频展示 end -->
+					</div>
+					<div class="page">
+						
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 内容区域 end -->
+	<include file="./index/index.footer"/>
+	
+</script>
+<script type="text/javascript" src="/public/video/vjs/jpages.js"></script>
+<script type="text/javascript" src="/public/video/vjs/video_list.js"></script>
+<script type="text/javascript">
+	$(function(){
+		getGoodsList(1);
+		$(".list_title ul li").click(function(){
+			$(".list_title ul li").removeClass("click_lia");
+			$(this).addClass("click_lia");
+			getGoodsList(1);
+			
+		})
+	});
+	function getGoodsList(page){
+        var sumPage;
+        var category=$(".click_lia").attr("index");
+        // alert(category);
+        
+        $.ajax({
+            url: '/Video/video',
+            type: "post",
+            dataType: "json",
+            data: {
+                'page':page,
+                'vtype':category,
+                'perPage':9
+            },
+        success: function(data){
+        	// alert(data['data']);
+           sumPage = (data["msg"]["total"]%data["msg"]["perPage"] == 0) ? data["msg"]["total"]/data["msg"]["perPage"] : Math.floor(data["msg"]["total"]/data["msg"]["perPage"]) + 1;
+            var html='';
+           if(data["msg"]["total"]==0){
+                    html+='暂无视频';
+                    $("div.page").hide();
+                }else{
+                	html+='<p class="boxs_p">'+data['msg']['name']+'</p>';
+                	
+                	$.each(data['tjv'],function(tjvIndex,tjvdata){
+						html+='<ul class="ul"><div class="ul_div_float"><a href="/Video/videoid/id/'+tjvdata['v_id']+'.html" target="_blank"><img src="/'+tjvdata['v_cover']+'"/><em></em></a><div class="right_font"><h3>'+tjvdata['v_title']+'</h3>'+tjvdata['v_note']+'</div></div>';
+                	})
+                	$.each(data['vhits'],function(vhitIndex,vo){
+			            html+='<li><a href="/Video/videoid/id/'+vo['v_id']+'.html" target="_blank"><img src="/'+vo['v_cover']+'"/><p><em>'+vo['v_title']+'</em></p></a></li>';
+			          })
+			          html+='</ul><ul class="ul2_video">';
+                   $.each(data['data'], function(commentIndex, comment){
+                   		if(commentIndex%3==2){
+                   			 html+='<li style="margin-right:0">';
+                   			}else{
+                   				 html+='<li>';
+                   			}
+	                     html+='<a href="/Video/videoid/id/'+comment['v_id']+'".html " target="_blank"><img alt="'+comment['v_title']+'" src="/'+comment['v_cover']+'"/><em></em>';
+	                     html+='<h3 >'+comment['v_title']+'</h3><b></b>';
+	                     html+='</a><span><em class="b_video_zan" data='+comment['v_id']+'>赞('+comment['zan']+')</em>';
+	                     html+='<input type="hidden" value='+comment['v_id']+'  class='+comment['v_id']+'>';
+	                     html+='<i>浏览:    '+comment['v_hits']+'次</i>';
+	                     html+='</span></li>';
+	                    });
+                   	html+='</ul>';
+                    $("div.page").show();
+                }
+                // alert(html);
+                $("#videos").html(html);
+            //分页设置
+                pagePause = 0;
+                if(page < 2){
+                    $("div.page").jPages({
+                        containerID : "videos",
+                        clickStop   : true,
+                        perPage : 8,
+                        allSumPage : sumPage,
+                        callback: ajaxPageData
+                    });
+                }
+                //2016-1-29添加
+		$(".list_banner a").hover(function(){
+			$(".list_banner a em").css({display:"none"});
+			$(this).find("em").css({display:"block"});
+		},function(){
+			$(".list_banner a em").css({display:"none"});
+		});
+
+		$(".focus_control li").hover(function(){
+			$(".list_banner a em").css({display:"block"});
+		});
+		$(".c_video_nav li").hover(function(){
+		      $(this).find("dl").show();
+		},function(){
+		      $(".c_video_nav li dl").hide();
+		});
+
+		$(".focus_control a").hover(function(){
+			$(".list_banner a em").css({display:"block"});
+		});
+
+		$(".focus_control").hover(function(){
+			$(".list_banner a em").css({display:"block"});
+		});
+
+        $(".ul_div_float a").hover(function(){
+            $(this).find("em").css({display:"block"});
+        },function(){
+        	$(this).find("em").css({display:"none"});
+        });
+
+        $(".ul2_video li").hover(function(){
+        	$(".ul2_video li b").css({display:"none"});
+        	$(this).find("b").css({display:"block"});
+        },function(){
+        	$(".ul2_video li b").css({display:"none"});
+        })
+        $(".b_video_zan").click(function(){       
+        	var num=$(this).next().val();
+        	  $.post('/index.php/home/index/indexzan/',{'id':num},function(data){          
+        	    $("."+num).prev().text('赞('+data+')');	    
+        	  })    
+                 
+        })
+
+        //截取字数
+        enjoy();//截取字数
+		function enjoy(){
+		    var spans=$(".ul2_video h3");
+		    for (var i = 0; i < spans.length; i++) {
+		       if($(spans[i]).html().length>=15){
+		       $(spans[i]).html($(spans[i]).html().slice(0,15)+"...");
+		        }
+		    }
+		}
+        },
+        error: function(request){
+            console.log("获取平台数据异常");
+        }
+    });
+	}
+
+	//分页回调函数
+	function ajaxPageData(obj){
+	    if(pagePause == 0){
+	        return false;
+	    }
+	    getGoodsList(obj["current"]);
+	}
+
+	
+</script>

@@ -1,0 +1,1 @@
+Base.getScript(pub+"/JS/mobile/AreaListListFun.js?v=151106");

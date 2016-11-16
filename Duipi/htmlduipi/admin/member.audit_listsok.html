@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link rel="stylesheet" href="__PUBLIC__/plugin/style/global/css/global.css" type="text/css">
+<link rel="stylesheet" href="__PUBLIC__/plugin/style/global/css/style.css" type="text/css">
+</head>
+<body>
+<div class="header lr10">
+{:R('admin/headerment',array($ment))}
+</div>
+<div class="bk10"></div>
+
+<div class="lr10" style="line-height:30px;color:#f60">
+	<b>待审核列表:</b> <?php echo $select_where; ?> &nbsp;&nbsp;&nbsp; 共找到 <?php echo $zongji; ?> 个待审核商户
+</div>
+    <form id="form2" name="form2" method="post" action="" onsubmit="return checkF(this)">  
+     
+    
+<div class="table-list lr10">        
+  <!--start-->
+  <table width="100%" cellspacing="0">
+    <thead>
+		<tr>
+		 <th align="center"> </th>
+            <th align="center">UID</th>
+            <th align="center">用户名</th>
+            <th align="center">邮箱</th>
+            <th align="center">手机</th>
+            <th align="center">金额</th>
+			<th align="center">福分</th> 
+			<th align="center">经验值</th>			
+			<th align="center">登陆时间,地址,IP</th>
+			<th align="center">注册时间</th>		
+			<th align="center">账户绑定</th>
+			<th align="center">冻结</th>
+			<th align="center">模拟登陆</th>
+                        <th align="center">商户资料</th>
+            <th align="center">管理</th>
+		</tr>
+    </thead>
+    <tbody>
+    	<?php foreach($huiyuans as $v){ ?>
+			<tr>
+			<td align="center"><input type="checkbox" name="id[]" value="<?php echo $v['uid'];?>" style="background:none; border:none;" /> </td>
+				<td align="center"><?php echo $v['uid']; ?></td>
+				<td align="center"><?php echo $v['username']; ?></td>	
+				<td align="center"><?php echo $v['email']; ?> <?php if($v['emailcode']==1){?><span style="color:#0c0">√</span><?php }else{ ?><span style="color:red">×</span><?php } ?></td>	
+				<td align="center"><?php echo $v['mobile']; ?> <?php if($v['mobilecode']==1){?><span style="color:#0c0">√</span><?php }else{ ?><span style="color:red">×</span><?php } ?></td>	
+				<td align="center"><?php echo $v['money']; ?></td>
+				<td align="center"><?php echo $v['score']; ?></td>
+				<td align="center"><?php echo $v['jingyan']; ?></td>				
+				<td align="center"><?php echo R("Base/buy_time",array($v['login_time'],"未登录")); ?>,<?php echo trim($v['user_ip'],","); ?></td>	
+				<td align="center"><?php echo R("Base/buy_time",array($v['time'])); ?></td>
+				<td align="center"><?php echo trim($v['band'],","); ?></td>
+				
+					<td align="center"><?php
+					if($v['dongjie']==0){
+						echo '帐号正常';
+					}
+					?>
+					<?php
+					if($v['dongjie']==1){
+						echo '<font color="#ff0000">帐号冻结</font>';
+					}
+					?></td>
+					
+
+					<td align="center">
+					<a target="_blank" href="__ROOT__/member/moni/id/{$v['uid']}">模拟登陆</a>	
+					</td>
+                                       <td align="center">
+					<a target="_blank" href="__PUBLIC__/uploads/{$v['seller_img']}"><img src="__PUBLIC__/uploads/{$v['seller_img']}" style="border:1px solid #eee; padding:1px; width:50px; height:50px;"></a>	
+					</td>
+				<td align="center">
+				       <?php
+						echo "<a href='__ROOT__/goods/goods_set/type/audit_sellerok/value/".$v['uid']."' onclick=\"return confirm('请仔细核对过资料！');\">审核取消</a>";
+					?>		
+			   </td>            	
+			</tr>
+
+            <?php } ?>
+  	</tbody>
+
+</table>
+</div><!--table-list end-->
+
+      
+    </form>  
+	    <script type="text/javascript" language="javascript">  
+            function selectBox(selectType){  
+            var checkboxis = document.getElementsByName("id[]");  
+            if(selectType == "reverse"){  
+                for (var i=0; i<checkboxis.length; i++){  
+                    
+                    checkboxis[i].checked = !checkboxis[i].checked;  
+                }  
+            }  
+            else if(selectType == "all")  
+            {  
+                for (var i=0; i<checkboxis.length; i++){  
+                    //alert(checkboxis[i].checked);  
+                    checkboxis[i].checked = true;  
+                }  
+            }  
+         }  
+    </script>  
+<div id="pages" style="margin:10px 10px">		
+	<ul><li>共 <?php echo $zongji; ?> 条</li><?php echo $fenye->show('two','li'); ?></ul>
+</div>
+<script>
+</script>
+</body>
+</html> 

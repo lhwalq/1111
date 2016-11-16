@@ -1,0 +1,83 @@
+<include file="./index/index.header"/>
+<div class="layout980 clearfix">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/layout-home.css"/>
+<include file="./index/member.left"/>
+<div class="center">
+	
+	<div class="per-info">
+		<ul>
+			<li class="info-mane gray02">
+				<b class="gray01">
+                                 <a href="__ROOT__/user/uname/d/{:R('base/idjia',array($huiyuan['uid']))}.html" target="_blank" class="blue" style="font-size: 18px;">
+                                 <if condition="($huiyuan['username'] neq null) ">
+                                    {$huiyuan['username']}
+                                 <elseif condition="$huiyuan['mobile'] neq null"/>
+                                    {$huiyuan['mobile']}
+				<else />
+                                    {$huiyuan['email']}
+				</if>
+                                 </a>
+				</b>
+				<if condition="($huiyuan['username'] neq null) ">
+				(
+                                <if condition="($huiyuan['mobile'] neq null) ">
+				{$huiyuan['mobile']}
+				<else />
+				{$huiyuan['email']}
+				</if>
+				)
+				</if>
+                                <br/>
+<!--				<span><a href="__ROOT__/uname/{:R('base/idjia',array($huiyuan['uid']))}.html" target="_blank" class="blue"><s></s>查看个人主页</a></span>-->
+			</li>
+                        
+			<li class="account-money">
+				<em class = "gray02">经验值：{$huiyuan['jingyan']}</em> 
+				<span class="class-icon0{$dengji_1['groupid']} gray01"><s></s>{$dengji_1['name']}</span>
+			        <if condition="($dengji_2) ">
+					<span class = "gray02">（还差{$dengji_x}经验值升级到{$dengji_2['name']}）</span>
+				<else />
+					<span class = "gray02">（还差{$dengji_x}经验值升级到最高等级）</span>
+				</if>
+			</li>
+			<li class="account-money">
+				<em class="gray02">福分：</em>
+				<span class="money-red"><s></s>{$huiyuan['score']}</span>&nbsp;&nbsp;
+				
+			</li>
+			<li class="account-money">
+				<em class="gray02">帐户余额：</em>
+				<span class="money-red"><s></s>{:R("base/uidcookie",array("money"))}</span>&nbsp;&nbsp;
+				<a href="__ROOT__/user/userrecharge" title="充值" class="blue">充值</a>
+			</li>
+			 佣金邀请二维码<br>	
+		 <img src=__ROOT__/index/ers width=320 height=480>  
+		</ul>		
+	</div>
+</div>
+<!--center_center_end-->
+<div class="right">				
+	<div class="groups-shadow clearfix">
+		<div class="R-grtit">
+			<h3>圈子热门话题</h3>
+		</div>
+		<ul class="R-list">
+                        <?php 
+                            $tiezi=D("quan_tiezi")->where("hueifu!='0'")->order("hueifu DESC")->limit("8")->select(); 
+                            $title=R("base/strcut",array(R("base/quanzid",array($tz['qzid'])),10));
+                        ?>
+                        <foreach name="dongtai" item="tz" >
+			<li>
+				<p class="groups-t"><a href="__ROOT__/group/nei/id/{$tz['id']}.html" class="gray"> {$tz['title']}</a></p>
+				<p class="groups-c gray02">{$title}<span class="gray03"> | </span>{$tz['hueifu']}条回复</p>
+			</li>
+			</foreach>
+			 
+		</ul>
+	</div> 
+	<p class="r-line"></p>
+</div>
+
+
+</div>
+<include file="./index/index.footer"/>

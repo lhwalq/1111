@@ -1,0 +1,135 @@
+* {
+	OUTLINE-STYLE: none; OUTLINE-COLOR: invert; OUTLINE-WIDTH: medium; WORD-WRAP: break-word
+}
+HTML {
+	MARGIN: 0px; HEIGHT: 100%; -webkit-text-size-adjust: none
+}
+BODY {
+	MARGIN: 0px; HEIGHT: 100%; -webkit-text-size-adjust: none
+}
+BODY {
+	FONT-FAMILY: "Microsoft YaHei", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Helvetica, Arial, sans-serif; BACKGROUND: #555
+}
+H2 {
+	MARGIN: 0px
+}
+H5 {
+	MARGIN: 0px
+}
+H6 {
+	MARGIN: 0px
+}
+INPUT {
+	OUTLINE-STYLE: none; OUTLINE-COLOR: invert; OUTLINE-WIDTH: medium
+}
+.bg-dot {
+	Z-INDEX: 2; WIDTH: 100%; BACKGROUND: url(../images/login/login_bg_dot.png) center center; HEIGHT: 100%
+}
+.login-layout {
+	Z-INDEX: 3; POSITION: absolute; MARGIN: -200px auto auto -340px; WIDTH: 640px; TOP: 50%; LEFT: 50%
+}
+.login-layout .top {
+	Z-INDEX: 1; POSITION: relative; MARGIN: 0px auto; HEIGHT: 60px; COLOR: #fff; text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25)
+}
+.login-layout .top H5 {
+	Z-INDEX: 1; POSITION: absolute; LINE-HEIGHT: 20px; DISPLAY: block; HEIGHT: 20px; FONT-SIZE: 13px; TOP: 0px; FONT-WEIGHT: 600; LEFT: 0px
+}
+.login-layout .top H5 EM {
+	FONT-STYLE: normal; FONT-FAMILY: Tahoma; MARGIN-LEFT: 4px; FONT-SIZE: 10px
+}
+.login-layout .top H2 {
+	Z-INDEX: 1; POSITION: absolute; LINE-HEIGHT: 36px; DISPLAY: block; HEIGHT: 36px; FONT-SIZE: 32px; TOP: 20px; FONT-WEIGHT: 600; LEFT: 0px
+}
+.login-layout .top H6 {
+	Z-INDEX: 1; POSITION: absolute; LINE-HEIGHT: 16px; DISPLAY: block; HEIGHT: 16px; FONT-SIZE: 11px; TOP: 44px; FONT-WEIGHT: 600; LEFT: 224px
+}
+.login-layout .box {
+	MARGIN: 30px 0px 0px; HEIGHT: 40px
+}
+.login-layout .box SPAN {
+	Z-INDEX: 1; POSITION: relative; PADDING-BOTTOM: 0px; MARGIN: 0px 6px 0px 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; DISPLAY: block; FLOAT: left; PADDING-TOP: 0px
+}
+.login-layout .box SPAN LABEL {
+	Z-INDEX: 9; POSITION: absolute; LINE-HEIGHT: 20px; PADDING-RIGHT: 10px; DISPLAY: block; HEIGHT: 20px; COLOR: #555555; FONT-SIZE: 14px; TOP: 10px; FONT-WEIGHT: 600; BORDER-RIGHT: #999 1px dotted; LEFT: 10px
+}
+.input-text {
+	Z-INDEX: 1; BORDER-BOTTOM: 0px; POSITION: relative; FILTER: progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#CCFFFFFF', endColorstr='#CCFFFFFF'); BORDER-LEFT: 0px; PADDING-BOTTOM: 6px; LINE-HEIGHT: 28px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px; FONT-FAMILY: Verdana, Geneva, sans-serif; HEIGHT: 28px; COLOR: #555555; FONT-SIZE: 14px; BORDER-TOP: 0px; FONT-WEIGHT: 600; BORDER-RIGHT: 0px; PADDING-TOP: 6px; box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.5); -webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.5)
+}
+.input-password {
+	Z-INDEX: 1; BORDER-BOTTOM: 0px; POSITION: relative; FILTER: progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#CCFFFFFF', endColorstr='#CCFFFFFF'); BORDER-LEFT: 0px; PADDING-BOTTOM: 6px; LINE-HEIGHT: 28px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px; FONT-FAMILY: Verdana, Geneva, sans-serif; HEIGHT: 28px; COLOR: #555555; FONT-SIZE: 14px; BORDER-TOP: 0px; FONT-WEIGHT: 600; BORDER-RIGHT: 0px; PADDING-TOP: 6px; box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.5); -webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.5)
+}
+.input-code {
+	Z-INDEX: 1; BORDER-BOTTOM: 0px; POSITION: relative; FILTER: progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#CCFFFFFF', endColorstr='#CCFFFFFF'); BORDER-LEFT: 0px; PADDING-BOTTOM: 6px; LINE-HEIGHT: 28px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px; FONT-FAMILY: Verdana, Geneva, sans-serif; HEIGHT: 28px; COLOR: #555555; FONT-SIZE: 14px; BORDER-TOP: 0px; FONT-WEIGHT: 600; BORDER-RIGHT: 0px; PADDING-TOP: 6px; box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.5); -webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.5)
+}
+.input-text:focus {
+	FILTER: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000'); BACKGROUND-COLOR: #fff; COLOR: #000; box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.25)
+}
+.input-password:focus {
+	FILTER: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000'); BACKGROUND-COLOR: #fff; COLOR: #000; box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.25)
+}
+.input-code:focus {
+	FILTER: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000'); BACKGROUND-COLOR: #fff; COLOR: #000; box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.25)
+}
+.input-text {
+	PADDING-LEFT: 56px; WIDTH: 164px
+}
+.input-password {
+	PADDING-LEFT: 56px; WIDTH: 164px
+}
+.input-code {
+	WIDTH: 68px
+}
+.code {
+	Z-INDEX: 9; BORDER-BOTTOM: #555 1px solid; POSITION: absolute; BORDER-LEFT: #555 1px solid; BACKGROUND-COLOR: #ffffff; WIDTH: 114px; DISPLAY: none; HEIGHT: 34px; BORDER-TOP: #555 1px solid; TOP: -40px; BORDER-RIGHT: #555 1px solid; LEFT: -10px; box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.25); border-radius: 4px
+}
+.code .arrow {
+	POSITION: absolute; WIDTH: 14px; BOTTOM: -7px; DISPLAY: block; BACKGROUND: url(../images/login/login_code.gif) no-repeat 0px 0px; HEIGHT: 7px; LEFT: 21px
+}
+.code IMG {
+	Z-INDEX: 1; POSITION: absolute; WIDTH: 90px; HEIGHT: 26px; TOP: 4px; LEFT: 4px
+}
+.code .close {
+	Z-INDEX: 1; POSITION: absolute; PADDING-BOTTOM: 1px; PADDING-LEFT: 1px; WIDTH: 10px; PADDING-RIGHT: 1px; DISPLAY: block; HEIGHT: 10px; TOP: 4px; RIGHT: 4px; PADDING-TOP: 1px
+}
+.code .close:hover {
+	BACKGROUND-COLOR: #ccc; border-radius: 5px; -webkit-border-radius: 5px
+}
+.login-layout .box SPAN .code .change:hover {
+	BACKGROUND-COLOR: #ccc; border-radius: 5px; -webkit-border-radius: 5px
+}
+.code .close I {
+	WIDTH: 10px; DISPLAY: block; BACKGROUND: url(../images/login/login_code.gif) no-repeat 0px -7px; HEIGHT: 10px; opacity: 0.5
+}
+.code .change {
+	Z-INDEX: 1; POSITION: absolute; PADDING-BOTTOM: 1px; PADDING-LEFT: 1px; WIDTH: 10px; BOTTOM: 4px; PADDING-RIGHT: 1px; DISPLAY: block; HEIGHT: 10px; RIGHT: 4px; PADDING-TOP: 1px
+}
+.code .change I {
+	WIDTH: 10px; DISPLAY: block; BACKGROUND: url(../images/login/login_code.gif) no-repeat -10px -7px; HEIGHT: 10px; opacity: 0.5
+}
+.code .close:hover I {
+	opacity: 1
+}
+.login-layout .box SPAN .code .change:hover I {
+	opacity: 1
+}
+.input-button {
+	BORDER-BOTTOM: 0px; FILTER: progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#BF000000', endColorstr='#BF000000'); BORDER-LEFT: 0px; WIDTH: 65px; FONT-FAMILY: "Microsoft YaHei", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Helvetica, Arial, sans-serif; HEIGHT: 40px; COLOR: #fff; FONT-SIZE: 15px; BORDER-TOP: 0px; CURSOR: pointer; FONT-WEIGHT: 600; BORDER-RIGHT: 0px
+}
+.input-button:hover {
+	BACKGROUND-COLOR: #000000 !important; box-shadow: 0 0 3px 1px rgba(255, 255, 255, 0.5)
+}
+.bottom {
+	POSITION: fixed; TEXT-ALIGN: center; LINE-HEIGHT: 16px; WIDTH: 600px; BOTTOM: 60px; FONT-FAMILY: Verdana, Tahoma; COLOR: #fff; MARGIN-LEFT: -300px; LEFT: 50%; text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25)
+}
+.bottom A {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.bottom A:hover {
+	COLOR: #ff0; TEXT-DECORATION: blink
+}
+.bottom H5 {
+	FONT-SIZE: 12px
+}
+.bottom H6 {
+	FONT-SIZE: 10px
+}

@@ -1,0 +1,1 @@
+Base.getScript(pub+"/JS/GoodsListFun.js?v=130826");

@@ -1,0 +1,233 @@
+<include file="./index/index.header"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/piyungou/css/Detail.css"/>
+<!--晒单详情-->
+<div class="Current_nav">
+	<a href="__ROOT__/index/index">首页</a> &gt; <a href="#">晒单分享</a> &gt; 晒单详请</div>
+<div class="share_box" id="loadingPicBlock">
+	<div id="DCMainLeft" class="share_box_left">
+		<div class="share_main">
+			<!--用户晒单部分-->
+			<div class="share_title">
+				<h3>{$shaidingdan['sd_title']}</h3>
+				<div class="share_time">
+					晒单时间：<span>{$shaidingdan['sd_time']|date="Y-m-d H:i",###}</span></div>
+			</div>
+			<div class="share_goods">
+				<div class="share-get">
+
+					<a class="fl-img" href="__ROOT__/user/uname/d/{:R('base/idjia',array($shaidingdan['sd_userid']))}.html" target="_blank"><img src="__PUBLIC__/uploads/{:R('base/huode_user_key',array($shaidingdan['sd_userid'],'img','8080'))}"></a>
+
+					<div class="share-getinfo">
+						<p class="getinfo-name">幸运获得者：<a class="blue Fb" href="__ROOT__/user/uname/d/{:R('base/idjia',array($shaidingdan['sd_userid']))}.html" target="_blank">{:R('base/userid',array($shaidingdan['sd_userid'],'username'))}</a></p>
+						<p>总共云购：<b class="orange">{:R('base/huode_user_goods_num',array($shaidingdan['sd_userid'],$shaidingdan['sd_shopid']))}</b>人次</p>
+						<?php 
+						$jikxiao = R("base/huode_shop_if_jiexiao",array($shaidingdan['sd_shopid']));						
+						 ?>
+                                                <if condition="$jikxiao['q_uid']">
+						<p>幸运云购码：{$jikxiao['q_user_code']}	</p>
+						<p>揭晓时间：{:R('base/microt',array($jikxiao['q_end_time']))}</p>
+						<else />
+							<?php 
+								$jikxiao = $shangpinss;
+							 ?>
+						</if>
+					</div>
+				</div>
+				<div class="share-Conduct">
+					<div class="arrow arrow_Rleft"><em>◆</em><span>◆</span></div>
+					<a class="fl-img" href="__ROOT__/goods/dataserverForPc/goodsId/{$shaidingdan['sd_shopid']}.html" target="_blank">
+					<img src="__PUBLIC__/uploads/{$jikxiao['thumb']}" border="0"></a>
+					<div class="share-getinfo">
+						<p class="getinfo-title"><a class="gray01" href="__ROOT__/goods/dataserverForPc/goodsId/{$jikxiao['id']}.html" target="_blank">(第{$jikxiao['qishu']}期){$jikxiao['title']}</a></p>
+						<p>价值：￥{$jikxiao['money']}</p>
+						<p id="GoToBuy"><a class="getbut-a" href="__ROOT__/goods/items/goodsId/{$shangpinss['id']}.html" target="_blank">
+                                                <if condition="!empty($goods['q_uid'])">
+						已揭晓
+						<else />
+						第{$shangpinss['qishu']}期正在进行中...
+						</if>
+						</span></a></p>
+					</div>
+				</div> 
+			</div>
+			<div class="share_content">
+				<p class="content-pad">{$shaidingdan['sd_content']}</p>
+                                <foreach name="sd_photolist" item="sdimg" >
+				<p><img src="__PUBLIC__/uploads/{$sdimg}" border="0"></p>
+				</foreach>
+			</div>
+			<!--用户晒单部分结束-->
+			<!-- 分享按钮 -->
+			<div class="mood">
+				<div class="moodwm">
+					<div class="moodm hidden" style="display: block;">
+						 <span class="smile" id="emHits"><i></i><b>羡慕嫉妒恨(<em>{$shaidingdan['sd_zhan']}</em>)</b></span>
+						 <span class="much"> <i></i>评论(<em id="emReplyCount">{$shaidingdan['sd_ping']}</em>)</span>
+					</div>
+					<div class="share">
+						<span class="fen">分享到：</span>
+						<!-- Baidu Button BEGIN -->
+						<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+						<a class="bds_qzone"></a>
+						<a class="bds_tsina"></a>
+						<a class="bds_tqq"></a>
+						<a class="bds_renren"></a>
+						<a class="bds_t163"></a>
+						<span class="bds_more"></span>
+						</div>
+						<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=671207" ></script>
+						<script type="text/javascript" id="bdshell_js"></script>
+						<script type="text/javascript">
+						document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+						</script>
+						<!-- Baidu Button END -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="bottomComment" class="qcomment_bottom_reply clearfix">
+			<div class="Comment_Reply clearfix">
+				<div class="Comment-pic">
+                                <if condition="(!$huiyuan) or ($huiyuan['img'] eq null)">
+				<img src="__PUBLIC__/images/prmimg.jpg" width="50" height="50" />
+				<else />
+				<img id="imgUserPhoto" src="__PUBLIC__/uploads/{:R('base/userid',array($huiyuan['uid'],'img'))}" width="50" height="50" border="0"/>
+				</if>	
+				</div>
+				<div class="Comment_form">
+					<div class="Comment_textbox">
+                                        <if condition="!$huiyuan">
+						<div id="notLogin" name="replyLogin" class="Comment_login">
+							请您<a href="__ROOT__/user/login" class="blue" name="replyLoginBtn">登录</a>
+							或<a href="__ROOT__/user/register" class="blue">注册</a>后再回复评论
+						</div>
+					<else />
+						<form action="" method="post">
+						<textarea name="sdhf_content" class="Comment-txt"></textarea>			
+						<div  style="line-height:25px;margin-top:5px;display: inline-block;padding:0px;">
+							<span style=" float:right"><img onclick="this.src = this.src + '/0'" src="__ROOT__/tools/checkcode/style/image/type/60_25_0_0_4/"/></span>
+							<span style="color:#aaa;float:left">验证码: </span><input type="text" name="sdhf_code" style="width:80px;height:20px;" />							
+						</div>	
+                                                <input type="hidden" name="id" value="{$sd_id}" class="reply_unbotton">
+						<input type="submit" name="submit" value="发表评论" class="reply_unbotton">
+						</form>
+					</if>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="commentMain" class="qcomment_main">
+			<ul>
+                                <foreach name="shaidingdan_hueifu" item="sdhf" >
+				<li class="Comment_single">
+					<div class="Comment_box_con clearfix">
+						<div class="User_head">
+
+						<a href="__ROOT__/user/uname/d/{:R('base/idjia',array($sdhf['sdhf_userid']))}.html" target="_blank" >
+
+                                                        <?php $userids=R("base/userid",array($sdhf['sdhf_userid'],'img')); ?>
+                                                        <if condition="$userids eq null">
+							<img src="__PUBLIC__/piyungou/images/prmimg.jpg" width="50" height="50" />
+							<else />
+							<img id="imgUserPhoto" src="__PUBLIC__/uploads/{:R('base/userid',array($sdhf['sdhf_userid'],'img'))}" width="50" height="50" border="0"/>
+							</if>		
+						</a>
+						</div>
+						<div class="Comment_con">
+							<div class="Comment_User">
+
+								<span><a class="blue" href="__ROOT__/user/uname/d/{:R('base/idjia',array($sdhf['sdhf_userid']))}.html" target="_blank">{:R('base/userid',array($sdhf['sdhf_userid'],'username'))}</a></span>
+
+							</div>
+							<div class="C_summary">{$sdhf['sdhf_content']}
+							<br/><span class="Summary-time">{$sdhf['sdhf_time']|date="Y-m-d H:i",###}</span>
+							</div>
+						</div>
+					</div>
+				</li>
+				</foreach>
+			</ul>
+		</div>			
+		<!--用户评论列表开始-->
+		<div class="Comment_main clearfix" id="CommentMain"></div>
+		<!--用户评论部分结束-->
+	</div>
+	<!--晒单左侧结束-->
+	<!--晒单右侧-->
+	<div class="Comment_right" id="PostDetailRight">
+		<div class="Comment_victory">
+	<!-- 	<div class="victory-tit">
+			<span>
+			<a href="javascript:void(0);" class="page-upgray"></a>
+			<a href="javascript:void(0);" class="page-updow page-dow"></a>
+			</span>
+			<h3>其他期数获得者</h3>
+		</div>
+		<ul>
+			<li class="victory_info">
+				<div class="victory_head"><a class="blue" href="#" title="长风" target="_blank"><img src="6542.jpg"></a></div>
+				<p class="victory_User"><a class="blue" href="#" title="长风" target="_blank">长风</a>获得了第10期</p>
+				<p><span class="gray03">暂未晒单</span></p>
+			</li>
+		</ul> -->	
+		<div class="Comment_share">
+			<h4>最新晒单</h4>
+                        <foreach name="shaidingdannew" item="sd" >
+			<div class="New-single">
+
+
+				<p class="New-single-time"><a class="blue" href="__ROOT__/user/uname/d/{:R('base/idjia',array($sdhf['sd_userid']))}.html" target="_blank">{:R('base/userid',array($sd['sd_userid'],'username'))}</a>{$sd['sd_time']|date="Y年m月d日 H:i",###}</p>
+				<p class="New-single-C"><a href="__ROOT__/index/detail/id/{$sd['sd_id']}" target="_blank">{:R('base/strcut',array($sd['sd_content'],100))}</a></p>
+
+				<div class="New-singleImg"><div class="arrow arrow_Rleft"><em>◆</em></div>
+					<a href="__ROOT__/index/detail/id/{$sd['sd_id']}" target="_blank">
+						<?php 
+							$sd_photolist_thumbs=explode(";",$sd['sd_photolist']);
+							if(count($sd_photolist_thumbs)>=3){
+								$i=0;
+								foreach($sd_photolist_thumbs as $val){
+									if($i<3 && !empty($val)){
+							 ?>
+										<img border="0" src="__PUBLIC__/uploads/{$val}">
+							<?php 
+									}
+									$i++;
+								}
+							}else{
+								foreach($sd_photolist_thumbs as $val){
+									if(!empty($val)){
+							 ?>
+										<img border="0" src="__PUBLIC__/uploads/{$val}">
+							<?php 
+									}
+								}
+							}
+						 ?>
+					</a>
+				</div>
+			</div>
+			</foreach>
+		</div>
+		</div>
+	</div>
+</div>
+<script>
+$(function(){
+	if($.cookie('xianmu')=={$shaidingdan['sd_id']}){
+		$("#emHits").addClass("smile-have");
+		return false;
+	}
+	$("#emHits").click(function(){		
+		$.post(
+			"__ROOT__/mobile/xianmu",
+			{id:"{$shaidingdan['sd_id']}"},
+			function(data){
+				$("#emHits em").text(data);
+				$("#emHits").addClass("smile-have");
+				$.cookie("xianmu","{$shaidingdan['sd_id']}", { expires:7,path: '/'});
+			}
+		);
+	})
+})
+</script>
+<include file="./index/index.footer"/>

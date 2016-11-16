@@ -1,0 +1,62 @@
+<include file="./index/index.header"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/piyungou/css/Comm.css"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/piyungou/css/MyCart.css"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/piyungou/css/style.css"/>
+
+<script type="text/javascript" src="__PUBLIC__/piyungou/js/JQuery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/piyungou/js/jquery.cookie.js"></script>
+</head>
+<body>
+     <script>localStorage.removeItem("chooselist");</script>
+    <input name="hidLogined" type="hidden" id="hidLogined" value="0">
+    <div class="logo">
+        <div class="float">
+            <span class="logo_pic">网盘支付成功,赠送云购码,等待开奖</span>
+            <ul class="ui-step" style='float:right;margin-top:10px'>
+                <li class="ui-step-start ui-step-active">
+                    <div class="ui-step-line" style="color:#28b726;background: #28b726;">-</div>
+                    <div class="ui-step-icon">
+                        <i class="ui-step-number">提交</i>
+                        <span class="ui-step-text">&nbsp;</span>
+                    </div>
+                </li>
+                <li class="ui-step-center ui-step-active">
+                    <div class="ui-step-line" style="color:#28b726;background: #28b726;">-</div>
+                    <div class="ui-step-icon">
+                        <i class="ui-step-number">支付</i>
+                        <span class="ui-step-text">&nbsp;</span>
+                    </div>
+                </li>
+                <li class="ui-step-center  ui-step-active">
+                    <div class="ui-step-line">-</div>
+                    <div class="ui-step-icon">
+                        <i class="ui-step-number">开奖</i>
+                        <span class="ui-step-text">&nbsp;</span>
+                    </div>
+                </li>
+                <li class="ui-step-end">
+                    <div class="ui-step-line">-</div>
+                    <div class="ui-step-icon">
+                        <i class="ui-step-number">揭晓</i>
+                        <span class="ui-step-text">&nbsp;</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="shop_payment">
+        <div id="divResult" class="wait_list hidden" style="display: block;">
+            <div class="wait_list_tips ">
+                <dl>
+                    <dt><img src="__PUBLIC__/images/login_exp04.png" border="0" alt=""></dt>
+                    <dd><h2 class="orange Fb">恭喜您，网盘支付成功！赠送云购码,请等待系统为您揭晓！</h2>
+                        <p>您现在可以<a href="__ROOT__/user/userbuylist" class="blue">查看云购记录</a>或<a href="__ROOT__/user/wangpan" class="blue">上传图片到网盘</a>或<a href="__ROOT__/index/index" class="blue">继续购物</a></p>
+
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+
+<include file="./index/index.footer"/>

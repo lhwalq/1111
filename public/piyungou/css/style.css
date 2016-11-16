@@ -1,0 +1,68 @@
+@charset "utf-8";
+*{margin:0px;padding:0px;list-style:none;}
+body {margin:0 auto;font-family: "Microsoft YaHei", Helvetica,sansation, Verdana, Arial, sans-serif;font-size: 12px;}
+.regstep{height:90px;}
+.regstep .ui-step {
+font-size: 14px;
+zoom: 1;
+position: relative;
+color: #b7b7b7;
+height: 50px;
+float:right;
+margin-right:156px;
+margin-top:40px;
+}
+.ui-step li {
+position: relative;
+}
+.ui-step .ui-step-start, .ui-step .ui-step-center {
+width: 340px;
+float: left;
+}
+.ui-step-line {
+position: absolute;
+color: #b7b7b7;
+height: 3px;
+background: #e3e7e6;
+display: block;
+line-height: 1;
+overflow: hidden;
+width: 100%;
+top: 16px;
+left: 1px;
+}
+.regstep .ui-step {
+font-size: 14px;
+zoom: 1;
+color: #b7b7b7;
+}
+.ui-step-number {
+display: block;
+width: 48px;
+height: 46px;
+background: url(../../images/step-bg-dark.png) no-repeat;
+font-weight:800;
+font-style: normal;
+position: absolute;
+top: -5px;
+left: 0;
+font-size: 14px;
+color: #333;
+line-height: 46px;
+text-align: center;
+}
+.ui-step .ui-step-active .ui-step-number {
+background: url(../../images/step-bg-light.png) no-repeat;
+}
+.ui-step .ui-step-start, .ui-step .ui-step-center {
+width: 140px;
+float: left;
+}
+.ui-step-end {
+width: 60px;
+float: left;
+}
+.ui-step-end .ui-step-line {
+width: 20px;
+}
+.confirm_order{color:#333;font-size:14px;margin-bottom:10px;margin-left: 10px}

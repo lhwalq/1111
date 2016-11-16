@@ -1,0 +1,330 @@
+<include file="./index/index.header"/>
+<div class="main-content clearfix">
+	<include file="./index/member.left"/>
+	<style> 
+#wuliu_select {
+	padding: 5px 8px;
+	width: 80px;
+	background-color: #F60;
+	border-radius: 2px;
+	font-family: 微软雅黑;
+	color: #fff;
+	font-size: 12px;
+	margin-left: 30px;
+}
+ 
+.wuliubtn {
+	padding: 3px 5px;
+	background-color: #2af;
+	border-radius: 2px;
+	color: #fff;
+	font-size: 12px;
+}
+ 
+.wuliubtn:hover {
+	color: #fff;
+	cursor: pointer
+}
+ 
+.single-img .pic {
+	text-indent: 0px;
+}
+ 
+#divPageNav {
+	padding-top: 10px;
+	text-align: right
+}
+ 
+.listTitle .sdzt b {
+	color: #fe6c00;
+	font-weight: bold
+}
+ 
+.message {
+	background: #fffce2;
+	border: 1px solid #fd9;
+	color: #f60;
+	padding: 5px 8px;
+	text-indent: 10px;
+}
+ 
+.single-xx-has span {
+	display: inline-block;
+	width: 180px
+}
+.orangebut:hover {
+background: red;
+color: #fff;
+}
+ul.text {
+font: 12px/1.5 "\5FAE\8F6F\96C5\9ED1",Arial;
+width: 744px;
+padding: 20px 20px;
+color: #333;
+border-top: 1px solid #ddd;
+float: left;
+margin-top: 20px;
+}
+ul.text li.tit {
+font-weight: bold;
+font-size: 14px;
+}
+ul.text li {
+width: 744px;
+line-height: 25px;
+float: left;
+}
+</style>
+ 
+	<link rel="stylesheet" type="text/css"
+		href="__PUBLIC__/piyungou/css/layout-records.css" />
+	<link rel="stylesheet" type="text/css"
+		href="__PUBLIC__/piyungou/css/layout-commodity.css" />
+<script type="text/javascript" src="__PUBLIC__/piyungou/js/area.js"></script>
+
+	<div class="R-content">
+		<div class="hddsp">
+			<a href="javascript:history.go(-1);" title="返回">&lt;&lt; 返回</a><b
+				class="gray">获得的商品 - 转积分</b>
+		</div>
+ 
+		<div class="steps">
+			<ul>
+                         <li class="operatingcur">1.获得商品<span class='<if condition="$fhid eq 0">steps4<elseif condition="$fhid eq 1"/>steps5<elseif condition="$fhid eq 2"/>steps5<elseif condition="$fhid eq 3"/>steps5<elseif condition="$fhid eq 4"/></if>'></span></li>
+                        <li class='<if condition="$fhid eq 0">operating<elseif condition="$fhid eq 1"/>operatingcur<elseif condition="$fhid eq 2"/>operating<elseif condition="$fhid eq 3"/>operating<elseif condition="$fhid eq 4"/></if>'>2.确认转积分
+                            <span class='<if condition="$fhid eq 0">steps3<elseif condition="$fhid eq 1"/>steps4<elseif condition="$fhid eq 2"/>steps4<elseif condition="$fhid eq 3"/>steps5<elseif condition="$fhid eq 4"/></if>'></span></li>	
+                        <li class= '<if condition="$fhid eq 0"><elseif condition="$fhid eq 1"/>operating<elseif condition="$fhid eq 2"/>operating<elseif condition="$fhid eq 3"/>operatingcur<elseif condition="$fhid eq 4"/></if>'>3.确认收到积分
+                            <span class='<if condition="$fhid eq 0"><elseif condition="$fhid eq 1"/>steps3<elseif condition="$fhid eq 2"/>steps3<elseif condition="$fhid eq 3"/>steps5<elseif condition="$fhid eq 4"/></if>'></span></li>
+                        <li class='<if condition="$fhid eq 0"><elseif condition="$fhid eq 1"/><elseif condition="$fhid eq 2"/><elseif condition="$fhid eq 3"/>operatingcur<elseif condition="$fhid eq 4"/></if>'>4.完成转换
+                            <span class='<if condition="$fhid eq 0"><elseif condition="$fhid eq 1"/><elseif condition="$fhid eq 2"/><elseif condition="$fhid eq 3"/>steps4<elseif condition="$fhid eq 4"/></if>'></span></li>
+                        <li class='<if condition="$fhid eq 0"><elseif condition="$fhid eq 1"/><elseif condition="$fhid eq 2"/><elseif condition="$fhid eq 3"/>operating<elseif condition="$fhid eq 4"/></if>'>5.晒单分享</li>
+
+                        
+                        </ul>
+		</div>
+ 
+		<div class="status">
+			<p>当前状态：<if condition="$fhid eq 0">转换积分<elseif condition="$fhid eq 1"/>确认收到积分<elseif condition="$fhid eq 2"/>转换完成<elseif condition="$fhid eq 3"/><if condition="$ssdd['sd_id']">已提交晒单<else/>等待晒单</if><elseif condition="$fhid eq 4"/>超时未提交地址，该订单已作废</if></p>
+			
+			<if condition="$fhid eq 0">
+                            <span>客服工作时间为（周一至周六 9:00--22:00）在此期间您可以致电<em>{:C('cell')}</em>客服热线随时咨询订单相关信息。
+                            </span>
+                            <div class="confirm"></div>
+                            <elseif condition="$fhid eq 1"/>
+				<span>已确认转换成积分，请尽快确认积分是否收到确认收货！<br>客服工作时间为（周一至周五 9:00--22:00）在此期间您可以致电<em>{fun:_yys('cell')}</em>客服热线随时咨询发货信息。</span>
+				<div class="confirm">
+				</div>
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tbody><tr>
+								<td width="160">{:R("base/microt",array($records['time']))}</td>
+								<td width="400">恭喜您众购成功，请尽快确认转换积分，以便系统为您转换成积分！</td>
+								<td>操作：众***</td>
+							</tr>
+							<tr>
+								 <td width="160">{$dizhi_sta['time']|date="Y-m-d H:i:s",###}</td>
+								 <td width="400">会员已确认提交转换成积分，等待系统自动为您转换！</td>
+								 <td>操作：会员本人</td>
+								 </tr>
+					</tbody>
+				</table>
+			<elseif condition="$fhid eq 2"/>
+            <span>客服工作时间为（周一至周五 9:00--22:00）在此期间您可以致电<em>{fun:_yys('cell')}</em>客服热线随时咨询转换信息。</span>
+				<div class="confirm">
+				</div>
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tbody><tr>
+								<td width="160">{:R("base/microt",array($records['time']))}</td>
+								<td width="400">恭喜您众购成功，请尽快确认转换积分，以便系统为您转换成积分！</td>
+								<td>操作：众***</td>
+							</tr>
+							<tr>
+								 <td width="160">{$dizhi_sta['time']|date="Y-m-d H:i:s",###}</td>
+								 <td width="400">会员已确认提交转换成积分，等待系统自动为您转换！</td>
+								 <td>操作：会员本人</td>
+							</tr>
+							<tr>
+								 <td width="160">{$records['fhtime']|date="Y-m-d H:i:s",###}</td>
+								 <td width="400">您的订单已审核通过，已转换成积分。</td>
+								 <td>操作：众***</td>
+							</tr>
+					</tbody>
+				</table>
+			<elseif condition="$fhid eq 3"/>
+				<span>您可通过晒单获得相应福分奖励哦。客服工作时间为（周一至周五 9:00--22:00）在此期间您可以致电<em>{fun:C('cell')}</em>客服热线随时咨询晒单相关信息。</span>
+				<div class="confirm">
+				<if condition="$odsdyz eq 0 ">
+                                        <if condition="(strpos($records['shopname'],'Q') eq false ) and (strpos($records['shopname'],'全国电信') eq false ) and (strpos($records['shopname'],'全国移动') eq false) and (strpos($records['shopname'],'全国联通') eq false)">
+						<input type="button" class="orangebut" name="btnReceived" value="立即晒单" onclick="javascript:location.href='singleinsert/{$records['id']}.html';">
+					 <else />
+						<input type="button" class="orangebut" name="btnReceived" value="虚拟商品不可晒单" style="background: #C0C0C0;border: 1px solid #C0C0C0;">
+					</if>
+ 
+				</if>
+				</div>
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tbody><tr>
+								<td width="160">{:R("base/microt",array($records['time']))}</td>
+								<td width="400">恭喜您众购成功，请尽快确认转换积分，以便系统为您转换成积分！</td>
+								<td>操作：众***</td>
+							</tr>
+							<tr>
+								 <td width="160">{$dizhi_sta['time']|date="Y-m-d H:i:s",###}</td>
+								 <td width="400">会员已确认提交转换成积分，等待系统自动为您转换！</td>
+								 <td>操作：会员本人</td>
+							</tr>
+							<tr>
+								 <td width="140">{$records['fhtime']|date="Y-m-d H:i:s",###}</td>
+								 <td width="400">您的订单已审核通过，已转换成积分。</td>
+								 <td>操作：众***</td>
+							</tr>
+					</tbody>
+				</table>
+			</if>
+		</div>
+		 <if condition="($fhid eq 0) ">
+		<form class="registerform"  method="post" action="__ROOT__/user/excorderdetailsb">
+		<div class="order_shipAddr">
+				<h5>积分转换计算</h5>
+				<div class="information">
+					<p>商品信息</p>
+					<table border="0" cellpadding="0" cellspacing="0">
+						<tbody>
+							<tr class="infoTitle">
+								<td class="comm">商品</td>
+								<td class="bor">价值</td>
+								<td>数量</td>
+								<td>可兑换积分</td>
+							</tr>
+ 
+							<tr>
+								<td class="commodity"><a
+									href="__ROOT__/goods/dataserverForPc/goodsId/{$records['shopid']}/" target="_blank"><img
+										src="__PUBLIC__/uploads/{:R('base/yunjl',array($records['shopid']))}"
+										width="70" height="70" border="0" alt="" align="left"></a><em
+									class="orange">(第{$records['shopqishu']}期)</em><a
+									href="__ROOT__/goods/dataserverForPc/goodsId/{$records['shopid']}" target="_blank">{$records['shopname']} </a><br>幸运编号：{$records['huode']}<br>购买时间：{:R('Base/microt',array($records['time']))}</td>
+								<td>￥{$records['money']}</td>
+								<td>1</td>
+								<td>{$records['zhuanhuan']}</td>
+								<input name="hidstate" type="hidden" value="0">
+							</tr>
+							<input name="hidOrderid" type="hidden" id="hidOrderid" value="{$records[id]}">
+						</tbody>
+					</table>
+				</div>
+			<br/>
+			<div class="order_go">
+				<input type="submit" class="orangebut" name="btnSubmitCart"
+					value="确认提交转换积分" style="height: 40px;" onclick="cklogin();return false;">
+			</div>
+		</div>
+		</form>
+	<elseif condition="$fhid neq 0" />
+			<div class="order_shipAddr">
+				<h5>积分转换计算</h5>
+				<div class="information">
+					<p>商品信息</p>
+					<table border="0" cellpadding="0" cellspacing="0">
+						<tbody>
+							<tr class="infoTitle">
+								<td class="comm">商品</td>
+								<td class="bor">价值</td>
+								<td>数量</td>
+								<td>转换价值</td>
+							</tr>
+ 
+							<tr>
+								<td class="commodity"><a
+									href="__ROOT__/goods/dataserverForPc/goodsId/{$records['shopid']}" target="_blank"><img
+										src="__PUBLIC__/uploads/{:R('base/yunjl',array($records['shopid']))}"
+										width="70" height="70" border="0" alt="" align="left"></a><em
+									class="orange">(第{$records['shopqishu']}期)</em><a
+									href="__ROOT__/goods/dataserverForPc/goodsId/{$records['shopid']}" target="_blank">{$records['shopname']} </a><br>幸运编号：{$records['huode']}<br>购买时间：{:R('Base/microt',array($records['time']))}</td>
+								<td>￥{$reshoplistinfo['money']}</td>
+								<td>1</td>
+								<td>￥{$reshopinfo['exprice']}</td>
+								
+							</tr>
+							
+						</tbody>
+					</table>
+				</div>
+			<br/>
+			
+		</div>
+         <elseif condition="$fhid eq 2"/>
+         <elseif condition="$fhid eq 3"/>
+         <elseif condition="$fhid eq 4"/> </if>
+		
+	<ul class="text">
+		<li class="tit">积分介绍:</li>
+		<li>1、积分是一种积分机制，获得的商品可以转换成积分，且目前只有这种方式获得积分；</li>
+		<li>2、积分可以在一元云购会员个人中心中的积分管理转换那里把积分转换成微众购余额或者提现到支付宝；</li>
+		<li>3、积分提现到支付宝目前只有满100积分起步提现，不然无法转出到支付宝账户；</li>
+		<li>4、1积分等价1元，该等价值将不会改变，也就是一直都是该价值兑换；</li>
+		<li>5、关于商品转换积分价格计算方式：实物的兑换价格是京冬价格的86折，话费卡是卡面值的96折计算，而腾讯QB业务则以腾讯官方价格的9折计算，有疑问可咨询客服；</li>
+	</ul>
+	</div>
+</div>
+ 
+ 
+	<script>
+		$("#hddsp").attr('class', 'sid-cur');
+		$(function() {
+			var width = ($(window).width() - 542) / 2;
+			var height = ($(window).height() - 360) / 2;
+			$("#paywindow").css("left", width);
+			$("#paywindow").css("top", height);
+ 
+			$(".pay_window_quit").click(function() {
+				$("#paywindow").hide();
+			});
+			$("#wuliu_select").click(function() {
+				$("#paywindow").show();
+			});
+ 
+			$(".wuliubtn").click(function() {
+				var uid = $(this).attr("uid");
+				var oid = $(this).attr("oid");
+				$.post("__ROOT__/order/set", {
+					"uid" : uid,
+					"oid" : oid
+				}, function(sdata) {
+					if (sdata == '1') {
+						alert("更新成功");
+					} else {
+						alert("更新失败");
+					}
+				});
+			});
+		});
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#addrIDOther").click(function() {
+				$("#liAddAddrTools").css({
+					"display" : "none"
+				});
+				$("#liAddAddrBox").css({
+					"display" : "list-item"
+				});
+			});
+ 
+			$(".addrinput").click(function() {
+				$("#liAddAddrTools").css({
+					"display" : "list-item"
+				});
+				$("#liAddAddrBox").css({
+					"display" : "none"
+				});
+			});
+		});
+	</script>
+     <script> 
+	function cklogin(){
+                if(confirm("确认把该获得商品转换成积分？")){
+                         document.login.submit();
+                 }
+	}
+</script>
+<include file="./index/index.footer"/>

@@ -1,0 +1,1 @@
+Base.getScript(pub+"/style/JS/BottomFun.js?v=151106");

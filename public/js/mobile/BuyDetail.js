@@ -1,0 +1,1 @@
+Base.getScript("/public/js/mobile/BuyDetailFun.js?v=151208");

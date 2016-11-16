@@ -1,0 +1,748 @@
+<include file="./index/index.header"/>
+
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/style/css/c_cloud.css"/>
+<input type="hidden" value="{$xiangmu['id']}" id="gid" /> 
+<input type="hidden" value="62" id="pid" />
+<div class="w_con" id="goods_details" style="display:none;">
+	<div class="w_details_left">
+		<h4 class="w_guide">
+			<a href="__ROOT__/index/index">首页</a><a href="/goods/allCat.html">全部商品</a><a class="w_accord" href="javascript:void 0">商品详情</a>
+		</h4>
+	</div>
+	<!--揭晓前-->
+	<div class="w_details_right">
+		<h3>揭晓信息</h3>
+		<div class="w_time_info"></div>
+		<ul class="w_period">
+	
+		</ul>
+		<div class="w_clear"></div>
+		<div class="w_page_on">
+			<a class="pageUp" href="javascript:void 0" onclick="pageUp()">上一页</a>
+			<a class="pageDown" href="javascript:void 0" onclick="pageDown()">下一页</a>
+		</div>
+	</div>
+	<!--揭晓后结束-->
+	<div class="w_clear"></div>
+	<div class="w_details_bottom">
+		<!--最新上架-->
+		<div class="w_shelves">
+			<div class="w_shelves_top">
+				<h3>最新上架</h3>
+	
+			</div>
+			<div class="w_shelves_bottom">
+				<h3>最新参与记录</h3>
+	
+			</div>
+		</div>
+		<!--奖品详情-->
+		<div class="w_prize pgp">
+			<dl class="w_calculate_nav">
+				<dd class="w_results_arrow">商品详情</dd>
+				<dd>所有参与记录</dd>
+				<dd>晒单</dd>
+				<span class="w_remaining"></span>
+			</dl>
+			<div class="w_calculate_con">
+				<div class="w_prize_con w_prize_img" style="display: block;"></div>
+				<!--所有参与记录-->
+				<div class="w_prize_con">
+					<div class="w_clear"></div>
+					
+
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/style/css/pager2.css" />
+
+<script id="timeline" type="text/html">
+<tr><th>时间</th><th>昵称</th><th>参与人次</th><th>IP</th><th>来源</th></tr>
+<#var len = dataList.length; #>
+<#for(var i=0; i<len; i++){ #>
+<tr>
+	<td><#=formatDate(dataList[i].buyTime,"yyyy-MM-dd HH:mm:ss:S") #></td>
+	<td><a href="../other/cloudRecord/<#=eval('('+dataList[i].userInfo+')').mid #>.html"><img class="lazy20" data-original="<#=path+eval('('+dataList[i].userInfo+')').icons #>"/><noscript><img src="<#=path+eval('('+dataList[i].userInfo+')').icons #>"/></noscript><c class="name"><#=eval('('+dataList[i].userInfo+')').nickname #></c></a></td>
+	<#if(dataList[i].orderType === 2){ #>
+	<td class="w_hover_add" style="width:160px;"><em></em><strong><#=dataList[i].buyTimes #></strong><span>查看云购码</span><label class="code" style="display:none;"><#=dataList[i].buyCodes.replace('[','').replace(']','').replace(/"/g,'') #></label><p class="w_add_explain"><b>由于该用户参与多期此商品云购，因此由系统自动为其分配相应数量的云购码。</b></p></td>
+	<#}else{ #>
+	<td class="w_hover_add w_hover_add_other" style="width:160px;"><strong><#=dataList[i].buyTimes #></strong><span>查看云购码</span><label class="code" style="display:none;"><#=dataList[i].buyCodes.replace('[','').replace(']','').replace(/"/g,'') #></label></td>
+	<#} #>
+	<td><#=dataList[i].buyIp?'('+dataList[i].buyIp+')':'' #></td>
+	<#if(typeof dataList[i].activityName !='undefined'){ #>
+	<#if(dataList[i].activityName.toLowerCase() === 'pc'){ #>
+	<td><i class="w_one"></i>电脑PC端</td>
+	<#}else if(dataList[i].activityName.toLowerCase() === 'app'){ #>
+	<td><i class="w_five"></i>Android客户端</td>
+	<#}else if(dataList[i].activityName.toLowerCase() === 'wx'){ #>
+	<td><i class="w_two"></i>微信公众平台</td>
+	<#}else if(dataList[i].activityName.toLowerCase() === 'wap'){ #>
+	<td><i class="w_three"></i>wap站</td>
+	<#}else if(dataList[i].activityName.toLowerCase() === 'ios'){ #>
+	<td><i class="w_four"></i>ios客户端</td>
+	<#}else{ #>
+	<td>未知</td>
+	<#} #>
+	<#}else{ #>
+	<td>未知</td>
+	<#} #>
+</tr>
+<#} #>
+</script>
+
+<table class="w_yun_con" cellspacing="0" cellpadding="0">
+</table>
+<div id="kkpager2" style="margin: 64px auto;"></div>
+<div class="w-msgbox m-detail-codesDetail" id="pro-view-9" style="z-index:10000;">
+	<a data-pro="close" href="javascript:void(0);" class="w-msgbox-close"></a>	
+	<div class="w-msgbox-hd" data-pro="header">
+		<h3></h3>
+	</div>
+	<div class="w-msgbox-bd" data-pro="entry">
+		<div class="m-detail-codesDetail-bd">
+			<div class="m-detail-codesDetail-wrap">
+				<dl class="m-detail-codesDetail-list f-clear">
+				</dl>
+			</div>
+		</div>
+	</div>	
+</div>
+<script type="text/javascript" src="__PUBLIC__/style/js/pager2.js"></script>
+
+
+<script type="text/javascript" src="__PUBLIC__/style/js/timeline.js"></script>
+
+				</div>
+				<!--晒单-->
+				<div class="w_prize_con">
+					
+
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/style/css/pager1.css"></link>
+
+<script id="sun" type="text/html">
+<#if(dataList.length!=0){ #>
+<!--有晒单-->
+<#for(var i in dataList){#>
+<div class="w_calculate_three">
+ 	<div class="w_results_left">
+    	<div class="w_results_border">
+       		<img class="lazy54" data-original="<#=path+dataList[i].icons #>" />
+       		<noscript><img src="<#=path+dataList[i].icons #>" /></noscript>
+    	</div>
+     	<a href="../other/cloudRecord/<#=dataList[i].mid #>.html"><#=dataList[i].nickname #></a>
+ 	</div>
+ 	<div class="w_results_right">
+    	<div class="w_results_top">
+       		<b>第<#=dataList[i].gperiod #>期晒单</b>
+       		<a href="../other/sunSingleDetail.do?showId=<#=dataList[i].showId #>&mid=<#=dataList[i].mid #>"><#=dataList[i].title #></a>
+       		<span><#=(typeof dataList[i].addTime !='undefined')?dataList.addTime:'' #></span>
+    	</div>
+        <div class="w_results_bottom">
+           <p style="overflow: hidden;text-overflow: ellipsis; white-space: nowrap;display:block;"><#=dataList[i].content #></p>
+           <div class="w_imgBorder">
+			<#var ps = dataList[i].photos.split(","); #>
+			<#for(var i in ps){ #>
+			<a href="javascript:void 0"><img class="lazy200" data-original="<#=ps[i] #>" /><noscript><img src="<#=ps[i] #>" /></noscript></a>
+			<#} #>
+			<div class="w_clear"></div>
+		   </div>
+        </div>
+ 	</div>
+</div>
+<#}}else{ #>
+<!--没有晒单-->
+<!--<div class="w_not_sun">暂时还没有任何晒单</div>-->
+<#} #>
+</script>
+
+<div class="sun"></div>
+<div id="kkpager1" style="margin: 64px auto;"></div>
+<script type="text/javascript" src="__PUBLIC__/style/js/pager1.js"></script>
+<script type="text/javascript" src="__PUBLIC__/style/js/goodsShow.js"></script>
+
+				</div>
+			</div>
+		</div>
+		<div class="w_clear"></div>
+	</div>
+</div>
+<div class="w_con" id="goods_during" style=""> 
+   <!--揭晓进行时-左侧--> 
+   <div class="w_during_left"> 
+<h4 class="w_guide"><a href="__ROOT__/index/index">首页</a><a href="__ROOT__/goods/glist/">全部商品</a><a href="__ROOT__/goods/glist/type/{$xiangmu['cateid']}.html">{$fenlei['name']}</a><a href="__ROOT__/goods/glist/type/{$xiangmu['cateid']}e{$xiangmu['brandid']}.html">{$pinpai['name']}</a><a class="w_accord" href="javascript:void%200">商品详情</a></h4>     <div class="w_during_graphic"> 
+     <div class="w_during_figure">
+      <img  src="__PUBLIC__/uploads/{$xiangmu['thumb']}" />
+     </div> 
+     <div class="w_during_wen"> 
+      <h1>（第{$xiangmu['qishu']}期）{$xiangmu['title']}<i style="color:#ff4a00;font-style:normal;margin-left:4px;"> {$xiangmu['title2']}</i></h1> 
+      <div class="w_add_doing"> 
+       <p class="w_add_doing_noleft">揭晓结果<b>幸运云购码</b></p> 
+       <div class="w_addBg_other"> 
+      
+        <p class="w_results">{$xiangmu['q_user_code']}</p> 
+	
+       </div> 
+      </div> 
+     </div> 
+     <div class="w_clear"></div> 
+    </div> 
+    <div class="w_during_winner"> 
+     <div class="w_winner_left"> 
+      <div class="w_winner_figure">
+       <img width="200" height="200" src="__PUBLIC__/uploads/{$xiangmu['thumb']}" />
+      </div> 
+      <dl class="w_winner_wen"> 
+       <dd class="w_red" style="text-overflow: ellipsis;white-space: nowrap;overflow: hidden;">
+        恭喜
+        <span><a href="__ROOT__/user/uname/d/{:R('base/idjia',array($xiangmu['q_uid']))}">{:R("base/huode_user_name",array($q_yonghu))}</a></span> 获得了本期商品
+       </dd> 
+       <dd>
+        本期云购：
+        <i>{$weer_shop_number}</i>人次 
+       
+	<a id="lookYgCode" class="w_other_ren" onclick="showCodes({$xiangmu['id']})" href="javascript:void(0)">点击查看</a>
+       </dd> 
+       <dd>
+        揭晓时间：{:R("base/microt",array($xiangmu['q_end_time']))}
+       </dd> 
+       <dd>
+        云购时间：{:R("base/microt",array($weer_shop_time))}
+       </dd> 
+      </dl> 
+     </div> 
+    
+    </div> 
+    <div class="w_all_nper">
+     {$wangqiqishu}
+     <span>查看更多&gt;&gt;</span>
+    </div> 
+    <ul class="w_calculate"> 
+     &nbsp;&nbsp; 
+     <ul class="w_calculate_in"> 
+      <li class="w_details_first"><em>{$xiangmu['q_user_code']}</em><span>本期幸运号码</span></li> 
+      <li class="w_details_second "><em>{$xiangmu['q_counttime']}</em><span>100个时间求和</span> 
+       <div class="w_two_con"> 
+        <i></i> 
+        <p class="w_two_text">奖品的最后一个号码分配完毕，公示该分配时间点前本站全部奖品的<strong>最后100个参与时间</strong>，并求和。</p> 
+       </div> </li> 
+      <li class="w_details_fourth"><em>{$xiangmu['canyurenshu']}</em><span>该奖品总需人次</span></li> 
+      <li class="w_details_fifth"><em>10000001</em><span>原始数</span></li> 
+     </ul> 
+    </ul> 
+   </div> 
+   <!--揭晓进行时-右侧--> 
+   <div class="w_during_right"> 
+    <h3>最新一期</h3> 
+    <p>最新一期正在进行，赶紧参加吧！</p> 
+    <div class="w_latest_right1"> 
+     <div class="w_rightImg">
+      <a class="w_goods_img" id="cartImg" href="__ROOT__/goods/items/goodsId/{$xiangmulists[0]['id']}"><img width="198" height="198" src="__PUBLIC__/uploads/{$xiangmulists[0]['thumb']}" /></a>
+     </div> 
+     <a class="w_goods_ddree" href="__ROOT__/goods/items/goodsId/{$xiangmulists[0]['id']}">(第{$xiangmulists[0]['qishu']}期){$xiangmulists[0]['title']}</a> 
+     <b> {$xiangmulists[0]['title2']}</b>
+     <em>价值：￥{$xiangmulists[0]['money']}</em> 
+     <div class="w_line">
+      <span style="width:{:R('base/width',array($xiangmulists[0][canyurenshu],$xiangmulists[0][zongrenshu],220))}px;"></span><!--,220 -->
+     </div> 
+     <ul class="w_number"> 
+      <li class="w_amount">{$xiangmulists[0]['canyurenshu']}</li> 
+      <li class="w_amount w_amount_right">{$xiangmulists[0]['shenyurenshu']}</li> 
+      <li>已云购次数</li> 
+      <li class="w_amount_right">剩余人次</li> 
+     </ul> 
+    </div> 
+    <div class="w_cumulative"> 
+    
+    
+    </div> 
+    <input id="cartGid" value="818" type="hidden" /> 
+    <input id="cartPid" value="64" type="hidden" /> 
+    <input id="cartPriceArea" value="1" type="hidden" /> 
+    <input id="cartPeriod" value="64" type="hidden" /> 
+    <input id="cartPriceTotal" value="550" type="hidden" /> 
+    <input id="cartSurplus" value="189" type="hidden" /> 
+    <input id="cartThumbPath" value="20150813/6_1439463563691.jpg" type="hidden" /> 
+    <input id="cartTitle" value="{$xiangmulists[0]['title']}" type="hidden" /> 
+    <div class="w_buy">
+     <a href="__ROOT__/goods/items/goodsId/{$xiangmulists[0]['id']}">立即抢购</a>
+    </div> 
+   </div> 
+   <div class="w_clear"></div> 
+   <!--选项卡--> 
+   <div class="w_calculate_results pgp"> 
+    <dl class="w_calculate_nav"> 
+     <dd class="w_results_arrow">
+      计算结果
+     </dd> 
+     <dd>
+      所有参与记录
+     </dd> 
+     <dd>
+      晒单
+     </dd> 
+     <span></span> 
+    </dl> 
+    <div class="w_calculate_con"> 
+     <div class="w_calculate_one" style="display:block"> 
+      <div class="w_rules"> 
+       <div class="w_rules_left"> 
+        <img src="__PUBLIC__/style/images/ji_03.png" /> 
+       </div> 
+       <div class="w_rules_right"> 
+       <p>（1）    奖品的最后一个号码分配完毕后，将公示该分配时间点前本站全部奖品的最后100个参与时间；</p>
+	           			<p>（2）   将这100个时间的数值进行求和（得出数值A）（每个时间按时、分、秒、毫秒的顺序组合，如20:15:25.362则为201525362）；</p>
+	          			<p>（3）  （数值A）除以该奖品总需人次得到的余数 + 原始数 10000001，得到最终幸运号码，拥有该幸运号码者，直接获得该奖品。</p>
+	          			<p class="w_rules_tips"> </p>
+       </div> 
+      </div> 
+      <ul class="w_winner_name"> 
+       <dl> 
+        <dd class="w_time">
+         云购时间
+        </dd> 
+        <dd class="w_yin">
+         时间因子
+        </dd> 
+        <dd class="w_account">
+         会员账号
+        </dd> 
+        <dd class="w_name">
+         商品名称
+        </dd> 
+        <dd class="w_people">
+         云购人次
+        </dd> 
+       </dl> 
+       <div class="w_clear"></div> 
+       <p>截止该商品最后云购时间【<label id="buyTime">{:R("base/microt",array($xiangmu['q_end_time']))}</label>】最后100条全站云购参与记录</p> 
+       <!--计算结果--> 
+       <ul class="w_specific"> 
+           
+           
+       <assign name="outs" value="0" />
+       <assign name="q_content" value="$xiangmu['q_content']" />
+       <foreach name="q_content" item="record" >
+				   <?php 
+						$xiangmuid = $xiangmu['id'];
+						$record_time = explode(".",$record['time']);
+						$record['time'] = $record_time[0];
+						
+$outs++;
+				    ?>	
+<if condition="$outs lt 9 ">
+        <li> 
+
+
+         <ul class="w_specific_left"> 
+          <li class="w_specific_first">{$record['time']|date="Y-m-d",###}</li> 
+          <li>{$record['time']|date="H:i:s",###}.{$record_time[1]}<i>{$record['timeadd']}</i></li> 
+         </ul> 
+         <ul class="w_specific_right"> 
+          <li class="w_account"><a href="__ROOT__/user/uname/d/{:R('Base/idjia',array($record['uid']))}">{:R("Base/huode_user_name",array($record['uid']))}</a></li> 
+          <li class="w_name" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"><a href="__ROOT__/goods/items/goodsId/{$record['shopid']}.html">（第{$record['shopqishu']}期）{$record['shopname']}</a></li> 
+          <li class="w_people" style="text-align: center;">{$record['gonumber']}人次</li> 
+         </ul> </li> 
+	<else />
+	 <li class="w_lose_con" style="display: none;">
+
+
+         <ul class="w_specific_left"> 
+          <li class="w_specific_first">{$record['time']|date="Y-m-d",###}</li> 
+          <li>{$record['time']|date="H:i:s",###}.{$record_time[1]}<i>{$record['timeadd']}</i></li> 
+         </ul> 
+         <ul class="w_specific_right"> 
+          <li class="w_account"><a href="__ROOT__/user/uname/d/{:R('Base/idjia',array($record['uid']))}">{:R("Base/huode_user_name",array($record['uid']))}</a></li> 
+          <li class="w_name" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"><a href="__ROOT__/goods/items/goodsId/{$record['shopid']}.html">（第{$record['shopqishu']}期）{$record['shopname']}</a></li> 
+          <li class="w_people" style="text-align: center;">{$record['gonumber']}人次</li> 
+         </ul>  </li> 
+	</if>
+       </foreach>
+	 <li class="w_special_li">
+展开全部100条数据
+<s></s>
+</li>
+<li class="w_special_li_other">
+收起
+<s class="w_special_s"></s>
+</li>
+ 
+<div class="w_count">
+<strong class="w_new_results">计算结果</strong>
+<div class="w_count_one">
+<li>1、求和： {$xiangmu['q_counttime']} (上面100条云购记录时间取值相加之和)</li>
+
+<li>
+<span>2、求余：{$xiangmu['q_counttime']} </span>
+
+<span>% {$xiangmu['canyurenshu']}(奖品需要人次) =</span>
+<?php 
+		$haohaohao1 = str_split($weer_shop_fmod);
+			 ?>
+                            <foreach name="haohaohao1" item="codeitem" >
+			    <b>{$codeitem}</b>
+			    </foreach>
+<span>（余数）</span>
+<em class="w_tips"></em>
+<div >
+<p>
+<span>余数：</span>
+指整数除法中，被除数未被未被除尽部分。“例如27除以6，商数为4，余数为3”
+</p>
+</div>
+</li>
+<li>
+<span>3、</span>
+
+                            <foreach name="haohaohao1" item="codeitem" >
+			    <b>{$codeitem}</b>
+			    </foreach>
+<span>（余数）+10000001=</span>
+<?php 
+		$haohaohao = str_split($xiangmu['q_user_code']);
+			 ?>
+                            <foreach name="haohaohao" item="codeitem" >
+			    <b>{$codeitem}</b>
+			    </foreach>
+
+</li>
+<li class="w_count_last">最终结果：{$xiangmu['q_user_code']}</li>
+</div>
+</div>
+
+
+        
+       </ul> 
+      </ul> 
+     </div> 
+       <!--所有参与记录--> 
+     <div class="w_calculate_one w_calculate_two"> 
+
+      <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/css/pager2.css" /> 
+     
+     <table class="w_yun_con" cellpadding="0" cellspacing="0">
+<iframe src="__ROOT__/goods/go_record_ifram/id/{$xiangmuid}/len/20" style="width:978px; border:block;height:1250px" frameborder="0" scrolling="no"></iframe>	
+</table>
+
+
+       
+      <div id="kkpager2" style="margin: 64px auto;"></div> 
+      <div class="w-msgbox m-detail-codesDetail" id="pro-view-9" style="z-index:10000;"> 
+       <a data-pro="close" href="javascript:void(0);" class="w-msgbox-close"></a> 
+       <div class="w-msgbox-hd" data-pro="header"> 
+        <h3></h3> 
+       </div> 
+       <div class="w-msgbox-bd" data-pro="entry"> 
+        <div class="m-detail-codesDetail-bd"> 
+         <div class="m-detail-codesDetail-wrap"> 
+          <dl class="m-detail-codesDetail-list f-clear"> 
+          </dl> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <script type="text/javascript" src="__PUBLIC__/style/js/pager2.js"></script> 
+      <script type="text/javascript" src="__PUBLIC__/style/js/timeline.js"></script> 
+     </div> 
+     <!--晒单--> 
+     <div class="w_calculate_one"> 
+     <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/css/pager1.css">
+
+
+
+<div class="sun"></div>
+<div  style="margin: 64px auto;">
+
+<if condition="$error eq 5 ">
+<style type="text/css">
+.Single_Content {
+overflow: hidden;
+border-top: none;
+background: #fff;
+margin: auto;
+margin-top: -70px;
+}
+.Single_list {
+width: 100%;
+overflow: hidden;
+margin: 30px auto 15px;
+padding: 0 0 19px 0;
+border-bottom: 1px solid #E4E4E4;
+}
+.Single_list .Topiclist-img {
+width: 80px;
+overflow: hidden;
+text-align: center;
+float: left;
+}
+.Single_list .Topiclist-img .head-img {
+width: 80px;
+margin: 0 auto;
+display: block;
+}
+.Single_list .Topiclist-img .head-img img {
+width: 80px;
+height: 80px;
+}
+.Single_list .Topiclist-img .blue {
+white-space: nowrap;
+width: 80px;
+overflow: hidden;
+display: block;
+}
+.Single_list .SingleR {
+width: 782px;
+margin-left: 48px;
+display: inline;
+}
+.fl, .fl-img {
+float: left;
+}
+.Single_list .SingleR_TC {
+position: relative;
+zoom: 1;
+}
+.Single_list .SingleR_TC i {
+left: -28px;
+top: 0;
+background-position: -143px 0;
+}
+.Single_list .SingleR_TC s {
+right: 0;
+bottom: 12px;
+background-position: -168px 0;
+}
+.Single_list .SingleR_TC h3 {
+color: #999;
+font-family: 微软雅黑,宋体;
+font-size: 18px;
+color: #333;
+line-height: 24px;
+}
+.Single_list .SingleR_TC h3 span {
+font-size: 14px;
+}
+a {
+color: #333;
+text-decoration: none;
+outline: none;
+}
+.Single_list .SingleR_TC h3 em {
+font-size: 12px;
+}
+.gray02 {
+color: #999;
+}
+.Single_list .SingleR_TC p {
+padding: 7px 25px 12px 0;
+}
+.gray01 {
+color: #666;
+}
+.Single_list .SingleR_TC p {
+padding: 7px 25px 12px 0;
+}
+.Single_list ul.SingleR_pic {
+display: inline-block;
+}
+.Single_list .SingleR_pic li {
+float: left;
+margin-right: 10px;
+display: inline;
+}
+.Single_list .SingleR_Comment .Comment_smile {
+height: 25px;
+padding-top: 6px;
+}
+.SingleR_Comment .Comment_smile span {
+margin-right: 10px;
+}
+.SingleR_Comment .Comment_smile span i {
+background: url(__PUBLIC__/images/Detailsbg.png) no-repeat;
+width: 18px;
+height: 18px;
+display: inline-block;
+vertical-align: -4px;
+background-position: -198px 0;
+margin-right: 3px;
+}
+.SingleR_Comment .Comment_smile span s {
+width: 18px;
+height: 18px;
+display: inline-block;
+vertical-align: -8px;
+background-position: -230px 0;
+margin-right: 0;
+}
+</style>
+		<div id="divPost" class="Single_Content">
+                <foreach name="shaidingdan" item="v" >
+			<div class="Single_list">
+				<div class="SingleL fl Topiclist-img">
+                                    
+				
+				<a rel="nofollow" class="head-img" href="__ROOT__/user/uname/d/{:R('base/idjia',array($v['sd_userid']))}" type="showCard" uweb="1000371861" target="_blank">
+                                           <img border="0" alt="" src="<empty  name='$v[sd_userid]' >__PUBLIC__/uploads/photo/member.jpg_160160.png <else />__PUBLIC__/uploads/{$huiyuan['img']}</empty>">
+					</a>
+				<a class="blue" href="__ROOT__/user/uname/d/{fun:idjia($v['sd_userid'])}" type="showCard" uweb="1000371861" target="_blank">{$huiyuan_username[$v['sd_userid']]}</a>
+				<!--span class="class-icon02"><s></s>云购少将</span-->
+				</div>
+				<div class="SingleR fl">
+					<div class="SingleR_TC"><i></i> <s></s>
+						<h3><span class="gray02">第{$v['sd_qishu']}期晒单</span><a href="__ROOT__/index/shaidan/detail/{$v['sd_id']}" target="_blank">{$v['sd_title']}</a>   <em class="gray02">{$v['sd_time']|date="Y-m-d",###}</em></h3>
+						<p class="gray01">{:R("base/strcut",array($v['sd_content'],220))}</p>
+						<img border="0" alt="" src="<notempty name='$v[sd_thumbs]'> __PUBLIC__/uploads/{$v['sd_thumbs']}</notempty>">
+					</div>
+					<div class="SingleR_Comment" postID="2676" count="7">
+						<div class="Comment_smile gray02"><span><i></i>{$v['sd_zhan']}人羡慕嫉妒恨</span><span><s></s>{$v['sd_ping']}条评论</span></div>
+					</div>
+				</div>
+			</div>
+		</foreach>
+                <if condition="$zongji gt $num ">
+			<div class="pagesx"><?php echo $fenye->show('two'); ?></div>
+		</if>
+		</div>
+	<else />
+		<div style="text-align:center;width:100%;height:80px;line-height:80px;">
+			<h1 style='text-align:center;width:100%;font-size:22px; font-weight:bold;color:#555;'>该商品还未有晒单！</h1>
+		</div>
+	</if>
+
+
+
+</div>
+      <script type="text/javascript" src="__PUBLIC__/style/js/pager1.js"></script>  
+     
+      <script id="sun" type="text/html">
+<#if(dataList.length!=0){ #>
+<!--有晒单-->
+<#for(var i in dataList){#>
+<div class="w_calculate_three">
+ 	<div class="w_results_left">
+    	<div class="w_results_border">
+       		<img class="lazy54" data-original="<#=path+dataList[i].icons #>" />
+       		<noscript><img src="<#=path+dataList[i].icons #>" /></noscript>
+    	</div>
+     	<a href="../other/cloudRecord/<#=dataList[i].mid #>.html"><#=dataList[i].nickname #></a>
+ 	</div>
+ 	<div class="w_results_right">
+    	<div class="w_results_top">
+       		<b>第<#=dataList[i].gperiod #>期晒单</b>
+       		<a href="../other/sunSingleDetail.do?showId=<#=dataList[i].showId #>&mid=<#=dataList[i].mid #>"><#=dataList[i].title #></a>
+       		<span><#=(typeof dataList[i].addTime !='undefined')?dataList.addTime:'' #></span>
+    	</div>
+        <div class="w_results_bottom">
+           <p style="overflow: hidden;text-overflow: ellipsis; white-space: nowrap;display:block;"><#=dataList[i].content #></p>
+           <div class="w_imgBorder">
+			<#var ps = dataList[i].photos.split(","); #>
+			<#for(var i in ps){ #>
+			<a href="javascript:void 0"><img class="lazy200" data-original="<#=ps[i] #>" /><noscript><img src="<#=ps[i] #>" /></noscript></a>
+			<#} #>
+			<div class="w_clear"></div>
+		   </div>
+        </div>
+ 	</div>
+</div>
+<#}}else{ #>
+<!--没有晒单-->
+<!--<div class="w_not_sun">暂时还没有任何晒单</div>-->
+<#} #>
+</script> 
+      <div class="sun"></div> 
+      <div id="kkpager1" style="margin: 64px auto;"></div> 
+      <script type="text/javascript" src="__PUBLIC__/style/js/pager1.js"></script> 
+      <script type="text/javascript" src="__PUBLIC__/style/js/goodsShow.js"></script> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="c_popular_recommend"> 
+    <h4 class="c_popular_title">人气商品</h4> 
+    <div class="c_pop_shop"> 
+     <ul class="c_pop_list" id="goodsList"> 
+<?php 
+$a=0;
+$yyslistrenqi=D("shangpin")->field("id,sid,cateid,brandid,title,title,title2,keywords,description,money,yunjiage,zongrenshu,canyurenshu,shenyurenshu,def_renshu,qishu,maxqishu,thumb,picarr,codes_table,xsjx_time,pos,renqi,time,q_uid,q_user")->where("renqi='1' and q_uid is null")->order("id DESC")->limit("20")->select();
+ ?>
+    <foreach name="yyslistrenqi" item="shop" >
+      <li><span class="span"><img id="goodsImg_<?php 
+echo $a;
+ ?>" src="__PUBLIC__/uploads/{$shop['thumb']}" height="210px" width="204px" /></span><b title="{$shop['title']}">{$shop['title']}</b><i>剩余<em>{$shop['zongrenshu']-$shop['canyurenshu']}</em>人次</i>
+       <div class="c_pop_hover">
+        <div class="c_pop_bj"></div>
+        <div class="c_divide_btn">
+         <a href="javascript:;" class="c_add_cart" onclick="cartoon2(<?php 
+echo $a.",".$shop['id'];
+ ?>)">加入购物袋</a>
+         <a href="javascript:gotoGoods({$shop['id']},1632)" class="c_know_detail">查看详情</a>
+        </div>
+       </div><input id="soon_gid_<?php 
+echo $a;
+ ?>" value="{$shop['id']}" type="hidden" /><input id="soon_pid_<?php 
+echo $a;$a++
+ ?>" value="1632" type="hidden" /><input id="soon_priceArea_0" value="1" type="hidden" /><input id="soon_period_0" value="undefined" type="hidden" /><input id="soon_priceTotal_0" value="33" type="hidden" /><input id="soon_surplus_0" value="33" type="hidden" /><input id="soon_thumbPath_0" value="20150728/6_1438052915007.jpg" type="hidden" /><input id="soon_title_0" value="晋商贷体验卡面值30元" type="hidden" /></li>
+      
+</foreach>
+
+
+     </ul> 
+     <div class="c_pop_btn c_pop_left" style="display: none;">
+      <i></i>
+     </div> 
+     <div class="c_pop_btn c_pop_right" style="display: none;">
+      <i></i>
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <!-- 云购码弹窗 --> 
+  <div class="w-msgbox m-detail-codesDetail" id="pro-view-7" style="z-index: 10000; left: 484.5px; top: 197.5px;"> 
+   <a data-pro="close" href="javascript:closeCodesPane();" class="w-msgbox-close"></a> 
+   <div class="w-msgbox-hd" data-pro="header"> 
+    <h3>您本期总共参与了<span class="txt-red"></span>人次</h3> 
+   </div> 
+   <div class="w-msgbox-bd" data-pro="entry"> 
+    <div class="m-detail-codesDetail-bd"> 
+     <div class="m-detail-codesDetail-wrap"> 
+      <dl class="m-detail-codesDetail-list f-clear"> 
+      </dl> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <!-- 提示是否继续购买 --> 
+  <div id="cartMsg" class="c_msgbox_bj" style="height: 3030px; display: none; z-index: 9999;"></div> 
+  <div style="left: 657px; top: 274px;" class="once_shop_con"> 
+   <a class="w_decisive" href="javascript:gotoCart(1)"></a> 
+   <a class="w_consider" href="javascript:"></a> 
+  </div> 
+  <!-- 云购期数弹窗 start --> 
+  <div class="w-msgbox m-detail-codesDetail" style="z-index: 10000; left: 484.5px; top: 74.5px;" id="pro-view-8"> 
+   <a data-pro="close" href="javascript:void(0);" class="w-msgbox-close" id="w_close"></a> 
+   <div class="w-msgbox-hd" data-pro="header"> 
+    <h3></h3> 
+   </div> 
+   <div class="w-msgbox-out" data-pro="entry"> 
+    <div class="m-detail-codesDetail-bd"> 
+     <div class="m-detail-codesDetail-wrap m-detail-codesDetail-in"> 
+      <dl class="m-detail-codesDetail-list f-clear m-detail-codesDetail-one">
+      {$wangqiqishull}
+      </dl> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <!-- 云购期数弹窗 end --> 
+  <div class="c_msgbox_bj" style="z-index: 9999; height: 3030px;"></div> 
+  <!-- 底部 -->
+  
+                             
+
+
+<script type="text/javascript" src="__PUBLIC__/style/js/c_cloud.js"></script>
+<script type="text/javascript" src="__PUBLIC__/style/js/goods_details_during.js"></script>
+<script type="text/javascript">
+$(function(){
+	getDetail();
+});
+setTimeout(function(){
+	$(".yMenua").removeClass("yMenua");
+},500);
+</script>
+<include file="./index/index.footer"/>

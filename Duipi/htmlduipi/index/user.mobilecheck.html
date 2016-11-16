@@ -1,0 +1,59 @@
+<include file="./index/index.header"/>
+<div class="login_layout">    
+	<div class="login_title">
+		<h2>新用户注册</h2>
+		<ul class="login_process">
+			<li><b>1</b>填写注册信息</li>
+			<li class="login_arrow"></li>
+			<li class="login_processCur"><b>2</b>验证邮箱/验证手机</li>
+			<li class="login_arrow"></li>
+			<li><b>3</b>完成注册</li>
+		</ul>
+		<span>已经是会员？<a id="hylinkLoginPage" class="blue Fb" href="__ROOT__/user/login">登录</a></span>
+	</div>
+	<div class="login_Content">
+		<form action="" enctype="application/x-www-form-urlencoded" method="post">
+		<div class="login_CMobile_Complete">
+			<p>{:C("web_name")}已向您的手机 <span class="orange">{$enname}</span> 免费发送了一条验证短信，请查看您的手机短信！</p>
+			<dl>
+				<dt style="width:200px">请输入手机短信收到的验证码：</dt>
+				<dd><input id="mobileCode" name="checkcode" class="login_CMobile_Code" type="text"></dd>
+				<dd></dd>
+			</dl>
+                        <input type="hidden" name="code" value="{$namestr}"/>
+			<input type="submit" name="submit" id="btnSubmitRegister" href="javascript:void(0);" class="login_Email_but" value="提交验证" />		
+		</div>    		
+        </form>
+		<div class="login_Explain">
+			<h2>没收到验证短信？</h2>
+			<p>1.请查看手机的垃圾短信，信息有可能被误认为是垃圾信息。</p>
+			<p>2.如果在2分钟后仍未收到验证短信，请点击<a id="retrySend" href="javascript:;" class="login_SendoutbutClick">重新发送120</a> </p>
+			<p>3.如果手机号码不小心输错了或者想换个号码？请点击 <a id="hylinkRegisterPageA" class="blue Fb" href="__ROOT__/user/register">重新注册</a></p>
+		</div>
+		
+		
+	</div>
+</div>
+<script>
+!function(w,d,e){
+var _orderno= '{$weerid}';
+var b=location.href,c=d.referrer,f,s,g=d.cookie,h=g.match(/(^|;)\s*ipycookie=([^;]*)/),i=g.match(/(^|;)\s*ipysession=([^;]*)/);if (w.parent!=w){f=b;b=c;c=f;};u='//stats.ipinyou.com/cvt?a='+e('6v.KQ.GpOzMMAWI209Hu8VTNWc-X')+'&c='+e(h?h[2]:'')+'&s='+e(i?i[2].match(/jump\%3D(\d+)/)[1]:'')+'&u='+e(b)+'&r='+e(c)+'&rd='+(new Date()).getTime()+'&OrderNo='+e(_orderno)+'&e=';
+function _(){if(!d.body){setTimeout(_(),100);}else{s= d.createElement('script');s.src = u;d.body.insertBefore(s,d.body.firstChild);}}_();
+}(window,document,encodeURIComponent);
+</script>
+
+<script>
+	var time = 120;
+	var t=setInterval(function  () {
+		time--;
+			$('#retrySend').html('重新发送'+time+"秒");
+			if (time==0) {
+				$('#retrySend').html('重新发送');
+				clearInterval(t);
+				validCode1=true;
+				$('#retrySend').attr('href','__ROOT__/user/sendmobile/code/{$namestr}');
+			}
+		},1000)
+</script>
+<include file="./index/index.footer"/>
+

@@ -1,0 +1,1 @@
+Base.getScript(pub+"/JS/DetailFun.js?v=151202");

@@ -1,0 +1,469 @@
+﻿
+.shareCon {
+    background: #fff none repeat scroll 0 0;
+    padding: 10px 0;
+}
+.shareCon dl {
+    padding: 0 10px;
+    text-align: center;
+}
+.shareCon dd {
+    clear: both;
+    color: #bbb;
+    font-size: 14px;
+    padding-top: 10px;
+    text-align: center;
+}
+.shareCon dd.gray6 {
+    color: #666;
+    margin-bottom: 15px;
+}
+.shareCon dd a.orangeBtn {
+    display: block;
+    font-size: 16px;
+    height: 40px;
+    letter-spacing: 1px;
+    line-height: 40px;
+    margin: 0 auto 30px;
+}
+.shareCon dd input {
+    border: 1px solid #dedede;
+    border-radius: 5px;
+    color: #bbb;
+    font-size: 14px;
+    height: 35px;
+    padding-left: 5px;
+}
+.shareCon dd input[type="tel"] {
+    width: 100%;
+}
+.shareCon dd input[type="text"] {
+    float: left;
+    width: 65%;
+}
+.shareCon a.m_get, .shareCon a.m_binding {
+    background: #f60 none repeat scroll 0 0;
+    border-radius: 5px;
+    color: #fff;
+    display: block;
+    text-align: center;
+}
+.shareCon a.m_get {
+    float: right;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    width: 33%;
+}
+.shareCon a.notClick {
+    background: #f6f6f6 none repeat scroll 0 0;
+    color: #ccc;
+}
+.inv-ad {
+    min-height: 104px;
+    min-width: 320px;
+}
+.inv-ad img {
+    display: block;
+    height: auto;
+    min-height: 104px;
+    min-width: 320px;
+    width: 100%;
+}
+.inv-con {
+    background: #fff none repeat scroll 0 0;
+    padding: 20px 10px 24px;
+}
+.inv-con a {
+    display: block;
+    font-size: 18px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 auto;
+    width: 170px;
+}
+
+.inv-con p {
+    font-size: 14px;
+    padding: 15px 0 9px;
+    text-align: center;
+}
+.inv-con span {
+    background: #f7f7f7 none repeat scroll 0 0;
+    border: 1px solid #bbb;
+    color: #999;
+    display: inline-block;
+    height: 98px;
+    line-height: 18px;
+    padding: 10px;
+    text-align: left;
+    width: 95%;
+}
+
+.inv-con1 {
+    background: #fff none repeat scroll 0 0;
+    padding: 20px 10px 24px;
+}
+.inv-con1 a {
+    font-size: 18px;
+    height: 40px;
+
+    margin: 0 auto;
+    width: 170px;
+}
+
+.inv-con1 p {
+    font-size: 14px;
+    padding: 15px 0 9px;
+    text-align: center;
+}
+.inv-con1 span {
+    background: #f7f7f7 none repeat scroll 0 0;
+    border: 1px solid #bbb;
+    color: #999;
+    display: inline-block;
+    height: 98px;
+    line-height: 18px;
+    padding: 10px;
+    text-align: left;
+    width: 100%;
+}
+
+
+.inv-count {
+    background: #fff none repeat scroll 0 0;
+    border-bottom: 1px solid #dedede;
+    padding-bottom: 13px;
+}
+.inv-count li {
+    float: left;
+    text-align: center;
+    width: 50%;
+}
+
+.inv-count em {
+    display: block;
+    font-size: 14px;
+}
+.pro_foot {
+    padding: 6px 5px;
+}
+.pro_foot li {
+    float: left;
+    padding: 0 5px;
+    width: 60%;
+}
+.pro_foot a {
+    display: block;
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+}
+.pro_foot li.border-orange-Btn {
+    width: 30%;
+}
+.pro_foot li.border-orange-Btn a {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #f60;
+    border-radius: 5px;
+    color: #f60;
+    height: 33px;
+    line-height: 33px;
+}
+.pro_foot a.orangeBtn {
+    height: 35px;
+    line-height: 35px;
+}
+.inviteDetails dl {
+    background: #fff none repeat scroll 0 0;
+    color: #999;
+    font-size: 10px;
+    text-align: left;
+}
+.inviteDetails dt {
+    background: #f7f7f7 none repeat scroll 0 0;
+    color: #666;
+}
+.inviteDetails dt, .inviteDetails dd {
+    border-bottom: 1px solid #dedede;
+    padding-left: 10px;
+    width: 100%;
+}
+.inviteDetails span {
+    display: inline-block;
+    padding: 10px 0;
+    vertical-align: middle;
+}
+.inviteDetails span:nth-child(5n-1) {
+    width: 19%;
+}
+.inviteDetails span:nth-child(4n-1) {
+    width: 23%;
+}
+.inviteDetails span:nth-child(3n-1) {
+    width: 22%;
+}
+.inviteDetails span:nth-child(5n-4) {
+    padding: 0;
+    width: 36%;
+}
+.inviteDetails dd img {
+    border-radius: 3px;
+    display: inline-block;
+    height: 21px;
+    margin: 5px 3px 5px 0;
+    width: 21px;
+}
+.inviteDetails dd em {
+    
+    height: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 82%;
+}
+.commiss p {
+    background: #f7f7f7 none repeat scroll 0 0;
+    border-bottom: 1px solid #dedede;
+    color: #bbb;
+    font-size: 14px;
+    height: 34px;
+    line-height: 34px;
+    padding-left: 10px;
+}
+.commiss p cite {
+    font-size: 12px;
+}
+.commiss span:nth-child(5n-1), .commiss span:nth-child(4n-1) {
+    text-align: center;
+}
+.commiss dd span:nth-child(5n-1) {
+    color: #f60;
+}
+.commission-con {
+    background: #fff none repeat scroll 0 0;
+    padding-bottom: 10px;
+}
+.commission-con p {
+    background: #f7f7f7 none repeat scroll 0 0;
+    border-bottom: 1px solid #dedede;
+    height: 58px;
+    line-height: 58px;
+    padding-left: 10px;
+}
+.commission-con p em {
+    font-size: 16px;
+    margin-right: 5px;
+}
+.commission-con p i {
+    margin-left: 5px;
+}
+.commission-con li {
+    border-bottom: 1px solid #dedede;
+    clear: both;
+    font-size: 14px;
+    height: 44px;
+    padding: 0 10px 0 83px;
+    position: relative;
+}
+.commission-con span, .commission-con input, .commission-con select, .commission-con b {
+    float: left;
+}
+.commission-con span {
+    left: 10px;
+    line-height: 44px;
+    position: absolute;
+}
+.commission-con input, .commission-con select {
+    color: #bbb;
+    font-size: 14px;
+    height: 24px;
+    line-height: 24px;
+}
+.commission-con input {
+    border: 0 none;
+    margin-top: 11px;
+    width: 100%;
+}
+.commission-con select {
+    background-color: #fff;
+    margin-top: 10px;
+    width: 47%;
+}
+.commission-con li b {
+    border-left: 1px solid #dedede;
+    display: block;
+    font-size: 0;
+    height: 24px;
+    margin: 10px 8px 10px 0;
+    overflow: hidden;
+    width: 0;
+}
+.commission-con a {
+    display: block;
+    font-size: 16px;
+    height: 45px;
+    letter-spacing: 2px;
+    line-height: 45px;
+    margin: 15px 10px;
+}
+.withdrawDetails {
+    background: #fff none repeat scroll 0 0;
+}
+.withdrawDetails dt, .withdrawDetails dd {
+    border-bottom: 1px solid #dedede;
+    padding: 0 10px;
+    width: 100%;
+}
+.withdrawDetails dt {
+    background: #f7f7f7 none repeat scroll 0 0;
+    color: #666;
+}
+.withdrawDetails span {
+    display: inline-block;
+    padding: 10px 0;
+    vertical-align: middle;
+}
+.withdrawDetails span:first-child {
+    width: 30%;
+}
+.withdrawDetails span:nth-child(4n-2) {
+    padding: 0;
+    width: 30%;
+}
+.withdrawDetails dt span:nth-child(4n-1), .withdrawDetails span:nth-child(4n-1) {
+    width: 25%;
+}
+.withdrawDetails span:last-child {
+    width: 15%;
+}
+.record-pop-ups {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 8px;
+    font-size: 14px;
+    padding: 20px 15px;
+    position: fixed;
+    text-align: center;
+    z-index: 10;
+}
+.record-pop-ups h4 {
+    font-size: 18px;
+    line-height: 24px;
+}
+.record-pop-ups ul {
+    border-top: 1px solid #eee;
+    margin-top: 8px;
+    padding-top: 8px;
+}
+.record-pop-ups li {
+    line-height: 24px;
+    padding: 0 5px;
+}
+.record-pop-ups span, .record-pop-ups p {
+    display: block;
+}
+.record-pop-ups span {
+    color: #999;
+    float: left;
+}
+.record-pop-ups p {
+    padding-left: 70px;
+    text-align: left;
+    text-indent: -0.1em;
+}
+.record-pop-ups a {
+    border-radius: 5px;
+    display: block;
+    font-size: 14px;
+    text-align: center;
+}
+.record-pop-ups a.z-closeBtn {
+    border: 1px solid #f60;
+    display: block;
+    height: 33px;
+    line-height: 33px;
+    margin: 20px auto 0;
+    width: 104px;
+}
+.record-pop-ups .comm-pop-btn cite {
+    display: block;
+    float: left;
+    padding-left: 8px;
+    width: 50%;
+}
+.record-pop-ups .comm-pop-btn cite a {
+    display: block;
+    height: 33px;
+    line-height: 33px;
+    margin: 20px 0 0;
+    width: 100%;
+}
+.record-pop-ups .comm-pop-btn cite.return-modify {
+    padding-left: 0;
+    padding-right: 7px;
+}
+.record-pop-ups .comm-pop-btn cite.return-modify a {
+    border: 1px solid #ddd;
+}
+.record-pop-ups .comm-pop-btn cite a.orangeBtn {
+    border: 1px solid #f60;
+}
+.f-pop-transferred, .f-pop-balance {
+    text-align: center;
+}
+.f-pop-transferred b {
+    background: rgba(0, 0, 0, 0) url("/style/css/img/member-icon.png") no-repeat scroll center top / 20px auto;
+    display: block;
+    height: 20px;
+    top: 20px;
+}
+.f-pop-transferred h5 {
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    padding: 10px 0;
+}
+.f-pop-transferred a {
+    height: 35px;
+    letter-spacing: 1px;
+    line-height: 35px;
+}
+.f-pop-balance dt {
+    font-size: 12px;
+    line-height: 24px;
+}
+.f-pop-balance dt em {
+    display: block;
+    font-size: 16px;
+}
+.f-pop-balance dd.gray3 {
+    padding-top: 10px;
+}
+.f-pop-balance dd.comm-pop-btn {
+    margin-top: 10px;
+}
+.m_popUp span {
+    background: rgba(0, 0, 0, 0) url("/style/css/img/share_02.png") no-repeat scroll right top / 320px auto;
+    display: block;
+    height: 85px;
+    position: relative;
+    z-index: 99;
+}
+.m_how {
+    line-height: 25px;
+    margin-top: 50px;
+    padding-left: 20px;
+    position: relative;
+    z-index: 99;
+}
+.m_how h4 {
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 5px;
+    margin-top: 120px;
+}
+.m_how p {
+    color: #999;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 5px 10px 5px 20px;
+    text-indent: -1.2em;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+        <link rel="stylesheet" href="__PUBLIC__/plugin/style/global/css/global.css" type="text/css"/>
+        <link rel="stylesheet" href="__PUBLIC__/plugin/style/global/css/style.css" type="text/css"/>
+        <style>
+            tbody tr{ line-height:30px; height:30px;} 
+        </style>
+    </head>
+    <body>
+        <div class="header lr10">
+            {:R('admin/headerment',array($ment))}
+            <span class="lr10"> </span><span class="lr10"> </span>
+        </div>
+        <div class="bk10"></div>
+        <div class="table-list lr10">
+            <!--start-->
+            <table width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th align="center">名称</th>
+                        <th align="center">操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($right AS $v) {	?>		
+                    <tr>
+                        <td align="center"><?php echo $v['name'];?> </td>
+                        <td align="center">
+                            <a href="__ROOT__/admin/rightEdit/id/<?php echo $v['id']; ?>">[修改]</a>
+                            <a href="__ROOT__/admin/rightDel/id/<?php echo $v['id']; ?>">[删除]</a>
+                        </td>
+                    </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+            <div class="btn_paixu"></div>
+        </div>
+
+        <script>
+        </script>
+    </body>
+</html> 

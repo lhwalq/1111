@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+        <link rel="stylesheet" href="__PUBLIC__/plugin/style/global/css/global.css" type="text/css"/>
+        <link rel="stylesheet" href="__PUBLIC__/plugin/style/global/css/style.css" type="text/css"/>
+        <script type="text/javascript" src="__PUBLIC__/plugin/style/global/js/jquery-1.8.3.min.js"></script>
+        <script src="__PUBLIC__/plugin/uploadify/api-uploadify.js" type="text/javascript"></script> 
+        <style>
+            table th{ border-bottom:1px solid #eee; font-size:12px; font-weight:100; text-align:right; width:200px;}
+            table td{ padding-left:10px;}
+            input.button{ display:inline-block}
+        </style>
+    </head>
+    <body>
+        <div class="header lr10">
+            {:R('admin/headerment',array($ment))}
+        </div>
+        <div class="bk10"></div>
+        <div class="table_form lr10">
+            <!--start-->
+            <form name="myform" action="__ROOT__/slide1/save" method="post" enctype="multipart/form-data">
+                <table width="100%" cellspacing="0">
+                    <tr>
+                        <td width="120" align="right">视频名称:</td>
+                        <td>
+                            <input type="hidden" name="id" value="<?php echo $slideone['id'];?>" class="input-text wid300" />
+                            <input type="text" name="title" value="<?php echo $slideone['title'];?>" class="input-text wid300" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="120" align="right">视频链接:</td>
+                        <td>
+                            <input type="text" name="link" value="<?php echo $slideone['link'];?>" class="input-text wid300"/>
+                            地址前,系统会默认添加服务器地址 
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td width="120" align="right">视频颜色:</td>
+                        <if condition='($is_mobile)'>
+                            <td><input  type="text" id="title_style_color" name="title2" value="<?php echo $slideone['color']?>" onKeyUp="return gbcount(this, 100, 'texttitle2');"  class="input-text wid300">
+                                    <script src="__PUBLIC__/plugin/style/global/js/colorpicker.js"></script>
+                                    <img src="__PUBLIC__/plugin/style/global/image/colour.png" width="15" height="16" onClick="colorpicker('title_colorpanel', 'set_title_color');" style="cursor:hand"/>
+                                    <img src="__PUBLIC__/plugin/style/global/image/bold.png" onClick="set_title_bold();" style="cursor:hand"/>
+                                    <span class="lr10">还能输入<b id="texttitle2">100</b>个字符</span>
+                            </td>
+                            <else/>
+                            <td>
+                                <input type="text" name="bac" value="<?php echo $slideone['bac'];?>" class="input-text wid300"/>
+                                比如 none repeat scroll 0% 0% rgb(255, 197, 1)
+                            </td>
+                        </if>
+                    </tr>
+                    <if condition='(!$is_mobile)'>
+                        <tr>
+                            <td width="120" align="right">视频排序:</td>
+                            <td>
+                                <input type="text" name="sort" value="<?php echo $slideone['sort'];?>" class="input-text wid300"/>
+                                数字1，代表1楼，数字2代表2楼
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="120" align="right">视频catid:</td>
+                            <td>
+                                <input type="text" name="pid" value="<?php echo $slideone['pid'];?>" class="input-text wid300"/>
+                                请对应分类catid
+                            </td>
+                        </tr>
+                        <else />
+                        <input type="hidden" name="mobile" value="1" class="input-text wid300"/>
+                    </if>
+                    <tr>
+                        <td width="120" align="right">图片:</td>
+                        <td>	
+                            <if condition="($slideone['id'])"> <img height="50px" src="__PUBLIC__/uploads/<?php echo $slideone['img']; ?>"/></if>
+                            <input type="text" name="image" id="imagetext" value="<?php echo $slideone['img'];?>" id="imagetext" class="input-text wid300" />
+                            <input type="button" class="button" onClick="GetUploadify('{:C(\"URL_DOMAIN\")}', 'uploadify', '缩略图上传', 'image', 'banner', 1, 500000, 'imagetext')" value="上传图片"/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td width="120" align="right"></td>
+                        <td>		
+                            <input type="submit" class="button" name="submit" value="提交" >
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div><!--table-list end-->
+
+        <script>
+            function upImage() {
+                return document.getElementById('imgfield').click();
+            }
+        </script>
+    </body>
+</html> 

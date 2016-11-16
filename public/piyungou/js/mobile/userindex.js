@@ -1,0 +1,1 @@
+Base.getScript(pub+"/piyungou/js/mobile/userindexFun.js");

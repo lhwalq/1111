@@ -1,0 +1,1 @@
+Base.getScript(pub+"/JS/goodsInfoFunzg.js?v=151106");

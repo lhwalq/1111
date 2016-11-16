@@ -1,0 +1,13 @@
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/piyungou/js/jquery.Jcrop.css" />
+<link rel="stylesheet" href="__PUBLIC__/piyungou/js/uploadify.css" type="text/css"> 
+<script type="text/javascript" src="__PUBLIC__/piyungou/js/jquery.Jcrop.js"></script>
+<script type="text/javascript" src="__PUBLIC__/piyungou/js/jquery.uploadify-3.1.min.js"></script> 
+<link href="__PUBLIC__/piyungou/js/style.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/piyungou/js/demo.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/piyungou/js/jquery.Validform.min.js"></script>
+<div class="subMenu">
+<if condition="$biaoti eq '编辑个人资料'"><a class="current2 current" href="__ROOT__/user/userModify"> <else /><a class="current2" href="__ROOT__/user/userModify"></if>个人资料</a>
+<if condition="$biaoti eq '修改头像'"><a class="current" href="__ROOT__/user/userphoto"> <else /><a href="__ROOT__/user/userphoto"></if>修改头像</a>
+	<if condition="$biaoti eq '收货地址'"><a class="current" href="__ROOT__/user/address"><else /><a href="__ROOT__/user/address"></if>收货地址</a>
+<if condition="$biaoti eq '密码修改'"><a class="current" href="__ROOT__/user/password"><else /><a href="__ROOT__/user/password"></if>密码修改</a>
+</div>

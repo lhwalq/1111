@@ -1,0 +1,236 @@
+<include file="./index/index.header"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/style/css/pager.css"></link>
+  <!-- 导航   end  --> 
+  
+ 
+  
+  
+ 
+  <div class="w_con"> 
+   <h4 class="w_guide"><a href="__ROOT__/index/index">首页</a><a class="w_accord" href="__ROOT__/goods/glistxg">全部选购商品</a></h4> 
+   <div class="w_goods_nav"> 
+    <h2>全部商品<span>（共<a href="javascript:void%200">{$zongji}</a>件商品）</span></h2> 
+    <div class="w_choose"> 
+     <dl class="w_choose_list" >
+     <?php 
+		if($cid){
+               
+			$two_cate_list = D("fenlei")->where(array("parentid"=>$cid))->order("`order` DESC")->field("cateid,parentid,name")->select();
+			if(!$two_cate_list && $daohangs['parentid'])
+			$two_cate_list = D("fenlei")->where(array("parentid"=>$daohangs[parentid]))->order("`order` DESC")->field("cateid,parentid,name")->select();
+		}else{
+			$two_cate_list = D("fenlei")->where(array("parentid"=>0,"model"=>'1'))->order("`order` DESC")->field("cateid,parentid,name")->select();
+		}
+			$two_cate_listda = D("fenlei")->where(array("parentid"=>0,"model"=>'1'))->order("`order` DESC")->field("cateid,parentid,name")->limit("7")->select();
+		
+		$two_cate_listfenlei = D("fenlei")->where(array("parentid"=>0,"model"=>'1'))->order("`order` DESC")->field("cateid,parentid,name")->select();
+		$jjj='1';
+		//var_dump($cid);
+	 ?>
+
+     <foreach name="two_cate_listda" item="two_cate" >
+      <dd>
+      <?php 
+       $urls=str_replace("_0_0", "", I("type"));
+      ?>
+       <a href="__ROOT__/goods/glistxg/type/{$two_cate['cateid']}_0_0.html" data-id="2" 
+      <?php 
+       $urls=str_replace("_0_0", "", I("type"));
+       if($urls==$two_cate['cateid']){
+    echo "class='w_selected'";
+    }
+	 ?> ><span class="w_icon w_icon_<?php 
+       if($jjj==1){echo one;}
+       else if($jjj==2){echo two;}
+       else if($jjj==3){echo three;}
+       else if($jjj==4){echo four;}
+       else if($jjj==5){echo five;}
+       else if($jjj==6){echo six;}
+       else if($jjj==7){echo seven;}
+       else{echo eight;}
+       $jjj++;
+        ?>"></span><b>{$two_cate['name']}</b></a>
+      </dd>
+      </foreach>
+      <div class="w_clear"></div>
+     </dl> 
+
+     <script> 
+function showh(){
+var height=$("#ddBrandList_brand").innerHeight();
+	if(height==60){
+		$("#ddBrandList_brand").css("height","auto");
+		$(".list_classMore").addClass("MoreClick");
+		$(".list_classMore").html("收起<i></i>");
+	}else{
+		$("#ddBrandList_brand").css("height","60px");
+		$(".list_classMore").removeClass("MoreClick");
+		$(".list_classMore").html("展开<i></i>");
+	};
+}
+$(function(){	
+	$(".list_classMore").click(showh);
+});
+</script>
+     <div class="w_all_class" style="display:block"> 
+      <div class="w_choose_more"> 
+        
+
+	 <dl class="w_goods_brand"> 
+        <dd>
+         分类
+        </dd> 
+ 
+	
+		<dd  class="w_specific_class1">
+		
+         <ul>
+<li>
+<a class="w_effect" href="__ROOT__/goods/glistxg/type/type/{$cid}_0_0.html">全部</a>
+</li>
+<foreach name="two_cate_list" item="two_cate" >
+                                        <if condition="$cid eq $two_cate['cateid'] ">
+					<li><a href="__ROOT__/goods/glistxg/type/{$two_cate['cateid']}_0_0.html" class="w_selected" title="{$two_cate['name']}">{$two_cate['name']}</a></li>
+					<else />
+					<li><a href="__ROOT__/goods/glistxg/type/{$two_cate['cateid']}_0_0.html" title="{$two_cate['name']}">{$two_cate['name']}</a></li>
+					</if>
+				</foreach>
+
+</ul>
+
+
+        </dd> 
+        <div class="w_clear"></div> 
+       </dl> 
+
+
+
+
+
+       <dl class="w_goods_brand"> 
+        <dd>
+         品牌
+        </dd> 
+        <if condition="count($pinpai) gt 17">
+		<dd id="ddBrandList_brand" class="w_specific_class1" style="height: 60px;">
+		<else />
+		<dd id="ddBrandList_brand" class="w_specific_class1" >
+		</if>
+         <ul>
+<li>
+<a class="w_effect" href="__ROOT__/goods/glistxg/type/{$cid}_0_{$order}.html">全部</a>
+</li>
+  <foreach name="pinpai" item="pinpais" > 
+                                 <if condition="$pinpais['id'] eq $bid">
+<li>
+<a  href="__ROOT__/goods/glistxg/type/{$cid}_{$pinpais['id']}_{$order}.html" class="w_selected">{$pinpais['name']}</a>
+</li>
+<else />
+<li>
+<a  href="__ROOT__/goods/glistxg/type/{$cid}_{$pinpais['id']}_{$order}.html">{$pinpais['name']}</a>
+</li>
+</if>
+				</foreach>
+
+</ul>
+<if condition="count($pinpai) gt 17">
+	<a class="list_classMore" href="javascript:;">展开<i></i></a>
+</if>
+        </dd> 
+        <div class="w_clear"></div> 
+       </dl> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="w_product_con"> 
+    <dl class="w_new"> 
+     <dd>
+      排列：
+     </dd> 
+      <dd>
+      <a href="__ROOT__/goods/glistxg/type/{$cid}_{$bid}_1.html"  <if condition="$order eq '1'"> class="w_announced" </if> data-id="publicTime">即将揭晓</a>
+     </dd> 
+     <dd>
+      <a href="__ROOT__/goods/glistxg/type/{$cid}_{$bid}_3.html"  <if condition="$order eq '3'">  class="w_announced" </if>  data-id="takedout">剩余人次</a>
+     </dd> 
+     <dd>
+      <a href="__ROOT__/goods/glistxg/type/{$cid}_{$bid}_2.html"  <if condition="$order eq '2'">  class="w_announced" </if>  data-id="periods">热卖</a>
+     </dd> 
+     <dd>
+      <a href="__ROOT__/goods/glistxg/type/{$cid}_{$bid}_4.html"  <if condition="$order eq '4'">  class="w_announced" </if> data-id="addTime">最新商品</a>
+     </dd> 
+     <dd>
+      <if condition="$order eq '5'"> 
+      <a class="w_last" href="__ROOT__/goods/glistxg/type/{$cid}_{$bid}_6.html" data-id="totalPrice_up">价格<span><img src="__PUBLIC__/style/images/jia_03.png" /></span><span class="w_jian_tou"><img src="__PUBLIC__/style/images/jia_06.png" /></span></a>
+ <else />
+     <if condition="$order eq '6'"> 
+      <a class="w_last" href="__ROOT__/goods/glistxg/type/{$cid}_{$bid}_5.html" data-id="totalPrice_up">价格<span><img src="__PUBLIC__/style/images/jia_03.png" /></span><span class="w_jian_tou"><img src="__PUBLIC__/style/images/jia_06.png" /></span></a>
+      <else />
+            <a class="w_last" href="__ROOT__/goods/glistxg/type/{$cid}_{$bid}_5.html" data-id="totalPrice_up">价格<span><img src="__PUBLIC__/style/images/jia_03.png" /></span><span class="w_jian_tou"><img src="__PUBLIC__/style/images/jia_06.png" /></span></a>
+</if>
+</if>
+     </dd> 
+    </dl> 
+   </div> 
+   <!--商品列表--> 
+   <div class="w_goods_con">
+    <ul class="w_goods_one">
+    
+   <assign name="ii" value="0" />
+   <foreach name="yyslist" item="shop" >
+     <li class="w_goods_details ">
+      <div class="w_imgOut" data-gid="{$shop['id']}" data-pid="{$shop['zongrenshu']}">
+       <a data-gid="{$shop['id']}" data-pid="{$shop['zongrenshu']}" target="_blank" class="w_goods_img" href="__ROOT__/goods/items/goodsId/{$shop['id']}.html"><img style="display: inline;" src="__PUBLIC__/uploads/{$shop['thumb']}" id="img_<?php 
+		echo $ii;
+	 ?>" data-gid="{$shop['id']}" data-pid="{$shop['zongrenshu']}" class="lazy1" data-original="__PUBLIC__/uploads/{$shop['picarr']}" />
+        <noscript>
+         <img src="__PUBLIC__/uploads/{$shop['picarr']}" alt="" />
+        </noscript></a>
+      </div><a class="w_goods_three" target="_blank" href="__ROOT__/goods/items/goodsId/{$shop['id']}.html" data-gid="{$shop['id']}" data-pid="{$shop['zongrenshu']}" title="{$shop['title']}">(第{$shop['qishu']}期){$shop['title']}</a><b>价值：￥{$shop['money']}</b>
+      <div class="w_line">
+       <span style="width:{:R("base/width",array($shop['canyurenshu'],$shop['zongrenshu'],244))}px;"></span>
+      </div>
+      <ul class="w_number">
+       <li class="w_amount">{$shop['canyurenshu']}</li>
+       <input id="cart_gid_0" value="{$shop['id']}" type="hidden" />
+       <input id="pid_0" value="1" type="hidden" />
+       <input id="priceArea_0" value="1" type="hidden" />
+       <input id="period_0" value="1" type="hidden" />
+       <input id="priceTotal_0" value="24200" type="hidden" />
+       <input id="surplus_0" value="4755" type="hidden" />
+       <input id="thumbPath_0" value="20150727/2_1437999470588.jpg,20150727/2_1437999478241.jpg,20150727/2_1437999478931.jpg,20150727/2_1437999479046.jpg" type="hidden" />
+       <input id="title_0" value="{$shop['title']}" type="hidden" />
+       <li class="w_amount">{$shop['zongrenshu']}</li>
+       <li class="w_amount">{$shop['zongrenshu']-$shop['canyurenshu']}</li>
+       <li>已云购次数</li>
+       <li>总需人次</li>
+       <li>剩余人次</li>
+      </ul>
+      <dl class="w_rob">
+       <dd>
+        <a class="w_slip" target="_blank" href="__ROOT__/goods/items/goodsId/{$shop['id']}.html" data-gid="{$shop['id']}" data-pid="{$shop['zongrenshu']}">立即抢购</a>
+       </dd>
+       <dd class="w_rob_out">
+        <a class="w_rob_in" href="javascript:void(0);" onclick="cartoong(<?php 
+		echo $shop['id'].",".$ii;$ii++;
+	 ?>)">加入购物袋</a>
+       </dd>
+      </dl>
+      
+      <div class="Curbor_id" style="display:none;">{$shop['id']}</div>
+				<div class="Curbor_yunjiage" style="display:none;">{$shop['yunjiage']}</div>
+				<div class="Curbor_shenyu" style="display:none;">{$shop['shenyurenshu']}</div>
+				
+				</li>
+    
+</foreach>
+    </ul>
+   
+   </div> 
+<if condition="$zongji gt $num ">
+	<div class="pagesx"><?php echo $fenye->show("two"); ?></div>
+	</if>
+  </div> 
+  <!-- 底部 --> 
+<include file="./index/index.footer"/>

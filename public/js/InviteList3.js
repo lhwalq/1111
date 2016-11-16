@@ -1,0 +1,1 @@
+Base.getScript(pub+"/JS/InviteListFun3.js?v=151202");

@@ -1,0 +1,114 @@
+<include file="./index/index.header"/>
+<div class="main-content clearfix">
+    <include file="./index/member.left"/>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/piyungou/css/layout-records.css"/>
+    <div class="R-content">
+        <div class="member-t"><h2>直购记录</h2></div>
+        <div id="GoodsList" class="goods_show">
+            <ul class="gtitle">
+                <li>商品图片</li>
+                <li class="gname">商品名称</li>
+                <li class="yg_status">发货状态</li>
+                <li class="joinInfo">购买件数</li>
+                <li class="do">操作</li>
+            </ul>	
+
+            <foreach name="record" item="rt" >
+                <?php
+                $jiexiao =R("Base/huode_shop_if_jiexiao",array($rt['shopid']));
+                $shopid=$rt['shopid'];
+                $jianginfo=D("shangpinzg")->where(array('id'=>$shopid))->find();
+                $status=explode(",",$rt['status']);
+                ?>
+
+                <ul class="goods_list">	
+                    <li><a title="" target="_blank" class="pic" href="__ROOT__/goodszg/itemszg/goodsId/{$rt['shopid']}.html"><img src="__PUBLIC__/uploads/{$jianginfo['thumb']}"></a></li>
+                    <li class="gname"style="margin:10px 0 0 0;">
+                        <a target="_blank" href="__ROOT__/goodszg/itemszg/goodsId/{$rt['shopid']}.html" class="blue">{$rt['shopname']}</a>
+
+
+
+
+                    </li>
+                    <li class="yg_status" style="margin:23px 0 0 0;"><span class="orange">{$rt['status']}
+
+                            <if condition="($status[1] eq '已发货') ">
+                                <br>
+                                {$rt['company']}---单号:{$rt['company_code']}
+                            </if><br>
+
+                            <if condition="($status[2] eq '待收货') ">
+                                <a class="wuliubtn" oid="{$rt[id]}" uid="{$rt[uid]}">确认收货</a> 
+                            </if>
+                        </span></li>
+                    <li class="joinInfo" style="margin:23px 0 0 0;"><p><em>{$rt['gonumber']}</em>件</p></li>
+
+
+                    <if condition="($status[3] eq '待收货') ">
+                        <li class="do" style="margin:23px 0 0 0;"><a  class="blue" title="详情">已提交地址</a></li>
+
+                        <else />
+                        <if condition="($status[2] eq '待收货') ">
+                            <li class="do" style="margin:23px 0 0 0;"><a href="__ROOT__/user/orderDetailzg/id/{$rt['id']}" class="blue" title="详情">已提交地址,待收货</a></li>
+                            <else />
+
+                            <if condition="($status[2] eq '已完成') ">
+                                <li class="do" style="margin:23px 0 0 0;"><a href="__ROOT__/user/orderDetailzg/id/{$rt['id']}" class="blue" title="详情">已付款,已发货,已完成</a></li>
+                                <else />
+                                <li class="do" style="margin:23px 0 0 0;"><a href="__ROOT__/user/orderDetailzg/id/{$rt['id']}" class="blue" title="详情">已提交地址</a></li>
+                            </if>
+                            <if condition="($status[3] eq '未提交地址') ">
+                                <li class="do" style="margin:23px 0 0 0;"><a href="__ROOT__/user/orderDetailzg/id/{$rt['id']}" class="blue" title="详情">未提交地址</a></li>
+                            </if>
+                        </if>
+                    </if>
+
+                </ul>
+
+            </foreach>	
+
+            <style>
+                #divPageNav{ padding-top:10px;text-align:right}
+                #divPageNav li a{ padding:5px;}
+            </style>
+            <div id="divPageNav" class="page_nav">
+
+                <?php echo $fenye->show('one');?> <li>共 {$zongji} 条</li>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script>
+    $("#hddsp").attr('class', 'sid-cur');
+    $(function () {
+        var width = ($(window).width() - 542) / 2;
+        var height = ($(window).height() - 360) / 2;
+        $("#paywindow").css("left", width);
+        $("#paywindow").css("top", height);
+
+        $(".pay_window_quit").click(function () {
+            $("#paywindow").hide();
+        });
+        $("#wuliu_select").click(function () {
+            $("#paywindow").show();
+        });
+
+        $(".wuliubtn").click(function () {
+            var uid = $(this).attr("uid");
+            var oid = $(this).attr("oid");
+
+            $.post("__ROOT__/order/setzg", {"uid": uid, "oid": oid}, function (sdata) {
+                if (sdata == '1') {
+                    alert("更新成功");
+                    window.location.href = "__ROOT__/user/userbuylistzg";
+                } else {
+                    alert("更新失败");
+                }
+            });
+        });
+    });
+
+</script>
+
+<include file="./index/index.footer"/>

@@ -1,0 +1,1 @@
+Base.getScript(pub+"/JS/BuyRecordFun.js?v=130903");

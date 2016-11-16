@@ -1,0 +1,66 @@
+<include file="./index/index.header"/>
+<div class="main-content clearfix">
+<include file="./index/member.left"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/layout-records.css"/>
+<div class="R-content">
+	<div class="member-t"><h2>云购记录</h2></div>
+	<div id="GoodsList" class="goods_show">
+		<ul class="gtitle">
+			<li>商品图片</li>
+			<li class="gname">商品名称</li>
+			<li class="yg_status">云购状态</li>
+			<li class="joinInfo">参与人次</li>
+			<li class="do">操作</li>
+		</ul>	
+		<foreach name="record" item="rt" >
+        <?php 
+        	$jiexiao = R("base/huode_shop_if_jiexiao",array($rt['shopid']));
+			$showtime= D("shangpin")->field('q_showtime')->where(array('id'=>$jiexiao[id]))->find();
+         ?>
+		<if condition="$jiexiao['q_uid'] and $showtime[q_showtime] eq N ">
+		<ul class="goods_list">	
+			<li><a title="" target="_blank" class="pic" href="__ROOT__/goods/dataserverForPc/goodsId/{$rt['shopid']}_{$rt['shopqishu']}.html"><img src="__PUBLIC__/uploads/{$jiexiao['thumb']}"></a></li>
+			<li class="gname"style="margin:10px 0 0 0;">
+
+				<a target="_blank" href="__ROOT__/goods/dataserverForPc/goodsId/{$rt['shopid']}_{$rt['shopqishu']}.html" class="blue">第({$rt['shopqishu']})期 {$rt['shopname']}</a>
+				<p class="gray02">获得者：<a href="__ROOT__/user/uname/d/{fun:idjia($jiexiao['q_uid'])}.html" target="_blank" class="blue">
+
+                {:R('base/huode_user_name',array($jiexiao['q_user']))}
+                </a></p>
+				<!-- <p class="gray02">揭晓时间：{fun:microt($rt['time'])}</p> -->
+				<?php 
+                $shopid=$rt['shopid'];
+                $jianginfo=D("shangpin")->where(array("id"=>$shopid))->find();
+                 ?>
+				<p class="gray02">揭晓时间：{:R('base/microt',array($jianginfo['q_end_time']))}</p>
+			</li>
+			<li class="yg_status" style="margin:23px 0 0 0;"><span class="orange">已揭晓</span></li>
+			<li class="joinInfo" style="margin:23px 0 0 0;"><p><em>{$rt['gonumber']}</em>人次</p></li>
+			<li class="do" style="margin:23px 0 0 0;"><a href="__ROOT__/user/userbuydetail/id/{$rt['id']}" class="blue" title="详情">详情</a></li>
+		</ul>
+		<else />
+		<ul class="goods_list">	
+			<li><a title="" target="_blank" class="pic" href="__ROOT__/goods/items/goodsId/{$rt['shopid']}.html"><img src="__PUBLIC__/uploads/{:R('base/yunjl',array($rt['shopid']))}"></a></li>
+			<li class="gname" style="margin:15px 0 0 0;">
+				<a target="_blank" href="__ROOT__/goods/items/goodsId/{$rt['shopid']}.html" class="blue">第({$rt['shopqishu']})期 {$rt['shopname']}</a>				
+				<p class="gray02">购买时间：{:R('base/microt',array($rt['time']))}</p>
+			</li>
+			<li class="yg_status" style="margin:23px 0 0 0;"><span class="orange">正在进行...</span></li>
+			<li class="joinInfo" style="margin:23px 0 0 0;"><p><em>{$rt['gonumber']}</em>人次</p></li>
+			<li class="do" style="margin:23px 0 0 0;"><a href="__ROOT__/user/userbuydetail/id/{$rt['id']}" class="blue" title="查看云购码">查看云购码</a></li>
+		</ul>
+		</if>
+		</foreach>	
+        
+        <style>
+			#divPageNav{ padding-top:10px;text-align:right}
+			#divPageNav li a{ padding:5px;}
+		</style>
+		<div id="divPageNav" class="page_nav">
+        	<?php echo $fenye->show('one'); ?> <li>共 {$zongji} 条</li>
+        </div>
+	</div>
+</div>
+
+</div>
+<include file="./index/index.footer"/>

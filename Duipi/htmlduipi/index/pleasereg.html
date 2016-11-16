@@ -1,0 +1,248 @@
+<include file="./index/index.header"/>
+<?php
+	$uid = R("Base/huode_user_uid");
+?>
+<script>
+$(function(){
+	$("#referDocument li").bind({		
+		mouseover:function(){
+			var number=$("#referDocument li").index(this)+1;
+			$(".S0"+number).removeClass("hidden");
+		},
+		mouseout:function(){
+			var number=$("#referDocument li").index(this)+1;
+			$(".S0"+number).addClass("hidden");
+		}
+	})
+})
+</script>
+
+
+<script type="text/javascript" src="/Template/default/js/common.js"></script>
+<meta name="__hash__" content="0ad28d6f2def92ee63f099a0b706e55b_6bc9dd62c277aefb2d9e50bbceb94352" /></head>
+<body>
+<script type="text/javascript" src="/Template/default/js/jquery.min.js"></script>
+ 
+<div class="clear"></div>
+<div class="block" style=" background:#fee3c1; width:100%">
+ 
+<style> 
+.wrap{ width:1000px; margin:0 auto;}
+.part1{ height:407px; background:url(__PUBLIC__/images/part1-bg03.jpg) center top no-repeat;}
+.part2{  height:367px; position:relative;background:url(__PUBLIC__/images/part2-bg03.jpg) 50% 0 no-repeat;}
+.part3{ position:relative; height:166px; color:#f9570b;background:url(__PUBLIC__/images/part3-bg03.jpg) center top no-repeat;}
+.part3 .wrap{ position:relative; height:166px;}
+.part4{ height:385px; padding-top:25px; font-size:14px; background:url(__PUBLIC__/images/part4-bg03.jpg) center top no-repeat;}
+.activeRegulation{ width:450px; margin-left:50px; display:inline;}
+.activeRegulation dt{ color:#f9560a;font-size:18px;}
+.activeRegulation dd{ position:relative; line-height:24px; padding-left:25px; margin-top:5px; _zoom:1;font-size:14px;}
+.activeRegulation dd.activeDetail{ margin-top:20px;}
+.activeRegulation i{  position:absolute; vertical-align:middle; top:3px; left:0; text-align:center; color:#fff; width:17px; height:17px; line-height:17px; background:url(__PUBLIC__/images/rItem.png) no-repeat;}
+.part4-layB{ display:inline; width:430px; margin:1px 50px 0 0; }
+ 
+ 
+.login_reg {
+    height: 45px;
+    padding-top: 25px;
+    text-align: center;
+    font-size: 14px;
+    border-top: 1px dashed #DDD;
+}
+.login_button {
+    text-align: center;
+}
+.reg-txt {
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+}
+ 
+ .login_button a {
+    background: url('__PUBLIC__/images/referrals_bg.png') no-repeat scroll 0% 0% transparent;
+}
+ 
+.login_button a, .login_button a:visited {
+    text-decoration: none;
+    width: 196px;
+    height: 45px;
+    text-align: center;
+    font-size: 14px;
+    background-position: -118px 0px;
+    line-height: 45px;
+    color: #FFF;
+    font-weight: bold;
+    display: inline-block;
+}
+.Invitation-t {
+    border-bottom: 1px solid #EDEDED;
+    font-size: 14px;
+    height: 25px;
+    font-weight: bold;
+    text-indent: 0.5em;
+}
+.Invitation-C1 {
+    height: 140px;
+    border-bottom: 1px dashed #EDEDED;
+   padding-top: 15px;
+}
+.Invitation-C2 {
+    height: 30px;
+border-bottom: 1px dashed #EDEDED;
+padding-top: 0px;
+}
+.Invitation-C3 {
+    height: 88px;
+    padding-top: 20px;
+}
+.Invitation-C1 p {
+    padding-bottom: 15px;
+    color: #686868;
+}
+.fs14 {
+    font-size: 14px;
+}
+.Invitation-C1 .textarea {
+    width: 420px;
+    height: 50px;
+    padding: 5px 10px;
+    line-height: 22px;
+    font-size: 14px;
+}
+.Invitation-C2 p {
+    padding-bottom: 5px;
+font-size: 12px;
+}
+.bdshare-button-style1-16:after {
+    content: ".";
+    visibility: hidden;
+    display: block;
+    height: 0px;
+    clear: both;
+}
+.Invitation-C3 li {
+    width: 88px;
+    float: left;
+    margin-right: 10px;
+	margin-top:15px;
+}
+a.Msohu {
+    width: 84px;
+    height: 32px;
+    display: block;
+    border: 1px solid #D9D9D9;
+    background-position: -297px -90px;
+}
+ .M126, .M163, .Mmsn, .Msohu, .Mgmail, .Msina, .Myahoo{
+    background: url('__PUBLIC__/images/referrals_bg.png') no-repeat scroll 0% 0% transparent;
+}
+a.M126 {
+    width: 84px;
+    height: 32px;
+    display: block;
+    border: 1px solid #D9D9D9;
+    background-position: -10px -90px;
+}
+a.M163 {
+    width: 84px;
+    height: 32px;
+    display: block;
+    border: 1px solid #D9D9D9;
+    background-position: -106px -90px;
+}
+a.Mmsn {
+    width: 84px;
+    height: 32px;
+    display: block;
+    border: 1px solid #D9D9D9;
+    background-position: -202px -90px;
+}
+a.Msohu {
+    width: 84px;
+    height: 32px;
+    display: block;
+    border: 1px solid #D9D9D9;
+    background-position: -297px -90px;
+}
+a.Mgmail {
+    width: 84px;
+    height: 32px;
+    display: block;
+    border: 1px solid #D9D9D9;
+    background-position: -394px -90px;
+}
+a.Msina {
+    width: 84px;
+    height: 32px;
+    display: block;
+    border: 1px solid #D9D9D9;
+    background-position: -488px -90px;
+}
+a.Myahoo {
+    width: 84px;
+    height: 32px;
+    display: block;
+    border: 1px solid #D9D9D9;
+    background-position: -584px -90px;
+}
+ 
+ 
+ 
+.fr {
+    float: right;
+}
+</style>
+ 
+<div class="part1">
+	<div class="wrap"></div>
+</div>
+ 
+<div class="part2 wrap"></div>
+ 
+<div class="part3 wrap"></div>
+ 
+<div class="part4 ">
+	<div class="wrap">
+	<!--活动规则 start-->
+	<dl class="activeRegulation fl">
+		<dt>活动规则：</dt>
+		<dd>
+			<i>1</i>您每邀请一位好友成功参与1元购物即可获得10积分。
+		</dd>
+		<dd>
+			<i>2</i>经您邀请的所有好友，成功参与1元购物后，您都可以获得6%的现金奖赏，并且永久有效。
+		</dd>
+		<dd>
+			<i>3</i>您每邀请一位好友成功参与1元购物，就可获得一个超级礼包抽奖机会；邀请越多，获奖机率就越大，快快告诉你QQ、MSN、人人、开心、微博上的朋友吧；具体活动详情请关注1元购物小组中活动专区。
+		</dd>
+		<dd>
+			<i>4</i>在【我的个人中心】的【佣金明细】里可看到您的每次返现记录。佣金满100及以上可申请提现，任何时候都可充值到云商城CMS演示站,云购源码,云购系统帐户。
+		</dd>
+		<dd>
+			<i>5</i>对于查实的作弊行为，扣除一切佣金，取消邀请佣金的资格并清除您的积分账户且封号。
+		</dd>
+		<dd class="activeDetail tc"><a href="__ROOT__/user/login" target="_blank"><img src="__PUBLIC__/images/activeDetail.png" alt="活动详情请点击"></a></dd>
+	</dl>
+	<!--活动规则 end-->
+	<div class="part4-layB fr">
+
+	
+		        </div>
+    </div>
+</div>
+ 
+  
+  
+ 
+  
+  
+  
+  
+ 
+    </div>
+  </div>
+</div>
+
+<include file="./index/index.footer"/>

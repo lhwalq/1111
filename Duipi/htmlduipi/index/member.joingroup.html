@@ -1,0 +1,34 @@
+<include file="./index/index.header"/>
+<div class="main-content clearfix">
+<include file="./index/member.left"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/piyungou/css/layout-topic.css"/>
+<div class="R-content">
+	<div class="member-t">
+		<h2>加入的圈子</h2> <span id="spanCount">({$group|count})</span>
+	</div>
+	<div class="groups-list clearfix">
+		
+		<if condition="$group eq null">
+		<div class="tips-con"><i></i>您还未有发表话题哦</div>
+		
+		<else />
+			<ul id="ulGroupList">
+			
+			<foreach name="group" item="v">
+			<li class="">
+				<div class="groups-img"><a target="_blank" href="__ROOT__/group/show/id/{$v['id']}.html" class="fl-img"><img src="__PUBLIC__/uploads/{$v['img']}" border="0"></a></div>
+				<div class="groups-info">
+					<p class="groups-name"><a target="_blank" href="__ROOT__/group/show/id/{$v['id']}.html" rel="nofollow" class="blue"><b>{$v['title']}</b></a></p>
+					<p class="groups-class gray02">成员：{$v['chengyuan']}&nbsp;&nbsp;&nbsp;&nbsp;话题：{$v['tiezi']}</p>
+					<p class="groups-intro gray02">{$v['jianjie']}</p>
+				</div>
+			</li>
+			</foreach>
+			</ul>
+		</if>
+	</div>
+	<div id="divPageNav" class="page_nav"></div>
+</div>
+
+</div>
+<include file="./index/index.footer"/>

@@ -1,0 +1,87 @@
+<include file="./index/index.header"/>
+<div class="main-content clearfix">
+<include file="./index/member.left"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/piyungou/css/layout-recharge.css"/>
+<div class="R-content">
+	<div class="member-t"><h2>账户明细</h2></div>
+	<div class="last">
+		<ul>
+			<li><h3>您的账户可用余额为：</h3><b class="orange">{$huiyuan['money']}</b>元 <a href="__ROOT__/user/userrecharge" class="bluebut" title="充值">充值</a>
+
+			</li>
+		<b class="red" style="float:left; margin-top:-40px; margin-left:12px;">
+<br>
+如果您的银行卡已被扣款，但平台显示未付款，请在七个工作日内联系客服{:C('cell')}
+</b>
+		</ul>
+
+	</div>
+
+	<div id="divList0" class="list-tab recordList">
+<ul class="listTitle">
+		<li class="leftTitle">充值时间</li>
+		<li class="code">备注</li>
+		<li class="price">来源/状态</li>
+		<li class="regard">交易金额</li>
+	
+	</ul>
+ 
+        <foreach name="$account1" item="at1" >
+		<ul>
+                
+			<li class="leftTitle fontAri">{$at1['time']|date="Y-m-d"}</li>
+			<li class="code">{$at1['trans_no']}</li>
+			<li class="price">
+			{if $at1['trans_type'] == 1}
+                        <if condition="($at1['trans_type'] eq 1)">
+				晋商贷用户购物卡
+			<else />
+				晋商贷用户转账
+			</if>		
+			</li>
+			<li class="regard">
+				<font color="#0c0">￥{$at1['trans_money']}</font>
+			</li>
+
+		</ul>
+	</foreach>
+	<hr>
+	
+        <foreach name="account" item="at" >
+	<ul>
+		<li class="leftTitle fontAri">{$at['time']|date="Y-m-d",###}</li>
+		<li class="code">{$at['content']}</li>
+                <li class="price">{$at['pay_type']}
+			
+                        
+                        <if condition="($at['status'] eq '未付款')">
+				未付款
+			<else />
+				已付款
+			</if>	
+		</li>
+		<li class="regard">
+			<font color="#0c0">￥{$at['money']}</font>
+		</li>
+		
+	</ul>
+        </foreach>>
+	</div>
+    
+        <style>
+			#divPageNav{ padding-top:10px;text-align:right}
+			#divPageNav li a{ padding:5px;}
+		</style>
+		<div id="divPageNav" class="page_nav">
+        	<?php echo $fenye->show('one');?> <li>云购充值共 {$zongji} 条</li>
+        </div>
+        
+	<div id="divPageNav0" class="page_nav" style="display: none;"> </div>
+	<div id="divList1" class="list-tab recordList" style="display:none;"></div>
+	<div id="divPageNav1" class="page_nav" style="display:none;"></div>
+	<div id="divDetailInfo" class="count" style="display:none;"></div>
+	<div id="divbuyDetail" class="list-tab recordList buyDetail" style="display:none;"></div>
+</div>
+
+</div>
+<include file="./index/index.footer"/>

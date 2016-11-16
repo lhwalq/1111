@@ -1,0 +1,740 @@
+<if condition="C('ssc')">
+<div class="w_during_graphic">  <div class="w_during_figure"><img src="__PUBLIC__/uploads/{$xiangmu['picarr'][0]}"></div>  <div class="w_during_wen">      <h1>（第{$xiangmu['qishu']}期）{$xiangmu['title']}<i style="color:#ff4a00;font-style:normal;margin-left:4px;">  {$xiangmu['title2']}</i></h1>         <div class="w_add_doing" >             
+<!-- <span class="w_add_doing_left" id="divLotteryTimer">揭晓倒计时</span> -->             <div class="w_addBg" >                 <p>
+<?php 
+date_default_timezone_set("Asia/Shanghai");
+	$newtime = intval (date("Hi"));
+	$ten= mktime(10,00,0,date("m"),date("d"),date("Y")); 
+		$time=(sprintf("%.3f",$ten)-microtime(true))/60;
+	$ru=(int)$time;
+	//var_dump(strlen($ru)==2);
+?>
+
+<if condition="($newtime gt '155') and ($newtime lt '1000')">
+<b id="liMinute1">0</b>
+<if condition="strlen($ru) eq 3">
+<b id="liMinute3">0</b>
+</if>
+<b id="liMinute2">0</b>
+<span>:</span>
+<b id="liSecond1">0</b>
+<b id="liSecond2">0</b>
+<span>:</span>
+<b class="ss1" id="liMilliSecond1">0</b>
+<if condition="strlen($ru) lt 3">
+<b id="last">0</b>
+</if>
+
+<else />
+<b id="liMinute1">0</b>
+<b id="liMinute2">0</b>
+<span>:</span>
+<b id="liSecond1">0</b>
+<b id="liSecond2">0</b>
+<span>:</span>
+<b class="ss1" id="liMilliSecond1">0</b>
+<b id="last">0</b>
+</if>
+</p>             
+
+</div>   
+<script type="text/javascript">	 
+function show_date_time_location(){
+	window.setTimeout(function(){
+	
+		$("#divLotteryTimer").hide();
+		$("#divLotteryTiming").show();	
+		$.post("__ROOT__/goods/lottery_shop_set/",{lottery_sub:true,gid:{$xiangmu['id']}},null);
+		window.setTimeout(function(){window.location.href="__ROOT__/goods/items/goodsId/{$xiangmu['id']}.html";},5000);
+	},1000);
+}
+function show_date_time(endTime,obj){	
+	if(!this.endTime){this.endTime=endTime;this.obj=obj;}	
+	rTimeout = window.setTimeout("show_date_time()",30);	
+	timeold = this.endTime-(new Date().getTime());
+	if(timeold <= 0){
+	document.getElementById('liMinute1').innerHTML = minsold_1;
+	document.getElementById('liMinute2').innerHTML = minsold_2;
+	document.getElementById('liSecond1').innerHTML = seconds_1;
+	document.getElementById('liSecond2').innerHTML = seconds_2;
+	document.getElementById('liMilliSecond1').innerHTML = ms_1;
+	document.getElementById('last').innerHTML = ms_2;
+		$("#liMinute1").attr("html","Code_0");
+		$("#liMinute2").attr("html","Code_0");
+		$("#liSecond1").attr("html","Code_0");
+		$("#liSecond2").attr("html","Code_0");
+		$("#liMilliSecond1").attr("html","Code_0");
+		$("#last").attr("html","Code_0");	
+		rTimeout && clearTimeout(rTimeout);	
+		show_date_time_location();	
+		return;
+	}	
+	sectimeold=timeold/1000
+	secondsold=Math.floor(sectimeold); 
+	msPerDay=24*60*60*1000
+	e_daysold=timeold/msPerDay 	
+	daysold=Math.floor(e_daysold); 				//天	
+	e_hrsold=(e_daysold-daysold)*24; 
+
+
+	t=e_hrsold*60;
+	
+  ab_str = t.toString();
+   ab_num = parseInt(ab_str.substring(0,ab_str.indexOf('.')));
+r=String(ab_num).slice(0,1); 
+r1=String(ab_num).slice(1,2); 
+r2=String(ab_num).slice(2,3); 
+
+
+
+	hrsold=Math.floor(e_hrsold); 				//时
+	e_minsold=(e_hrsold-hrsold)*60;	
+	//分
+	minsold=Math.floor((e_hrsold-hrsold)*60);
+	minsold = (minsold<10?'0'+minsold:minsold)
+	minsold = new String(minsold);
+	minsold_1 = minsold.substr(0,1);
+	minsold_2 = minsold.substr(1,1);	
+ 
+	//秒
+	e_seconds = (e_minsold-minsold)*60;	
+	seconds=Math.floor((e_minsold-minsold)*60);
+	seconds = (seconds<10?'0'+seconds:seconds)
+	seconds = new String(seconds);
+	seconds_1 = seconds.substr(0,1);
+	seconds_2 = seconds.substr(1,1);	
+	//毫秒	
+	ms = e_seconds-seconds;
+	ms = new String(ms)
+	ms_1 = ms.substr(2,1);
+	ms_2 = ms.substr(3,1);
+	//alert(r);
+if(r&&r1&&r2){
+	document.getElementById('liMinute1').innerHTML = r;
+	document.getElementById('liMinute3').innerHTML = r1;
+	document.getElementById('liMinute2').innerHTML = r2;
+	document.getElementById('liSecond1').innerHTML = seconds_1;
+	document.getElementById('liSecond2').innerHTML = seconds_2;
+	document.getElementById('liMilliSecond1').innerHTML = ms_1;
+	document.getElementById('last').innerHTML = ms_2;
+	$("#liMinute1").attr("html",minsold_1);
+	$("#liMinute2").attr("html",minsold_2);
+	$("#liSecond1").attr("html",seconds_1);
+	$("#liSecond2").attr("html",seconds_2);
+	$("#liMilliSecond1").attr("html",ms_1);
+	}else{
+	document.getElementById('liMinute1').innerHTML = minsold_1;
+	document.getElementById('liMinute2').innerHTML = minsold_2;
+	document.getElementById('liSecond1').innerHTML = seconds_1;
+	document.getElementById('liSecond2').innerHTML = seconds_2;
+	document.getElementById('liMilliSecond1').innerHTML = ms_1;
+	document.getElementById('last').innerHTML = ms_2;
+	$("#liMinute1").attr("html",minsold_1);
+	$("#liMinute2").attr("html",minsold_2);
+	$("#liSecond1").attr("html",seconds_1);
+	$("#liSecond2").attr("html",seconds_2);
+	$("#liMilliSecond1").attr("html",ms_1);
+	$("#last").attr("html",ms_2);
+	}
+	//this.obj.innerHTML=daysold+"天"+(hrsold<10?'0'+hrsold:hrsold)+"小时"+(minsold<10?'0'+minsold:minsold)+"分"+(seconds<10?'0'+seconds:seconds)+"秒."+ms;
+}
+ 
+$(function(){
+	$.ajaxSetup({async:false});
+	$.post("__ROOT__/goods/lottery_shop_get/",{lottery_shop_get:true,gid:{$xiangmu['id']},"times":Math.random()},function(sdata){	
+	if(sdata!='no'){show_date_time((new Date().getTime())+(parseInt(sdata))*1000,null);}});
+});
+</script>
+
+<div id="pics" class="w_add_newimg">                 <img id="pic" src="__PUBLIC__/style/images/one.png">             </div>         </div>     </div> </div> <div class="w_clear"></div> <div class="w_during_winner">  <div class="w_winner_left">      <div class="w_winner_left_box">            <img src="__PUBLIC__/style/images/boy_07.png">         </div>         <p class="w_winner_left_text">谁将会是本期幸运儿？</p>     </div>     <dl class="w_winner_right">                    </dl>   </div>  <div class="w_big_text_box">  <div class="w_big_text">         <h3>我们有严谨的幸运号码计算规则，保证公平公正公开</h3>             </div>     
+<ul class="w_calculate">
+<p>计算公式</p>
+<ul class="w_calculate_in">
+<li class="w_details_first">
+<em id="publishWinCodeCalculate">?</em>
+<span>本期幸运号码</span>
+</li>
+<li class="w_details_second " onmouseleave="Times100Leave()" onmouseenter="Times100Enter()">
+<em id="ygRecord100">{$xiangmu['q_counttime']}</em>
+<span>100个时间求和</span>
+<div class="w_two_con" style="display: none;">
+<i></i>
+<p class="w_two_text">
+奖品的最后一个号码分配完毕，公示该分配时间点前本站全部奖品的
+<strong>最后100个参与时间</strong>
+，并求和。
+</p>
+</div>
+</li>
+<li class="w_details_third" onmouseleave="oldLeave()" onmouseenter="oldEnter()">
+<em id="publishLottery">?</em>
+<span>"老时时彩"开奖号码</span>
+<div class="w_three_con" style="display: block;">
+<i></i>
+<p class="w_three_text">
+为保证公平公正公开，取最近一期中国福利彩票“老时时彩”的开奖结果。
+<br>
+<a target="_blank" href="http://data.shishicai.cn/cqssc/haoma/">开奖查询>></a>
+</p>
+</div>
+</li>
+<li class="w_details_fourth">
+<em id="publishTotalPrice">{$xiangmu['canyurenshu']}</em>
+<span>该奖品总需人次</span>
+</li>
+<li class="w_details_fifth">
+<em>10000001</em>
+<span>原始数</span>
+</li>
+</ul>
+</ul>
+
+</div> </div>
+	<!--揭晓进行时-右侧-->
+
+
+	<div class="w_during_right">
+		<h3>最新一期</h3>
+		<p>最新一期正在进行，赶紧参加吧！</p>
+
+	 <div class="w_latest_right1">    <div class="w_rightImg"><a class="w_goods_img" id="cartImg" href="__ROOT__/goods/dataserverForPc/goodsId/{$xiangmulistse[0][id]}"><img src="__PUBLIC__/uploads/{$xiangmu['picarr'][0]}"></a></div>    <a class="w_goods_ddree" href="__ROOT__/goods/dataserverForPc/goodsId/{$xiangmulistse[0][id]}.html">(第{$xiangmulistse[0][qishu]}期){$xiangmulistse[0][title]}</a>    <b>  {$xiangmulistse[0][title2]}</b><em>价值：￥{$xiangmulistse[0][money]}</em>    <div class="w_line"><span style="width:{:R('base/width',array($xiangmulists[0][canyurenshu],$xiangmulists[0][zongrenshu],100))}%;"></span></div>    <ul class="w_number">        <li class="w_amount">{$xiangmulistse[0][canyurenshu]}</li>        <li class="w_amount w_amount_right">{$xiangmulistse[0][zongrenshu]-$xiangmulistse[0][canyurenshu]}</li>        <li>已云购次数</li>        <li class="w_amount_right">剩余人次</li>    </ul> </div> <div class="w_cumulative">             </div> <input id="cartGid" value="{$xiangmu['id']}" type="hidden"> <input id="cartPid" value="1880" type="hidden"> <input id="cartPriceArea" value="1" type="hidden"> <input id="cartPeriod" value="1880" type="hidden"> <input id="cartPriceTotal" value="55" type="hidden"> <input id="cartSurplus" value="20" type="hidden"> <input id="cartThumbPath" value="__PUBLIC__/uploads/{$xiangmu['picarr'][0]}" type="hidden"> <input id="cartTitle" value="淘宝购物卡面值50元 支付宝充值" type="hidden"> <div class="w_buy"><a href="__ROOT__/goods/dataserverForPc/goodsId/{$xiangmulistse[0][id]}.html">立即抢购</a></div> </div>
+	<div class="w_clear"></div>
+	<!--选项卡-->
+	<div class="w_calculate_results pgp">
+	 	<dl class="w_calculate_nav">
+	     	<dd class="w_results_arrow">计算结果</dd>
+	     	<dd>所有参与记录</dd>
+	     	<dd>晒单</dd>
+	     	<span></span>
+	 	</dl>
+	 	
+	    	<div class="w_calculate_one" style="display:block">
+	      		<div class="w_rules">
+	        		<div class="w_rules_left">
+	          			<img src="__PUBLIC__/style/images/ji_03.png">
+	        		</div>
+	        		<div class="w_rules_right">
+	           			<p>（2）   将这100个时间的数值进行求和（得出数值A）（每个时间按时、分、秒、毫秒的顺序组合，如20:15:25.362则为201525362）；</p>
+	          			<p>（3）   为保证公平公正公开，系统还会等待一小段时间，取最近下一期中国福利彩票“老时时彩”的开奖结果（一个五位数值B）；</p>
+	          			<p>（4）  （数值A+数值B）除以该奖品总需人次得到的余数 + 原始数 10000001，得到最终幸运号码，拥有该幸运号码者，直接获得该奖品。</p>
+	          			<p class="w_rules_tips">  注：本商品最后一个夺宝码分配时间对应的“老时时彩”期数号码因福彩中心未开奖或福彩中心通讯故障导致未能及时揭晓的,<br>将于12小时后默认按“老时时彩”开奖结果为“00000”计算揭晓。了解更多“<a href="http://data.shishicai.cn/cqssc/haoma/" target="_blank" style="color:#dd2726;text-decoration:underline;">老时时彩</a>”信息</p>
+	        		</div>
+	      		</div>
+	      		<ul class="w_winner_name">
+	          		<dl>
+	            		<dd class="w_time">云购时间</dd>
+	            		<dd class="w_yin">时间因子</dd>
+		                <dd class="w_account">会员账号</dd>
+		                <dd class="w_name">商品名称</dd>
+		                <dd class="w_people">云购人次</dd>
+	          		</dl>
+	          		<div class="w_clear"></div>
+	          		<p>截止该商品最后云购时间【<label>{:R("Base/microt",array($xiangmu['q_end_time']))}</label>】最后100条全站云购参与记录</p>
+	          		 <!--计算结果--> 
+       <ul class="w_specific"> 
+       <?php 
+				$outs=0;		
+				   ?>
+         <foreach name="q_content" item="record" >
+				   <?php 
+						$xiangmuid = $xiangmu['id'];
+						$record_time = explode(".",$record['time']);
+						$record['time'] = $record_time[0];
+						
+$outs++;
+				   ?>
+        <if condition="$outs lt 9 ">
+        <li> 
+
+
+         <ul class="w_specific_left"> 
+          <li class="w_specific_first">{$record['time']|date="Y-m-d",###}</li> 
+          <li>{$record['time']|date="H:i:s",###}.{$record_time[1]}<i>{$record['timeadd']}</i></li> 
+         </ul> 
+         <ul class="w_specific_right"> 
+          <li class="w_account"><a href="__ROOT__/user/uname/d/{:R('Base/idjia',array($record['uid']))}">{:R("Base/huode_user_name",array($record['uid']))}</a></li> 
+          <li class="w_name" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"><a href="__ROOT__/goods/dataserverForPc/goodsId/{$record['shopid']}.html">（第{$record['shopqishu']}期）{$record['shopname']}</a></li> 
+          <li class="w_people" style="text-align: center;">{$record['gonumber']}人次</li> 
+         </ul> </li> 
+	 <else />
+	 <li class="w_lose_con" style="display: none;">
+
+
+         <ul class="w_specific_left"> 
+          <li class="w_specific_first">{$record['time']|date="Y-m-d",###}</li> 
+          <li>{$record['time']|date="H:i:s",###}.{$record_time[1]}<i>{$record['timeadd']}</i></li> 
+         </ul> 
+         <ul class="w_specific_right"> 
+          <li class="w_account"><a href="__ROOT__/user/uname/d/{:R('Base/idjia',array($record['uid']))}">{:R("Base/huode_user_name",array($record['uid']))}</a></li> 
+          <li class="w_name" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"><a href="__ROOT__/goods/dataserverForPc/goodsId/{$record['shopid']}.html">（第{$record['shopqishu']}期）{$record['shopname']}</a></li> 
+          <li class="w_people" style="text-align: center;">{$record['gonumber']}人次</li> 
+         </ul>  </li> 
+	 </if>
+         </foreach>
+	 <li class="w_special_li">
+展开全部100条数据
+<s></s>
+</li>
+<li class="w_special_li_other">
+收起
+<s class="w_special_s"></s>
+</li>
+ 
+<div class="w_count">
+<strong class="w_new_results">计算结果</strong>
+<div class="w_count_one">
+<li>1、求和： {$xiangmu['q_counttime']} (上面100条夺宝记录时间取值相加之和)</li>
+<li>
+<span>2、最近下一期（?期）“老时时彩”开奖号码 </span>
+<i>?</i>
+<i>?</i>
+<i>?</i>
+<i>?</i>
+<i>?</i>
+<a target="_blank" href="http://data.shishicai.cn/cqssc/haoma/">开奖查询>></a>
+</li>
+<li>
+<span>3、求余：（{$xiangmu['q_counttime']} +</span>
+<i>?</i>
+<i>?</i>
+<i>?</i>
+<i>?</i>
+<i>?</i>
+<span>）% {$xiangmu['canyurenshu']}(奖品需要人次) =</span>
+<b>?</b>
+<b>?</b>
+<span>（余数）</span>
+<em class="w_tips"></em>
+<div class="w_answer w_answer_xiu">
+<p>
+<span>余数：</span>
+指整数除法中，被除数未被除数除尽部分。“例如27除以6，商数为4，余数为3”
+</p>
+</div>
+</li>
+<li>
+<span>4、</span>
+<b>?</b>
+<b>?</b>
+<span>（余数）+10000001=</span>
+<b>?</b>
+<b>?</b>
+<b>?</b>
+<b>?</b>
+<b>?</b>
+<b>?</b>
+<b>?</b>
+</li>
+<li class="w_count_last_other">
+最终结果：
+<strong>等待揭晓...</strong>
+</li>
+</div>
+</div>
+<script type="text/javascript" src="__PUBLIC__/style/js/goods_details_during.js"></script>
+
+        
+       </ul> 
+      </ul> 
+     </div> 
+     <!--所有参与记录--> 
+     
+
+     <div class="w_calculate_one w_calculate_two">
+					<div class="w_clear"></div>
+					
+
+
+
+
+<table class="w_yun_con" cellpadding="0" cellspacing="0">
+<iframe src="__ROOT__/goods/go_record_ifram/id/{$xiangmuid}/len/20" style="width:978px; border:block;height:1250px" frameborder="0" scrolling="no"></iframe>	
+</table>
+<div id="kkpager2" style="margin: 64px auto;"></div>
+<div class="w-msgbox m-detail-codesDetail" id="pro-view-9" style="z-index:10000;">
+	<a data-pro="close" href="javascript:void(0);" class="w-msgbox-close"></a>	
+	<div class="w-msgbox-hd" data-pro="header">
+		<h3></h3>
+	</div>
+	<div class="w-msgbox-bd" data-pro="entry">
+		<div class="m-detail-codesDetail-bd">
+			<div class="m-detail-codesDetail-wrap">
+				<dl class="m-detail-codesDetail-list f-clear">
+				</dl>
+			</div>
+		</div>
+	</div>	
+</div>
+<script type="text/javascript" src="__PUBLIC__/style/js/pager2.js"></script>
+<script type="text/javascript" src="__PUBLIC__/style/js/timeline.js"></script>
+
+				</div>
+				<!--晒单-->
+				<div class="w_calculate_one">
+					
+
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/style/css/pager1.css">
+
+
+
+<div class="sun"></div>
+<div  style="margin: 64px auto;">
+
+<if condition=" $error eq 0">
+		<div id="divPost" class="Single_Content">
+                <foreach name="shaidingdan" item="v" >
+			<div class="Single_list">
+				<div class="SingleL fl Topiclist-img">
+					<a rel="nofollow" class="head-img" href="__ROOT__/user/uname/d/{:R('Base/idjia',array($huiyuan_id[$v['sd_id']]))}.html" type="showCard" uweb="1000371861" target="_blank">
+						<img border="0" alt="" src="<if condition="$huiyuan_img[$v['sd_id']] neq ''"> __PUBLIC__/uploads/{$huiyuan_img[$v['sd_id']]}<else />__PUBLIC__/uploads/photo/member.jpg_30.jpg</if>">
+					</a>
+					<a class="blue" href="__ROOT__/user/uname/d/{:R('Base/idjia',array($huiyuan_id[$v['sd_id']]))}.html" type="showCard" uweb="1000371861" target="_blank">{$huiyuan_username[$v['sd_id']]}</a>
+					<!--span class="class-icon02"><s></s>云购少将</span-->
+				</div>
+				<div class="SingleR fl">
+					<div class="SingleR_TC"><i></i> <s></s>
+						<h3><span class="gray02">第{$v['sd_qishu']}期晒单</span><a href="__ROOT__/index/shaidan/detail/{$v['sd_id']}.html" target="_blank">{$v['sd_title']}</a>   <em class="gray02">{$v['sd_time']|date="Y-m-d",###}</em></h3>
+						<p class="gray01">{:R("Base/strcut",array($v['sd_content'],220))}</p>
+					</div>
+					<div class="SingleR_Comment" postID="2676" count="7">
+						<div class="Comment_smile gray02"><span><i></i>{$v['sd_zhan']}人羡慕嫉妒恨</span><span><s></s>{$v['sd_ping']}条评论</span></div>
+					</div>
+				</div>
+			</div>
+		</foreach>
+		<if condition="$zongji gt $num">
+			<div class="pagesx">{page:two}</div>
+		</if>
+		</div>
+	<else />
+		<div style="text-align:center;width:100%;height:80px;line-height:80px;">
+			<h1 style='text-align:center;width:100%;font-size:22px; font-weight:bold;color:#555;'>该商品还未有晒单！</h1>
+		</div>
+	</if>
+
+
+
+</div>
+<else />
+<div class="w_during_graphic">  <div class="w_during_figure"><img src="__PUBLIC__/uploads/{$xiangmu['picarr'][0]}"></div>  <div class="w_during_wen">      <h1>（第{$xiangmu['qishu']}期）{$xiangmu['title']}<i style="color:#ff4a00;font-style:normal;margin-left:4px;">  {$xiangmu['title2']}</i></h1>         <div class="w_add_doing" >             
+<!-- <span class="w_add_doing_left" id="divLotteryTimer">揭晓倒计时</span> -->             <div class="w_addBg" >                 <p>
+<b id="liMinute1">0</b>
+<b id="liMinute2">0</b>
+<span>:</span>
+<b id="liSecond1">0</b>
+<b id="liSecond2">0</b>
+<span>:</span>
+<b class="ss1" id="liMilliSecond1">0</b>
+<b id="last">0</b>
+</p>             
+
+</div>   
+<script >	 
+function show_date_time_location(){
+	window.setTimeout(function(){
+		$("#divLotteryTimer").hide();
+		$("#divLotteryTiming").show();	
+		$.post("__ROOT__/goods/lottery_shop_set/",{lottery_sub:true,gid:{$xiangmu['id']}},null);
+		window.setTimeout(function(){window.location.href="__ROOT__/goods/items/goodsId/{$xiangmu['id']}.html";},5000);
+	},1000);
+}
+function show_date_time(endTime,obj){	
+	if(!this.endTime){this.endTime=endTime;this.obj=obj;}	
+	rTimeout = window.setTimeout("show_date_time()",30);	
+	timeold = this.endTime-(new Date().getTime());
+	if(timeold <= 0){
+	document.getElementById('liMinute1').innerHTML = minsold_1;
+	document.getElementById('liMinute2').innerHTML = minsold_2;
+	document.getElementById('liSecond1').innerHTML = seconds_1;
+	document.getElementById('liSecond2').innerHTML = seconds_2;
+	document.getElementById('liMilliSecond1').innerHTML = ms_1;
+	document.getElementById('last').innerHTML = ms_2;
+		$("#liMinute1").attr("html","Code_0");
+		$("#liMinute2").attr("html","Code_0");
+		$("#liSecond1").attr("html","Code_0");
+		$("#liSecond2").attr("html","Code_0");
+		$("#liMilliSecond1").attr("html","Code_0");
+		$("#last").attr("html","Code_0");	
+		rTimeout && clearTimeout(rTimeout);	
+		show_date_time_location();	
+		return;
+	}	
+	sectimeold=timeold/1000
+	secondsold=Math.floor(sectimeold); 
+	msPerDay=24*60*60*1000
+	e_daysold=timeold/msPerDay 	
+	daysold=Math.floor(e_daysold); 				//天	
+	e_hrsold=(e_daysold-daysold)*24; 
+	hrsold=Math.floor(e_hrsold); 				//时
+	e_minsold=(e_hrsold-hrsold)*60;	
+	//分
+	minsold=Math.floor((e_hrsold-hrsold)*60);
+	minsold = (minsold<10?'0'+minsold:minsold)
+	minsold = new String(minsold);
+	minsold_1 = minsold.substr(0,1);
+	minsold_2 = minsold.substr(1,1);	
+ 
+	//秒
+	e_seconds = (e_minsold-minsold)*60;	
+	seconds=Math.floor((e_minsold-minsold)*60);
+	seconds = (seconds<10?'0'+seconds:seconds)
+	seconds = new String(seconds);
+	seconds_1 = seconds.substr(0,1);
+	seconds_2 = seconds.substr(1,1);	
+	//毫秒	
+	ms = e_seconds-seconds;
+	ms = new String(ms)
+	ms_1 = ms.substr(2,1);
+	ms_2 = ms.substr(3,1);
+	document.getElementById('liMinute1').innerHTML = minsold_1;
+	document.getElementById('liMinute2').innerHTML = minsold_2;
+	document.getElementById('liSecond1').innerHTML = seconds_1;
+	document.getElementById('liSecond2').innerHTML = seconds_2;
+	document.getElementById('liMilliSecond1').innerHTML = ms_1;
+	document.getElementById('last').innerHTML = ms_2;
+	$("#liMinute1").attr("html",minsold_1);
+	$("#liMinute2").attr("html",minsold_2);
+	$("#liSecond1").attr("html",seconds_1);
+	$("#liSecond2").attr("html",seconds_2);
+	$("#liMilliSecond1").attr("html",ms_1);
+	$("#last").attr("html",ms_2);
+	//this.obj.innerHTML=daysold+"天"+(hrsold<10?'0'+hrsold:hrsold)+"小时"+(minsold<10?'0'+minsold:minsold)+"分"+(seconds<10?'0'+seconds:seconds)+"秒."+ms;
+}
+ 
+$(function(){
+	$.ajaxSetup({async:false});
+	$.post("__ROOT__/goods/lottery_shop_get/",{lottery_shop_get:true,gid:{$xiangmu['id']},"times":Math.random()},function(sdata){	
+	if(sdata!='no'){show_date_time((new Date().getTime())+(parseInt(sdata))*1000,null);}});
+});
+</script>
+
+<div id="pics" class="w_add_newimg">                 <img id="pic" src="__PUBLIC__/style/images/one.png">             </div>         </div>     </div> </div> <div class="w_clear"></div> <div class="w_during_winner">  <div class="w_winner_left">      <div class="w_winner_left_box">            <img src="__PUBLIC__/style/images/boy_07.png">         </div>         <p class="w_winner_left_text">谁将会是本期幸运儿？</p>     </div>     <dl class="w_winner_right">                    </dl>   </div>  <div class="w_big_text_box">  <div class="w_big_text">         <h3>我们有严谨的幸运号码计算规则，保证公平公正公开</h3>             </div>     <ul class="w_calculate">         
+
+<p>计算公式</p>         
+   <ul class="w_calculate_in">   
+   <li class="w_details_first"><em>?</em><span>本期幸运号码</span></li>  
+   <li class="w_details_second "><em>{$xiangmu['q_counttime']}</em><span>100个时间求和</span>  
+   <div class="w_two_con">            
+   <i></i>            
+   <p class="w_two_text">奖品的最后一个号码分配完毕，公示该分配时间点前本站全部奖品的<strong>最后100个参与时间</strong>，并求和。</p>          
+   </div>    </li>       
+   <li class="w_details_fourth"><em>{$xiangmu['canyurenshu']}</em><span>该奖品总需人次</span></li>     
+   <div style="display: none;" class="w_three_con">              
+   <i></i>              
+   <p class="w_three_text">将这100个数值之和除以该商品总参与人次后取余数，余数加上10000001 即为“幸运云购码”!</p>           </div>    </li>       <li class="w_details_fourth"><em>10000001</em><span>原始数</span></li>             </ul>     </ul> </div> </div>
+	<!--揭晓进行时-右侧-->
+
+
+	<div class="w_during_right">
+		<h3>最新一期</h3>
+		<p>最新一期正在进行，赶紧参加吧！</p>
+	 <div class="w_latest_right1">    <div class="w_rightImg"><a class="w_goods_img" id="cartImg" href="__ROOT__/goods/dataserverForPc/goodsId/{$xiangmulistse[0][id]}"><img src="__PUBLIC__/uploads/{$xiangmu['picarr'][0]}"></a></div>    <a class="w_goods_ddree" href="__ROOT__/goods/dataserverForPc/goodsId/{$xiangmulistse[0][id]}.html">(第{$xiangmulistse[0][qishu]}期){$xiangmulistse[0][title]}</a>    <b>  {$xiangmulistse[0][title2]}</b><em>价值：￥{$xiangmulistse[0][money]}</em>    <div class="w_line"><span style="width:{:R('base/width',array($xiangmulists[0][canyurenshu],$xiangmulists[0][zongrenshu],220))}px;"></span></div>    <ul class="w_number">        <li class="w_amount">{$xiangmulistse[0][canyurenshu]}</li>        <li class="w_amount w_amount_right">{$xiangmulistse[0][zongrenshu]-$xiangmulistse[0][canyurenshu]}</li>        <li>已云购次数</li>        <li class="w_amount_right">剩余人次</li>    </ul> </div> <div class="w_cumulative">             </div> <input id="cartGid" value="{$xiangmu['id']}" type="hidden"> <input id="cartPid" value="1880" type="hidden"> <input id="cartPriceArea" value="1" type="hidden"> <input id="cartPeriod" value="1880" type="hidden"> <input id="cartPriceTotal" value="55" type="hidden"> <input id="cartSurplus" value="20" type="hidden"> <input id="cartThumbPath" value="__PUBLIC__/uploads/{$xiangmu['picarr'][0]}" type="hidden"> <input id="cartTitle" value="淘宝购物卡面值50元 支付宝充值" type="hidden"> <div class="w_buy"><a href="__ROOT__/goods/dataserverForPc/goodsId/{$xiangmulistse[0][id]}.html">立即抢购</a></div> </div>
+	<div class="w_clear"></div>
+	<!--选项卡-->
+	<div class="w_calculate_results pgp">
+	 	<dl class="w_calculate_nav">
+	     	<dd class="w_results_arrow">计算结果</dd>
+	     	<dd>所有参与记录</dd>
+	     	<dd>晒单</dd>
+	     	<span></span>
+	 	</dl>
+	 	
+	    	<div class="w_calculate_one" style="display:block">
+	      		<div class="w_rules">
+	        		<div class="w_rules_left">
+	          			<img src="__PUBLIC__/style/images/ji_03.png">
+	        		</div>
+	        		<div class="w_rules_right">
+	           			<p>（1）    奖品的最后一个号码分配完毕后，将公示该分配时间点前本站全部奖品的最后100个参与时间；</p>
+	           			<p>（2）   将这100个时间的数值进行求和（得出数值A）（每个时间按时、分、秒、毫秒的顺序组合，如20:15:25.362则为201525362）；</p>
+	          			<p>（3）  （数值A）除以该奖品总需人次得到的余数 + 原始数 10000001，得到最终幸运号码，拥有该幸运号码者，直接获得该奖品。</p>
+	          			<p class="w_rules_tips"> </p>
+	        		</div>
+	      		</div>
+	      		<ul class="w_winner_name">
+	          		<dl>
+	            		<dd class="w_time">云购时间</dd>
+	            		<dd class="w_yin">时间因子</dd>
+		                <dd class="w_account">会员账号</dd>
+		                <dd class="w_name">商品名称</dd>
+		                <dd class="w_people">云购人次</dd>
+	          		</dl>
+	          		<div class="w_clear"></div>
+                                <p>截止该商品最后云购时间 【<label>{:R("Base/microt",array($xiangmu['q_end_time']))}</label>】最后100条全站云购参与记录</p>
+	          		 <!--计算结果--> 
+       <ul class="w_specific"> 
+       <?php 
+				$outs=0;		
+				   ?>
+                                   <foreach name="q_content" item="record" >
+				   <?php 
+						$xiangmuid = $xiangmu['id'];
+						$record_time = explode(".",$record['time']);
+						$record['time'] = $record_time[0];
+						
+$outs++;
+				   ?>	
+<if condition="$outs lt 9">
+        <li> 
+         <ul class="w_specific_left"> 
+          <li class="w_specific_first">{$record['time']|date="Y-m-d",###}</li> 
+          <li>{$record['time']|date="H:i:s",###}.{$record_time[1]}<i>{$record['timeadd']}</i></li> 
+         </ul> 
+         <ul class="w_specific_right"> 
+          <li class="w_account"><a href="__ROOT__/user/uname/d/{:R('Base/idjia',array($record['uid']))}">{:R("Base/huode_user_name",array($record['uid']))}</a></li> 
+          <li class="w_name" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"><a href="__ROOT__/goods/dataserverForPc/goodsId/{$record['shopid']}.html">（第{$record['shopqishu']}期）{$record['shopname']}</a></li> 
+          <li class="w_people" style="text-align: center;">{$record['gonumber']}人次</li> 
+         </ul> </li> 
+	 <else />
+	 <li class="w_lose_con" style="display: none;">
+
+
+         <ul class="w_specific_left"> 
+          <li class="w_specific_first">{$record['time']|date="Y-m-d",###}</li> 
+          <li>{$record['time']|date="H:i:s",###}.{$record_time[1]}<i>{$record['timeadd']}</i></li> 
+         </ul> 
+         <ul class="w_specific_right"> 
+          <li class="w_account"><a href="__ROOT__/user/uname/d/{:R('Base/idjia',array($record['uid']))}">{:R("Base/huode_user_name",array($record['uid']))}</a></li> 
+          <li class="w_name" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"><a href="__ROOT__/goods/dataserverForPc/goodsId/{$record['shopid']}.html">（第{$record['shopqishu']}期）{$record['shopname']}</a></li> 
+          <li class="w_people" style="text-align: center;">{$record['gonumber']}人次</li> 
+         </ul>  </li> 
+	 </if>
+       </foreach>
+	 <li class="w_special_li">
+展开全部100条数据
+<s></s>
+</li>
+<li class="w_special_li_other">
+收起
+<s class="w_special_s"></s>
+</li>
+ 
+<div class="w_count">
+<strong class="w_new_results">计算结果</strong>
+<div class="w_count_one">
+<li>1、求和：<if condition="$xiangmu[q_showtime] neq 'Y'"> {$xiangmu['q_counttime']}<else />?</if> (上面100条云购记录时间取值相加之和)</li>
+
+<li>
+<span>2、求余：<if condition="$xiangmu[q_showtime] neq 'Y'"> {$xiangmu['q_counttime']}<else />?</if> </span>
+
+<span>% {$xiangmu['canyurenshu']}(奖品需要人次) =</span>
+<if condition="$xiangmu[q_showtime] neq 'Y'"> <?php 
+		$haohaohao1 = str_split($weer_shop_fmod);
+			?>
+                            <foreach name="haohaohao1" item="codeitem" >
+			    <b>{$codeitem}</b>
+			    </foreach><else />?</if>
+
+<span>（余数）</span>
+<em class="w_tips"></em>
+<div class="w_answer w_answer_xiu">
+<p>
+<span>余数：</span>
+指整数除法中，被除数未被除尽部分。“例如27除以6，商数为4，余数为3”
+</p>
+</div>
+</li>
+<li>
+<span>3、</span>
+
+                            <foreach name="haohaohao1" item="codeitem" >
+			    <b>{$codeitem}</b>
+			    </foreach>
+<span>?（余数）+10000001=</span>
+<if condition="$xiangmu[q_showtime] neq 'Y'"> <?php 
+		$haohaohao = str_split($xiangmu['q_user_code']);
+			?>
+                            {loop $haohaohao $codeitem}
+			    <b>{$codeitem}</b>
+			    {loop:end}<else />?</if>
+
+
+</li>
+<li class="w_count_last">最终结果：<if condition="$xiangmu[q_showtime] neq 'Y'"> {$xiangmu['q_user_code']}<else />?</if></li>
+</div>
+</div>
+<script type="text/javascript" src="__PUBLIC__/style/js/goods_details_during.js"></script>
+
+        
+       </ul> 
+      </ul> 
+     </div> 
+     <!--所有参与记录--> 
+     
+
+     <div class="w_calculate_one w_calculate_two">
+					<div class="w_clear"></div>
+					
+
+
+
+
+<table class="w_yun_con" cellpadding="0" cellspacing="0">
+<iframe src="__ROOT__/goods/go_record_ifram/id/{$xiangmuid}/len/20" style="width:978px; border:block;height:1250px" frameborder="0" scrolling="no"></iframe>	
+</table>
+<div id="kkpager2" style="margin: 64px auto;"></div>
+<div class="w-msgbox m-detail-codesDetail" id="pro-view-9" style="z-index:10000;">
+	<a data-pro="close" href="javascript:void(0);" class="w-msgbox-close"></a>	
+	<div class="w-msgbox-hd" data-pro="header">
+		<h3></h3>
+	</div>
+	<div class="w-msgbox-bd" data-pro="entry">
+		<div class="m-detail-codesDetail-bd">
+			<div class="m-detail-codesDetail-wrap">
+				<dl class="m-detail-codesDetail-list f-clear">
+				</dl>
+			</div>
+		</div>
+	</div>	
+</div>
+<script type="text/javascript" src="__PUBLIC__/style/js/pager2.js"></script>
+<script type="text/javascript" src="__PUBLIC__/style/js/timeline.js"></script>
+
+				</div>
+				<!--晒单-->
+				<div class="w_calculate_one">
+					
+
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/style/css/pager1.css">
+
+
+
+<div class="sun"></div>
+<div  style="margin: 64px auto;">
+
+<if condition="$error eq 0">
+		<div id="divPost" class="Single_Content">
+		 <foreach name="shaidingdan" item="v" >		
+			<div class="Single_list">
+				<div class="SingleL fl Topiclist-img">
+					<a rel="nofollow" class="head-img" href="__ROOT__/user/uname/d/{:R('Base/idjia',array($huiyuan_id[$v['sd_id']]))}.html" type="showCard" uweb="1000371861" target="_blank">
+						<img border="0" alt="" src="<if condition="$huiyuan_img[$v['sd_id']] neq ''"> __PUBLIC__/uploads/{$huiyuan_img[$v['sd_id']]}<else />__PUBLIC__/uploads/photo/member.jpg_30.jpg</if>">
+					</a>
+					<a class="blue" href="__ROOT__/user/uname/d/{:R('Base/idjia',array($huiyuan_id[$v['sd_id']]))}.html" type="showCard" uweb="1000371861" target="_blank">{$huiyuan_username[$v['sd_id']]}</a>
+					<!--span class="class-icon02"><s></s>云购少将</span-->
+				</div>
+				<div class="SingleR fl">
+					<div class="SingleR_TC"><i></i> <s></s>
+						<h3><span class="gray02">第{$v['sd_qishu']}期晒单</span><a href="__ROOT__/index/shaidan/detail/{$v['sd_id']}.html" target="_blank">{$v['sd_title']}</a>   <em class="gray02">{$v['sd_time']|date="Y-m-d",###}</em></h3>
+						<p class="gray01">{:R("Base/strcut",array($v['sd_content'],220))}</p>
+					</div>
+					<div class="SingleR_Comment" postID="2676" count="7">
+						<div class="Comment_smile gray02"><span><i></i>{$v['sd_zhan']}人羡慕嫉妒恨</span><span><s></s>{$v['sd_ping']}条评论</span></div>
+					</div>
+				</div>
+			</div>
+		 </foreach>
+		<if condition="$zongji gt $num">
+			<div class="pagesx"><?php echo $fenye->show("two"); ?></div>
+		</if>
+		</div>
+	<else />
+		<div style="text-align:center;width:100%;height:80px;line-height:80px;">
+			<h1 style='text-align:center;width:100%;font-size:22px; font-weight:bold;color:#555;'>该商品还未有晒单！</h1>
+		</div>
+	</if>
+
+
+
+</div>
+</if>

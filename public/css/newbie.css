@@ -1,0 +1,23 @@
+@charset "utf-8";
+	.clearfix:after {
+	content:".";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;
+}
+.clearfix {
+	display:inline-block;
+}
+* html .clearfix {
+	height:1%;
+}
+.clearfix {
+	display:block;
+}
+*{padding: 0;margin: 0;}
+	.GuideContent{background: url(../images/newbie/newbj.jpg) no-repeat center 0;min-width: 1200px;}
+	.y-new-con{width: 1200px;height: 2597px;margin: 0 auto;background: #f9f5ae url(../images/newbie/newcon.jpg) no-repeat;}
+	.y-new-header{width: 1200px;height: 642px;margin: 0 auto;background:url(../images/newbie/new1.png) no-repeat;}
+	.y-new-bottom{width: 1200px;height: 260px;margin: 0 auto;background: #f9f5ae;}
+	.y-new-bottom a{display: block;width: 441px;height: 123px;background: url(../images/newbie/newbtn.jpg) no-repeat;margin-left: 393px;}

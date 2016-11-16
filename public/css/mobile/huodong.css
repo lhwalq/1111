@@ -1,0 +1,201 @@
+body, ol, ul, li, dl, dt, dd, p, h3 {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+body {
+	min-width: 320px;
+	font-size: 12px;
+	font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;
+	color: #000;
+	padding: 0;
+	margin: 0;
+	background-color: #d93a1d;
+	overflow-x: hidden;
+}
+.hd-wrapper {
+	width: 100%;
+	position: relative;
+}
+.hd-title {
+	min-width: 320px;
+}
+.hd-title img {
+	width: 100%;
+	display: block;
+}
+.hd-periods {
+	color: #fbff02;
+	font-size: 14px;
+	font-weight: bold;
+	position: absolute;
+	top: 5px;
+	left: 9px;
+	font-family: KaiTi;
+}
+.hd-num {
+	font-size: 19px;
+	color: #fff;
+	text-align: center;
+	line-height: 28px;
+	margin: 5px 0;
+}
+.member-icon {
+	background: url(../../images/mobile/hd_icons.png) 0 -25px no-repeat;
+	width: 14px;
+	height: 16px;
+	display: inline-block;
+	position: relative;
+	top: 1px;
+	right: 3px;
+}
+.ticket-btn {
+	display: block;
+	width: 267px;
+	height: 96px;
+	background: url(../../images/mobile/ticket_btn.png) center no-repeat;
+	cursor: pointer;
+	margin: 0 auto 6px;
+}
+.ticket-btn p {
+	color: #d93a1d;
+	font-size: 13px;
+	font-weight: bold;
+	padding-left: 20px;
+	line-height: 22px;
+}
+.hd-a {
+	color: #D93A1D;
+	font-size: 23px;
+	text-align: center;
+	font-weight: bold;
+	line-height: 78px;
+}
+.luck-btn {
+	display: block;
+	width: 223px;
+	height: 41px;
+	background: url(../../images/mobile/luck_btn.png) center no-repeat;
+	cursor: pointer;
+	margin: 0 auto;
+}
+.hd-intro {
+	padding: 16px 15px 16px 18px;
+}
+.rule-title, .luck-title {
+	line-height: 26px;
+	margin: 2px 0;
+	color: #fff;
+	font-size: 16px;
+}
+.luck-title {
+	margin: 10px 0 6px;
+}
+.rule-icon, .luck-icon {
+	background: url(../../images/mobile/hd_icons.png) 0 -69px no-repeat;
+	width: 18px;
+	height: 18px;
+	display: inline-block;
+	position: relative;
+	top: 3px;
+	padding-right: 5px;
+}
+.luck-icon {
+	background-position: 0 -46px;
+}
+.hd-rules, .luck-list  {
+	padding: 0 5px 8px 31px;
+	color: #fff;
+	line-height: 20px;
+}
+.luck-box {
+	max-height: 384px;
+	overflow: hidden;
+}
+.luck-list {
+	padding-left: 13px;
+	overflow: hidden;
+	display: block;
+}
+.hd-rules li {
+	padding: 3px 0;
+	font-size: 13px;
+	list-style: decimal;
+}
+.luck-list  li  img {
+	width: 36px;
+	height: 36px;
+	border-radius: 5px;
+	float: left;
+	margin-right: 5px;
+}
+.luck-list li p {
+	height: 18px;
+	line-height: 18px;
+	overflow: hidden;
+}
+.luck-list li {
+	font-size: 12px;
+	padding: 6px 0;
+	line-height: 18px;
+	overflow: hidden;
+}
+.gold-color {
+	color: #f8fd03;
+}
+.hd-logo {
+	margin-top: 26px;
+	background: url(../../images/mobile/hd_logo.png) center no-repeat;
+	height: 84px;
+	display: block;
+}
+.follow-icon {
+	background: url(../../images/mobile/hd_icons.png) 0 0 no-repeat;
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	position: relative;
+	top: 4px;
+	padding-right: 4px;
+}
+.follow-btn {
+	display: block;
+	font-size: 16px;
+	color: #fff !important;
+	margin: auto;
+	width: 74px;
+}
+.last-periods {
+	width: 286px;
+	margin: 17px auto 15px;
+	overflow: hidden;
+	border: 2px dashed #fbff02;
+}
+.last-periods h4 {
+	color: #fff;
+	font-weight: bold;
+	font-size: 16px;
+	font-family: KaiTi;
+	padding-left: 46px;
+}
+.last-img {
+	float: left;
+	width: 86px;
+	height: 96px;
+	line-height: 104px;
+}
+.last-img img {
+	width: 82px;
+	height: 82px;
+	margin: 7px 1px 5px 3px;
+	border-radius: 4px;
+}
+.last-info {
+	float: left;
+}
+.last-info li {
+	font-size: 12px;
+	color: #fff;
+	line-height: 19px;
+	padding-left: 2px;
+}

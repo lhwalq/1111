@@ -1,0 +1,308 @@
+<include file="./index/index.header"/>
+<!-- 右侧悬浮 -->
+<!-- 滑过右侧购物车时未登录时的登陆框 -->
+<div style="top: 123px;" class="Left-fixed-divs3 Left-fixed-login">
+	<span class="close-login"></span>
+	<span class="right-login-xs"></span>
+	
+</div>
+
+
+
+<input value="652" id="gid" type="hidden"> 
+<input value="1" id="pid" type="hidden">
+<div class="w_con" id="goods_details" style="">
+	<div class="w_details_left">
+		<h4 class="w_guide"><a href="__ROOT__/index/index">首页</a>
+		<a href="__ROOT__/goods/glist/">全部商品</a><a href="__ROOT__/goods/glist/type/{$xiangmu['cateid']}.html">{$fenlei['name']}</a><a href="__ROOT__/goods/glist/type/{$xiangmu['cateid']}e{$xiangmu['brandid']}.html">{$pinpai['name']}</a><a class="w_accord" href="javascript:void%200">商品详情</a></h4>
+	  
+	  
+
+
+
+
+
+
+
+
+	  <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/css/pager2.css">
+	  
+	 <!--显示揭晓动画 start-->
+			<include file="./index/index.item_contentszg"/>
+	
+				
+			<!--显示揭晓动画 end-->	
+
+
+
+
+
+
+
+	
+				
+<script type="text/javascript" src="__PUBLIC__/style/js/pager1.js"></script>
+<script type="text/javascript" src="__PUBLIC__/style/js/goodsShow.js"></script>
+
+				</div>
+			</div>
+		</div>
+		<div class="w_clear"></div>
+	</div>
+</div>
+
+<!-- 云购码弹窗 -->
+<div class="w-msgbox m-detail-codesDetail" id="pro-view-7" style="z-index: 10000; left: 484.5px; top: 197.5px;">
+	<a data-pro="close" href="javascript:closeCodesPane();" class="w-msgbox-close"></a>	
+	<div class="w-msgbox-hd" data-pro="header">
+		<h3>您本期总共参与了<span class="txt-red"></span>人次</h3>
+	</div>
+	<div class="w-msgbox-bd" data-pro="entry">
+		<div class="m-detail-codesDetail-bd">
+			<div class="m-detail-codesDetail-wrap">
+				<dl class="m-detail-codesDetail-list f-clear">
+				</dl>
+			</div>
+		</div>
+	</div>	
+</div>
+<!-- 提示是否继续购买 -->
+<div id="cartMsg" class="c_msgbox_bj" style="height: 7369px; display: none; z-index: 9999;"></div>
+<div style="left: 657px; top: 274px;" class="once_shop_con">
+    <a class="w_decisive" href="javascript:gotoCart(1)"></a>
+    <a class="w_consider" href="javascript:"></a> 
+  </div>
+<!-- 云购期数弹窗 start -->
+<div class="w-msgbox m-detail-codesDetail" style="z-index: 10000; left: 484.5px; top: 207.5px;" id="pro-view-8">
+  <a data-pro="close" href="javascript:void(0);" class="w-msgbox-close" id="w_close"></a>  
+  <div class="w-msgbox-hd" data-pro="header">
+    <h3><input id="p" type="text"><span class="w_jie_shu"><a href="#" onclick="toP()">揭晓期数</a></span></h3>
+  </div>
+  <div class="w-msgbox-out" data-pro="entry">
+    <div class="m-detail-codesDetail-bd">
+      <div class="m-detail-codesDetail-wrap m-detail-codesDetail-in">
+        <dl class="m-detail-codesDetail-list f-clear m-detail-codesDetail-one">
+          
+        </dl>
+      </div>
+    </div>
+  </div>  
+</div>
+<!-- 云购期数弹窗 end -->
+<div class="c_msgbox_bj" style="z-index: 9999; height: 7369px;"></div>
+
+
+<!-- 底部 -->
+
+                             
+
+
+<script type="text/javascript" src="__PUBLIC__/style/js/c_cloud.js"></script>
+<script type="text/javascript" src="__PUBLIC__/style/js/goods_details_during.js"></script>
+<script type="text/javascript">
+$(function(){
+	
+});
+setTimeout(function(){
+	$(".yMenua").removeClass("yMenua");
+},500);
+</script>
+
+<script type="text/javascript">
+<!--补丁3.1.6_b.0.2-->
+function set_iframe_height(fid,did,height){	
+	$("#"+fid).css("height",height);	
+}
+
+$(function(){
+	$("#ulRecordTab li").click(function(){
+		var add=$("#ulRecordTab li").index(this);
+		$("#ulRecordTab li").removeClass("Record_titCur").eq(add).addClass("Record_titCur");
+		$(".Pro_Record .hide").hide().eq(add).show();
+	});
+	
+	var DetailsT_TitP = $(".DetailsT_TitP ul li");
+	var divContent    = $("#divContent div");	
+	DetailsT_TitP.click(function(){
+		var index = $(this).index();
+			DetailsT_TitP.removeClass("DetailsTCur").eq(index).addClass("DetailsTCur");
+	
+			var iframe = divContent.hide().eq(index).find("iframe");
+			if (typeof(iframe.attr("g_src")) != "undefined") {
+			  	 iframe.attr("src",iframe.attr("g_src"));
+				 iframe.removeAttr("g_src");
+			}
+			divContent.hide().eq(index).show();
+	});
+	<!--补丁3.1.6_b.0.2-->
+	
+	var fouli=$(".DetailsT_TitP ul li")
+	$("#btnUserBuyMore").click(function(){
+		 fouli.removeClass("DetailsTCur").eq(1).addClass("DetailsTCur");
+		var iframe = divContent.hide().eq(1).find("iframe");
+			if (typeof(iframe.attr("g_src")) != "undefined") {
+			  	 iframe.attr("src",iframe.attr("g_src"));
+				 iframe.removeAttr("g_src");
+			}
+		 $("#divContent .divContent-in").hide().eq(1).show();
+		 $("html,body").animate({scrollTop:1280},1500);
+		 $("#divProductNav").addClass("nav-fixed");
+	});
+	$(window).scroll(function(){
+		if($(window).scrollTop()>=1200){
+			$("#divProductNav").addClass("nav-fixed");
+		}else if($(window).scrollTop()<1200){
+			$("#divProductNav").removeClass("nav-fixed");
+		}
+	});
+})
+var shopinfo={shopid:{$xiangmu['id']},money:{$xiangmu['yunjiage']},shenyu:{$nomal}};
+
+	
+$(function(){
+	function baifenshua(aa,n){
+	n = n || 2;
+	return ( Math.round( aa * Math.pow( 10, n + 2 ) ) / Math.pow( 10, n ) ).toFixed( n ) + '%';
+}
+	var shopnum = $("#num_dig");
+	shopnum.keyup(function(){
+		if(shopnum.val()>{$nomal}){
+			shopnum.val({$nomal});
+		}
+		var numshop=shopnum.val();
+		if(numshop=={$xiangmu['zongrenshu']}){
+			var baifenbi='100%';
+		}else{
+			var showbaifen=numshop/{$xiangmu['zongrenshu']};
+			var baifenbi=baifenshua(showbaifen,2);
+		}
+		$("#chance").html("<span style='color:red'>获得机率"+baifenbi+"</span>");
+	});	
+	
+	$("#shopadd").click(function(){
+		var shopnum = $("#num_dig");
+			var resshopnump='';
+			var num = parseInt(shopnum.val());				
+			if(num+1 > {$nomal}){				
+				shopnum.val({$nomal});
+				resshopnump = {$nomal};
+			}else{
+				resshopnump=parseInt(shopnum.val())+1;
+				shopnum.val(resshopnump);	
+				if(shopnum.val()>={$nomal}){
+					resshopnump=shopinfo['shenyu'];
+					shopnum.val(resshopnump);
+				}
+			}
+			if(resshopnump=={$xiangmu['zongrenshu']}){
+				var baifenbi='100%';
+			}else{
+				var showbaifen=resshopnump/{$xiangmu['zongrenshu']};
+				var baifenbi=baifenshua(showbaifen,2);
+			}
+			$("#chance").html("<span style='color:red'>获得机率"+baifenbi+"</span>");
+	});
+	 $("li").click(function(){
+    var yiyuansha=$(this).text();
+     var renren={$xiangmu['shenyurenshu']};
+    // alert(yiyuansha);
+     //alert(renren);
+     if(yiyuansha<renren){
+    document.getElementById("num_dig").value=yiyuansha;	
+   var shopnums=yiyuansha;
+		if(shopnums=={$xiangmu['zongrenshu']}){
+				var baifenbi='100%';
+			}else{
+				var showbaifen=shopnums/{$xiangmu['zongrenshu']};
+				var baifenbi=baifenshua(showbaifen,2);
+			}
+  $("#chance").html("<span style='color:red'>获得机率"+baifenbi+"</span>");
+  }else{
+  $("#chance").html("<span style='color:red'>购买人次太多哦</span>");
+  }
+})
+	
+	$("#shopsub").click(function(){
+		var shopnum = $("#num_dig");
+		var num = parseInt(shopnum.val());
+		if(num<2){
+			shopnum.val(1);			
+		}else{
+			shopnum.val(parseInt(shopnum.val())-1);
+		}
+		var shopnums=parseInt(shopnum.val());
+		if(shopnums=={$xiangmu['zongrenshu']}){
+				var baifenbi='100%';
+			}else{
+				var showbaifen=shopnums/{$xiangmu['zongrenshu']};
+				var baifenbi=baifenshua(showbaifen,2);
+			}
+			$("#chance").html("<span style='color:red'>获得机率"+baifenbi+"</span>");
+	});
+});
+
+$(function(){
+$(".Det_Cart").click(function(){ 
+	//添加到购物车动画
+	var src=$(".bigImg img").attr('src');  
+	var $shadow = $('<img id="cart_dh" style="display: none; border:1px solid #aaa; z-index: 99999;" width="400" height="400" src="'+src+'" />').prependTo("body"); 
+	var $img = $(".bigImg img");
+	$shadow.css({ 
+	   'width' : $img.css('width'), 
+	   'height': $img.css('height'),
+	   'position' : 'absolute',      
+	   'top' : $img.offset().top,
+	   'left' : $img.offset().left, 
+	   'opacity' :1    
+	}).show();
+	var $gouwuche =$("#btnMyCart");
+	var numdig=$(".num_dig").val();
+	$shadow.animate({   
+		width: 1, 
+		height: 1, 
+		top: $gouwuche.offset().top, 
+		left: $gouwuche.offset().left,
+		opacity: 0
+	},500,function(){
+		Cartcookie(false);
+	});		
+});
+	$(".Det_Shopbut").click(function(){	
+		Cartcookie(true);
+	});	
+});
+
+
+
+function Cartcookie(cook){
+	var shopid=shopinfo['shopid'];
+	var number=parseInt($("#num_dig").val());
+	if(number<=1){number=1;}
+	var Cartlistzg = $.cookie('Cartlistzg');
+	if(!Cartlistzg){
+		var info = {};
+	}else{
+		var info = $.evalJSON(Cartlistzg);
+		if((typeof info) !== 'object'){
+			var info = {};
+		}
+	}		
+	if(!info[shopid]){
+		var CartTotal=$("#btnMyCart em").text();
+			$(".yShoppingCart1 span").text(parseInt(CartTotal)+1);
+			$("#btnMyCart em").text(parseInt(CartTotal)+1);
+	}	
+	info[shopid]={};
+	info[shopid]['num']=number;
+	info[shopid]['shenyu']=shopinfo['shenyu'];
+	info[shopid]['money']=shopinfo['money'];
+	info['MoenyCount']='0.00';	
+	$.cookie('Cartlistzg',$.toJSON(info),{expires:7,path:'/'});
+	if(cook){
+		window.location.href="__ROOT__/goodszg/Cartlistzg/"+new Date().getTime();//+new Date().getTime()
+	}
+}  
+</script> 
+
+
+<include file="./index/index.footer"/>

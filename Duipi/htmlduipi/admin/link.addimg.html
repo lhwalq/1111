@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+        <link rel="stylesheet" href="__PUBLIC__/plugin/style/global/css/global.css" type="text/css"/>
+        <link rel="stylesheet" href="__PUBLIC__/plugin/style/global/css/style.css" type="text/css"/>
+        <style>
+            table th{ border-bottom:1px solid #eee; font-size:12px; font-weight:100; text-align:right; width:200px;}
+            table td{ padding-left:10px;}
+            input.button{ display:inline-block}
+        </style>
+    </head>
+    <body>
+        <div class="header lr10">
+            {:R('admin/headerment',array($ment))}
+        </div>
+        <div class="bk10"></div>
+        <div class="table_form lr10">
+            <!--start-->
+            <form name="myform" action="__ROOT__/link/save" method="post" enctype="multipart/form-data">
+                <table width="100%" class="lr10">
+                    <tr>
+                        <td width="120" align="right">链接名称：</td>
+                        <td>
+                            <input type="text" value="<?php echo $info['name'];?>" name="name" class="input-text"/>
+                            <input type="hidden" value="<?php echo $info['id'];?>" name="id" class="input-text"/></td>
+                    </tr>
+                    <tr>
+                        <td width="120" align="right">链接地址：</td>
+                        <td><input type="text" name="url" value="<?php echo $info['url'];?>"  class="input-text"/></td>
+                    </tr>
+                    <tr>
+                        <td width="120" align="right">链接图片:</td>
+                        <td>
+                            <input type="text" id="imagetext" value="<?php echo $info['logo'];?>" class="input-text wid300"/>
+                            <input type="button" class="button" onClick="upImage()" value="选择图片"/>  (*不上传图片则为文字链接)        
+                            <input type="file" id="imgfield" name="image" class="button" 
+                                   onchange="document.getElementById('imagetext').value = this.value"
+                                   style=" display:none;" /> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="120" align="right"></td>
+                        <td><input type="submit" class="button" name="submit"  value=" 提交 " ></td>
+                    </tr>
+                </table>
+            </form>
+        </div><!--table-list end-->
+
+        <script>
+            function upImage() {
+                return document.getElementById('imgfield').click();
+            }
+        </script>
+    </body>
+</html> 

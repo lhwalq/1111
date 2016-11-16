@@ -1,0 +1,257 @@
+<include file="./index/index.header"/>
+<meta name="keywords" content=<if condition="isset($guanjianzi)">"{$guanjianzi}"<else/>"{:C('web_key')}"</if> />
+<meta name="description" content=<if condition="isset($miaoshu)">"{$miaoshu}"<else/>"{:C('web_des')}"</if> />
+ 
+      <link rel="stylesheet" type="text/css" href="__PUBLIC__/piyungou/css/Comm.css"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/piyungou/css/CartList.css"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/piyungou/css/style.css"/>
+
+<script type="text/javascript" src="__PUBLIC__/plugin/style/global/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/piyungou/js/jquery.cookie.js"></script>
+</head>
+<body>
+    <div class="logo">
+        <div class="float">
+            <span class="logo_pic">
+                <h2>确认订单</h2>
+                </a></span>
+            <ul class="ui-step" style='float:right;margin-top:10px'>
+                <li class="ui-step-start ui-step-active">
+                    <div class="ui-step-line">-</div>
+                    <div class="ui-step-icon">
+                        <i class="ui-step-number">提交</i>
+                        <span class="ui-step-text">&nbsp;</span>
+                    </div>
+                </li>
+                <li class="ui-step-center">
+                    <div class="ui-step-line">-</div>
+                    <div class="ui-step-icon">
+                        <i class="ui-step-number">支付</i>
+                        <span class="ui-step-text">&nbsp;</span>
+                    </div>
+                </li>
+                <li class="ui-step-center">
+                    <div class="ui-step-line">-</div>
+                    <div class="ui-step-icon">
+                        <i class="ui-step-number">开奖</i>
+                        <span class="ui-step-text">&nbsp;</span>
+                    </div>
+                </li>
+                <li class="ui-step-end">
+                    <div class="ui-step-line">-</div>
+                    <div class="ui-step-icon">
+                        <i class="ui-step-number">揭晓</i>
+                        <span class="ui-step-text">&nbsp;</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="shop_process">
+        <div class="i_tips"></div>
+        <div class="submitted">
+            <ul class="order">
+                <li class="top">
+                    <span class="goods">商品</span>
+                    <span class="name">名称</span>
+                    <span class="moneys">价值</span>
+                    <span class="money">云购价</span>
+                    <span class="num">云购人次</span>
+                    <span class="xj">小计</span>
+                    <span class="do">操作</span>
+                </li>
+                  <script>
+                        var chooselist = localStorage.getItem('chooselist');
+                        if(!chooselist){
+                                            var datas = {};
+                                    }else{
+                                            var datas = $.evalJSON(chooselist);
+                                            if((typeof datas) !== 'object'){
+                                                    var datas = {};
+                                            }
+                                    }
+                        </script>
+                <foreach name="yyslist" item="shops" >
+                <li class="end" id="shoplist{$shops['id']}">
+                    <span class="goods">
+                        <a href="__ROOT__/goods/items/goodsId/{$shops['id']}.html">
+                            <img src="__PUBLIC__/uploads/{$shops['thumb']}" />
+                        </a>                    
+                    </span>
+                    <span class="name">
+                        <a href="__ROOT__/goods/items/goodsId/{$shops['id']}.html" >{$shops['title']}</a>
+                        <if condition="$shops['pay_ygb'] eq 1">
+                        <p style="color:red">此商品只限福分消费</p>
+                        </if>
+                        <p>总需 <span class="color">{$shops['zongrenshu']}</span>人次参与，还剩 
+                            <span class="gorenci">{$shops['cart_shenyu']}</span> 人次
+                        </p>
+                    </span>
+                    <span class="moneys">￥{$shops['money']}</span>
+                    <span class="money"><span class="color">￥<b>{$shops['yunjiage']}</b></span></span>	
+                    <if condition="$shops['cart_shenyu']=='0'">	
+                    <span class="num">				
+                        <dl class="add">					
+                            <dd><input type="type" val="{$shops['id']}" onkeyup="value = value.replace(/\D/g, '')" value="{$shops['cart_gorenci']}" class="amount" disabled style="width:55px"/></dd>                    
+                        </dl>
+                        <p class="message" style="margin-left:12px;color:black">商品已揭晓，请购买下期商品</p>
+                    </span> 
+                    <span  class="xj">0.00</span> 
+                    <elseif condition="$shops['is_choose'] eq 1"/>
+                     <span class="num">				
+							<dl class="add">					
+							<dd><input type="type" val="{$shops['id']}" onkeyup="value=value.replace(/\D/g,'')" value="{$shops['cart_gorenci']}" class="amount" disabled /></dd>                    
+							<dd>
+									<a href="JavaScript:;" val="{$shops['id']}" class="jia" style="display:none"></a>
+									<a href="JavaScript:;" val="{$shops['id']}" class="jian" style="display:none"></a>
+								</dd>      
+                                                        </dl>
+		                    <p class="message" style="margin-left:12px;color:black" >该商品为选购商品，请返回再修改选购号码</p>
+						</span> 
+						<span  class="xj">{$shops['cart_xiaoji']}</span>  
+
+                                            <script>
+                                              var shopsid="{$shops['id']}";
+                                              if(!datas[shopsid]){
+                                                $(".add input[val="+shopsid+"]").removeAttr("disabled");
+                                                $(".add input[val="+shopsid+"]").parent().parent().next().text("");
+                                                $(".add a[val="+shopsid+"]").attr("style","");
+                                              }
+                                            </script>
+                    <else/>
+                    <span class="num">				
+                        <dl class="add">					
+                            <dd><input type="type" val="{$shops['id']}" onkeyup="value = value.replace(/\D/g, '')" value="{$shops['cart_gorenci']}" class="amount" /></dd>
+                            <dd>
+                                <a href="JavaScript:;" val="{$shops['id']}" class="jia"></a>
+                                <a href="JavaScript:;" val="{$shops['id']}" class="jian"></a>
+                            </dd>                        
+                        </dl>
+                        <p class="message"></p>
+                    </span> 
+                    <span  class="xj">{$shops['cart_xiaoji']}</span>  
+                    </if>
+                    <span class="do"><a href="javascript:;" onclick="delcart({$shops['id']})"  class="delgood">删除</a></span> 
+                </li>     		
+                </foreach>
+                <li class="ts">
+                    <p class="right">云购金额总计:￥<span id="moenyCount">{$MoenyCount}</span></p>
+                </li>
+            </ul>
+        </div>
+        <h5>
+            <a href="__ROOT__/index/index" id="but_on"></a>
+            <input id="but_ok" type="button" value=""  name="submit"/>
+        </h5>
+    </div> 
+
+    <script type="text/javascript">
+        var info = "{$gouwucheshopinfo}";
+        info = eval('(' + info + ')');  
+        var numberadd = $(".jia");
+        var numbersub = $(".jian");
+        var xiaoji = $(".xj");
+        var num = $(".amount");
+        var message = $(".message");
+        var moenyCount = $("#moenyCount");
+
+        $(function () {
+            $("#but_ok").click(function () {
+                var countmoney = parseInt(moenyCount.text());
+                if (countmoney > 0) {
+                    $.cookie('Cartlist','',{path:'/'});
+                    $.cookie('Cartlist', $.toJSON(info), {expires: 7, path: '/'});
+                    document.location.href = '__ROOT__/pay/pay/' + new Date().getTime();
+                } else {
+                    alert("购物车为空!");
+                }
+            });
+        });
+        function UpdataMoney(shopid, number, zindex) {
+            var number = parseInt(number);
+            info['MoenyCount'] = info['MoenyCount'] - info[shopid]['money'] * info[shopid]['num'] + info[shopid]['money'] * number;
+            info[shopid]['num'] = number;
+            var xjmoney = xiaoji.eq(zindex + 1);
+            xjmoney.text(info[shopid]['money'] * number + '.00');
+            moenyCount.text(info['MoenyCount'] + '.00');
+        }
+
+
+        function delcart(id) {
+            info['MoenyCount'] = info['MoenyCount'] - info[id]['money'] * info[id]['num'];
+            $("#shoplist" + id).hide();
+            $("#moenyCount").text(info['MoenyCount'] + ".00");
+            delete info[id];
+            //$.cookie('Cartlist','',{path:'/'});
+            $.cookie('Cartlist', $.toJSON(info), {expires: 30, path: '/'});
+            var choose=localStorage.getItem('chooselist');
+            if(choose)
+            {
+                data = $.evalJSON(choose);
+                var data1 = {};
+
+                $.each(data, function(i, n){
+                    if(i!=id)
+                    {
+                        data1[i]={};
+                        data1[i]['code']=n.code; 
+                    }
+                });
+
+                localStorage.setItem('chooselist',$.toJSON(data1));
+                if($.toJSON(data1)=="{}")
+                {
+                    localStorage.removeItem('chooselist');
+                }
+            }
+        }
+
+        num.keyup(function () {
+            var shopid = $(this).attr("val");
+            var zindex = num.index(this);
+
+            if ($(this).val() > info[shopid]['shenyu']) {
+                message.eq(zindex).text("云购次数不能超过" + info[shopid]['shenyu'] + "次");
+                $(this).val(info[shopid]['shenyu']);
+                UpdataMoney(shopid, $(this).val(), zindex);
+                return;
+            }
+            if ($(this).val() < 1) {
+                message.eq(zindex).text("云购次数不能少于1次");
+                $(this).val(1);
+                UpdataMoney(shopid, $(this).val(), zindex);
+                return;
+            }
+            UpdataMoney(shopid, $(this).val(), zindex);
+        });
+        numberadd.click(function () {
+            var shopid = $(this).attr('val');
+            var zindex = numberadd.index(this);
+            var thisnum = num.eq(zindex);
+            if (info[shopid]['num'] >= info[shopid]['shenyu']) {
+                message.eq(zindex).text("云购次数不能超过" + info[shopid]['shenyu'] + "次");
+                return;
+            }
+            var number = info[shopid]['num'] + 1;
+            thisnum.val(number);
+            UpdataMoney(shopid, number, zindex);
+        });
+        numbersub.click(function () {
+            var shopid = $(this).attr('val');
+            var zindex = numbersub.index(this);
+            var thisnum = num.eq(zindex);
+            if (info[shopid]['num'] <= 1) {
+                message.eq(zindex).text("云购次数不能少于1次");
+                return;
+            }
+            var number = info[shopid]['num'] - 1;
+            thisnum.val(number);
+            UpdataMoney(shopid, number, zindex);
+        });
+
+    </script> 
+
+
+
+   <include file="./index/index.footer"/>

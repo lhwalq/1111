@@ -1,0 +1,317 @@
+<include file="./index/index.header"/>
+<div class="main-content clearfix">
+<include file="./index/member.left"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/layout-setUp.css"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/accountess.css"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/commess.css"/>
+<style>
+	.c_mobile_valid li{border:none;}
+	.c_mobile_info, .c_tel_info{width:auto;}
+	.c_login_pwd li{height:auto;}
+	.c_update_detail{display:none;margin-bottom:40px;}
+	select:focus{outline:none;}
+	.c_account_tel{margin-top: 40px;}
+	.c_account_tel dd{height:50px;padding-left: 60px;}
+	.c_account_tel .c_get_code,.c_account_tel .c_telphone{margin:0;}
+	.c_flow_text{position: absolute;top: 30px;}
+	.c_send_success{margin:40px 0 0 70px;font-size:14px;color:#555;}
+	.c_send_success input{margin-right:10px;width:212px;height:40px;border:1px solid #C8C8C8;padding:0 4px;}
+	.c_go_look input{margin-left: 194px;_margin-left:97px;margin-top:30px;}
+	.c_email_number{width:212px;height:40px;border:1px solid #C8C8C8;padding:0 4px;margin-right: 10px;}
+	.c_mobile_confirm{margin-left:104px;_margin-left:52px;}
+	select:focus{outline:none;}
+	.c_tel_info .c_tel_msg{float: right;width: 320px;margin-left: 0;color: #e86969;}
+	.c_tel_msg{color:#e86969;font-size:12px;}
+	.c_new_tel{width: 212px;height: 38px;padding: 0 4px;border: 1px solid #C8C8C8;margin-right:10px;}
+	.c_tel_valid_info{font-size:12px;padding-left: 76px;height: 30px;margin-top: 6px;padding-left: 104px;}
+	.y_accountright_bottom .y_account_div_a a{color:#fff;border-radius:2px;background:#12ADFF;}
+	.y_accountright_bottom .y_account_div_a a:hover{background:#12ADFF;}
+	.c_update_type,.c_update_type2{margin: 0 100px;margin-left: 320px;_margin-left:160px;}
+	.c_update_type dd,.c_update_type2 dd{float:left;margin-right:80px;cursor:default;}
+	.c_code_msg,.c_no_recieve,.c_valid_content,.c_mobile_confirm{display:block;}
+</style>
+<script type="text/javascript">
+$(function(){		
+	var demo=$(".registerform").Validform({
+		tiptype:2,
+		datatype:{
+			"tel":/([a-z][A-Z][0-9])+/,
+			"nic":/^[A-Za-z0-9_\u4e00-\u9fa5]{2,20}$/,
+		},
+	});	
+	demo.tipmsg.w["tel"]="请正确输入电话号码(区号、号码必填，用“-”隔开)";
+	demo.tipmsg.w["nic"]="昵称为2-20个汉字、字母、数字、“_”字符组成";
+	demo.addRule([
+	{
+		ele:"#nicxx",
+		datatype:"nic",
+	},
+	{
+		ele:"#txt_ship_tel",
+		datatype:"tel",
+	}]);
+});
+</script>
+<script>
+foo=function(){
+	var $ul = $(this).parent().next().children('.c_update_detail');
+		val=$(this).attr('index');
+		uid=$(this).attr('uid');
+		$(this).parent().next().children('.c_update_detail').slideUp(500);
+		if($ul.is(':visible')){
+			$(this).parent().next().children('.c_update_detail').slideUp(500);
+			$(this).eq(0).html('<a href="javascript:void(0);">修改</a>');
+		}else{
+			$('.c_update_detail').slideUp();
+			$(this).parent().next().children('.c_update_detail').slideDown(500);
+			$('.c_update_detail').parent().parent().find('.y_account_div_a').html('<a href="javascript:void(0);">修改</a>');
+			$(this).eq(0).html('<a href="javascript:void(0);">取消</a>');
+		}
+	}
+$(function(){
+	// 对修改的操作
+	$('.y_account_div_a').bind("click",foo);
+	// 修改后确认
+	$('.queren').click(function(){
+		yanzheng=$(this).attr("index");
+		// alert(yanzheng);
+		code=$('.codemobile').val();
+		newemails=$('.c_new_tel').val();
+		$('.y_account_div_a').bind("click",foo);
+
+		$.post("__ROOT__/user/panduan",{val:yanzheng,code:code,uid:uid,newcode:newemails},function(data){
+			if(data!=''){
+				$('.queren').parent().parent().parent().hide();
+				$('.queren').parent().parent().parent().next().show();
+			}
+		})
+		$(".c_get_codemobile").html("获取短信验证码");
+		/*$(this).parent().parent().parent().hide();
+		$(this).parent().parent().parent().next().show();*/
+
+	})
+
+	//"更改手机"验证手机号
+	function checkTelephone(obj){  
+		var reg= /^[1][358]\d{9}$/; //验证手机号码  
+		var phone=$(".c_new_tel").val();
+			if(phone==""){
+				$(".c_tel_msg_a").css({'float':'none'});
+				$(".c_get_codemobile").css({'margin-right':'-23px'});
+				$(".c_tel_msg_a").html("请输入手机号码");
+			}else{
+				if(!reg.test(phone)){  
+					$(".c_get_codemobile").css({'margin-right':'-11px'});
+					$(".c_tel_msg_a").css({'float':'none'});
+					$(".c_tel_msg_a").html("手机号码格式错误");
+				}else{
+					$(".c_tel_msg_a").css({'float':'right'});
+					$(".c_get_codemobile").css({'margin-right':'249px'});
+					$(".c_tel_msg_a").html("");
+				}
+			} 
+	}
+    // 更换邮箱验证邮箱
+	function checkemail(obj){  
+		var reg=/^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/; //验证邮箱 
+		var phone=$(".c_new_email").val();
+			if(phone==""){
+				$(".c_tel_msg_b").html("请输入邮箱");
+				return false;
+			}else{
+				if(!reg.test(phone)){  
+					$(".c_tel_msg_b").html("邮箱格式错误");
+					return false;
+				}else{
+					$(".c_tel_msg_b").html("");
+					return true;
+				}
+			} 
+	}
+
+
+	$(".c_new_tel").blur(function(){
+		checkTelephone($(this));
+	})
+	$(".c_new_email").blur(function(){
+		checkemail($(this));
+	})
+	//获取短信验证码
+	var validCode=true;
+	var validCode1=true;
+	$(".c_get_codemobile").click (function() {
+		checkTelephone($(this));
+		if(validCode1){
+			validCode1=false;
+			$('.y_account_div_a').unbind("click");
+			var time=30;
+			var code=$(this);
+			info=$(this).attr('info');
+			uid=$(this).attr('uid');
+			cuowu=$(".c_tel_msg_a").html();
+			newphone=$('.c_new_tel').val();
+			if(cuowu==""){
+				$.post("__ROOT__/user/panduan",{newmobile:newphone,val:info,uid:uid},function(data){
+					//alert(data);
+					if(data!=0){
+						var t=setInterval(function  () {
+							time--;
+							code.html(time+"秒");
+							if (time==0) {
+								clearInterval(t);
+								code.html("获取短信验证码");
+								validCode1=true;
+								$('.y_account_div_a').bind("click",foo);
+							}
+						},1000)
+						code.parent().next().css({'display':'block'});
+						code.next().css({'display':'block'});
+					}else{
+						$(".c_tel_msg_a").css({'float':'none'});
+						$(".c_get_codemobile").css({'margin-right':'-23px'});
+						$(".c_tel_msg_a").html("该手机已绑定！");
+						validCode1=true;
+					}
+				});				
+			}else{
+				validCode1=true;
+			}
+		}
+	}) 
+
+    // 获取邮箱验证码
+	$('.tijiao').click(function(){
+		cuowu=$(".c_tel_msg_b").html();
+		if(cuowu==""){
+			newemail=$('.c_new_email').val();
+			if(newemail!=""){
+				yan=$(this).attr('index');	
+				$.post("__ROOT__/user/panduan",{newemail:newemail,val:yan,uid:uid},function(data){
+					//alert(data);
+					if(data==0){
+						$(".c_tel_msg_b").html("该邮箱已绑定！");
+					}else{
+						//alert(data);
+						$('.tijiao').parent().parent().parent().hide();
+						$('.secondemail').show();
+						$('.newemail').html(newemail);
+						$('.qu').attr('href',"http://mail."+data);
+					}
+				})	
+			}
+		}
+	})
+
+	$('.c_resentemail').click(function(){
+		$.post("__ROOT__/user/panduan",{val:val,info:emailinfo,uid:uid},function(data){
+
+	})
+})
+
+	
+})
+</script>
+<div class="R-content">
+        <include file="./index/user.shezhi"/>
+	<div class="prompt orange">完善以下资料，{:C('web_name_two')}不会以任何形式公开您的个人隐私，请放心填写！<s></s></div>
+	<div class="info">
+		<table border="0" cellpadding="0" cellspacing="8">
+			<tr>    <if condition="($huiyuan['mobile'] neq null) AND ($huiyuan['mobilecode'] eq '1') ">		
+				<td align="right"><em><font>*</font><label>手机：</label></em></td>
+				<td style='width:300px'>
+					<b calss="mobilecode">{$huiyuan['mobile']}</b> 
+					 已验证
+				</td>
+				
+				<else />
+				<td align="right"><em><font>*</font><label>手机：</label></em></td>
+				<td>
+					<a style="margin-left:0;" href="__ROOT__/user/mobilechecking" title="绑定手机">绑定手机</a>
+				</td>
+				</if>
+			</tr>
+			<tr>
+                                <if condition="($huiyuan['email'] neq null) AND ($huiyuan['emailcode'] eq '1') ">		
+				<td align="right"><em><font>*</font><label>邮箱：</label></em></td>
+				<td style='width:300px'>
+					<b>{$huiyuan['email']}</b> 
+					 已验证
+					<div class="y_account_div_a" style='display:inline' index="email" emailinfo="{$huiyuan['email']}" uid="{$huiyuan['uid']}">
+						<a href="javascript:void(0);">修改</a>
+					</div>
+				</td>
+				<td>
+					<div class="c_update_detail email">
+						<!-- 第一步 -->
+						<div class="c_update_way">
+							<div class="c_by_way" style="display:block;">
+								<!-- 第一步 -->
+								<div class="c_mobile_valid first" style="padding-left:50px;margin-right:300px">
+									<dl class="c_tel_info c_set_pwd">
+										<dd>
+											<label style="display:inline-block;width:84px;text-align:right;">填写新邮箱</label>
+											<input type="text" class="c_new_email c_email_number"/>
+											<span class="c_tel_msg_b c_email_msg" style="width:360px;color:red"></span>
+										</dd>
+										<dd><input type="button" class="c_mobile_confirm tijiao" value="提交" index="email"></dd>				
+									</dl>
+								</div>
+								<!-- 第二步 -->
+								<div class="c_mobile_valid secondemail" style="display:none">
+									<div class="c_mobile_info" style="width:690px;margin-left:0;">我们给你的邮箱<a href="javascript:;" style="color:#0697da;display:inline;" class="newemail"></a>发送了一封验证邮件
+									<p>注意：原邮箱已不可用，若不去新邮箱激活，则需重新<a href="__ROOT__/member/user/login">登陆</a></p>
+									</div>
+									<a href='' class='c_mobile_confirm qu' style='color:#fff;text-align:center;line-height:34px'>去邮箱查看</a>
+								</div>
+								<!-- 第三步 -->
+							</div>
+						</div>
+					</div>
+				</td>
+				<else/>
+				<td align="right"><em><font>*</font><label>邮箱：</label></em></td>
+				<td>
+					<a style="margin-left:0;" href="__ROOT__/user/mailchecking" title="绑定邮箱">绑定邮箱</a>
+				</td>
+				</if>
+			</tr>
+			<tr>
+                                 <if condition="($huiyuan_qq['b_id'] neq null) OR ($huiyuan_qq['b_type'] eq 'qq') ">		
+				<td align="right"><em><font>*</font><label>QQ：</label></em></td>
+				<td>
+					 已绑定
+				</td>
+				<else />
+				<td align="right"><em><font>*</font><label>QQ：</label></em></td>
+				<td>
+					<a style="margin-left:0;" href="__ROOT__/user/qqclock" title="请绑定qq">请绑定qq</a>
+				</td>
+				</if>
+			</tr>
+	<form class="registerform" method="post" action="__ROOT__/user/nicheng">
+			<tr>
+				<td align="right"><em><font>*</font><label>昵称：</label></em></td>
+				<td>
+					<input id="nicxx" datatype="nic" nullmsg="昵称不能为空" name="txtnicheng" value="{$huiyuan['username']}" type="text"  class="txt gray" maxlength="20" />					
+				</td>					
+				<td><div class="Validform_checktip">昵称为2-20个汉字、字母、数字、“_”字符组成</div></td>
+			</tr>
+			<tr>
+				<td align="right"><em><font>&nbsp;</font><label>签名：</label></em></td>
+                                 <if condition="($huiyuan['qianming'] eq null)">		
+				<td><textarea name="qianming" class="info_txtarea gray03" >让别人看到不一样的你！</textarea></td>
+				<else/>
+				<td><textarea name="qianming" class="info_txtarea gray03" >{$huiyuan['qianming']}</textarea></td>
+				</if>
+			</tr>
+			<tr>
+				<td><em>&nbsp;</em></td>
+				<td><input name="submit" type="submit" class="bluebut" value="保存"></td>
+			</tr>
+		</table>
+	</form>	
+	</div>
+</div>
+</div>
+
+<include file="./index/index.footer"/>

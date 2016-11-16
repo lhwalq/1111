@@ -1,0 +1,13 @@
+@charset "utf-8";
+input, select {background: #fff;}
+select {-webkit-appearance: menulist;}
+.registerform {padding: 10px 2px 15px 5px;position: relative;}
+.registerform table {width: 100%;}
+.registerform table td {font-size: 13px;line-height: 42px;color: #666;}
+.registerform input, .registerform select {border: 1px solid #ddd;border-radius: 5px;padding: 5px 6px;line-height: 19px;height: 19px;display: inline-block;}
+.registerform select {line-height: 31px;height: 31px;padding: 5px 0 5px 2px;max-width: 78px;}
+.registerform input[type="submit"],.registerform input[type="button"] {background: #f60;border: 1px solid #f60;width: 100%;color: #fff;height: 36px;font-size: 15px;}
+.m_checktip {display: none;}
+.address_info{padding: 13px 10px;}
+.address_info lable{float: left; width: 75px; margin: 12px 0px 0px 0px;}
+.address_info li {font-size: 15px;line-height: 34px;padding:2px 0 2px 5px;border-bottom: 1px dashed #ddd;color: #666;white-space: nowrap;}

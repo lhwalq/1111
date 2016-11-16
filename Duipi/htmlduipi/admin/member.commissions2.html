@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+        <link rel="stylesheet" href="__PUBLIC__/plugin/style/global/css/global.css" type="text/css"/>
+        <link rel="stylesheet" href="__PUBLIC__/plugin/style/global/css/style.css" type="text/css"/>
+        <style>
+            tbody tr{ line-height:30px; height:30px;} 
+        </style>
+    </head>
+    <body>
+        <div class="header lr10">
+            {:R('admin/headerment',array($ment))}
+        </div>
+        <div class="bk10"></div>
+        <div class="table-list lr10">
+            <!--start-->
+            <table width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th width="100px" align="center">时间</th>
+                        <th width="100px" align="center">UID</th>
+                        <th width="100px" align="center">商品ID</th>
+                        <th width="100px" align="center">金额</th>
+                        <th width="100px" align="center">佣金</th>
+                        <th width="100px" align="center">关联帐号1级</th>
+                        <th width="100px" align="center">关联帐号2级</th>
+                        <th width="100px" align="center">关联帐号3级　</th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($commissions as $key=>$v){ ?>
+                    <tr>
+                        <td align="center"><?php echo date('Y-m-d',$v['time']); ?></td>
+                        <td align="center"><?php echo $v['uid']; ?></td>	
+                        <td align="center"><?php echo $v['shopid']; ?></td>	
+                        <td align="center"><?php echo $v['ygmoney']; ?></td>	
+                        <td align="left"><?php  if($v[yaoqing3]&&$v[yaoqing2]&&$v[yaoqing]){echo $v['ygmoney']*$configss[fufen_yongjin];}else if(!$v[yaoqing3]&&$v[yaoqing2]&&$v[yaoqing]){echo $v['ygmoney']*$configss[fufen_yongjin2];}else{echo $v['ygmoney']*$configss[fufen_yongjin3];}
+                            ?></td>	
+                        <td align="center"><?php if($v[yaoqing]){echo '上1级uid:'.$v[yaoqing];}else{echo 无上1级关联;}; ?></td>
+                        <td align="center"><?php if($v[yaoqing2]){echo '上2级uid:'.$v[yaoqing2];}else{echo 无上2级关联;}; ?></td>	
+                        <td align="center"><?php if($v[yaoqing3]){echo '上3级uid:'.$v[yaoqing3];}else{echo 无上3级关联;}; ?></td>
+
+
+
+                    </tr>
+                    <?php } ?>
+
+                </tbody>
+
+            </table>
+        </div><!--table-list end-->
+        <div id="pages"><ul><li>共 <?php echo $zongji; ?> 条</li><?php echo $fenye->show('one','li'); ?></ul></div>
+        <script>
+        </script>
+    </body>
+</html> 

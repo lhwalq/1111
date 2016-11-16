@@ -1,0 +1,149 @@
+<include file="./index/index.header"/>
+<div class="main-content clearfix">
+<include file="./index/member.left"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/piyungou/css/layout-records.css"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/piyungou/css/layout-invitation.css"/>
+              <div class="R-content">
+            <div class="member-t"><h2>使用佣金充值到账户明细</h2></div>
+            <div class="total">
+        	    <dt>
+		 
+            	    </dt><dd>佣金余额：<b class="orange">{$hh[yongjin]}</b>元</dd><dd><a href="__ROOT__/user/cashout" title="申请提现" class="bluebut">申请提现</a><a href="__ROOT__/user/cashout" title="充值到云购账户" class="orangebut">充值到云购账户</a></dd>
+                
+                <dd class="gray02">佣金余额可实时充值到您的云购帐户，满100元时才可申请提现。</dd>
+		    </div>
+<!--             <div class="record-tit">
+			    <div class="record-tab">
+				    <a href="javascript:void();" class="record-cur">全部</a><a href="javascript:void();">今天</a><a href="javascript:void();">本周</a><a href="javascript:void();">本月</a><a href="javascript:void();">最近三个月</a>
+			    </div>
+			    
+		    </div> -->
+            <div id="divCommissionList" class="list-tab commission gray02"><ul class="listTitle"><li class="w140">用户</li><li class="w150">时间</li><li class="w280">描述</li><li class="w90">佣金(元)</li></ul>
+		
+			 <if condition="$recodetotal neq 0"> 
+			 <foreach name="recodearr" item="val" key="key" >
+				
+				<?php
+				$tupian=D("yonghu")->where(array('uid'=>$val[uid]))->find();
+			
+?>
+			<ul>
+			
+			<li class="w140"><a href="__ROOT__/user/uname/d/{:R('base/idjia',array($val['uid']))}" target="_blank"><img src= "<if condition='$tupian[img] eq null'>__PUBLIC__/images/prmimg.jpg<else />__PUBLIC__/uploads/{$tupian[img]}</if>" alt="" border="0"></a><a href="__ROOT__/user/uname/d/{:R('base/idjia',array($val['uid']))}" target="_blank" class="blue">{:R("base/huode_user_name",array($val['uid']))}</a></li>
+			<li class="w150">{$val['time']|date='Y-m-d H:i:s',###}</li><li class="w280"><if condition="$uid==$val['uid']">{$val['content']}<else /><a target="_blank" href="__ROOT__/goods/items/goodsId/{$val['shopid']}.html" title="{$val['content']}" class="blue">{$val['content']}</a></if></li><li class="w90 orange"><if condition="$uid eq $val['uid']">-<else />+</if>{$val['money']}</li>
+			</ul>
+			 </foreach>
+			
+			<else />
+			
+			</div>
+			 <div class="tips-con"><i></i>您还未有邀请谁哦</div></div>
+			 
+			 </if>
+            <div id="divPageNav" class="page_nav"></div>
+        </div>
+    </div>
+<style>
+  .goods_show li{
+    color:#7D7D7D;
+	float:left;
+	width:194px;
+	    
+  }
+  .goods_show li .ms{    
+	 width:10px;  
+  }
+  
+ .goods_show li a{
+    color:#22AAFF;
+	border-bottom:1px solid #22AAFF;
+  }
+</style>
+<script>
+$(function(){
+	$(".subMenu a").click(function(){
+		var id=$(".subMenu a").index(this);
+		$(".subMenu a").removeClass().eq(id).addClass("current");
+		$(".R-content .topic").hide().eq(id).show();
+	});
+})
+function shaidan(id){
+	if(confirm("您确认要删除该条信息吗？")){
+		window.location.href="__ROOT__/index/shaidandel/id/"+id;
+	}
+	//FixedConfirm('你确定要删除？',240);
+}
+/*$("#btnShow6").click(function(){
+		FixedConfirm('你确定要删除？',240);
+});*/
+function FixedConfirm(content,minwidth){
+	var div=FixedStar();
+		div+='<div id="foucs_close"></div>';
+		div+='<div id="foucs_main">';
+		div+='<div class="title" style="display:black">提示</div>';
+		div+='<div class="content"><div class="PopMsgC"  style="display:black"><s></s>'+content+'</div>';
+		div+='<div class="PopMsgbtn" style="display:black">';
+		div+='<a class="orangebut" id="btnMsgOK" href="javascript:;">确认</a>&nbsp;&nbsp;';
+		div+='<a class="cancelBtn" id="btnMsgCancel" href="javascript:;">取消</a>';
+		div+='</div></div></div>';
+		div+='</div>';	
+	$("body").append(div);
+	Fixed(minwidth);
+	FixedClose();
+}
+$(function(){
+	$(window).resize(function(){
+		Fixed();
+	})
+})
+//关闭弹窗
+function FixedClose(){
+	$("#foucs_close,#page_close,#btnMsgCancel").click(function(){		
+		$("#foucs_big,#foucs_min,#w3foucs").fadeOut(200,function(){
+			$("#foucs_big,#foucs_min,#w3foucs").remove();
+		});		
+	})
+};
+function FixedStar(){
+	var div='<div id="foucs_big"></div>';
+		div+='<div id="foucs_min"></div>';
+		div+='<div id="w3foucs">';
+	return div;
+}
+function Fixed(w,h){
+	var bigheight=document.body.clientHeight,
+	    bigwidth=document.body.clientWidth;
+	var big=$("#foucs_big"),	
+	    min=$("#foucs_min");
+	var w3foucs=$("#w3foucs");
+	if(w==null){
+		if(w3foucs.text()!=null){
+			w = w3foucs.width();
+		}else{
+			w = 200;
+		}
+	}	
+	if(h==null){
+		var h = w3foucs.height();
+	}   
+	big.height(bigheight);	
+    big.width(bigwidth); 
+    big.fadeTo(500,0.5);
+	min.width(w+14); 
+    min.height(h+14); 
+    min.fadeTo(500,0.5);
+	
+	w3foucs.css("height",h);
+	w3foucs.width(w);
+    var t = ($(window).height()/2) - (h/2);
+    if(t < 0) t = 0;
+    $("#w3foucs,#foucs_min").css({display:"block",position:"fixed"});
+	$("#foucs_close").css({display:"block"});
+    var l = ($(window).width()/2) - (w/2);
+    if(l < 0) l = 0;   
+    $("#foucs_min").css({left: l-5+'px', top: t-5+'px'});
+    w3foucs.css({left: l+'px', top: t+'px'});
+}
+</script>
+</div>
+<include file="./index/index.footer"/>

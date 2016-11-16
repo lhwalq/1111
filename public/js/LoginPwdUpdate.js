@@ -1,0 +1,1 @@
+Base.getScript(pub+"/js/LoginPwdUpdateFun.js?v=151202");

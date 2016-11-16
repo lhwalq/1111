@@ -1,0 +1,1 @@
+Base.getScript(pub+"/js/MyCart/js/Indexfun.js?v=151106");

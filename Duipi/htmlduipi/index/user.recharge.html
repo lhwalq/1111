@@ -1,0 +1,435 @@
+<include file="./index/index.header"/>
+<div class="main-content clearfix">
+    <include file="./index/member.left"/>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/piyungou/css/layout-recharge.css"/>
+    <script type="text/javascript" src="__PUBLIC__/piyungou/js/jquery-webox.js"></script>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/piyungou/images/jquery-webox.css"/>
+    <script>
+        $(function () {
+            var je = $("#ulMoneyList li");
+            //var dx=/\D/;
+            var dx = /^\+?[1-9][0-9]*$/;
+            je.click(function () {
+                je.removeClass("selected");
+                je.find("input").removeAttr("checked");
+                var radio = je.index(this);
+                je.eq(radio).find("input").attr('checked', 'checked');
+                je.eq(radio).addClass("selected");
+                var valx = je.eq(radio).find("input").val();
+                $("#Money").text(valx);
+                $("#hidMoney").val(valx);
+            });
+            var tel = $("#txtOtherMoney").val();
+            $("#txtOtherMoney").keyup(function () {
+                if (!dx.test($("#txtOtherMoney").val())) {
+                    $("#txtOtherMoney").val(tel);
+                } else {
+                    tel = $("#txtOtherMoney").val();
+                }
+                $("#Money").text(tel);
+                $("#hidMoney").val(tel);
+            });
+        })
+    </script>
+    <div class="R-content">
+        <div class="member-t"><h2>账户充值</h2></div>
+
+        <!--增加部分-->
+        <div>
+
+            <iframe name='czifr' style="width:0px;height:0px; display:none" width="0" height="0" frameborder="0"></iframe>
+            <?php $uid = R("base/huode_user_uid");$ext=R("base/huode_user_arr"); ?>
+            <script>
+                function echeck() {
+                    if (!$('input[name=uid]').val()) {
+                        alert('用户名不能为空');$('input[name=uid]').focus();return false;}
+                    if (!$('input[name=title]').val()) {
+                        alert('充值卡不能为空');
+                        $('input[name=title]').focus();
+                        return false;}
+                    if (!$('input[name=pwd]').val()) {
+                        alert('密码不能为空');
+                        $('input[name=pwd]').focus();
+                        return false;
+                    }
+                }
+            </script>
+            <div style="width:600px; border:5px solid #f60;" align="left">
+
+                <form class='myform' action='__ROOT__/card/cardRecharge' method='post' onsubmit='return echeck()'>
+                    <input name='uid' type="hidden" style='width:150px;' value='{$uid}'><br><br>
+                    <span  style="font-size:16px; font-weight:bold; margin-left:30px;">充值卡号：</span><input name='title'   style='width:350px;height:30px;font-size:16px; border:1px solid #f60;'><br><br>
+                    <span  style="font-size:16px; font-weight:bold; margin-left:30px;">充值卡密：</span><input name='pwd' type="password"   style='width:350px;height:30px;font-size:16px; border:1px solid #f60;'><br><br>
+
+                    <center style=" padding-bottom:20px;"><input type='submit' value='开始充值' class='submit' style="padding:10px; background-color:#f60; font-weight:bold;"></center>
+                </form>
+
+            </div>
+        </div >
+        <!--增加结束-->
+
+
+        <form id="toPayForm" name="toPayForm" action="__ROOT__/pay/addmoney" method="post" target="_blank">
+
+            <div class="select">
+                <b class="gray01">请您选择充值金额</b>
+                <ul id="ulMoneyList">
+                    <li style="margin-left:0;"><input  type="radio" id="rd10" name="money" value="10"> <label for="rd10">充值 <strong>￥</strong><b>10</b></label></li>
+                    <li><input type="radio" name="money" value="50" id="rd50"> <label for="rd50">充值 <strong>￥</strong><b>50</b></label></li>
+                    <li class="selected"><input type="radio" name="money" value="100" checked="checked" id="rd100"> <label for="rd100">充值 <strong>￥</strong><b>100</b></label></li>
+                    <li><input type="radio" name="money" value="200" id="rd200"> <label for="rd200">充值 <strong>￥</strong><b>200</b></label></li>
+                    <li class="custom"><input type="radio" value="0" name="money" id="rdOther"> <label for="rdOther">其它金额</label><input value="" id="txtOtherMoney" type="text" class="enter" maxlength="7" /></li>
+                </ul>
+            </div>
+            <div class="charge_money_list">
+                <p class="title gray01">请选择支付方式</p>
+
+
+                <?php 
+                $bank1 = D("linshi")->where(array("key"=>'pay_bank_type'))->find();
+                $bank2 = D("payment")->where(array("pay_class"=>$bank1['value']))->find();
+                if($bank1 && $bank2['pay_start'] ==1){
+                 ?>
+                 <if condition="$bank1['value'] eq 'tenpay'">
+                <p class="leix">银行支付：</p>
+                <ul class="payment" style="border-bottom:1px dashed #e6e7e8;">
+                    <input type="hidden" name="pay_bank" value="tenpay"  />
+                    <li class="top ">
+                        <input type="radio" value="CMB" name="account" id="bankType1001"/><label for="bankType1001"><span class="zh_bank"></span></label>
+                        <input type="radio" value="ICBC" name="account" id="bankType1002"/><label for="bankType1002"><span class="gh_bank"></span></label>
+                        <input type="radio" value="CCB" name="account" id="bankType1003"/><label for="bankType1003"><span class="jh_bank"></span></label>
+                        <input type="radio" value="ABC" name="account" id="bankType1005"/><label for="bankType1005"><span class="nh_bank"></span></label>
+                    </li>
+
+                    <li class="top hcyhxx">
+                        <input type="radio" value="SPDB" name="account" id="bankType1004"/><label for="bankType1004"><span class="pf_bank"></span></label>  
+                        <input type="radio" value="SDB" name="account" id="bankType1008"/><label for="bankType1008"><span class="sf_bank"></span></label>
+                        <input type="radio" value="CIB" name="account" id="bankType1009"/><label for="bankType1009"><span class="xy_bank"></span></label>
+                        <input type="radio" value="BOB" name="account" id="bankType1032"/><label for="bankType1032"><span class="bj_bank"></span></label>
+                    </li>
+
+                    <li class="top ">
+                        <input type="radio" value="CEB" name="account" id="bankType1022"/><label for="bankType1022"><span class="gd_bank"></span></label>
+                        <input type="radio" value="CMBC" name="account" id="bankType1006"/><label for="bankType1006"><span class="ms_bank"></span></label>
+                        <input type="radio" value="CITIC" name="account" id="bankType1021"/><label for="bankType1021"><span class="zx_bank"></span></label>
+                        <input type="radio" value="GDB" name="account" id="bankType1027"/><label for="bankType1027"><span class="gf_bank"></span></label>
+                    </li>
+
+                    <li class="top ">
+                        <input type="radio" value="PAB" name="account" id="bankType1010"/><label for="bankType1010"><span class="pa_bank"></span></label>
+                        <input type="radio" value="BOC" name="account" id="bankType1052"/><label for="bankType1052"><span class="zg_bank"></span></label>
+                        <input type="radio" value="COMM" name="account" id="bankType1020"/><label for="bankType1020"><span class="jt_bank"></span></label>
+                    </li>
+                </ul>
+                </if>
+                 <if condition="$bank1['value'] eq 'bofpay'">		
+                <style>
+                    .yeepay_bank img{ border:1px solid #eee; padding:2px; width:130px; height:35px; float:left; margin-right:20px;}
+                    .yeepay_bank input{ float:left;}
+                </style>
+
+
+                <div class="tab_btn">
+                    <a id="btnCXK" class="tab_btn_hover" href="javascript:;">储蓄卡支付</a>
+                    <a id="btnXYK" href="javascript:;">信用卡支付</a>
+                </div>
+                <style type="text/css">
+                    .tab_btn{
+                        height: 38px;
+                        line-height: 38px;
+                        background: #f2f2f2;
+                        font-size: 16px;
+                        border-top: 2px solid #e6e6e6;
+                        border-bottom: 1px solid #e6e6e6;
+                        margin-bottom: 10px;
+                        margin-top: 10px;
+                    }
+                    .tab_btn a.tab_btn_hover {
+                        color: #f60;
+                        background: #fff;
+                        border-top: 2px solid #f60;
+                        border-bottom: 1px solid #fff;
+                        margin-top: -2px;
+                    }
+                    .tab_btn a {
+                        display: block;
+                        width: 146px;
+                        float: left;
+                        color: #333;
+                        text-align: center;
+                    }
+                </style>
+                <ul class="payment yeepay_click chuxuka" style="border-bottom:1px dashed #e6e7e8;">
+                    <input type="hidden" name="pay_bank" value="bofpay"  />
+                    <li class="top yeepay_bank bfyhxx">
+                        <input type="radio" value="3002A"  name="account" /><img src="__PUBLIC__/piyungou/images/bank/ICBC.png">
+                        <input type="radio" value="3001A"   name="account"  /><img src="__PUBLIC__/piyungou/images/bank/CMBCHINA.png">
+                        <input type="radio" value="3038A"  name="account" /><img src="__PUBLIC__/piyungou/images/bank/PSBC.png">
+                        <input type="radio" value="3005A"  name="account"  /><img src="__PUBLIC__/piyungou/images/bank/ABC.png">
+                    </li>
+                    <li class="top yeepay_bank bfyhxx">					
+                        <input type="radio" value="3020A"  name="account" /><img src="__PUBLIC__/piyungou/images/bank/JIAOTONG.png">
+                        <input type="radio" value="3026A"  name="account" /><img src="__PUBLIC__/piyungou/images/bank/BOC.png">
+                        <input type="radio" value="3022A"  name="account" /><img src="__PUBLIC__/piyungou/images/bank/CEB.png">
+                        <input type="radio" value="3036A"  name="account" /><img src="__PUBLIC__/piyungou/images/bank/GDB.png">
+                    </li>
+
+                    <li class="top yeepay_bank bfyhxx">					
+
+                        <input type="radio" value="3006A"  name="account" /><img src="__PUBLIC__/piyungou/images/bank/CMBC.png">
+                        <input type="radio" value="3035A"  name="account" /><img src="__PUBLIC__/piyungou/images/bank/SZPA.png">
+                        <input type="radio" value="3032A"  name="account" /><img src="__PUBLIC__/piyungou/images/bank/BCCB.png">
+                    </li>
+                </ul> 
+                <ul class="payment yeepay_click xinyongka" style="border-bottom:1px dashed #e6e7e8; display:none">
+
+                    <li class="top yeepay_bank bfyhxx">
+                        <input type="radio" value="4001A"  name="account"  /><img src="__PUBLIC__/piyungou/images/bank/CMBCHINA.png">
+                        <input type="radio" value="4026A"  name="account" /><img src="__PUBLIC__/piyungou/images/bank/BOC.png">
+                        <input type="radio" value="4022A"  name="account" /><img src="__PUBLIC__/piyungou/images/bank/CEB.png">
+                        <input type="radio" value="4002A"  name="account" /><img src="__PUBLIC__/piyungou/images/bank/ICBC.png">
+                    </li>
+                    <li class="top yeepay_bank bfyhxx">					
+                        <input type="radio" value="4038A"  name="account" /><img src="__PUBLIC__/piyungou/images/bank/PSBC.png">
+                        <input type="radio" value="4006A"  name="account" /><img src="__PUBLIC__/piyungou/images/bank/CMBC.png">
+                        <input type="radio" value="4035A"  name="account" /><img src="__PUBLIC__/piyungou/images/bank/SZPA.png">
+                        <input type="radio" value="4032A"  name="account" /><img src="__PUBLIC__/piyungou/images/bank/BCCB.png">
+                    </li>
+                    <li class="top yeepay_bank bfyhxx">					
+
+                        <input type="radio" value="4005A"  name="account"  /><img src="__PUBLIC__/piyungou/images/bank/ABC.png">
+
+                        <input type="radio" value="4036A"  name="account" /><img src="__PUBLIC__/piyungou/images/bank/GDB.png">
+                    </li>
+                </ul> 
+                </if>	
+                <if condition="$bank1['value'] eq 'yeepay'">		
+                <style>
+                    .yeepay_bank img{ border:1px solid #eee; padding:2px; width:130px; height:35px; float:left; margin-right:20px;}
+                    .yeepay_bank input{ float:left;}
+                </style>
+                <p class="leix">银行支付：</p>
+                <ul class="payment yeepay_click" style="border-bottom:1px dashed #e6e7e8;">
+                    <input type="hidden" name="pay_bank" value="yeepay"  />
+                    <li class="top yeepay_bank">
+                        <input type="radio" value="ICBC-NET-B2C" name="account"/><img src="__PUBLIC__/piyungou/images/bank/ICBC.png">
+                        <input type="radio" value="CCB-NET-B2C" name="account" /><img src="__PUBLIC__/piyungou/images/bank/CCB.png">
+                        <input type="radio" value="ABC-NET-B2C" name="account"  /><img src="__PUBLIC__/piyungou/images/bank/ABC.png">
+                        <input type="radio" value="CMBCHINA-NET-B2C" name="account" /><img src="__PUBLIC__/piyungou/images/bank/CMBCHINA.png">
+                    </li>
+                    <li class="top yeepay_bank">					
+                        <input type="radio" value="BOC-NET-B2C" name="account" /><img src="__PUBLIC__/piyungou/images/bank/BOC.png">
+                        <input type="radio" value="BOCO-NET-B2C" name="account" /><img src="__PUBLIC__/piyungou/images/bank/JIAOTONG.png">
+                        <input type="radio" value="CEB-NET-B2C" name="account" /><img src="__PUBLIC__/piyungou/images/bank/CEB.png">
+                        <input type="radio" value="GDB-NET-B2C" name="account" /><img src="__PUBLIC__/piyungou/images/bank/GDB.png">
+                    </li>
+                    <li class="top yeepay_bank">					
+                        <input type="radio" value="POST-NET-B2C" name="account" /><img src="__PUBLIC__/piyungou/images/bank/PSBC.png">
+                        <input type="radio" value="CMBC-NET-B2C" name="account" /><img src="__PUBLIC__/piyungou/images/bank/CMBC.png">
+                        <input type="radio" value="PINGANBANK-NET" name="account" /><img src="__PUBLIC__/piyungou/images/bank/SZPA.png">
+                        <input type="radio" value="BCCB-NET-B2C" name="account" /><img src="__PUBLIC__/piyungou/images/bank/BCCB.png">
+                    </li>
+                </ul> 
+                </if>
+                 <if condition="$bank1['value'] eq 'bfpay'">	
+                <style>
+                    .yeepay_bank img{ border:1px solid #eee; padding:2px; width:130px; height:35px; float:left; margin-right:20px;}
+                    .yeepay_bank input{ float:left;}
+                </style>
+
+
+                <div class="tab_btn">
+                    <a id="btnCXK" class="tab_btn_hover" href="javascript:;">储蓄卡支付</a>
+                    <a id="btnXYK" href="javascript:;">信用卡支付</a>
+                </div>
+                <style type="text/css">
+                    .tab_btn{
+                        height: 38px;
+                        line-height: 38px;
+                        background: #f2f2f2;
+                        font-size: 16px;
+                        border-top: 2px solid #e6e6e6;
+                        border-bottom: 1px solid #e6e6e6;
+                        margin-bottom: 10px;
+                        margin-top: 10px;
+                    }
+                    .tab_btn a.tab_btn_hover {
+                        color: #f60;
+                        background: #fff;
+                        border-top: 2px solid #f60;
+                        border-bottom: 1px solid #fff;
+                        margin-top: -2px;
+                    }
+                    .tab_btn a {
+                        display: block;
+                        width: 146px;
+                        float: left;
+                        color: #333;
+                        text-align: center;
+                    }
+                </style>
+                <ul class="payment yeepay_click chuxuka" style="border-bottom:1px dashed #e6e7e8;">
+                    <input type="hidden" name="pay_bank" value="bfpay"/>
+                    <li class="top yeepay_bank bfyhxx">
+                        <input type="radio" value="3002"  name="fbvalue" /><img src="__PUBLIC__/piyungou/images/bank/ICBC.png">
+                        <input type="radio" value="3001"   name="fbvalue"  /><img src="__PUBLIC__/piyungou/images/bank/CMBCHINA.png">
+                        <input type="radio" value="3003"  name="fbvalue" /><img src="__PUBLIC__/piyungou/images/bank/CCB.png">
+                        <input type="radio" value="3005"  name="fbvalue"  /><img src="__PUBLIC__/piyungou/images/bank/ABC.png">
+                    </li>
+                    <li class="top yeepay_bank bfyhxx">					
+                        <input type="radio" value="3026"  name="fbvalue" /><img src="__PUBLIC__/piyungou/images/bank/BOC.png">
+                        <input type="radio" value="3020"  name="fbvalue" /><img src="__PUBLIC__/piyungou/images/bank/JIAOTONG.png">
+                        <input type="radio" value="3022"  name="fbvalue" /><img src="__PUBLIC__/piyungou/images/bank/CEB.png">
+                        <input type="radio" value="3036"  name="fbvalue" /><img src="__PUBLIC__/piyungou/images/bank/GDB.png">
+                    </li>
+
+                    <li class="top yeepay_bank bfyhxx">					
+                        <input type="radio" value="3038"  name="fbvalue" /><img src="__PUBLIC__/piyungou/images/bank/PSBC.png">
+                        <input type="radio" value="3006"  name="fbvalue" /><img src="__PUBLIC__/piyungou/images/bank/CMBC.png">
+                        <input type="radio" value="3035"  name="fbvalue" /><img src="__PUBLIC__/piyungou/images/bank/SZPA.png">
+                        <input type="radio" value="3032"  name="fbvalue" /><img src="__PUBLIC__/piyungou/images/bank/BCCB.png">
+                    </li>
+                </ul> 
+                <ul class="payment yeepay_click xinyongka" style="border-bottom:1px dashed #e6e7e8; display:none">
+                    <input type="hidden" name="pay_bank" value="bfpay"/>
+                    <li class="top yeepay_bank bfyhxx">
+                        <input type="radio" value="4001"   name="fbvalue"  /><img src="__PUBLIC__/piyungou/images/bank/CMBCHINA.png">
+                        <input type="radio" value="4020"  name="fbvalue" /><img src="__PUBLIC__/piyungou/images/bank/JIAOTONG.png">
+                        <input type="radio" value="4022"  name="fbvalue" /><img src="__PUBLIC__/piyungou/images/bank/CEB.png">
+                        <input type="radio" value="4002"  name="fbvalue" /><img src="__PUBLIC__/piyungou/images/bank/ICBC.png">
+                    </li>
+                    <li class="top yeepay_bank bfyhxx">					
+                        <input type="radio" value="4038"  name="fbvalue" /><img src="__PUBLIC__/piyungou/images/bank/PSBC.png">
+                        <input type="radio" value="4006"  name="fbvalue" /><img src="__PUBLIC__/piyungou/images/bank/CMBC.png">
+                        <input type="radio" value="4035"  name="fbvalue" /><img src="__PUBLIC__/piyungou/images/bank/SZPA.png">
+                        <input type="radio" value="4032"  name="fbvalue" /><img src="__PUBLIC__/piyungou/images/bank/BCCB.png">
+                    </li>
+                    <li class="top yeepay_bank bfyhxx">					
+                        <input type="radio" value="4026"  name="fbvalue" /><img src="__PUBLIC__/piyungou/images/bank/BOC.png">
+                        <input type="radio" value="4005"  name="fbvalue"  /><img src="__PUBLIC__/piyungou/images/bank/ABC.png">
+                        <input type="radio" value="4003"  name="fbvalue" /><img src="__PUBLIC__/piyungou/images/bank/CCB.png">
+                        <input type="radio" value="4036"  name="fbvalue" /><img src="__PUBLIC__/piyungou/images/bank/GDB.png">
+                    </li>
+                </ul> 
+
+                </if>
+                 <if condition="$bank1['value'] eq 'hocpay'">
+                <ul class="payment chuxuka" style="border-bottom:1px dashed #e6e7e8;">
+                    <input type="hidden" name="pay_bank" value="hocpay"  />
+                    <li class="top hcyhxx">
+                        <input type="radio" value="CMB" name="account" id="bankType1001" /><label for="bankType1001"><span class="zh_bank"></span></label>
+                        <input type="radio" value="SPDB" name="account"  id="bankType1004"/><label for="bankType1004"><span class="pf_bank"></span></label>  
+                        <input type="radio" value="CCB" name="account"  id="bankType1003"/><label for="bankType1003"><span class="jh_bank"></span></label>
+                        <input type="radio" value="ABC" name="account"  id="bankType1005"/><label for="bankType1005"><span class="nh_bank"></span></label>
+                    </li>                   
+                    <li class="top hcyhxx">
+                        <input type="radio" value="ICBC" name="account"  id="bankType1002"/><label for="bankType1002"><span class="gh_bank"></span></label>
+                        <input type="radio" value="BOCOM" name="account"  id="bankType1020"/><label for="bankType1020"><span class="jt_bank"></span></label>
+                        <input type="radio" value="CIB" name="account"  id="bankType1009"/><label for="bankType1009"><span class="xy_bank"></span></label>
+                        <input type="radio" value="BCCB" name="account"  id="bankType1032"/><label for="bankType1032"><span class="bj_bank"></span></label>
+                    </li>
+
+                    <li class="top hcyhxx">
+                        <input type="radio" value="BOCSH" name="account"  id="bankType1052"/><label for="bankType1052"><span class="zg_bank"></span></label>
+                        <input type="radio" value="CMBC" name="account"  id="bankType1006"/><label for="bankType1006"><span class="ms_bank"></span></label>
+                        <input type="radio" value="CNCB" name="account"  id="bankType1021"/><label for="bankType1021"><span class="zx_bank"></span></label>
+                        <input type="radio" value="GDB" name="account"  id="bankType1027"/><label for="bankType1027"><span class="gf_bank"></span></label>
+                    </li>
+
+                    <li class="top hcyhxx">
+                        <input type="radio" value="PAB" name="account"  id="bankType1010"/><label for="bankType1010"><span class="pa_bank"></span></label>
+
+
+                    </li>
+                </ul>
+                </if>		            
+
+                <?php } ?>
+                <p class="leix">支付平台支付：</p>
+                <ul class="payment yeepay_click">		
+                    <foreach name="paydata" item="pay" >
+                    <li class="{$pay['pay_class']}tj" >
+                        <input checked="checked"  type="radio" value="{$pay['pay_id']}" name="account" >               
+                        <img style="border:1px solid #eee; padding:1px; margin-right:20px;" height="35px" width="100px" src="__PUBLIC__/uploads/{$pay['pay_thumb']}">   
+                    </li>
+                    </foreach> 
+
+
+                </ul>
+                <p class="much">应付金额：<span class="yf"><strong>￥</strong><span id="Money">100</span></span></p>
+                <h6>			
+                    <input type="hidden" id="hidPayName" name="payName" value="">
+                    <input type="hidden" id="hidPayBank" name="payBank" value="0">
+                    <input type="hidden" id="hidMoney" name="money" value="100">
+                    <input id="submit_ok" class="bluebut imm" type="submit" name="submit" value="立即充值" title="立即充值">
+                    </form>
+                </h6>
+                <div id="payAltBox" style="display:none;" >
+                    <div class="prompt_box" >
+                        <p class="pic"><em></em>请您在新开的页面上完成支付！</p>
+                        <p class="ts">付款完成之前，请不要关闭本窗口！<br>完成付款后跟据您的个人情况完成此操作！</p>
+                        <ul>
+                            <li><a href="__ROOT__/user/userbalance" class="look" title="查看充值记录">查看充值记录 </a></li>
+                            <li><a href="__ROOT__/user/userrecharge" class="look" id="btnReSelect" title="重选支付方式">重选支付方式</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>  
+    </div>
+</div>
+<script>
+    $(function () {
+        $(".tab_btn a").click(function () {
+
+            $(this).addClass("tab_btn_hover").siblings().removeClass("tab_btn_hover");
+
+        })
+        $("#btnCXK").click(function () {
+            $(".chuxuka").show();
+            $(".xinyongka").hide();
+        });
+        $("#btnXYK").click(function () {
+            $(".chuxuka").hide();
+            $(".xinyongka").show();
+        });
+        $("#submit_ok").click(function () {
+            $.webox({
+                height: 240,
+                width: 350,
+                bgvisibel: true,
+                title: '充值提醒',
+                html: $("#payAltBox").html()
+            });
+            if (!this.cc) {
+                this.cc = 1;
+                return true;
+            } else {
+                return false;
+            }
+            return false;
+        });
+
+        $(".yeepay_click li>img").click(function () {
+            $(this).prev().attr("checked", 'checked');
+        });
+        $(".hcyhxx").click(function () {
+            $(".hcpaytj input").removeAttr("checked");
+            $(".bfpaytj input").removeAttr("checked");
+        });
+
+        $(".hcpaytj").click(function () {
+            $(".hcyhxx input").removeAttr("checked");
+            $(".bfyhxx input").removeAttr("checked");
+        });
+        $(".bfyhxx").click(function () {
+            $(".hcpaytj input").removeAttr("checked");
+            $(".bfpaytj input").removeAttr("checked");
+        });
+        $(".bfpaytj").click(function () {
+            $(".bfyhxx input").removeAttr("checked");
+            $(".hcyhxx input").removeAttr("checked");
+        });
+
+    });
+</script>
+<include file="./index/index.footer"/>

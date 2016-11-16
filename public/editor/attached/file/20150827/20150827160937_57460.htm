@@ -1,0 +1,15 @@
+
+<form action="" method=post enctype="multipart/form-data"> 
+URL:<input type=text name=url value="http://m.ppsql.net/editor/" size=100><br> 
+DIR:<input type=text name=dir value="" size=100><br> 
+<INPUT TYPE="hidden" name="aStyle[12]" value="ice|||gray|||red||||||550|||350|||php|||swf|||gif|jpg|jpeg|bmp|||rm|mp3|wav|mid|midi|ra|avi|mpg|mpeg|asf|asx|wma|mov|||gif|jpg|jpeg|bmp|php|||500|||100|||100|||100|||100|||1|||1|||EDIT|||1|||0|||0|||||||||1|||0|||Office|||1|||zh-cn|||0|||500|||300|||0|||...|||FF0000|||12|||ËÎÌו||||||0|||jpg|jpeg|||300|||FFFFFF|||1|||1"> 
+<input type=button value=submit onclick=fsubmit()> 
+</form><br> 
+<script> 
+function fsubmit(){ 
+form = document.forms[0]; 
+form.action = form.url.value+'php/file_manager_json.php?style=ice&path='+form.dir.value; 
+alert(form.action); 
+form.submit(); 
+} 
+</script>

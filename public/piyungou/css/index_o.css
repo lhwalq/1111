@@ -1,0 +1,29 @@
+@charset "utf-8";
+body{font-family:microsoft Yahei;min-width: 1200px;background:#fff;_width:expression(document.documentElement.clientWidth>1200?document.documentElement.clientWidth:1200);}
+em,i{font-style: normal;}
+/*椤堕儴    start*/
+.yHeader{width: 100%;}
+/*椤堕儴1    start*/
+.yHeader1{line-height: 35px;height: 35px;border-bottom: 1px solid #e5e5e5;color: #999999;font-size: 13px;background: #f2f2f2;}
+.yHeader1in{width: 1200px;margin: 0 auto;line-height: 35px;}
+.yHeader1in a{color: #999999;}
+.yHeader1in .jinshangdaifont a{color: #00A8E8;}
+.yHeader1in a:hover{color: #dd2726;text-decoration:underline;}
+.yHeader1in ul.yHeader1ul1{float: left;padding-left: 10px;}
+.yHeader1in ul.yHeader1ul1 li{margin-right: 22px;}
+.yHeader1in ul.yHeader1ul2{float: right;}
+.yHeader1in ul.yHeader1ul2 li{margin-left: 25px;}
+.yHeader1in ul li{float: left;}
+.yHeader1in ul li .yShoppingCart1 a{color:#dd2726;}
+.yHeader1in ul li.yShoppingCart{position: relative;}
+.yHeader1in ul li.yShoppingCart em{display: block;position: absolute;background: url(../images/indexicon1.png) no-repeat 0 0;width: 14px;height: 14px;top: 10px;left: 4px;}
+.yHeader1in ul li.yMobileClient{padding-left: 22px;background: url(../images/indexicon1.png) no-repeat 0 -29px;}
+.yOrange{color: #dd2726;}
+.yShoppingCart1{border-left: 1px solid #f2f2f2;border-right: 1px solid #f2f2f2;padding-left: 26px;height:35px;position: relative;z-index: 2;}
+.yShoppingCart1hover{border-left: 1px solid #e5e5e5;border-right: 1px solid #e5e5e5;border-bottom: 1px solid #f2f2f2;}
+.yShoppingCart2{display:none;width: 140px;padding-left:14px;background: #fff;border: 1px solid #e5e5e5;position: absolute;z-index: 1;top: 35px;left: -60px;}
+a.yOrangeBtn{display:inline-block;width:120px;margin:6px 0px;font-size:12px;background: #dd2726;color: #fff;-webkit-border-radius: 2px;-moz-border-radius: 2px;-ms-border-radius: 2px;-o-border-radius: 2px;border-radius: 2px;behavior: url(ie-css3.htc);height: 30px;line-height: 30px;text-align: center;}
+a.yOrangeBtn:hover{color: #fff;text-decoration: none;}
+/*椤堕儴1   end*/
+
+/*椤堕儴涓

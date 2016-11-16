@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+        <link rel="stylesheet" href="__PUBLIC__/plugin/style/global/css/global.css" type="text/css"/>
+        <link rel="stylesheet" href="__PUBLIC__/plugin/style/global/css/style.css" type="text/css"/>
+        <script src="__PUBLIC__/plugin/style/global/js/jquery-1.8.3.min.js"></script>
+    </head>
+    <body>
+        <div class="header lr10">
+            {:R('admin/headerment',array($ment))}
+        </div>
+        <div class="bk10"></div>
+        <div class="table-list lr10">
+            <table width="50%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th width="80%">权限码</th>
+                        <th width="20%">管理操作</th>
+                    </tr>
+                </thead>
+
+                <tbody id="trlist">
+                    <?php foreach($right as $key=>$do){ ?>
+                    <tr>
+                        <td width="80%" align="center"><?php echo $do; ?></td>
+                        <td width="20%" align="center">
+                            <a href="javascript:void(0)" onclick="removes(this)">[删除]</a>	        									
+                        </td>
+                    </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+        </div><!--table-list end-->
+
+        <div class="bk10"></div>
+        <div class="table-list lr10" style='margin-top: 30px'>
+            <table width="50%" cellspacing="0">
+
+                <tr>
+                    <td width="30%" align="center">添加权限码</td>
+                    <td width="70%" align="center">
+                        <select onchange="get_list_action(this.value);" id="action">
+                            <option selected="selected">请选择</option>
+                            <foreach name="name" item="v" >
+                                <option value="{$v}">{$v}</option>
+                            </foreach>
+                        </select> @ 
+                        <select id="list">
+
+                        </select>
+                        <input type="button" class="button" onClick="create_right_auto()" value=" 添加 " />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="">
+            <form name="myform" action="__ROOT__/Admin/rightSave" method="post" id="myform">
+                名称
+                <?php foreach($right as $key=>$do){ ?>
+                <input type='hidden' name='data[]' value='{$do}' />
+                <?php } ?>
+                <input type="text" name="name" value="{$rightName}"/>
+                <input type="hidden" name="id" value="{$id}" />
+                <input  type="submit" class="button" name="dosubmit" style=" margin-top:8px; margin-left:20px;" onClick="add_band()"  value=" 保存 " />
+            </form>
+            <br/>
+            <p style="color:red">
+                *格式：[标题名字]备注 否则可能不能正常分类
+            </p>
+        </div>
+
+        <script>
+            function get_list_action(v) {
+                $.getJSON("__ROOT__/admin/getClass/name/" + v, function (data) {
+                    // data = eval(data);
+                    //console.log(data.code)
+                    if (data.code == 1) {
+                        var str = "";
+                        $("#list").html("");
+                        $.each(data.data, function (i, val) {
+                            str += '<option value=' + val + '>' + val + '</option>'
+                        });
+                        $("#list").append(str);
+                    } else {
+
+                    }
+                });
+            }
+            function removes(T) {
+                var tr = $(T).parent().parent();
+                var vals = $(T).parent().prev().text();
+                console.log(vals);
+                $("input[value='" + vals + "']").remove();
+                tr.remove();
+            }
+            function create_right_auto() {
+                var v = $("#action");
+                var k = $("#list");
+                var name = v.val() + "/" + k.val();
+                var str = '<tr><td width="80%" align="center">' + name + '</td><td width="20%" align="center"><a href="javascript:void(0)" onclick="removes(this)">[删除]</a></td></tr>'
+                var str2 = "<input type='hidden' name='data[]' value='" + name + "' />"
+                $("#trlist").append(str);
+                $("#myform").prepend(str2);
+            }
+        </script>
+    </body>
+</html> 

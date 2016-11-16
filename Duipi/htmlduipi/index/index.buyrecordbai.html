@@ -1,0 +1,40 @@
+<include file="./index/index.header"/>
+<meta name="description" content="最新100条云购记录"><meta name="keywords" content="最新100条云购记录">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/piyungou/css/Comm.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/piyungou/css/ygRecord.css">
+<input name="hidBuyId" type="hidden" id="hidBuyId" value="1948496">
+<!--云购记录开始-->
+<div class="ygRecord">
+    <h3>
+        <span>最新云购记录</span><p>本页显示最新云购记录<strong>100</strong>条 <a href="__ROOT__/index/buyrecord">查看历史云购记录&gt;&gt;</a></p>
+    </h3>
+    <ul class="Record_title">
+        <li class="time">云购时间</li>
+        <li class="nem">会员账号</li>
+        <li class="name">云购商品名称</li>
+        <li class="much">云购人次<!--云购人次--></li>
+    </ul>
+    <div id="recordList">
+        <?php $n=1; ?> 
+            <foreach name="RecordList" item="Record" >
+            <?php 
+            $n++;
+            $Record['time'] = explode(".",$Record['time']);
+            if($n%2==0){
+                $class='Record_content';
+            }else{
+                $class='Record_contents';
+           }
+            ?>         
+            <ul class="{$class}">
+                <li class="time">{$Record['time'][0]|date="Y-m-d H:i:s",###}.{$Record['time'][1]}</li>
+                <li class="nem"><a class="blue" href="__ROOT__/user/uname/d/{$Record['uid']}.html" target="_blank">{$Record['username']}</a></li>
+                <li class="name"><a href="__ROOT__/goods/items/goodsId/{$Record['shopid']}.html">（第{$Record['shopqishu']}期）{:R("Base/strcut",array($Record['shopname'],60,null))}</a></li>
+                <li class="much">{$Record['gonumber']}人次</li>
+            </ul>
+        </foreach> 
+
+    </div>
+    <div class="endpage">本页显示最新云购记录<strong>100</strong>条 <a href="__ROOT__/index/buyrecord" rel="nofollow">查看历史云购记录&gt;&gt;</a></div>
+</div>
+<include file="./index/index.footer"/>

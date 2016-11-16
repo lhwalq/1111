@@ -1,0 +1,236 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0064)http://13.yiyuansha.com/admin/index.php -->
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>旺旺号不得不前进</TITLE>
+<META content=IE=edge;chrome=1 http-equiv=X-UA-Compatible>
+<META content="text/html; charset=UTF-8" http-equiv=Content-Type>
+<SCRIPT type=text/javascript src="index_files/jquery.js"></SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="index_files/jquery.validation.min.js"></SCRIPT>
+
+<SCRIPT type=text/javascript src="index_files/admincp.js"></SCRIPT>
+
+<SCRIPT type=text/javascript src="index_files/jquery.cookie.js"></SCRIPT>
+
+<SCRIPT type=text/javascript charset=utf-8 src="index_files/common.js"></SCRIPT>
+<LINK id=cssfile2 rel=stylesheet type=text/css 
+href="index_files/skin_0.css"><LINK rel=stylesheet type=text/css 
+href="index_files/perfect-scrollbar.min.css"><LINK rel=stylesheet 
+href="index_files/font-awesome.min.css"><!--[if IE 7]>
+  <link rel="stylesheet" href="http://13.yiyuansha.com/admin/templates/default/css/font/font-awesome/css/font-awesome-ie7.min.css">
+<![endif]-->
+<SCRIPT type=text/javascript 
+src="index_files/perfect-scrollbar.min.js"></SCRIPT>
+
+<SCRIPT type=text/javascript>
+SITEURL = 'http://13.yiyuansha.com/shop';
+RESOURCE_SITE_URL = 'http://13.yiyuansha.com/data/resource';
+MICROSHOP_SITE_URL = 'http://13.yiyuansha.com/microshop';
+CIRCLE_SITE_URL = 'http://13.yiyuansha.com/circle';
+ADMIN_TEMPLATES_URL = 'http://13.yiyuansha.com/admin/templates/default';
+LOADING_IMAGE = "http://13.yiyuansha.com/admin/templates/default/images/loading.gif";
+//换肤
+cookie_skin = $.cookie("MyCssSkin");
+if (cookie_skin) {
+	$('#cssfile2').attr("href","http://13.yiyuansha.com/admin/templates/default/css/"+ cookie_skin +".css");
+}
+</SCRIPT>
+
+<META name=GENERATOR content="MSHTML 8.00.6001.23636"></HEAD>
+<BODY>
+<DIV id=append_parent></DIV>
+<DIV id=ajaxwaitid></DIV>
+<SCRIPT type=text/javascript src="index_files/jquery.mousewheel.js"></SCRIPT>
+
+<DIV class=page>
+<DIV class=fixed-bar>
+<DIV class=item-title>
+<H3>系统信息<!--上次登录的时间：2015-03-05 02:35:05--></H3></DIV></DIV>
+<DIV class=fixed-empty></DIV>
+<DIV class=info-panel>
+<DL class=member>
+  <DT>
+  <DIV class=ico><I></I><SUB title=会员总数><SPAN><EM 
+  id=statistics_member></EM></SPAN></SUB></DIV>
+  <H3>会员</H3>
+  <H5>新增会员/预存款提现</H5></DT>
+  <DD>
+  <UL>
+    <LI class="w50pre normal"><A 
+    href="http://13.yiyuansha.com/admin/index.php?act=member&amp;op=member">本周新增<SUB><EM 
+    id=statistics_week_add_member></EM></SUB></A></LI>
+    <LI class="w50pre none"><A 
+    href="http://13.yiyuansha.com/admin/index.php?act=predeposit&amp;op=pd_cash_list">预存款提现<SUB><EM 
+    id=statistics_cashlist>0</EM></SUB></A></LI></UL></DD></DL>
+<DL class=shop>
+  <DT>
+  <DIV class=ico><I></I><SUB title=新增店铺数><SPAN><EM 
+  id=statistics_store></EM></SPAN></SUB></DIV>
+  <H3>店铺</H3>
+  <H5>新开店铺审核</H5></DT>
+  <DD>
+  <UL>
+    <LI class="w20pre none"><A 
+    href="http://13.yiyuansha.com/admin/index.php?act=store&amp;op=store_joinin">开店审核<SUB><EM 
+    id=statistics_store_joinin>0</EM></SUB></A></LI>
+    <LI class="w20pre none"><A 
+    href="http://13.yiyuansha.com/admin/index.php?act=store&amp;op=store_bind_class_applay_list&amp;state=0">类目申请<SUB><EM 
+    id=statistics_store_bind_class_applay>0</EM></SUB></A></LI>
+    <LI class="w20pre none"><A 
+    href="http://13.yiyuansha.com/admin/index.php?act=store&amp;op=reopen_list&amp;re_state=1">续签申请<SUB><EM 
+    id=statistics_store_reopen_applay>0</EM></SUB></A></LI>
+    <LI class="w20pre none"><A 
+    href="http://13.yiyuansha.com/admin/index.php?act=store&amp;op=store&amp;store_type=expired">已到期<SUB><EM 
+    id=statistics_store_expired>0</EM></SUB></A></LI>
+    <LI class="w20pre none"><A 
+    href="http://13.yiyuansha.com/admin/index.php?act=store&amp;op=store&amp;store_type=expire">即将到期<SUB><EM 
+    id=statistics_store_expire>0</EM></SUB></A></LI></UL></DD></DL>
+<DL class=goods>
+  <DT>
+  <DIV class=ico><I></I><SUB title=商品总数><SPAN><EM 
+  id=statistics_goods></EM></SPAN></SUB></DIV>
+  <H3>商品</H3>
+  <H5>新增商品/品牌申请审核</H5></DT>
+  <DD>
+  <UL>
+    <LI class="w25pre normal"><A 
+    href="http://13.yiyuansha.com/admin/index.php?act=goods&amp;op=goods">本周新增<SUB 
+    title=""><EM id=statistics_week_add_product></EM></SUB></A></LI>
+    <LI class="w25pre none"><A 
+    href="http://13.yiyuansha.com/admin/index.php?act=goods&amp;op=goods&amp;type=waitverify&amp;search_verify=10">商品审核<SUB><EM 
+    id=statistics_product_verify>0</EM></SUB></A></LI>
+    <LI class="w25pre none"><A 
+    href="http://13.yiyuansha.com/admin/index.php?act=inform&amp;op=inform_list">举报<SUB><EM 
+    id=statistics_inform_list>0</EM></SUB></A></LI>
+    <LI class="w25pre none"><A 
+    href="http://13.yiyuansha.com/admin/index.php?act=brand&amp;op=brand_apply">品牌申请<SUB><EM 
+    id=statistics_brand_apply>0</EM></SUB></A></LI></UL></DD></DL>
+<DL class=trade>
+  <DT>
+  <DIV class=ico><I></I><SUB title=订单总数><SPAN><EM 
+  id=statistics_order></EM></SPAN></SUB></DIV>
+  <H3>交易</H3>
+  <H5>交易订单及投诉/举报</H5></DT>
+  <DD>
+  <UL>
+    <LI class="w18pre none"><A 
+    href="http://13.yiyuansha.com/admin/index.php?act=refund&amp;op=refund_manage">退款<SUB><EM 
+    id=statistics_refund></EM></SUB></A></LI>
+    <LI class="w18pre none"><A 
+    href="http://13.yiyuansha.com/admin/index.php?act=return&amp;op=return_manage">退货<SUB><EM 
+    id=statistics_return></EM></SUB></A></LI>
+    <LI class="w25pre none"><A 
+    href="http://13.yiyuansha.com/admin/index.php?act=vr_refund&amp;op=refund_manage">虚拟订单退款<SUB><EM 
+    id=statistics_vr_refund></EM></SUB></A></LI>
+    <LI class="w18pre none"><A 
+    href="http://13.yiyuansha.com/admin/index.php?act=complain&amp;op=complain_new_list">投诉<SUB><EM 
+    id=statistics_complain_new_list>0</EM></SUB></A></LI>
+    <LI class="w20pre none"><A 
+    href="http://13.yiyuansha.com/admin/index.php?act=complain&amp;op=complain_handle_list">待仲裁<SUB><EM 
+    id=statistics_complain_handle_list>0</EM></SUB></A></LI></UL></DD></DL>
+<DL class=operation>
+  <DT>
+  <DIV class=ico><I></I></DIV>
+  <H3>运营</H3>
+  <H5>系统运营类设置及审核</H5></DT>
+  <DD>
+  <UL>
+    <LI class="w15pre none"><A 
+    href="http://13.yiyuansha.com/admin/index.php?act=groupbuy&amp;op=groupbuy_verify_list">抢购<SUB><EM 
+    id=statistics_groupbuy_verify_list>0</EM></SUB></A></LI>
+    <LI class="w17pre none"><A 
+    href="http://13.yiyuansha.com/admin/index.php?act=pointorder&amp;op=pointorder_list&amp;porderstate=waitship">积分订单<SUB><EM 
+    id=statistics_points_order>0</EM></SUB></A></LI>
+    <LI class="w17pre none"><A 
+    href="http://13.yiyuansha.com/admin/index.php?act=bill&amp;op=show_statis&amp;os_month=&amp;query_store=&amp;bill_state=2">账单审核<SUB><EM 
+    id=statistics_check_billno>0</EM></SUB></A></LI>
+    <LI class="w17pre none"><A 
+    href="http://13.yiyuansha.com/admin/index.php?act=bill&amp;op=show_statis&amp;os_month=&amp;query_store=&amp;bill_state=3">账单支付<SUB><EM 
+    id=statistics_pay_billno>0</EM></SUB></A></LI>
+    <LI class="w17pre none"><A 
+    href="http://13.yiyuansha.com/admin/index.php?act=mall_consult&amp;op=index">平台客服<SUB><EM 
+    id=statistics_mall_consult>0</EM></SUB></A></LI>
+    <LI class="w17pre none"><A 
+    href="http://13.yiyuansha.com/admin/index.php?act=delivery&amp;op=index&amp;sign=verify">服务站<SUB><EM 
+    id=statistics_delivery_point>0</EM></SUB></A></LI></UL></DD></DL>
+<DL class=cms>
+  <DT>
+  <DIV class=ico><I></I></DIV>
+  <H3>CMS</H3>
+  <H5>资讯文章/图片画报/会员评论</H5></DT>
+  <DD>
+  <UL>
+    <LI class="w33pre none"><A 
+    href="http://13.yiyuansha.com/admin/index.php?act=cms_article&amp;op=cms_article_list_verify">文章审核<SUB><EM 
+    id=statistics_cms_article_verify>0</EM></SUB></A></LI>
+    <LI class="w33pre none"><A 
+    href="http://13.yiyuansha.com/admin/index.php?act=cms_picture&amp;op=cms_picture_list_verify">画报审核<SUB><EM 
+    id=statistics_cms_picture_verify>0</EM></SUB></A></LI>
+    <LI class="w34pre none"><A 
+    href="http://13.yiyuansha.com/admin/index.php?act=cms_comment&amp;op=comment_manage">评论<SUB></SUB></A></LI></UL></DD></DL>
+<DL class=circle>
+  <DT>
+  <DIV class=ico><I></I></DIV>
+  <H3>圈子</H3>
+  <H5>申请开通/圈内话题及举报</H5></DT>
+  <DD>
+  <UL>
+    <LI class="w33pre none"><A 
+    href="http://13.yiyuansha.com/admin/index.php?act=circle_manage&amp;op=circle_verify">圈子申请<SUB><EM 
+    id=statistics_circle_verify>0</EM></SUB></A></LI>
+    <LI class="w33pre none"><A 
+    href="http://13.yiyuansha.com/admin/index.php?act=circle_theme&amp;op=theme_list">话题</A></LI>
+    <LI class="w34pre none"><A 
+    href="http://13.yiyuansha.com/admin/index.php?act=circle_inform&amp;op=inform_list">举报</A></LI></UL></DD></DL>
+<DL class=microshop>
+  <DT>
+  <DIV class=ico><I></I></DIV>
+  <H3>微商城</H3>
+  <H5>随心看/个人秀/店铺街</H5></DT>
+  <DD>
+  <UL>
+    <LI class="w33pre none"><A 
+    href="http://13.yiyuansha.com/admin/index.php?act=microshop&amp;op=goods_manage">随心看</A></LI>
+    <LI class="w33pre none"><A 
+    href="http://13.yiyuansha.com/admin/index.php?act=circle_theme&amp;op=theme_list">个人秀</A></LI>
+    <LI class="w34pre none"><A 
+    href="http://13.yiyuansha.com/admin/index.php?act=circle_inform&amp;op=inform_list">店铺街</A></LI></UL></DD></DL>
+<DL class=system>
+  <DT>
+  <DIV class=ico><I></I></DIV>
+  <H3></H3>
+  <DIV id=system-info>
+  <UL>
+    <LI>一元杀商城V3 <SPAN>201411158256</SPAN></LI>
+    <LI><SPAN>2015-01-31</SPAN></LI>
+    <LI><SPAN>WINNT</SPAN></LI>
+    <LI>WEB <SPAN>Microsoft-IIS/6.0</SPAN></LI>
+    <LI>PHP <SPAN>5.3.27</SPAN></LI>
+    <LI>MYSQL <SPAN>5.0.27-community-nt</SPAN></LI></UL></DIV></DT>
+  <DD>
+  <UL>
+    <LI class="w50pre none"><A href="http://www.yiyuansha.com/" 
+    target=_blank>官方网站<SUB></SUB></A></LI>
+    <LI class="w50pre none"><A href="http://www.yiyuansha.com/" 
+    target=_blank>官方论坛<SUB></SUB></A></LI></UL></DD></DL>
+<DIV class=clear></DIV>
+<DIV class=system-info></DIV></DIV></DIV>
+<SCRIPT type=text/javascript>
+var normal = ['week_add_member','week_add_product'];
+var work = ['store_joinin','store_bind_class_applay','store_reopen_applay','store_expired','store_expire','brand_apply','cashlist','groupbuy_verify_list','points_order','complain_new_list','complain_handle_list', 'product_verify','inform_list','refund','return','vr_refund','cms_article_verify','cms_picture_verify','circle_verify','check_billno','pay_billno','mall_consult','delivery_point','offline'];
+$(document).ready(function(){
+	$.getJSON("index.php?act=dashboard&op=statistics", function(data){
+	  $.each(data, function(k,v){
+		  $("#statistics_"+k).html(v);
+		  if (v!= 0 && $.inArray(k,work) !== -1){
+			$("#statistics_"+k).parent().parent().parent().removeClass('none').addClass('high');
+		  }else if (v == 0 && $.inArray(k,normal) !== -1){
+			$("#statistics_"+k).parent().parent().parent().removeClass('normal').addClass('none');
+		  }
+	  });
+	});
+	//自定义滚定条
+	$('#system-info').perfectScrollbar();
+});
+</SCRIPT>
+</BODY></HTML>

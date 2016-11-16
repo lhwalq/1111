@@ -1,0 +1,1 @@
+Base.getScript(pub+"/js/mobile/LotteryFun.js");

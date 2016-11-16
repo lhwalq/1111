@@ -1,0 +1,126 @@
+<include file="./index/index.header"/>
+<div class="groups-stripes"></div>
+<div class="layout980">
+    <div class="Topic-left">	
+        <div class="detail-Ltop">
+            <div class="detail-Himg">
+                <a href="__ROOT__/group/show/id/{$quanzi['id']}" class="fl-img"><img src="__PUBLIC__/uploads/{$quanzi['img']}" border="0" ></a>
+            </div>
+            <div class="detail-HC"><div class="detail-Htit gray03">
+                    <h2><a id="thisGroupName" href="__ROOT__/group/show/id/{$quanzi['id']}" class="orange">{$quanzi['title']}</a></h2> 
+                    <span class="return"><a href="__ROOT__/group/show/id/{$quanzi['id']}" class="gray02">&lt;&lt; 返回圈子</a></span>
+                </div>
+                <p class="detail-Hinfo gray02">成员：
+                    <span class="gray01">{$quanzi['chengyuan']}</span>&nbsp;&nbsp;&nbsp;话题：
+                    <span class="gray01">{$quanzi['tiezi']}</span>&nbsp;&nbsp;&nbsp;创建时间：
+                    <span class="gray01">{$quanzi['time']|date="Y-m-d H:i:s",###}</span></p>
+            </div>
+        </div>
+        <div id="divTopicShow" class="detail-content">
+            <div class="detail-Ctitle">
+                <div class="detail-Ctimg">
+                    <a href="__ROOT__/user/uname/d/{:R('Base/idjia',array($dongtai['hueiyuan']))}" class="fl-img" type="showCard">
+                        <if condition="!R('Base/userid',array($dongtai['hueiyuan'],'img'))">
+                            <img src="__PUBLIC__/images/prmimg.jpg" width="50" height="50" />
+                            <else/>
+                            <img id="imgUserPhoto" src="__PUBLIC__/uploads/{:R('Base/userid',array($dongtai['hueiyuan'],'img'))}" width="50" height="50" border="0"/>
+                        </if>				
+                    </a>
+                </div>
+                <div class="detail-Ctl">
+                    <p class="detail-tit gray">{$dongtai['title']}
+                    <if condition="$dongtai['zhiding'] eq 'Y'">
+                        <i class="zhiding"></i>&nbsp;
+                    </if>
+
+                    <i id="JingHua" class="jing" style="display:none;"></i></p>
+                    <div class="detail-Ctit gray03"><a href="__ROOT__/user/uname/d/{:R('Base/idjia',array($dongtai['hueiyuan']))}" class="blue" type="showCard">{:R('Base/userid',array($dongtai['hueiyuan'],'username'))}</a> 
+                        <span class="class-icon07"></span> 
+                        <span class="time gray02">{$dongtai['time']|date="Y-m-d H:i:s",###}</span>&nbsp;&nbsp;
+                        <span class="gray03">人气({$dongtai['dianji']})</span>
+                    </div>
+                </div>
+            </div>
+            <div id="divTopicContent" class="detail-Con gray01">{$dongtai['neirong']}</div>
+        </div>
+
+        <div id="divAdminPower" class="detail-admin" style="display:none;">
+            <a href="javascript:;" id="btnSetGood" class="blue Control01"><s></s>话题加精</a>
+            <a id="btnUnshow" href="javascript:;" class="blue Control02"><s></s>屏蔽该话题</a>
+            <a href="javascript:;" id="btnCancelGood" class="blue Control03" style="display:none;"><s></s>取消加精</a>
+        </div>
+        <div class="Comment_main" id="commentMain" style="display: block;">
+            <div class="Comment-date">
+                <span class="gray02">共 <i id="totalNum" class="orange">{$zongji}</i> 条回复</span> 
+                <em><a href="javascript:;" class="blue">回复</a></em>
+            </div>
+            <if condition="$zongji eq 0">
+                <div class="tips-con"><i></i>暂无回复，快抢沙发吧！</div>
+                <else/>
+                <foreach name="hueifu" item="hf" >
+                    <div class="Comment_box_con">
+                        <div class="User_head"><a type="showCard" href="__ROOT__/user/uname/d/{:R('Base/idjia',array($hf['hueiyuan']))}" class="fl-img">
+                                <if condition="!R('Base/userid',array($hf['hueiyuan'],'img'))">
+                                    <img src="__PUBLIC__/images/prmimg.jpg" width="50" height="50" />
+                                    <else/>
+                                    <img id="imgUserPhoto" src="__PUBLIC__/uploads/{:R('Base/userid',array($hf['hueiyuan'],'img'))}" width="50" height="50" border="0"/>
+                                </if>	
+                            </a></div>
+                        <div class="Comment_con">
+                            <div class="Comment_User"><b></b><a type="showCard" href="__ROOT__/user/uname/d/{:R('Base/idjia',array($hf['hueiyuan']))}" class="blue">{:R('Base/userid',array($hf['hueiyuan'],"username"))}</a></div>
+                            <div class="C_summary gray02">{$hf['neirong']}
+                                <br/>
+                                <span class="gray03">{$hf['time']|date="Y-m-d H:i:s",###}</span>
+                            </div>
+                            <div class="C_detail"><a name="linkReply" href="javascript:;" class="blue"><!-- 回复 --></a></div>
+                            <div name="ReplyList" class="qcomment_reply_list_module"></div>				
+                        </div>
+                    </div>
+                </foreach>
+                <div class="page_nav">
+                    <if condition="$zongji gt $num">
+                        <div class="pagesx"><?php echo $fenye->show("two");?></div>
+                    </if>
+                </div>
+            </if>
+        </div>
+
+        <!--回复-->
+        <if condition="$quanzi['huifu'] eq 'Y'">
+            <div class="Comment_Box clearfix">
+                <div class="Comment-pic">
+                    <if condition="!R('Base/userid',array($dongtai['hueiyuan'],'img'))">
+                        <img src="__PUBLIC__/images/prmimg.jpg" width="50" height="50" />
+                        <else/>
+                        <img id="imgUserPhoto" src="__PUBLIC__/uploads/{:R('Base/userid',array($dongtai['hueiyuan'],'img'))}" width="50" height="50" border="0"/>
+                    </if>	
+                </div>
+                <div class="Comment_form">
+                    <div class="Comment_textbox">
+                        <if condition="$huiyuan['uid']">
+                            <form action="__ROOT__/group/hueifuinsert" method="post">
+                                <textarea id="hueifucontent" class="textarea01" name="hueifu" style="display: block;border:1px solid #C2C2C2; height:150px; resize:none;"></textarea>
+                                <input value="{$dongtai['id']}" name="tzid" class="hidden"/>
+                                <input value="{$quanzi['id']}" name="qzid" class="hidden"/>
+                                <div  style="line-height:25px;display: inline-block;padding:0px;margin-top:5px;">
+                                    <span style=" float:right"><img onclick="this.src = this.src + '/0'" src="__ROOT__/Tools/checkcode/style/image/type/60_25_0_0_4"/></span>
+                                    <span style="color:#aaa;float:left">验证码: </span><input type="text" name="group_code" style="width:80px;height:20px;" />							
+                                </div>
+                                <div class="Comment_but"><input type="submit" name="submit" id="btnSubmitMsg" class="reply_unbotton" value="立即发送" /></div>
+                            </form>
+                            <else/>
+                            <div class="Comment_login" id="notLogin">
+                                请您<a class="blue" href="__ROOT__/user/login" id="replyLoginBtn">登录</a>或<a class="blue" href="__ROOT__/user/register">注册</a>后再回复评论							
+                            </div>
+                        </if>
+                    </div>
+                </div>
+            </div> 
+            <else/>
+            <div class="tips-con"><i></i>该圈子已设置不可回复!</div>
+        </if>
+        <!--回复-->
+    </div>
+    <include file="./index/group.right"/>
+</div>
+<include file="./index/index.footer"/>

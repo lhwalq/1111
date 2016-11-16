@@ -1,0 +1,72 @@
+<include file="./index/index.header"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/piyungou/css/css.css"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/piyungou/css/pageDialog.css"/>
+<div class="layout980 clearfix"> 
+<include file="./index/us.left"/>
+<div class="content clearfix">
+	<div class="per-info">
+		<ul>
+			<li class="info-mane gray02">
+				<b class="gray01" >{:R("base/huode_user_name",array($huiyuan1,'username'))}</b>				
+			</li>
+			<li class="info-address"><span><a href="__ROOT__/user/uname/d/{:R('base/idjia',array($huiyuan1['uid']))}.html" class="blue"><s></s>__ROOT__/user/uname/{:R('base/idjia',array($huiyuan1['uid']))}</a></span></li>
+			<li class="info-intro gray02">
+			
+			<if condition="$huiyuan1['qianming'] neq null"> 
+			
+			<else />
+			这家伙很懒，什么都没留下。
+			</if>
+			</li>
+		</ul>
+	</div>
+	<include file="./index/us.tab"/>
+
+	<if condition="$huiyuan1"> 
+	<div id="divInfo0" class="New-content">
+
+
+		<foreach name="huiyuango" item="go" >
+			 <?php
+        				$jiexiao =R("BASE/huode_shop_if_jiexiao",array($go['shopid']));    
+						 if ($jiexiao['q_uid']){
+							$url = "dataserverForPC";
+						 }else{
+							$url = "items";
+						 }
+    		?>
+		<div class="scroll-list">
+			<div class="R-tit">
+				<span class="tit-name gray01">
+					{:R("base/huode_user_name",array($huiyuan1,'username'))}
+				</span>
+				<i>在{:R("base/microt",array($go['time'],"r"))}云购了</i>
+				<span class="tit blue"><a target="_blank" href="__ROOT__/goods/{$url}/goodsId/{$go['shopid']}.html" class="blue">{$go['shopname']}</a></span>
+			</div>          
+			<div class="buy-com">
+				<p class="buy-pic"><a target="_blank" href="__ROOT__/goods/{$url}/goodsId/{$go['shopid']}.html"><img src="__PUBLIC__/uploads/{$jiexiao['thumb']}"></a></p>
+				<div class="buy-rcon">                 	
+					<p class="buy-name"><a target="_blank" rel="nofollow" href="__ROOT__/goods/{$url}/goodsId/{$go['shopid']}.html" class="blue">(第{$go['shopqishu']}期){$go['shopname']}</a></p>				
+                   
+                    
+					<if condition="$jiexiao['q_uid']">
+					<p class="buy-money gray02">价值：<span class="money"><i class="rmb">{$jiexiao['money']}</i></span></p>
+					<p class="buy-code gray02">幸运云购码：<span class="orange">{$jiexiao['q_user_code']}</span></p>
+					<p class="buy-time gray02">揭晓时间：{$jiexiao['q_end_time']|date="Y-m-d",###}</p>
+					<p><a target="_blank" href="__ROOT__/goods/{$url}/goodsId/{$go['shopid']}.html" class="button03">去看看</a></p>
+					<else />
+					<p><a target="_blank" href="__ROOT__/goods/{$url}/goodsId/{$go['shopid']}.html" class="button03">去看看</a></p>
+					</if>
+				</div>
+			</div>
+		</div>
+		</foreach>		
+	</div>
+	<else />
+	<div class="New-content"><div class="tips-con"><i></i>TA还没有获得商品哦</div></div> 
+	</if>
+</div>
+
+
+</div>
+<include file="./index/index.footer"/>

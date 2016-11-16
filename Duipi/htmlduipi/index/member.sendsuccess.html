@@ -1,0 +1,36 @@
+<include file="./index/index.header"/>
+<div class="main-content clearfix">
+<include file="./index/member.left"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/yungou/css/layout-setUp.css"/>
+<div class="R-content">
+	<div class="member-t"><h2>邮箱验证</h2></div>
+	<div class="email_verification_ok">
+		<h4>验证成功</h4>
+		<ul>
+			<li><span>发送成功！</span></li>
+			<li>一元云购已经发送了一封验证邮件到您的邮箱{$email}</li>
+			<li>请尽快登录您的邮箱点击验证链接，完成邮箱验证</li>
+		</ul>
+		<p class="not">没有收到邮件？</p>
+		<p>1.请检查您的垃圾箱或广告箱，邮件有可能被误认为垃圾或广告邮件；或选择
+		<a class="orangebut" href="javascript:" >重发验证邮件</a>
+		</p>
+		<p>2.若您的邮箱已过期或忘记密码无法登录，请选择正常使用中的邮箱。</p>
+	</div>
+</div>
+		
+</div>
+<script>
+var time = 120;
+	var t=setInterval(function  () {
+		time--;
+			$('.orangebut').html('重新发送'+time+"秒");
+			if (time==0) {
+				$('.orangebut').html('重新发送');
+				clearInterval(t);
+				validCode1=true;
+				$('.orangebut').attr('href','javascript:location.reload();');
+			}
+		},1000)
+	</script>
+<include file="./index/index.footer1"/>

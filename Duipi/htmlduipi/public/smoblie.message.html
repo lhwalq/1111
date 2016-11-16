@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta charset="utf-8">
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <title>{$string}</title>
+        <link href="/css/jquery-ui-1.10.1.custom.min.css" rel="stylesheet" />
+        <!--字体图标库-->
+        <link rel="stylesheet" href="/css/iconfont.css">
+        <link rel="stylesheet" href="/css/swiper-3.2.5.min.css">
+        <link rel="stylesheet" href="/css/zyupload.css" />
+
+        <!--主样式-->
+        <link rel="stylesheet" href="/css/ectouch.css" />
+        <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
+    </head>
+    <script>
+
+        function locahost() {
+            var defurl = "{$defurl}";
+            if (defurl == ':js:')
+            {
+                window.history.back();
+            } else {
+                location.href = defurl;
+            }
+        }
+
+        function closeWindow() {
+            window.open('', '_self', '');
+            window.close();
+        }
+
+        var i = {$time};
+        if (i != 0) {
+            window.close_id = setInterval(function () {
+                if (i > 0) {
+                    document.getElementById('time').innerHTML = i;
+                    i = i - 1;
+                } else {
+                    locahost();
+                    clearInterval(window.close_id);
+                }
+            }, 1000);
+        }</script>
+    <body class="">
+        <div class="filter-top" id="scrollUp">
+            <i class="iconfont icon-jiantou"></i>
+        </div>	
+        <div class="con">
+            <include file="./public/smoblie.title"/>
+            <div class="category">
+                <!-- 内容 -->
+                <section class="product-list j-product-list product-list-medium">
+
+                    <div class="no-div-message">
+                        <i class="iconfont icon-biaoqingleiben"></i>
+                        <p>{$string}</p>
+                        <p><font id="time" style="color:red;">{$time}</font>秒后返回上一页面</p>
+                        <!--亲，此处没有内容～！-->
+                    </div>
+
+                </section>
+            </div>
+        </div>
+    </body>
+</html>

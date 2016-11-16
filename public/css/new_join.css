@@ -1,0 +1,61 @@
+﻿@charset "utf-8";
+@import url(comm.css);
+body{font-family:microsoft Yahei;min-width: 1210px;_width:expression(document.documentElement.clientWidth>1210?document.documentElement.clientWidth:1210);}
+a{color: #666666;font-size:13px;}
+.w_clear{clear:both;}
+.w_content{background:url(/style/css/img/footer_bg_02.jpg) no-repeat;width:100%;height:445px;}
+.jilu_box{width:1208px;margin:0px auto;border:1px solid #ddd;}
+.w_newyun_con{margin:0px;width:100%;}
+.w_newyun_con_title,.w_newyun_con_details{overflow:hidden;background:#fbfbfb;border-bottom:1px solid #ddd;padding:0px 10px 0px 20px;width:1178px;}
+.w_newyun_con_title{background:#f2f2f2;}
+.w_newyun_con_title li{float:left;height:36px;font-size:14px;color:#666;line-height:36px;}
+.w_newyun_con_details dd{float:left;height:36px;font-size:12px;color:#666;line-height:36px;}
+.w_newyun_con .w_addcolor_news a{color:#4a91d4;overflow:hidden;display:block;width:100%;height:36px;font-size:12px;}
+.w_first_dd{width:180px;}
+.w_dd_two{width:178px;}
+.w_dd_three{width:230px;}
+.w_dd_five{width:80px;text-align: center;}
+.w_dd_four{width:500px;}
+.jilu_box p{color:#4a91d4;font-size:12px;text-align: right;padding-right:36px;line-height:36px;background:#fbfbfb;}
+.jilu_box p span{color:#ff4a00;}
+.jilu_box .w_special_li{
+height:40px;background:#f89f36;line-height:40px;text-align: center;color:#fff;cursor: pointer;
+position:relative;
+}
+.jilu_box .w_special_li_other{display:none;height:40px;background:#f89f36;line-height:40px;text-align: center;color:#fff;cursor: pointer;
+position:relative;}
+.jilu_box .w_special_li s{background:url(/style/css/img/ikons_03.png) no-repeat left center;display:block;width:22px;height:22px;position: absolute;right:500px;top:10px;background-size:70%;}
+.jilu_box .w_special_li_other .w_special_s{background:url(/style/css/img/ikons_05.png) no-repeat left center;background-size:70%;right:526px;display:block;width:22px;height:22px;position: absolute;top:10px;}
+.jilu_box .w_lose_con{display:none;}
+
+
+.yJoinNum{float: left;color: #3c3c3c;font-size: 14px;position: absolute;top: 10px;left:240px;}
+.yJoinNum .allNums{display:block;height:30px;}
+.yJoinNum span{display: inline-block;font-size: 14px;color: #545454;line-height:30px;vertical-align: middle;}
+.yJoinNum span {
+    color: #545454;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 30px;
+    vertical-align: middle;
+}
+.yJoinNum span.yNumList{margin: 0 3px;width: 24px;height: 30px;overflow: hidden;font-size: 28px;line-height: 30px;font-family: "Arial";background-position: 0 -1099px;font-weight: bold;text-align: center;color: #ec610c;background: url(/style/css/img/can.jpg) no-repeat;}
+.yJoinNum span.w_ci_bg{background:url(/style/css/img/jiant.jpg) no-repeat right 13px;padding-right:10px;}
+
+.info-list{width:1210px;margin:0px auto;position: relative;}
+.info-list .qq_iten{margin-bottom:20px;padding-top:180px;text-align:center;font-size:34px;color:#555;opacity:1;}
+.info-list .qq_iten span{font-size: 34px;}
+.info-list .qq_iten_other{padding:0px;}
+.info-list .qq_iten b{color:#ff4a00;}
+
+.w_newyun_con_details i{display:inline-block;background:url(/style/css/img/buyWay.png) no-repeat left center;margin-right:4px;}
+.w_newyun_con_details .w_one{width:17px;height:20px;background-position:0px 0px;vertical-align:-10px;}
+.w_newyun_con_details .w_two{width:17px;height:20px;background-position:-17px 0px;vertical-align:-10px;}
+.w_newyun_con_details .w_three{width:17px;height:20px;background-position:-35px 0px;vertical-align:-10px;}
+.w_newyun_con_details .w_four{width:16px;height:20px;background-position:-52px 0px;vertical-align:-10px;}
+.w_newyun_con_details .w_five{width:17px;height:20px;background-position:-68px 0px;vertical-align:-10px;}
+.w_xiu_width .w_first_dd{width:210px;}
+.w_xiu_width .w_dd_two{width:210px;}
+.w_xiu_width .w_dd_three{width:328px;}
+.w_xiu_width .w_dd_five{width:200px;text-align: center;}
+.w_xiu_width .w_dd_four{width:230px;}

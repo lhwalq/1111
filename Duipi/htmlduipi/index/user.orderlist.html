@@ -1,0 +1,224 @@
+<include file="./index/index.header"/>
+<div class="main-content clearfix">
+<include file="./index/member.left"/>
+<style> 
+		#wuliu_select{ padding:5px 8px; width:80px; background-color:#F60;border-radius:2px;font-family: 微软雅黑; color:#fff; font-size:12px; margin-left:30px; }		
+		.wuliubtn{ padding:3px 5px;background-color:#2af;border-radius:2px; color:#fff; font-size:12px; }
+		.wuliubtn:hover{ color:#fff; cursor:pointer}
+
+		.wuliubtnss{ padding:3px 5px;background-color:#2af;border-radius:2px; color:#fff; font-size:12px; }
+		.wuliubtnss:hover{ color:#fff; cursor:pointer}
+		.single-img .pic{ text-indent:0px;}
+		#divPageNav{ padding-top:10px;text-align:right}		
+		.listTitle .sdzt b{color: #fe6c00; font-weight:bold}
+		.message{ background:#fffce2; border:1px solid #fd9; color:#f60; padding:5px 8px; text-indent:10px;}
+		.single-xx-has span{ display:inline-block;  width:180px}
+</style>
+        
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/layout-records.css"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/layout-commodity.css"/>
+<div class="R-content">
+	<div class="member-t"><h2>获得的商品</h2></div>
+	<div class="get-pro gray02">您总共成功一元云购获得商品 <b id="goodsCount" class="orange">{$record|count} </b> 个
+    	  <a href="#" id="wuliu_select">查询物流</a>
+    </div>	
+    <?php if(!R("base/member_huode_dizhi",array($uid))){ ?>     
+    <div class="message">你还没有填写收货信息,请填写收货信息！ <a href="__ROOT__/user/address" style="font-weight:bold; color:#2af">去填写!</a></div>
+    <?php } ?>    
+    
+    <div style="clear:both; width:100%; height:20px; display:block;"></div>
+	<div id="tbList" class="single-C list-tab">
+		<ul class="listTitle">
+			<li class="single-img">商品图片</li>
+			<li class="single-xx-has">商品信息</li>
+			<li class="sdzt">状态</li>
+			<li class="single-Control">操作</li>
+		</ul>
+		<if condition="count($record) eq 0 ">
+		<div class="tips-con"><i></i>无相应的获得商品记录</div>
+		<else />
+                <foreach name="record" item="recd" >
+		  <?php $status=@explode(",",$recd['status']); ?>
+		<ul class="listTitle" style="background:#fff; height:140px; padding:10px 0 0 0;">
+			<li class="single-img"><a target="_blank" class="pic" href="__ROOT__/goods/dataserverForPc/goodsId/{$recd['shopid']}"><img src="__PUBLIC__/uploads/{:R('base/yunjl',array($recd['shopid']))}"></a></li>
+			<li class="single-xx-has"><a target="_blank" href="__ROOT__/goods/dataserverForPc/goodsId/{$recd['shopid']}" class="blue1">第{$recd['shopqishu']}期{$recd['shopname']}</a>
+            <br/><if condition="$recd['company_code']"><span>物流公司：{$recd['company']}</span>快递单号：{$recd['company_code']} </if><if condition="($recd['cardId']) and ($status[2] eq '已完成') and ($recd[wei] eq 0)"><span>卡号：{$recd['cardId']}</span>卡密：{$recd['cardPwd']}</if>
+      
+            </li>
+			<li class="sdzt">
+            
+            <?php            
+            	$status=@explode(",",$recd['status']);    
+                if($status[2]=='未完成' || $status[2]=='待收货' || $status[2]=='未提交地址'){
+                    if($status[3]=='未提交地址'){
+			if($recd['leixing']=='1'){
+				echo '充值地址未确认 <br/><a href="__ROOT__/user/orderDetail/crodid/'.$recd['id'].'" class="blue1">立即确认地址</a>';
+				echo ' <br/><a href="__ROOT__/user/excorderdetail/id/'.$recd['id'].'" class="blue1">兑换积分</a>';
+			}elseif ($recd['leixing']=='2'){
+				echo '未提取卡密 <br/><a href="orderDetail/'.$recd['id'].'" class="blue1">提取卡密</a>';
+			}else{
+				echo '收货地址未确认 <br/><a href="__ROOT__/user/orderDetail/crodid/'.$recd['id'].'" class="blue1">立即确认地址</a>';
+				echo ' <br/><a href="__ROOT__/user/excorderdetail/id/'.$recd['id'].'" class="blue1">兑换积分</a>';
+                            }			
+			}
+                    if($status[1]=='未发货' && $status[3]!='未提交地址'){                    	
+                        echo "等待发货";
+                    } 
+                    if($status[1]=='已发货'){
+			if($recd['leixing']==2){
+			echo "未提取卡密";
+                        echo "<br>";
+                        echo '<a class="wuliubtnss" oid="'.$recd['id'].'" uid="'.$recd['uid'].'">提取卡密</a>'; 
+			echo ' <br/><a href="excorderdetail/'.$recd['id'].'" class="blue1">兑换积分</a>';
+			}else{
+                    	echo "已发货";
+                        echo "<br>";
+                        echo '<a class="wuliubtn" oid="'.$recd['id'].'" uid="'.$recd['uid'].'">确认收货</a>'; 
+			}
+                    }  
+                } 
+                if($status[2]=='已完成'){
+                	echo "已完成";
+			if($recd['wei']=='1'){
+                            echo "<br>";
+                            echo "已转积分";
+                } 
+                }   
+                if($status[2]=='已作废'){
+                	echo "已作废";
+                }   
+		$sd=D("shai")->where(array("sd_shopid"=>$recd[shopid]))->find();
+		//var_dump($recd);
+             ?>       
+            
+            </li>
+            <li class="single-Control" style="width: 99px">
+				<a href="__ROOT__/user/orderDetail/crodid/{$recd['id']}" class="blue1">交易详情</a><br/>
+                                <if condition="$recd['status'] eq '已付款,已发货,已完成'">
+					<br/>
+					<if condition="!$sd[sd_id]">
+					<a href="__ROOT__/user/singleinsert/id/{$recd['shopid']}.html" class="blue1">立即晒单</a>
+					</if>
+				</if>
+			</li>
+			
+            
+		</ul>
+		</foreach>
+		</if>
+	</div>
+		<div id="divPageNav" class="page_nav">
+        	<?php echo $fenye->show('two'); ?> <li>共 {$zongji} 条</li>
+        </div>
+</div>
+</div>
+ 
+<!--期数修改弹出框-->
+<style> 
+#paywindow{position:absolute;z-index:999; display:none}
+#paywindow_b{width:542px;height:360px;background:#2a8aba; filter:alpha(opacity=60);opacity: 0.6;position:absolute;left:0px;top:0px; display:block}
+#paywindow_c{width:530px;height:348px;background:#fff;display:block;position:absolute;left:6px;top:6px;}
+.p_win_title{ line-height:40px;height:40px;background:#f8f8f8;}
+.p_win_title b{float:left}
+.p_win_title a{float:right;padding:0px 10px;color:#f60}
+.p_win_content h1{font-size:25px;font-weight:bold;}
+.p_win_but,.p_win_mes,.p_win_ctitle,.p_win_text{ margin:10px 20px;}
+.p_win_mes{border-bottom:1px solid #eee;line-height:35px;}
+.p_win_mes span{margin-left:10px;}
+.p_win_ctitle{overflow:hidden;}
+.p_win_x_b{float:left; width:73px;height:68px;background-repeat:no-repeat;}
+.p_win_x_t{ font-size:18px; font-weight:bold;font-family: "Helvetica Neue",\5FAE\8F6F\96C5\9ED1,Tohoma;color:#f00; text-align:center}
+.p_win_but{ height:40px; line-height:40px;}
+.p_win_but a{ padding:8px 15px; background:#f60; color:#fff;border:1px solid #f50; margin:0px 15px;font-family: "Helvetica Neue",\5FAE\8F6F\96C5\9ED1,Tohoma; font-size:15px; }
+.p_win_but a:hover{ background:#f50}
+.p_win_text a{ font-size:13px; color:#f60}
+.pay_window_quit:hover{ color:#f00}
+</style>
+<div id="paywindow">
+	<div id="paywindow_b"></div>
+	<div id="paywindow_c">
+		<div class="p_win_title"><a href="javascript:void();" class="pay_window_quit">[关闭]</a><b>　 物流查询</b></div>
+		<div class="p_win_content">			
+            	<iframe name="kuaidi100" src="http://www.kuaidi100.com/frame/app/index2.html" width="527" height="300" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no"></iframe>        
+		</div>
+	</div>
+</div>
+ 
+<script> 
+$("#hddsp").attr('class','sid-cur');
+$(function(){
+	var width = ($(window).width()-542)/2;
+	var height = ($(window).height()-360)/2;
+	$("#paywindow").css("left",width);
+	$("#paywindow").css("top",height);
+		
+	$(".pay_window_quit").click(function(){
+		$("#paywindow").hide();								 
+	});	
+	$("#wuliu_select").click(function(){
+		$("#paywindow").show();								 
+	});	
+	
+	$(".wuliubtn").click(function(){
+		var uid = $(this).attr("uid");	
+		var oid = $(this).attr("oid");	
+		$.post("__ROOT__/order/set",{"uid":uid,"oid":oid},function(sdata){
+			if(parseInt(sdata)==1){
+				alert("更新成功");
+				window.location.href="__ROOT__/user/orderlist";
+			}else{
+				alert("更新失败");
+			}											   
+		});					  
+	});
+});
+ 
+</script>
+
+<script> 
+$("#hddsp").attr('class','sid-cur');
+$(function(){
+	var width = ($(window).width()-542)/2;
+	var height = ($(window).height()-360)/2;
+	$("#paywindow").css("left",width);
+	$("#paywindow").css("top",height);
+		
+	$(".pay_window_quit").click(function(){
+		$("#paywindow").hide();								 
+	});	
+	$("#wuliu_select").click(function(){
+		$("#paywindow").show();								 
+	});	
+	
+	$(".wuliubtnss").click(function(){
+		var uid = $(this).attr("uid");	
+		var oid = $(this).attr("oid");	
+		$.post("__ROOT__/order/setqq",{"uid":uid,"oid":oid},function(sdata){
+			if(sdata==1){
+				alert("提取成功");
+				window.location.href="__ROOT__/user/orderlist";
+			}else{
+				alert("库存不足，请联系在线客服");
+				window.location.href="__ROOT__/user/orderlist";
+			}											   
+		});					  
+	});
+});
+ 
+</script>
+<script type="text/javascript"> 
+var a = document.getElementById("divbox1");
+var a = document.getElementById("divbox2");
+function popboxshow(){
+    a.style.display='none';
+    b.style.display='block';
+}
+function popboxhidd(){
+   a.style.display='block';
+   b.style.display='none';
+ 
+}
+</script>
+ 
+<!--期数修改弹出框-->
+<include file="./index/index.footer"/>

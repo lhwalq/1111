@@ -1,0 +1,90 @@
+<include file="./index/index.header"/>
+<!--内容 开始-->
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/qqhelp.css"/>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/js/area_city.js"></script>
+<script type="text/javascript">
+var opt0 =["----请选择----","----请选择----","----请选择----"];//初始值
+</script>
+
+<div class="help-main">
+	<div class="qqGroup">
+		<div class="qqTitle">
+			<span class="groupt">云购<b>QQ</b>群</span>
+			<span>为打造更具公平、透明的云购平台，一元云购特成立各地QQ交流群（可在选择框查找本地群），欢迎广大云友加入。<br>另外，云购正在招募各地群主加盟，具体待遇和要求静候通知...</span>
+		</div>
+		<div id="listTopContents" class="qqList"><p>直属群</p>
+		<ul>
+                <foreach name="lists2" item="v" >
+		<li><dt><img border="0" alt="{$v['name']}" src="__PUBLIC__/images/qqgroup.jpg"></dt><dt>{$v['name']}<if condition="$v['full'] eq '已满' "><img src="__PUBLIC__/images/qqhot.png"/></if></dt><dd><a href="{$v['qqurl']}" style="color:#82CD4C">{$v['qq']}</a></dd></li>
+		</foreach>
+		</ul></div>	
+		
+		<div class="qsearch">			
+			<ul>
+				<li>
+					<label>筛选：</label>
+				</li>
+				<li>				
+				 <select id="s_province"  name="s_province" STYLE="height:30px;width:130px;background:url(__PUBLIC__/plugin/style/select.gif);"></select>&nbsp;&nbsp;省	   
+				 <select id="s_city" name="s_city" STYLE="height:30px;width:130px;"></select>&nbsp;&nbsp;县 
+				 <select id="s_county"  name="s_county" STYLE="height:30px;width:130px;"></select>&nbsp;&nbsp;区 					 
+				</li>			
+                <script type="text/javascript">_init_area(opt0);</script>
+			</ul>
+			<span>地方群</span>
+		</div>		
+		<div id="listContents" class="qqList">
+		<ul>
+                <foreach name="lists1" item="v" >
+		<li ><dt><img border="0" alt="{$v['name']}" src="__PUBLIC__/images/qqgroup.jpg"></dt><dt style='width:150px;overflow:hidden;word-break:keep-all;white-space:nowrap;' title="{$v['name']}">{$v['name']}<if condition="$v['full'] eq '已满' "><img src="__PUBLIC__/images/qqhot.png"/></if></dt><dd><a href="{$v['qqurl']}">{$v['qq']}</a></dd></li>
+		</foreach>
+		</ul></div>		
+	</div>
+	</div>
+    
+    	<script type="text/javascript">
+	$(function(){	
+	 var str='----请选择----';
+       $("#s_province").change(function(){	   
+	     var  prov = $("#s_province").val(); 
+		 var cityv = $("#s_city").val();
+		 var  couv = $("#s_county").val();
+		$.ajax({
+			type: "get",
+			url: "__ROOT__/index/get_cityqq/prov/"+prov+'/cityv/'+cityv+'/couv/'+couv,
+			success: function(data){				
+			$("#listContents").html(data);
+			}
+		});
+
+		$("#s_city").change(function(){	  
+	     var  prov = $("#s_province").val(); 
+		 var cityv = $("#s_city").val();
+		 var  couv = $("#s_county").val();
+		 $.ajax({
+			type: "get",
+			url: "__ROOT__/index/get_cityqq/prov/"+prov+'/cityv/'+cityv+'/couv/'+couv,
+			success: function(data){
+			$("#listContents").html(data);
+			}
+		});
+
+		 $("#s_county").change(function(){	  
+	     var  prov = $("#s_province").val(); 
+		 var cityv = $("#s_city").val();
+		 var  couv = $("#s_county").val();
+		 $.ajax({
+			type: "get",
+			url: "__ROOT__/index/get_cityqq/prov/"+prov+'/cityv/'+cityv+'/couv/'+couv,
+			success: function(data){
+			$("#listContents").html(data);
+			}
+		});
+	   });
+		   
+	   });
+		   
+	   });
+	});
+	</script>
+	<include file="./index/index.footer"/>

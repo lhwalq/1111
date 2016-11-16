@@ -1,0 +1,1 @@
+Base.getScript(pub+"/piyungou/css/mobile/new/ShareListFun.js?v=150129");

@@ -1,0 +1,71 @@
+<include file="./index/index.header"/>
+<div class="main-content clearfix">
+<include file="./index/member.left"/>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link rel="stylesheet" href="__PUBLIC__/plugin/style/global/css/style.css" type="text/css">
+<style>
+tbody tr{ line-height:30px; height:30px;} 
+.header{height:40px; overflow:hidden;     border: 1px solid #fff; background: #fff;
+        zoom: 1;
+        position: relative;
+        z-index: 21;
+        height: 155px;
+        margin-top: 0px;
+    padding-left: 0px;
+}
+body {
+    background-color: #ffffff; 
+}
+</style>
+</head>
+<body style="overflow-y:hidden">
+    <div class="R-content" style="width: 1000px; margin-top: 20px;">
+
+<div class="table-list lr10">
+<!--start-->
+  <table width="100%" cellspacing="0">
+    <thead>
+		<tr>
+        	<th align="center">订单号</th>
+            <th align="center" width="20%">商品标题</th>
+            <th align="center">购买用户</a></th>
+            <th align="center">购买次数</th>
+            <th align="center">购买总价</th>
+            <th align="center">购买日期</th>
+            <th align="center">中奖</th>
+            <th align="center">订单状态</th>
+            <th align="center">管理</th>
+		</tr>
+    </thead>
+    <tbody>
+	
+		<foreach name="recordlist" item="v" >
+            <tr>
+                <td align="center">{$v['code']}<if condition="$v['code_tmp']"><font color='#ff0000'>[多]</font></if></td>
+                <td align="center">
+                <a target="_blank" href="__ROOT__/goods/items/goodsId/{$v['shopid']}" >
+                第({$v['shopqishu']})期{:R("Base/strcut",array($v['shopname'],0,25))}</a>
+                </td>              
+                <td align="center" >{$v['username']}</td>
+                <td align="center">{$v['gonumber']}人次</td>
+                <td align="center">￥{$v['moneycount']}元</td>
+                <td align="center"><?php echo date("Y-m-d H:i:s",$v['time'])?></td>
+                 <td align="center"><?php  echo $v['huode'] ? "中奖" : '未中奖'?></td>
+                <td align="center">{$v['status']}</td>
+                <td align="center"><a href="__ROOT__/seller/get_dingdan/id/{$v['id']}">详细</a></td>
+            </tr>
+             </foreach>
+  	</tbody>
+</table>
+<div id="pages"><ul><li>共 {$zongji} 条</li><?php echo $fenye->show('one','li');?></ul></div>
+</div><!--table-list end-->
+
+<script>
+</script>
+</div>
+</body>
+</html> 

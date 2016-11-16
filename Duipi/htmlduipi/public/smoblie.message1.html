@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- saved from url=(0070)http://dsc.ecmoban.com/test/mobile/index.php?r=flow/Index/address_list -->
+<html>
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <title>收货地址</title>
+        <link href="/css/jquery-ui-1.10.1.custom.min.css" rel="stylesheet" />
+        <!--字体图标库-->
+        <link rel="stylesheet" href="/css/iconfont.css">
+        <link rel="stylesheet" href="/css/swiper-3.2.5.min.css">
+        <link rel="stylesheet" href="/css/zyupload.css" />
+
+        <!--主样式-->
+        <link rel="stylesheet" href="/css/ectouch.css" />
+        <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
+        <link href="/css/layer.css" type="text/css" rel="styleSheet" id="layermcss"></head>
+    <body class="">
+        <div class="filter-top" id="scrollUp">
+            <i class="iconfont icon-jiantou"></i>
+        </div>
+    <include file="./public/smobile.daohang"/>
+    <include file="./public/smoblie.soso"/>
+    <div class="con">
+        <include file="./public/smoblie.title"/>
+        <div class="no-div-message">
+            <i class="iconfont icon-biaoqingleiben"></i>
+            <p>{$string[0]}</p>
+            {$string[1]}
+            {$string[2]}
+        </div>
+
+    </div>
+    <!--引用js-->
+    <script type="text/javascript" src="/js/swiper-3.2.5.min.js"></script>
+    <script type="text/javascript" src="/js/layer.js"></script>
+    <script type="text/javascript" src="/js/ectouch.js"></script>        <script type="text/javascript" src="/js/jquery.json.js"></script>
+    <script type="text/javascript" src="/js/common.js"></script>
+    <script type="text/javascript" src="/js/region_goods.js"></script>
+    <script type="text/javascript">
+        //设置默认收获地址
+        function adderss_user(address_id) {
+            if (address_id) {
+                $.get("/test/mobile/index.php?r=flow/index/set_address", {address_id: address_id}, function (data) {
+                    if (data.status == 1) {
+                        if (data.url) {
+                            window.location.href = data.url;
+                        }
+                    }
+                }, 'json');
+            }
+        }
+    </script>
+
+</body></html>

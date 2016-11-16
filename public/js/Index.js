@@ -1,0 +1,1 @@
+Base.getScript(pub+"/js/IndexFun.js?v=151106");

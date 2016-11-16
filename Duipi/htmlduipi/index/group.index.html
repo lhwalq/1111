@@ -1,0 +1,33 @@
+<include file="./index/index.header"/>
+<div class="groups-stripes"></div>
+<div class="layout980">
+	<div class="groups-left">
+		<h2 class="gr-title1"><a><b>云购圈子</b></a></h2>
+		<div class="gr-guild">
+			<b>在这里可以做什么?</b>
+			<p class="gray01">在这里你可以找到与自己兴致相投的云友，随意申请加入任何你感兴趣的圈子，了解云购所发生的“重大事件”，参与到他们的行列之中，一起探论夺宝神奇，看看他们是如何夺宝的，一起分享交流探讨！来！一起加入他们的行列中吧！</p>
+		</div>
+		<div class="groups-list clearfix">
+			<ul>
+                        <foreach name="quanzi" item="v" >
+				<li>
+					<div class="groups-img"><a href="__ROOT__/group/show/id/{$v['id']}" class="fl-img">
+					<if condition="!$v['img']">
+					<img src="__PUBLIC__/uploads/quanzi/prmimg.jpg" title="{$v['title']}" border="0" alt="">
+					<else/>
+					<img src="__PUBLIC__/uploads/{$v['img']}" title="{$v['title']}" border="0" alt="">
+                                        </if>
+					</a></div>
+					<div class="groups-info">
+						<p class="groups-name"><a href="__ROOT__/group/show/id/{$v['id']}" title="{$v['title']}" class="blue">{$v['title']}</a></p>
+						<p class="groups-class gray02">成员：{$v['chengyuan']}&nbsp;&nbsp;&nbsp;&nbsp;话题：{$v['tiezi']}</p>
+						<p class="groups-intro gray02">{$v['jianjie']}</p>
+					</div>
+				</li>
+                        </foreach>				
+			</ul>
+		</div>		
+	</div>
+        <include file="./index/group.right"/>
+</div>
+<include file="./index/index.footer"/>

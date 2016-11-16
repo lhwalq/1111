@@ -1,0 +1,1 @@
+Base.getScript("/love/templates/yungou/js/mobile/PostListFun.js?v=130826");

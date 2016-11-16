@@ -1,0 +1,109 @@
+<include file="./index/index.header"/>
+
+	<style type="text/css">
+		body, html{width: 100%;height: 100%;margin:0;font-family:"微软雅黑";}
+		#l-map{height:700px;width:100%;}
+		#r-result{width:100%; font-size:18px;line-height:20px;}
+	</style>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/map.css"/>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=BCa9d6b5c6f5126da538d3f59f11535c"></script>
+</head>
+<body>
+	
+	<div id="r-result" class="search_header2" >
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;城市名: <input id="cityName" type="text"  style="color: rgb(102, 102, 102);width:100px; margin-right:10px;" />
+		<input type="button" value="搜索中奖城市" onclick="theLocation()" />
+	</div>
+	<div id="l-map"></div>
+
+</body>
+</html>
+<script type="text/javascript" src="__PUBLIC__/plugin/style/global/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+
+    //var sContent =
+    //' <li class=""><p class="myLogo"><a target="_blank" href="'+用户主页链接+'"><img src="'+图片+'"><s></s></a></p><dl><dt class="pro_name"><a title="'+商品名称+'" target="_blank" href="'+商品链接+'">'+商品名称+'</a></dt><dd>获得者：<a title="'+用户呢称+'" target="_blank" class="blue" href="'+用户主页链接+'">'+用户呢称+'</a></dd><dd>云购：<em>'+云购人次+'</em>人次</dd></dl></li>';
+
+
+	// 百度地图API功能
+	var map = new BMap.Map("l-map");
+	map.centerAndZoom(new BMap.Point(116.331398,39.897445), 13);
+	map.enableScrollWheelZoom(true);
+	var index = 0;
+	var myGeo = new BMap.Geocoder();
+	
+
+	var adds = [];
+	var area="";
+
+	function bdGEO(){
+		var add = adds[index];
+		geocodeSearch(add);
+		index++;
+	}
+	function geocodeSearch(add){
+		if(index < adds.length){
+			setTimeout(window.bdGEO,400);
+		} 
+		myGeo.getPoint(add.address, function(point){
+			
+			if (point) {
+				//document.getElementById("result").innerHTML +=  index + "、" + add + ":" + point.lng + "," + point.lat + "</br>";
+				var address = new BMap.Point(point.lng, point.lat);
+				 if(add.name == ""){
+		add.name="匿名";
+	};
+				var sContent =
+	         '<div id="markerBox" class="m_info un_blockCon"> <ul>  <li class=""><p class="myLogo"><a target="_blank" href="__ROOT__/user/uname/d/'+add.uid+'.html"><img src="__PUBLIC__/uploads/'+add.img+'"><s></s></a></p><dl><dt class="pro_name"><a title="'+add.shopname+'" target="_blank" href="__ROOT__/goods/items/goodsId/'+add.shopid+'.html">'+add.shopname+'</a></dt><dd>获得者：<a title="'+add.name+'" target="_blank" class="blue" href="__ROOT__/user/uname/d/'+add.uid+'.html">'+add.name+'</a></dd><dd>云购：<em>'+add.num+'</em>人次</dd></dl></li></ul></div>';
+				
+
+				addMarker(address,sContent);
+			}
+		}, area);
+	}
+	// 编写自定义函数,创建标注
+	function addMarker(point,sContent){
+		var marker = new BMap.Marker(point);
+		map.addOverlay(marker);
+		var infoWindow = new BMap.InfoWindow(sContent);  // 创建信息窗口对象
+		marker.addEventListener("click", function(){          
+	   this.openInfoWindow(infoWindow);
+	   //图片加载完毕重绘infowindow
+	   document.getElementById('imgDemo').onload = function (){
+		   infoWindow.redraw();   //防止在网速较慢，图片未加载时，生成的信息框高度比图片的总高度小，导致图片部分被隐藏
+	   }
+	});
+	}
+
+
+	function theLocation(){
+		var city = document.getElementById("cityName").value;
+		if(city != ""){
+			map.centerAndZoom(city,11);      // 用城市名设置地图中心点
+		}
+
+
+
+		$.ajax({  
+		async: false,   
+               type: "GET",  
+               url: "__ROOT__/mobile/lotteryInfo?area="+city,  
+               //我们用text格式接收  
+               //dataType: "text",   
+               //json格式接收数据  
+               dataType: "json",  
+               success: function (jsonStr) {  
+                   adds = jsonStr;
+               }  
+        });  
+
+		
+		area=city;
+		bdGEO();
+
+	}
+
+	
+</script>
+
+<include file="./index/index.footer"/>

@@ -1,0 +1,454 @@
+<style>
+
+*{ margin:0; padding:0; list-style:none;}
+img{ border:0;}
+
+.rides-cs {  font-size: 12px;; position: fixed; top: 45%;  _position: absolute; z-index: 1500; border-radius:6px 0px 0 6px;}
+.rides-cs a { }
+.rides-cs a:hover {  text-decoration: none;}
+.rides-cs .floatL { width: 36px; float:left; position: relative; z-index:1;margin-top: 21px;height: 181px;}
+.rides-cs .floatL a { font-size:0; text-indent: -999em; display: block;}
+.rides-cs .floatR { width: 130px; float: left; padding: 5px; overflow:hidden;}
+.rides-cs .floatR .cn { border-radius:6px;margin-top:4px;}
+.rides-cs .cn .titZx{ font-size: 14px; color: #333;font-weight:600; line-height:24px;padding:5px;text-align:center;}
+.rides-cs .cn ul {padding:0px;}
+.rides-cs .cn ul li { line-height: 38px; height:38px;border-bottom: solid 1px #E6E4E4;overflow: hidden;text-align:center;}
+.rides-cs .cn ul li span { color: #777;}
+.rides-cs .cn ul li a{color: #777;}
+.rides-cs .cn ul li img { vertical-align: middle;}
+.rides-cs .btnOpen, .rides-cs .btnCtn {  position: relative; z-index:9; top:25px; left: 0;  background-image: url(/index.png); background-repeat: no-repeat; display:block;  height: 146px; padding: 8px;}
+.rides-cs .btnOpen { background-position: 0 0;}
+.rides-cs .btnCtn { background-position: -37px 0;}
+.rides-cs ul li.top { border-bottom: solid #ACE5F9 1px;}
+.rides-cs ul li.bot { border-bottom: none;}
+</style>
+
+
+
+
+<a href="javascript:;" id="launch_qq11" class="btn7 rides-cs">
+<img src=/index.png>
+</a>
+
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<script>
+　　//自定义配置
+　　BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: '4000482466', selector: 'launch_qq11'});
+</script>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/piyungou/css/Comm222.css"/>
+<!-- 底部 --> 
+ <div class="g-footer">
+	<div class="m-instruction ">
+		<div class="g-wrap f-clear">
+			<div class="g-mainabc">
+				<?php $number=1; 
+                                 $category=D("fenlei")->where("parentid='1' and name!='网站公告'")->order("`order`")->select(); ?>			
+                                <foreach name="category" item="help" >
+				<ul class="m-instruction-list">
+					<li class="m-instruction-list-item">
+						<h5><i class="ico ico-instruction ico-instruction-{$number}"></i>{$help['name']}</h5>
+						<ul class="list">	
+						
+				<?php 
+                                        $article=D("wenzhang")->where(array("cateid"=>$help['cateid']))->select();
+					foreach($article as $art){
+						echo "<li><a href='".C("URL_DOMAIN").'index/show/d/'.$art['id'].".html' target='_blank'>".$art['title'].'</a></li>';
+					}
+				 ?>
+						</ul>
+					</li>
+					<input type='Hidden' value="{$number++}" />
+				</ul>
+				</foreach>
+				 
+			</div>
+			<div class="g-side1">
+				<div class="g-side-l">
+					<ul class="m-instruction-state f-clear">						
+						<li><i class="ico ico-state-l ico-state-l-2"></i>100%正品保证</li>
+						<li><i class="ico ico-state-l ico-state-l-3"></i>100%权益保障</li>
+						<li><i class="ico ico-state-l ico-state-l-1"></i>100%公平公正公开</li>
+					</ul>
+				</div>
+				<div class="g-side-r">
+					<div class="m-instruction-yxCode">
+						<img width="100%" src="__PUBLIC__/uploads/{:C('web_logo1')}" />
+						<p style="line-height: 12px;margin-top:2px;">微信公共号</p>
+					</div>
+					<div class="m-instruction-service">
+						
+						<p>服务热线：<font color="#da3553">{:C('cell')}</font></p>
+						<?php 
+						if(C('qq_qun')){
+						$qq_qun_list = C('qq_qun');
+						$qq_qun_list = explode("|",$qq_qun_list);
+						foreach($qq_qun_list as $qq){
+						$qq = trim($qq);
+						 ?>
+						<p><span class="ft-qqicon"><a style="text-indent:0em; background:none;width:160px;" target="_blank" rel="nofollow" href="javascript:;">官方QQ群：<em class="orange Fb">{$qq}</em></a>  </span></p>
+						<?php 
+							} }
+						 ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="m-copyright">
+		{:R('base/Getheader',array('foot'))}&nbsp;|&nbsp;{:C('web_copyright')} &nbsp;&nbsp;
+	</div>
+        <div class="m-copyright">
+		<div class="g-wrap">
+			<ul class="m-QC-list">
+				<li><a style="width: 108px;"  target="_blank">&nbsp;</a></li>
+				<li><a style="width: 84px;" target="_blank">&nbsp;</a></li>
+				<li><a style="width: 104px;" target="_blank">&nbsp;</a></li>
+				<li><a style="width: 82px;" target="_blank">&nbsp;</a></li>
+				
+			</ul>
+		</div>
+		</div>
+
+</div>      
+<!--footer end-->
+       <div style="display:none"><dd title="服务器时间" style="background:url(__PUBLIC__/plugin/style/images/img/time.png) no-repeat 0px 6px;background-size:21px;"  class="specialFamily" id='sp_ServerTime'> </div>
+			
+ <script type="text/javascript" src="__PUBLIC__/piyungou/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/piyungou/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="__PUBLIC__/style/js/json2.js"></script> 
+  <script type="text/javascript">
+	$(function(){				
+					var week = '日一二三四五六';
+					var innerHtml = '{0}:{1}:{2}';
+					var dateHtml = "{0}月{1}日 &nbsp;周{2}";
+					var timer = 0;
+					var beijingTimeZone = 8;				
+							function format(str, json){
+								return str.replace(/{(\d)}/g, function(a, key) {
+									return json[key];
+								});
+							}				
+							function p(s) {
+								return s < 10 ? '0' + s : s;
+							}			
+
+							function showTime(time){
+								var timeOffset = ((-1 * (new Date()).getTimezoneOffset()) - (beijingTimeZone * 60)) * 60000;
+								var now = new Date(time - timeOffset);
+								document.getElementById('sp_ServerTime').innerHTML = format(innerHtml, [p(now.getHours()), p(now.getMinutes()), p(now.getSeconds())]);				
+								
+							}				
+							
+							window.yungou_time = 	function(time){						
+								showTime(time);
+								timer = setInterval(function(){
+									time += 1000;
+									showTime(time);
+								}, 1000);					
+							}
+				window.yungou_time(<?php echo time()*1000; ?>);
+							
+			});
+			$(document).ready(function(){
+				try{  
+			       if(typeof(eval(pleasereg_initx))=="function"){
+			            pleasereg_initx();
+				   }
+			    }catch(e){
+			       //alert("not function"); 
+			    }  
+			})
+			// //云购基金
+			// $.ajax({
+			// 	url:"__ROOT__/api/fund/get",
+			// 	success:function(msg){
+			// 		$("#spanFundTotal").text(msg);
+			// 	}
+			// });
+//计算购物袋数量
+function cartCount(){
+	var cart = jaaulde.utils.cookies.get("Cartlist");
+	if(cart!=null&& cart!=''&&cart != "undefined"){
+	$.get("__ROOT__/goods/che1/"+ new Date().getTime(),function(data){
+		$("#cartCount").html("("+data+")");
+		$("#row").html("("+data+")");	
+	});
+	
+	
+	}else{
+		$("#cartCount").html("(0)");
+	}
+}
+//加载购物袋信息
+var row = 0;
+var failure =  new Array();
+function loadCart(){
+	$.ajax({
+		type:'get',
+		url:"__ROOT__/goods/che/"+ new Date().getTime(),
+		dataType:'json',
+		success:function(headJosn){
+			var str ='<dt><b>购物袋</b><a href="__ROOT__/goods/cartlist">全屏查看</a></dt><div id="cartListDiv" class="right-hide-scroll">';
+			row = headJosn.cartList.length;
+			if(headJosn.cartList.length > 0){
+				for(i=0;i<headJosn.cartList.length;i++){
+				
+					$("#noCart").hide();
+					str += '<dd id="dd_'+i+'">';    
+					
+					str += '<a href="javascript:gotoGoods('+headJosn.cartList[i].gid+','+headJosn.cartList[i].online.periodCurrent+')"><img width="60" height="60" src="__PUBLIC__/uploads/'+headJosn.cartList[i].online.showImages.split+'"/></a>';
+					
+					
+					var a =headJosn.cartList[i].online.priceTotal-headJosn.cartList[i].online.priceSell;
+					
+					if(headJosn.cartList[i].type!=3){
+						str += '<div class="yfixed-divs-r"> <div class="yfixed-divs-rfsss">';     
+						str += '<p>云购人次 <em id="htime_'+i+'">'+headJosn.cartList[i].times+'</em></p>'; 
+						var price = headJosn.cartList[i].times*(headJosn.cartList[i].buyPeriod);
+						str += '<p>小计 <em id="hprice_'+i+'">￥'+price+'</em></p>';  
+						str += '</div><div class="yfixed-divs-rtsss"><p> </p>';    
+						str += '</p><i onclick="delshop('+headJosn.cartList[i].gid+','+i+')"></i></div></div>';
+					}else{
+						str += '<div class="yfixed-divs-r">';     
+						str +='<input  type="hidden" id="htimes_'+i+'" value="'+headJosn.cartList[i].online.priceAll+'"/>';     
+						str += '<p>云购人次 <em id="htimes_'+i+'">'+headJosn.cartList[i].online.priceAll+'</em></p>';  
+						str += '<p>小计 <em id="hprice_'+i+'">￥'+headJosn.cartList[i].online.priceAll+'</em></p><i onclick="delshop('+headJosn.cartList[i].gid+','+i+')"></i></div>';  
+					}
+					str +='<input  type="hidden" id="harea_'+i+'" value="'+headJosn.cartList[i].online.priceArea+'"/>';     
+					str +='<input  type="hidden" id="gid_'+i+'" value="'+headJosn.cartList[i].gid+'"/>'; 
+					str +='<input  type="hidden" id="hbuyPeriod_'+i+'" value="'+headJosn.cartList[i].buyPeriod+'"/>'; 
+					str +='<input  type="hidden" id="id_'+i+'" value="'+headJosn.cartList[i].id+'"/></dd>';     
+				}
+				str +='</div>';     
+				$("#list").html(str);
+				$("#cartListDiv").css({height:$(window).height()-136+"px"});
+				hsetTotal(-1);
+			}
+			//鼠标移到每条记录上
+			$(".yfixed-divs-r").hover(function(){
+		        if($(".yfixed-divs-rf")){
+			        $(this).find(".yfixed-divs-rt").show();
+			        $(this).find(".yfixed-divs-rf").hide();
+		        }
+		    },function(){
+		        if($(".yfixed-divs-rt")){
+		            $(this).find(".yfixed-divs-rt").hide();
+		            $(this).find(".yfixed-divs-rf").show();
+		        }
+		    })
+		}
+	})
+}
+var showCart = true;
+//鼠标移到购物袋上
+$(".Left-fixed-divs3").hover(function(){
+	var cart = jaaulde.utils.cookies.get("Cartlist");
+	if(cart!=null&& cart!=''&&cart != "undefined"){
+	    $(".Left-fixed-divs2").show();
+	    if(showCart){
+	    	showCart = false;
+	    	loadCart();
+	    }
+	}
+},function(){
+    $(".Left-fixed-divs2").hide();
+})
+//计算总价
+function hsetTotal(a){
+	if(a>=0){
+		$("#row").html(row);
+		var times = $("#htimes_"+a).val()==''?1:$("#htimes_"+a).val();
+		var area = $("#harea_"+a).val()==''?1:$("#harea_"+a).val();
+		var buyPeriod = $("#hbuyPeriod_"+a).val()==''?1:$("#hbuyPeriod_"+a).val();
+		if(typeof(area) == "undefined")
+			area=1;
+		if(typeof(buyPeriod) == "undefined")
+			buyPeriod=1;
+		if(typeof(times) == "undefined")
+			times=$("#buyAllTimes_"+a).html()==null?1:$("#buyAllTimes_"+a).html();
+		var price=times*area*(parseInt(buyPeriod));
+		$("#hprice_"+a).html('￥'+price);
+	}
+	var sum = 0;
+	for(var i=0;i<row;i++){
+		if(failure.toString().indexOf(i+',') <0){
+		   sum+=parseInt($("#hprice_"+i).html().replace("￥", ""));
+		}
+	}
+	$("#hpriceTotal").html(sum);
+}
+//加次数
+function haddTimes(a){
+	var times = $("#htimes_"+a).val();
+	if(parseInt(times)<parseInt($("#hsurplus_"+a).val())){
+		$.ajax({
+			type:'get',
+			url:"__ROOT__/goods/che",
+			dataType:'json',
+			data: {buyPeriod:$("#hbuyPeriod_"+a).val(),
+				num:$("#htimes_"+a).val(),
+				id:$("#gid_"+a).val()},
+			success:function(result){
+				if(result.status){
+					var times = $("#htimes_"+a).val();
+					$("#htimes_"+a).val(parseInt(times)+1);
+					$("#htime_"+a).html(parseInt(times)+1);
+					hsetTotal(a);
+					var cart = jaaulde.utils.cookies.get("Cartlist");
+					cart = eval( cart );
+					cart[a].times=(times/1)+1;
+					jaaulde.utils.cookies.set('Cartlist',JSON.stringify(cart),{path:"/"});
+				}
+				if(typeof($('.c_shop_bag')) != "undefined"){
+					cartAjax();
+				}
+			}
+		});
+	}
+}
+//减次数
+function hminusTimes(a){
+	var times = $("#htimes_"+a).val();
+	if(times>1){
+		$("#htimes_"+a).val(parseInt(times)-1);
+		$("#htime_"+a).html(parseInt(times)-1);
+		setTotal(a);
+		var cart = jaaulde.utils.cookies.get("Cartlist");
+		var list = eval( cart );
+		list[a].times=(times/1)-1;
+		jaaulde.utils.cookies.set('Cartlist',JSON.stringify(list),{path:"/"});
+		if(typeof($('.c_shop_bag')) != "undefined"){
+			cartAjax();
+		}
+	}
+}
+//删除
+
+function delshop(id,a){
+	var Cartlist = $.cookie('Cartlist');	
+	var info = $.evalJSON(Cartlist);
+	var num=parseInt($("#rCartTotal2").html())-1;
+	var sum=parseInt($("#rCartTotalM").html());
+	info['MoenyCount'] = sum-info[id]['money']*info[id]['num'];
+		
+	delete info[id];
+	
+	$.cookie('Cartlist',$.toJSON(info),{expires:30,path:'/'});
+	
+	$("#dd_"+a).remove();
+	if($('#list').find('dd').length<1){
+		$(".Left-fixed-divs2").show();
+		 $(".Left-fixed-divs3").hover(function(){
+			         $(".Left-fixed-divs2").show();
+				 $.get("__ROOT__/api/gou/che1/"+ new Date().getTime(),function(data){
+		if(data<1){
+		$("#noCart").show();
+		}
+	});
+			    },function(){
+			         $(".Left-fixed-divs2").hide();
+			    })
+	}
+	failure.push(a+',');
+	row=row-1;
+	hsetTotal(-1);
+	cartCount();
+	if($('.c_shop_bag div').length>0){
+		cartAjax();
+	}
+}
+function hdel(a){
+	var cart = jaaulde.utils.cookies.get("Cartlist");
+	var cartList = eval( cart );
+	if(cartList.length==1){
+		jaaulde.utils.cookies.set('Cartlist','',{path:"/"});
+	}else{
+		cartList.splice(a,1)
+		jaaulde.utils.cookies.set('Cartlist',JSON.stringify(cartList),{path:"/"});
+	}
+	$("#dd_"+a).remove();
+	if($('#list').find('dd').length<1){
+		$(".Left-fixed-divs2").hide();
+		 $(".Left-fixed-divs3").hover(function(){
+			         $(".Left-fixed-divs2").hide();
+			    },function(){
+			         $(".Left-fixed-divs2").hide();
+			    })
+	}
+	failure.push(a+',');
+	row=row-1;
+	hsetTotal(-1);
+	cartCount();
+	if($('.c_shop_bag div').length>0){
+		cartAjax();
+	}
+}
+</script> 
+  <script type="text/javascript" src="__PUBLIC__/style/js/index.js"></script> 
+		
+  <script type="text/javascript" src="__PUBLIC__/style/js/indexExt.js"></script> 
+   <script>
+					var attr=0;
+					 attr=$(".yJoinNum input").val();
+					var attr1=[];
+					var nums=0;
+					for(i=0;i<attr.length;i++){
+						var nums=attr.slice(i,i+1);
+						attr1.push(nums);
+					}
+					$(".yNumList ul").css("marginTop","-270px");
+				 	var list=0;
+				 	if($(".yNumList").length<attr1.length){
+							var more=attr1.length-$(".yNumList").length;
+							for(i=0;i<more;i++){
+								$($(".yNumList")[0]).clone(true).insertAfter($($(".yNumList")[$(".yNumList").length-1]))
+							}
+						}
+				 	for(i=0;i<attr1.length;i++){
+				 		list=attr[i];
+						$($(".yNumList ul")[i]).animate({marginTop:(list*30-270)},2000)
+					}
+					//setInterval(function(){
+						
+						attr1=[];
+						attr=$(".yJoinNum input").val();
+						for(i=0;i<attr.length;i++){
+							var nums=attr.slice(i,i+1);
+							attr1.push(nums);
+						}
+						if($(".yNumList").length<attr1.length){
+							var more=attr1.length-$(".yNumList").length;
+							for(i=0;i<more;i++){
+								$($(".yNumList")[0]).clone(true).insertAfter($($(".yNumList")[$(".yNumList").length-1]))
+							}
+						}
+						$(".yNumList ul").css("marginTop","-270px");
+						for(i=0;i<attr1.length;i++){
+					 		list=attr[i];
+							$($(".yNumList ul")[i]).animate({marginTop:(list*30-270)},2000)
+						}
+					//},10000)
+
+					$(function(){
+						for(i=0;i<$("#user").length;i++){       
+					      	if($($("#user")[i]).html().length>10){
+					      	$($("#user")[i]).html($($("#user")[i]).html().slice(0,10)+"...")
+					     	}
+					    }
+					 })
+			</script>
+  <script type="text/javascript">
+$(function(){
+	
+});
+
+
+
+</script>  
+
+
+
+<div style="display:none"><script language="javascript" type="text/javascript" src="http://js.users.51.la/18658291.js"></script>
+<noscript><a href="http://www.51.la/?18658291" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/18658291.asp" style="border:none" /></a></noscript></div>
+ </body>
+</html>

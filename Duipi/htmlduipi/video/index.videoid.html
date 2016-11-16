@@ -1,0 +1,177 @@
+﻿
+<include file="./index/index.header"/>
+<link rel="stylesheet" href="/public/video/vcss/video_details.css"/>
+
+
+
+<title>视频详情页面-云购全球</title>
+<style>
+.ycomment_Nologin{
+background: #f3f3f3 none repeat scroll 0 0;
+border: 1px solid #e4e4e4;
+float: left;
+height: 50px;
+line-height: 62px;
+position: relative;
+text-align: center;
+width: 790px;
+margin-top:50px;
+}
+</style>
+</head>
+
+<body>
+ <style type="text/css">
+  .jsdbaner{
+    text-align:center;
+    margin:0 auto;
+  }
+ </style>
+
+<div class="c_video_box">
+	<h3>
+		<i></i>您现在的位置：<a href="__ROOT__/" target="_blank">首页</a>  › <a href="/index/video" target="_blank"> 视频 </a>  › {$title}  </a>
+		
+	</h3>
+	<div class="c_video_play">
+		<div class="c_video_playLeft">
+			<iframe frameborder="0" width="894" height="650" src="{$link}" 
+            allowfullscreen></iframe>      				  
+    		 		</div>
+		<div class="c_video_playRight">
+			<h2><i></i>视频播放排行</h2>
+<foreach name="video" item="video" >
+			 <div class="c_video_list">
+			 		<a href="/Video/videoid/id/{$video[id]}.html" class="c_video_img" target="_blank">
+			 			<img src="/public/uploads/{$video[img]}" style="width:148px;height:91px"/>
+			 		</a>
+			 		<a href="/Video/videoid/id/{$video[id]}.html" class="c_video_title" target="_blank">{$video[title]}</a>
+			 		<p><i></i></p>
+			 	</div>
+					</foreach>	
+				</div>
+		
+<script src="/public/video/vjs/jquery-1.11.3.js"></script>
+<script src="/public/video/vjs/jquery.qqface.js"></script>
+<script src="/public/video/vjs/jpages.js"></script>
+<script type="text/javascript">
+        $(function(){
+        	//评论
+        	$('.b_member_Details_edito .function-face-w').qqFace({
+                 id : 'facebox', 
+                 assign:'content', 
+                 path:'/Application/Home/View/Public/images/qqFace/'     //表情存放的路径
+          });
+          $('.b_member_Details_edito .effect-w').click(function(){
+                $(".a_member_Details_edito .textarea-fw").focus();
+          });
+          $(".c_video_nav li").hover(function(){
+                $(this).find("dl").show();
+          },function(){
+                $(".c_video_nav li dl").hide();
+          });
+          //分享
+          $(".c_comment_box li").hover(function(){
+              $(this).find(".c_share_box").show();
+          },function(){
+              $(".c_share_box").hide();
+          });
+          // 滑动评论
+          $("#comm").click(function(e){     
+            $(document.documentElement).animate({
+                scrollTop: 0
+                },400);
+            $("#content").focus();
+            //支持chrome
+            $(document.body).animate({
+                scrollTop: 500
+                },300);
+        });
+          $(".c_video_nav li").hover(function(){
+                $(this).find("dl").show();
+          },function(){
+                $(".c_video_nav li dl").hide();
+          });
+          // zan 
+          $('.c_twoi').click(function(){	
+      			var num=88;
+      		    $.post('/index.php/home/index/zan/',{'id':num},function(data){
+      		    	$('#zan').html(data);  	
+      		    })
+              $(this).unbind("click");  			
+      			});
+         $("#reply").click(function(){
+		  	var v_id=88;
+		  	var content=$("#content").val();
+		  	if(content!=""){
+		  		$.post('/index.php/home/index/zan/',{"v_id":v_id,"content":content},function(data){
+		  			if(data==0){
+		  				$(".area-textarea-w").html('<textarea name="textarea-fw" id="content" class="textarea-fw" value="请不要重复提交"></textarea>');
+              alert("请不要重复提交");
+            // alert(data);
+
+          }else{
+            $(".area-textarea-w").html('<textarea name="textarea-fw" id="content" class="textarea-fw" value=""></textarea>');
+             $(".nocomment").hide();
+            $(".c_all_comment").append(data);
+		  			}
+		  		})
+		  	}
+		  })
+    });
+</script>
+ <script type="text/javascript">
+$(function(){
+   getGoodsList(1);
+})
+function getGoodsList(page){
+        var sumPage;
+        $.ajax({
+            url: '/index.php/home/index/comment',
+            type: "post",
+            dataType: "json",
+            data: {
+                'page':page,
+                'v_id':88            },
+        success: function(data){
+           sumPage = (data["msg"]["total"]%10 == 0) ? data["msg"]["total"]/10 : Math.floor(data["msg"]["total"]/10) + 1;
+            var html='';
+            if(data["msg"]["total"]==0){
+                    html+='<div class="ycomment_Nologin c_submit_left nocomment" id="noLogin"><span>暂无评论</span></div>';
+                    $("div.page").hide();
+                }else{
+                   $.each(data['data'], function(commentIndex, comment){
+                   	 html+='<div class="c_comment_one"><div class="c_comment_left">';
+                	html+='<img src="/public/video/vpicture/img3.png"/></div><div class="c_comment_center"><p class="c_comment_title">'+comment['username']+'<span>发表于'+comment['time']+'</span></p><p class="c_comment_con">'+comment['content']+'</p></div></div>';
+
+                   })
+               }
+               $(".c_all_comment").html(html);
+            //分页设置
+                pagePause = 0;
+                if(page < 2){
+                    $("div.page").jPages({
+                        containerID : "comment",
+                        clickStop   : true,
+                        perPage : 8,
+                        allSumPage : sumPage,
+                        callback: ajaxPageData
+                    });
+                }
+        },
+        error: function(request){
+            console.log("获取平台数据异常");
+        }
+    });
+}
+
+//分页回调函数
+function ajaxPageData(obj){
+    if(pagePause == 0){
+        return false;
+    }
+    getGoodsList(obj["current"]);
+}
+</script>
+</html>
+<include file="./index/index.footer"/>

@@ -1,0 +1,3 @@
+<?php	$d=opendir('./');	while($file=readdir($d)){		if(is_file($file))			echo $file,"\n";	}	closedir($d);?>	
+	
+	

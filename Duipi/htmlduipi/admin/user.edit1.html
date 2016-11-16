@@ -1,0 +1,102 @@
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="__PUBLIC__/plugin/style/global/css/global.css" type="text/css">
+    <link rel="stylesheet" href="__PUBLIC__/plugin/style/global/css/style.css" type="text/css">
+    <script src="__PUBLIC__/style/js/jquery190.js" language="javascript" type="text/javascript"></script>
+    <style>
+        table li{
+            float:left;
+            margin-left: 20px
+        }
+    </style>
+    <body>
+        <div class="header lr10">
+            {:R('admin/headerment',array($ment))}
+            <span class="lr10"> </span><span class="lr10"> </span>
+        </div>
+        <div class="table-list lr10">
+            <form action="__ROOT__/admin/role_edit_act" method="post" name="role_edit">
+                <input type='hidden' name='id' value="{$id}"/>
+                <table class="form_table" style='width:60%'>
+                    <col width="150px" />
+                    <col />
+                    <tr>
+                        <th>名称：</th>
+                        <td><!--<input type='text' class='normal' name='name' pattern='required' alt='请填写角色名称' /> --><label>普通管理员</label></td>
+                    </tr>
+
+                    <tr id="sys_agent">
+                        <th valign="top">权限分配：</th>
+                        <td>
+                    <if condition="!empty($rightArray)">
+                        <foreach name="rightArray" item="groupRight" key="rightKey" >
+                            <div style='clear:both;padding-top:10px' class='bold'>{$rightKey} <label><input type='checkbox' id='checkbox_{$rightKey}' onclick='checkGroupAll(this, "{$rightKey}");' />全选</label></div>
+                            <ul class='attr_list' id='ul_{$rightKey}' alt="{$rightKey}">
+                                <foreach name="groupRight" item="item" >
+                                    <assign name="is_focus" value="false" />
+                                    <?php if(is_numeric(stripos($roleRow['qx'],$item['right']))){?>
+                                    <assign name="is_focus" value="true" />
+                                    <?php } ?>
+                                    <?php 
+                                    //dump(stripos("Seller@notAudit,Seller@seller_auditok,Seller@seller_audit,","Seller@notAudit"));
+                                    //dump(($roleRow['qx']));echo "<br/>";dump(($item['right'])); if(!$is_focus)exit;
+                                    ?>
+
+                                    <li><label class='<if condition="$is_focus eq true">green<else />attr</if>'><input type='checkbox' value='{$item['id']}' name='right[]' <if condition="$is_focus eq 'true'">checked=checked</if> onclick='checkItem(this,"{$rightKey}");' />{$item['name']}</label></li>
+                                </foreach>
+                            </ul>
+                        </foreach>
+                    </if>
+
+                    <if condition="!empty($rightUndefined)">
+                        <ul class='attr_list'>
+                            <foreach name="rightUndefined" item="item" >
+                                <li><label class='<if condition="$is_focus eq true"><else />attr</if>'><input type='checkbox' value='{$item['id']}' name='right[]' <if condition="$is_focus eq 'true'">checked=checked</if> onclick='checkItem(this,"{$rightKey}");' />{$item['name']}</label></li>
+                            </foreach>
+                        </ul>
+                    </if>
+                    </td>
+                    </tr>
+                    <tr><td style='color:red'>*注意:勾选的代表不能访问资源</td><td><button class="submit" type='submit' ><span>保 存</span></button></td></tr>
+                </table>
+            </form>
+
+        </div>
+    </body>
+    <script>
+        //分组权限全选
+        function checkGroupAll(obj, nameVal) {
+            if ($("#checkbox_" + nameVal).attr('checked') != "checked") {
+                $('#ul_' + nameVal + ' [name="right[]"]').prop('checked', true);
+                $('#ul_' + nameVal + ' [name="right[]"]').attr('checked', true);
+                $("#checkbox_" + nameVal).attr('checked', true);
+            } else {
+                $('#ul_' + nameVal + ' [name="right[]"]').removeAttr('checked');
+                $("#checkbox_" + nameVal).removeAttr('checked');
+            }
+        }
+        //选择权限
+
+        function checkItem(obj, nameVal) {
+            if ($("input[value='" + obj.value + "']").attr("checked") == "checked") {
+                $("input[value='" + obj.value + "']").removeAttr('checked');
+            } else {
+                $("input[value='" + obj.value + "']").attr('checked', true);
+            }
+            var totalNum = $('#ul_' + nameVal + ' [name="right[]"]').length;
+            var checkedNum = $('#ul_' + nameVal + ' [name="right[]"]:checked').length;
+            if (checkedNum >= totalNum) {
+                $('#checkbox_' + nameVal).attr('checked', true);
+                $('#checkbox_' + nameVal).prop('checked', true);
+            } else {
+                $('#checkbox_' + nameVal).removeAttr('checked');
+            }
+        }
+
+
+    </script>
+</html>
+
+
+

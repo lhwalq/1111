@@ -1,0 +1,1 @@
+Base.getScript(pub+"/JS/LotteryFun.js?v=151106");

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)http://dsc.ecmoban.com/test/mobile/index.php?r=user/login/logout -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <title>系统提示</title>
+        <link href="/css/jquery-ui-1.10.1.custom.min.css" rel="stylesheet">
+        <!--字体图标库-->
+        <link rel="stylesheet" href="/css/iconfont.css">
+        <link rel="stylesheet" href="/css/swiper-3.2.5.min.css">
+        <link rel="stylesheet" href="/css/zyUpload.css">
+
+        <!--主样式-->
+        <link rel="stylesheet" href="/css/ectouch.css">
+        <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
+        <link href="/css/layer.css" type="text/css" rel="styleSheet" id="layermcss"></head>
+    <body class="">
+        <div class="filter-top" id="scrollUp">
+            <i class="iconfont icon-jiantou"></i>
+        </div>
+    <include file="./public/smobile.daohang" />
+    <include file="./public/smoblie.soso"/>
+    <div class="con">
+        <div class="message">
+            <div class="flow-done-con">
+                <i class="iconfont icon-hookring2"></i>
+                <p style="padding-left:1.5rem;padding-right:1.5rem">{$str|default="操作成功。"}</p>
+            </div>
+            <div class="padding-all message-a">
+                <a class="back" href='{$defurl|default="javascript:history.go(-1)"}'>继续操作</a>
+                <a class="back" href="/smobile/index">返回首页</a>
+            </div>
+
+        </div>
+    </div>
+    <!--引用js-->
+    <script type="text/javascript" src="/js/swiper-3.2.5.min.js"></script>
+    <script type="text/javascript" src="/js/layer.js"></script>
+    <script type="text/javascript" src="/js/ectouch.js"></script>        <script>
+        window.onload = function () {
+            setTimeout(url, 3000);//1000毫秒=1秒后执行test方法
+        }
+        function url() {
+            var a = '{$defurl|default="/suser/home"}';
+            $(".back").each(function () {
+                window.location.href = a;
+                return false;
+            });
+        }
+    </script>
+
+</body></html>

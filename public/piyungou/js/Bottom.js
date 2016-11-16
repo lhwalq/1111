@@ -1,0 +1,1 @@
+Base.getScript(pub+"/piyungou/js/BottomFun.js?date=20141118");

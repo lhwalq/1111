@@ -1,0 +1,389 @@
+<script type="text/javascript" charset="utf-8">
+   $("img.lazy").lazyload({
+       effect : "fadeIn"
+   });
+</script>
+<!-- 底部 --> 
+  <div class="footer_change"> 
+   <div class="footer"> 
+    <ul class="footerIn"> 
+     <li> <span style="background-position: -119px -70px;height: 46px;margin-top: 7px"></span> <p>100%公平公正公开</p> </li> 
+     <li> <span style="background-position: -119px -122px;margin-top: 4px;height: 48px;"></span> <p>100%品质保障</p> </li> 
+     <li> <span style="background-position: -193px -22px;height: 39px;margin-top: 13px;"></span> <p>全国免运费（港澳除外）</p> </li> 
+     <li> <span style="background-position: -193px -62px;"></span> <p>100%权益保障</p> </li> 
+    </ul> 
+    <div class="yFootSupport"> 
+     <div class="yFootSupport_in"> 
+     <?php $category=D("fenlei")->where(array("parentid"=>"1"))->select();?>
+                                <foreach name="category" item="help" >
+      <dl> 
+       <dt>
+        {$help['name']}
+       </dt> 
+       <?php $article=D("wenzhang")->where(array("cateid"=>$help[cateid]))->select();?>
+					<foreach name="article" item="art" >
+					   <dd><a href="__ROOT__/help/{$art['id']}html" target='_blank'>".$art['title'].'</a></dd>;
+					 </foreach>
+        
+      </dl> 
+     </foreach>
+	             
+      
+      <dl class="dl_Time"> 
+       <dd title="服务热线" style="background:url(__PUBLIC__/style/images/img/phone.png) no-repeat 0px 5px;">
+        {:C('cell')}
+       </dd> 
+<style>
+					.yFCenterdd1 a:hover{
+						text-decoration: none;
+					}
+				</style>
+       <dd title="服务器时间" style="background:url(__PUBLIC__/style/images/img/time.png) no-repeat 0px 6px;background-size:21px;"  class="specialFamily" id='sp_ServerTime'>
+       
+       {YOne sql="select * from `@#_jijin` limit 1" return="fund_data"}
+			    {YOne:end}
+       <a href="{LOCAL_PATH}/single/fund.html">
+        <dd title="公益基金" style="background:url(__PUBLIC__/style/images/img/new-icon.png) no-repeat -200px 5px;background-size:224px;" class="fund" id='spanFundTotal'>
+         ￥{$fund_data['fund_count_money']}
+        </dd></a> 
+      </dl> 
+      <dl class="dlLast"> 
+       <a href="#"> 
+        <dd class="dlLast-WeChat"> 
+         <div class="y-popover"> 
+          <span class="y-arrow"></span> 
+          <b>云购官方微信</b> 
+          <img src="__PUBLIC__/style/images/cloud_kik.jpg" alt="" /> 
+         </div> 
+        </dd> </a> 
+       <a href=""> 
+        <dd class="dlLast-Sina"> 
+         <div class="y-popover"> 
+          <span class="y-arrow"></span> 
+          <b>云购新浪微博</b> 
+          <img src="__PUBLIC__/style/images/cloud_xx.jpg" alt="" /> 
+         </div> 
+        </dd> </a> 
+       <a href="/app/index.html"> 
+        <dd class="dlLast-apple"> 
+         <!-- <div class="y-popover">
+								<span class="y-arrow"></span>
+								<b>扫二维码下载</b>
+								<img src="{YYS_UPLOADS_PATH}/{fun:_yys('web_logo1')}" alt="">
+							</div> --> 
+        </dd> </a> 
+       <a href="/app/index.html"> 
+        <dd class="dlLast-Android"> 
+         <!-- <div class="y-popover">
+								<span class="y-arrow"></span>
+								<b>扫二维码下载</b>
+								<img src="/style/images/cloud_kik01.png" alt="">
+							</div> --> 
+        </dd> </a> 
+      </dl> 
+     </div> 
+     <div class="footer-time-list"> 
+      <div class="yFootBottomRight">
+        {:C('web_copyright')}
+       <!-- http://www.ddtkj.com/ --> 
+      </div> 
+      <div class="yFootBottomLeft"> 
+       <a href="#" target="_blank" class="yFootBottomLeft1"></a> 
+       <a href="" class="yFootBottomLeft2"><img border="0" src="http://img.webscan.360.cn/status/pai/hash/cb86ad78b8051d9a4d47439f0a506afa" /></a> 
+       <a href="#" target="_blank" class="yFootBottomLeft3"></a> 
+       <a href="#" target="_blank" class="yFootBottomLeft4"></a> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="yFootBottom"> 
+     <div class="yFootBottomIn" style="clear: both;"> 
+      <p>友情链接： 
+		<foreach name="link_size" item="size" >
+		<a target="_blank" href="{$size['url']}">{$size['name']}</a>
+	</foreach>	
+	</p> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+
+					
+ 
+ 
+<script type="text/javascript" src="__PUBLIC__/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="__PUBLIC__/style/js/json2.js"></script> 
+  <script type="text/javascript">
+	$(function(){				
+					var week = '日一二三四五六';
+					var innerHtml = '{0}:{1}:{2}';
+					var dateHtml = "{0}月{1}日 &nbsp;周{2}";
+					var timer = 0;
+					var beijingTimeZone = 8;				
+							function format(str, json){
+								return str.replace(/{(\d)}/g, function(a, key) {
+									return json[key];
+								});
+							}				
+							function p(s) {
+								return s < 10 ? '0' + s : s;
+							}			
+
+							function showTime(time){
+								var timeOffset = ((-1 * (new Date()).getTimezoneOffset()) - (beijingTimeZone * 60)) * 60000;
+								var now = new Date(time - timeOffset);
+								document.getElementById('sp_ServerTime').innerHTML = format(innerHtml, [p(now.getHours()), p(now.getMinutes()), p(now.getSeconds())]);				
+								
+							}				
+							
+							window.yungou_time = 	function(time){						
+								showTime(time);
+								timer = setInterval(function(){
+									time += 1000;
+									showTime(time);
+								}, 1000);					
+							}
+				window.yungou_time({fun:time()}*1000);
+							
+			});
+			$(document).ready(function(){
+				try{  
+			       if(typeof(eval(pleasereg_initx))=="function"){
+			            pleasereg_initx();
+				   }
+			    }catch(e){
+			    }  
+			})
+
+//计算购物袋数量
+function cartCount(){
+	var cart = jaaulde.utils.cookies.get("Cartlist");
+	if(cart!=null&& cart!=''&&cart != "undefined"){
+	$.get("{LOCAL_PATH}/api/gou/che1/"+ new Date().getTime(),function(data){
+		$("#cartCount").html("("+data+")");
+		$("#row").html("("+data+")");	
+	});
+	
+	
+	}else{
+		$("#cartCount").html("(0)");
+	}
+}
+//加载购物袋信息
+var row = 0;
+var failure =  new Array();
+function loadCart(){
+	$.ajax({
+		type:'get',
+		url:"{LOCAL_PATH}/api/gou/che/"+ new Date().getTime(),
+		dataType:'json',
+		success:function(headJosn){
+			var str ='<dt><b>购物袋</b><a href="{LOCAL_PATH}/goods/cartlist">全屏查看</a></dt><div id="cartListDiv" class="right-hide-scroll">';
+			row = headJosn.cartList.length;
+			if(headJosn.cartList.length > 0){
+				for(i=0;i<headJosn.cartList.length;i++){
+				
+					$("#noCart").hide();
+					str += '<dd id="dd_'+i+'">';    
+					
+					str += '<a href="javascript:gotoGoods('+headJosn.cartList[i].gid+','+headJosn.cartList[i].online.periodCurrent+')"><img width="60" height="60" src="'+headJosn.cartList[i].online.showImages.split+'"/></a>';
+					
+					var a =headJosn.cartList[i].online.priceTotal-headJosn.cartList[i].online.priceSell;
+					
+					if(headJosn.cartList[i].type!=3){
+						str += '<div class="yfixed-divs-r"> <div class="yfixed-divs-rfsss">';     
+						str += '<p>云购人次 <em id="htime_'+i+'">'+headJosn.cartList[i].times+'</em></p>'; 
+						var price = headJosn.cartList[i].times*(headJosn.cartList[i].buyPeriod);
+						str += '<p>小计 <em id="hprice_'+i+'">￥'+price+'</em></p>';  
+						str += '</div><div class="yfixed-divs-rtsss"><p> </p>';    
+						str += '</p><i onclick="delshop('+headJosn.cartList[i].gid+','+i+')"></i></div></div>';
+					}else{
+						str += '<div class="yfixed-divs-r">';     
+						str +='<input  type="hidden" id="htimes_'+i+'" value="'+headJosn.cartList[i].online.priceAll+'"/>';     
+						str += '<p>云购人次 <em id="htimes_'+i+'">'+headJosn.cartList[i].online.priceAll+'</em></p>';  
+						str += '<p>小计 <em id="hprice_'+i+'">￥'+headJosn.cartList[i].online.priceAll+'</em></p><i onclick="delshop('+headJosn.cartList[i].gid+','+i+')"></i></div>';  
+					}
+					str +='<input  type="hidden" id="harea_'+i+'" value="'+headJosn.cartList[i].online.priceArea+'"/>';     
+					str +='<input  type="hidden" id="gid_'+i+'" value="'+headJosn.cartList[i].gid+'"/>'; 
+					str +='<input  type="hidden" id="hbuyPeriod_'+i+'" value="'+headJosn.cartList[i].buyPeriod+'"/>'; 
+					str +='<input  type="hidden" id="id_'+i+'" value="'+headJosn.cartList[i].id+'"/></dd>';     
+				}
+				str +='</div>';     
+				$("#list").html(str);
+				$("#cartListDiv").css({height:$(window).height()-136+"px"});
+				hsetTotal(-1);
+			}
+			//鼠标移到每条记录上
+			$(".yfixed-divs-r").hover(function(){
+		        if($(".yfixed-divs-rf")){
+			        $(this).find(".yfixed-divs-rt").show();
+			        $(this).find(".yfixed-divs-rf").hide();
+		        }
+		    },function(){
+		        if($(".yfixed-divs-rt")){
+		            $(this).find(".yfixed-divs-rt").hide();
+		            $(this).find(".yfixed-divs-rf").show();
+		        }
+		    })
+		}
+	})
+}
+var showCart = true;
+//鼠标移到购物袋上
+$(".Left-fixed-divs3").hover(function(){
+	var cart = jaaulde.utils.cookies.get("Cartlist");
+	if(cart!=null&& cart!=''&&cart != "undefined"){
+	    $(".Left-fixed-divs2").show();
+	    if(showCart){
+	    	showCart = false;
+	    	loadCart();
+	    }
+	}
+},function(){
+    $(".Left-fixed-divs2").hide();
+})
+//计算总价
+function hsetTotal(a){
+	if(a>=0){
+		$("#row").html(row);
+		var times = $("#htimes_"+a).val()==''?1:$("#htimes_"+a).val();
+		var area = $("#harea_"+a).val()==''?1:$("#harea_"+a).val();
+		var buyPeriod = $("#hbuyPeriod_"+a).val()==''?1:$("#hbuyPeriod_"+a).val();
+		if(typeof(area) == "undefined")
+			area=1;
+		if(typeof(buyPeriod) == "undefined")
+			buyPeriod=1;
+		if(typeof(times) == "undefined")
+			times=$("#buyAllTimes_"+a).html()==null?1:$("#buyAllTimes_"+a).html();
+		var price=times*area*(parseInt(buyPeriod));
+		$("#hprice_"+a).html('￥'+price);
+	}
+	var sum = 0;
+	for(var i=0;i<row;i++){
+		if(failure.toString().indexOf(i+',') <0){
+		   sum+=parseInt($("#hprice_"+i).html().replace("￥", ""));
+		}
+	}
+	$("#hpriceTotal").html(sum);
+}
+//加次数
+function haddTimes(a){
+	var times = $("#htimes_"+a).val();
+	if(parseInt(times)<parseInt($("#hsurplus_"+a).val())){
+		$.ajax({
+			type:'get',
+			url:"/api/gou/che",
+			dataType:'json',
+			data: {buyPeriod:$("#hbuyPeriod_"+a).val(),
+				num:$("#htimes_"+a).val(),
+				id:$("#gid_"+a).val()},
+			success:function(result){
+				if(result.status){
+					var times = $("#htimes_"+a).val();
+					$("#htimes_"+a).val(parseInt(times)+1);
+					$("#htime_"+a).html(parseInt(times)+1);
+					hsetTotal(a);
+					var cart = jaaulde.utils.cookies.get("Cartlist");
+					cart = eval( cart );
+					cart[a].times=(times/1)+1;
+					jaaulde.utils.cookies.set('Cartlist',JSON.stringify(cart),{path:"/"});
+				}
+				if(typeof($('.c_shop_bag')) != "undefined"){
+					cartAjax();
+				}
+			}
+		});
+	}
+}
+//减次数
+function hminusTimes(a){
+	var times = $("#htimes_"+a).val();
+	if(times>1){
+		$("#htimes_"+a).val(parseInt(times)-1);
+		$("#htime_"+a).html(parseInt(times)-1);
+		setTotal(a);
+		var cart = jaaulde.utils.cookies.get("Cartlist");
+		var list = eval( cart );
+		list[a].times=(times/1)-1;
+		jaaulde.utils.cookies.set('Cartlist',JSON.stringify(list),{path:"/"});
+		if(typeof($('.c_shop_bag')) != "undefined"){
+			cartAjax();
+		}
+	}
+}
+//删除
+
+function delshop(id,a){
+	var Cartlist = $.cookie('Cartlist');	
+	var info = $.evalJSON(Cartlist);
+	var num=parseInt($("#rCartTotal2").html())-1;
+	var sum=parseInt($("#rCartTotalM").html());
+	info['MoenyCount'] = sum-info[id]['money']*info[id]['num'];
+		
+	delete info[id];
+	
+	$.cookie('Cartlist',$.toJSON(info),{expires:30,path:'/'});
+	
+	$("#dd_"+a).remove();
+	if($('#list').find('dd').length<1){
+		$(".Left-fixed-divs2").show();
+		 $(".Left-fixed-divs3").hover(function(){
+			         $(".Left-fixed-divs2").show();
+				 $.get("{LOCAL_PATH}/api/gou/che1/"+ new Date().getTime(),function(data){
+		if(data<1){
+		$("#noCart").show();
+		}
+	});
+			    },function(){
+			         $(".Left-fixed-divs2").hide();
+			    })
+	}
+	failure.push(a+',');
+	row=row-1;
+	hsetTotal(-1);
+	cartCount();
+	if($('.c_shop_bag div').length>0){
+		cartAjax();
+	}
+}
+function hdel(a){
+	var cart = jaaulde.utils.cookies.get("Cartlist");
+	var cartList = eval( cart );
+	if(cartList.length==1){
+		jaaulde.utils.cookies.set('Cartlist','',{path:"/"});
+	}else{
+		cartList.splice(a,1)
+		jaaulde.utils.cookies.set('Cartlist',JSON.stringify(cartList),{path:"/"});
+	}
+	$("#dd_"+a).remove();
+	if($('#list').find('dd').length<1){
+		$(".Left-fixed-divs2").hide();
+		 $(".Left-fixed-divs3").hover(function(){
+			         $(".Left-fixed-divs2").hide();
+			    },function(){
+			         $(".Left-fixed-divs2").hide();
+			    })
+	}
+	failure.push(a+',');
+	row=row-1;
+	hsetTotal(-1);
+	cartCount();
+	if($('.c_shop_bag div').length>0){
+		cartAjax();
+	}
+}
+</script> 
+  <script type="text/javascript" src="/style/js/index.js"></script> 
+		
+  <script type="text/javascript" src="/style/js/indexExt.js"></script> 
+   
+  <script type="text/javascript">
+$(function(){
+	
+});
+
+
+
+</script>  
+
+ </body>
+</html>

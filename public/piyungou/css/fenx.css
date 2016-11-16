@@ -1,0 +1,52 @@
+﻿/*分享css*/
+	.c_share_method {
+		float: right;
+		right:20px;
+		width: 235px;
+		position: relative;
+		top:12px
+		}
+	.c_share_method dd {
+		float: left;
+		position: absolute;
+		top: 0;
+		}
+	.c_xl_microblog {
+		display: block;
+		width: 25px;
+		height: 25px;
+		background: url(../images/share_ico.png) 0 -8px no-repeat;
+		}
+	.c_xl_microblog:hover{display:block;width:25px;height:25px;background:url(../images/share_ico_hover.png) 0 -8px no-repeat;}
+		
+	.c_share_qq {
+		display: block;
+		width: 25px;
+		height: 26px;
+		background: url(../images/share_ico2.png) 0 0 no-repeat;
+		}
+	.c_share_qq:hover{display:block;width:25px;height:26px;background:url(../images/share_ico_hover2.png) 0 0 no-repeat;}
+	
+	.c_share_kik {
+		display: block;
+		width: 25px;
+		height: 26px;
+		background: url(../images/share_ico.png) 0 -86px no-repeat;
+		}
+	.c_share_kik:hover{display:block;width:25px;height:26px;background:url(../images/share_ico_hover.png) 0 -86px no-repeat;}
+		
+	.c_human_web {
+		display: block;
+		width: 25px;
+		height: 26px;
+		background: url(../images/share_ico.png) 0 -126px no-repeat;
+		}
+	.c_human_web:hover{display:block;width:25px;height:26px;background:url(../images/share_ico_hover.png) 0 -126px no-repeat;}
+	
+	.c_tx_microblog {
+		display: block;
+		width: 25px;
+		height: 25px;
+		background: url(../images/share_ico.png) 0 -166px no-repeat;
+		}
+	.c_tx_microblog:hover{display:block;width:25px;height:25px;background:url(../images/share_ico_hover.png) 0 -166px no-repeat;}

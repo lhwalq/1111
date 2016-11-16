@@ -1,0 +1,67 @@
+<include file="./index/index.header"/>
+<div class="main-content clearfix">
+<include file="./index/member.left"/>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>后台首页</title>
+
+<link rel="stylesheet" href="__PUBLIC__/plugin/style/global/css/style.css" type="text/css">
+
+<script src="__PUBLIC__/plugin/style/global/js/jquery-1.8.3.min.js"></script>
+<script src="__PUBLIC__/plugin/uploadify/api-uploadify.js" type="text/javascript"></script> 
+
+<style>
+.header{height:40px; overflow:hidden;     border: 1px solid #fff; background: #fff;
+        zoom: 1;
+        position: relative;
+        z-index: 21;
+        height: 155px;
+        margin-top: 0px;
+    padding-left: 0px;
+}
+body {
+    background-color: #ffffff; 
+}
+</style>
+</head>
+<body style="overflow-y:hidden">
+
+<div class="table_form lr10">
+<form method="post" action="">
+	<table width="87%"  cellspacing="0" cellpadding="0" style="margin-left:150px;">
+	<tr style="background-color:#FFe;height:50px;">
+			<td align="right" style="width:120px" style="font-weight:bold"></td>
+			<td><b><?php if($user['seller_img']) {echo "资料已上传，正等待商户审核，若要修改，请重新上传！";}else{ echo "请上传商户认证资料"; } ?></b></td>
+        </tr>
+        
+        <tr>
+         <td align="right" style="width:120px"><font color="red">*</font>商户认证资料：</td>
+        <td>
+        	<img src=<?php if($user['seller_img']){
+			?>
+				"__PUBLIC__/uploads/{$user['seller_img']}"
+				<?php 
+			} else { 
+			?>
+				"__PUBLIC__/uploads/photo/goods.jpg"<?php 
+			}?>style="border:1px solid #eee; padding:1px; width:50px; height:50px;">
+           	<input type="text" id="imagetext" name="thumb" value="photo/goods.jpg" class="input-text wid300">
+			<input type="button" class="button"
+             onClick="GetUploadify('<?php echo C('URL_DOMAIN'); ?>','uploadify','商户认证资料上传','image','sellerimg',1,500000,'imagetext')" 
+             value="上传图片"/>	
+        </td>
+      </tr>
+<tr height="60px">
+			<td align="right" style="width:120px"></td>
+			<td><input type="submit" name="dosubmit" class="button" value="保存"/></td>
+		</tr>
+	</table>
+</form>
+</div>
+</div>
+
+</body>
+</html> 
+<include file="./index/index.footer"/>

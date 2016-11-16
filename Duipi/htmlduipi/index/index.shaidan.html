@@ -1,0 +1,35 @@
+<include file="./index/index.header"/>
+  <div class="w_header_nav">
+   <img src="__PUBLIC__/style/images/share_02.jpg" />
+  </div> 
+  <div class="w_con"> 
+   <h2 class="w_title">全部晒单<b>（共{$zongji}条晒单）</b></h2> 
+   <div class="w_share"> 
+    <!--第一列--> 
+    <dl class="w_share_one">
+<foreach name="shaidingdan" item="sd" >
+     <dd class="w_oneself_share">
+      <a href="__ROOT__/index/detail/id/{$sd['sd_id']}"><img style="display: inline;" src="__PUBLIC__/uploads/{$sd['sd_thumbs']}" class="lazy1" data-original="__PUBLIC__/uploads/{$sd['sd_thumbs']}" />
+       <noscript>
+        <img src="__PUBLIC__/uploads/{$sd['sd_thumbs']}" />
+       </noscript></a>
+      <p title="{$sd['sd_title']}" style="overflow: hidden;text-overflow: ellipsis; white-space: nowrap;display:block;">{$sd['sd_title']}<br />{$sd['sd_time']|date="Y-m-d H:i",###}</p>
+      <div class="w_single">
+       <a href="__ROOT__/user/uname/d/{:R('base/idjia',array($sd['sd_userid']))}.html" class="w_em">
+        <div class="w_f1">
+         <img src="__PUBLIC__/uploads/{:R('base/huode_user_key',array($sd['sd_userid'],'img','3030'))}" />
+        </div><em>{:R('base/huode_user_name',array($sd['sd_userid'],'username'))}</em></a>
+       <a href="__ROOT__/index/detail/id/{$sd['sd_id']}">({$sd['sd_ping']})</a>
+      </div>
+     </dd>
+</foreach>
+
+     
+    </dl> 
+   </div> 
+   <if condition="$zongji gt $num ">
+			<div class="pagesx"><?php echo $fenye->show("two") ?></div>
+		</if>
+  </div> 
+  <!-- 底部 --> 
+  <include file="./index/index.footer"/>

@@ -1,0 +1,46 @@
+<include file="./index/index.header"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/piyungou/css/GoodsList.css"/>
+ 
+<div class="wrap" id="loadingPicBlock">
+	<div id="current" class="list_Curtit">
+		<h1 class="fl">商品搜索－"{$search}"</h1> 
+		<span id="spTotalCount">(共<em class="orange">{$list}</em>件相关商品)</span>
+	</div>
+        <if condition="$yyslist neq null ">
+	<div class="listContent">
+	<ul class="item" id="ulGoodsList">
+            <foreach name="yyslist" item="shop" >
+		<li class="goods-iten" >
+			<div class="pic">
+				<a href="__ROOT__/goods/items/goodsId/{$shop['id']}.html" target="_blank" title="{$shop['title']} "><img alt="{$shop['title']}" src="__PUBLIC__/uploads/{$shop['thumb']}"></a>
+				<p name="buyCount" style="display:none;"></p>
+			</div>
+			<p class="name">
+				<a href="__ROOT__/goods/items/goodsId/{$shop['id']}.html" target="_blank" title="{$shop['title']} ">{$shop['title']}</a>
+			</p>
+			<p class="money">价值：<span class="rmbgray">{$shop['money']}</span></p>
+			<div class="Progress-bar">
+				<p ><span style="width:{:R('base/width',array($shop['canyurenshu'],$shop['zongrenshu'],213))}px;"></span></p>
+				<ul class="Pro-bar-li">
+					<li class="P-bar01"><em>{$shop['canyurenshu']}</em>已参与人次</li>
+					<li class="P-bar02"><em>{$shop['zongrenshu']}</em>总需人次</li>
+					<li class="P-bar03"><em>{$shop['zongrenshu']-$shop['canyurenshu']}</em>剩余人次</li>
+				</ul>
+			</div>
+			<div class="gl_buybtn">
+				<div class="go_buy">
+					<a href="__ROOT__/goods/items/goodsId/{$shop['id']}.html" title="立即云购" class="go_Shopping fl">立即云购</a>
+					<a href="__ROOT__/goods/items/goodsId/{$shop['id']}.html" title="加入购物车" class="go_cart fr">加入购物车</a>
+				</div>
+			</div>
+			<div class="Curborid" style="display:none;">{$shop['id']}</div>
+		</li>
+		</foreach>
+	</ul>
+	</div>
+	<else/>
+	<div class="NoConMsg"><span>未找到有关“<em class="orange">{$search}</em>”的商品</span></div>
+	</if>
+</div>
+
+<include file="./index/index.footer"/>

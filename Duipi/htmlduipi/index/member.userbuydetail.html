@@ -1,0 +1,47 @@
+<include file="./index/index.header"/>
+<div class="main-content clearfix">
+<include file="./index/member.left"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/piyungou/css/layout-records.css"/>
+<div class="R-content">
+	<div class="member-t"><h2>云购记录</h2></div>
+	<?php
+        	$jiexiao = R("base/huode_shop_if_jiexiao",array($record['shopid']));
+        ?>
+	<if condition="$jiexiao['q_uid']&&$jiexiao['q_showtime']=='N'">
+	<div class="yg_record_goods">
+		<a href="__ROOT__/goods/dataserverForPc/goodsId/{$record['shopid']}.html" target="_blank" class="fl-img"><img src="__PUBLIC__/uploads/{$record['thumb']}"></a>
+		<div class="yg_record_r">
+			<li><span class="orange">(第{$record['shopqishu']}期)</span> <a target="_blank" href="__ROOT__/goods/dataserverForPc/goodsId/{$record['shopid']}_{$record['shopqishu']}.html" class="blue">{$jiexiao['title']}</a></li>
+			<li class="gray02">本期商品云购已结束 【获得者：<a href="__ROOT__/user/uname/d/{:R('base/idjia',array($record['uid']))}.html" target="_blank" class="blue">
+			{:R("base/huode_user_name",array($jiexiao['q_user']))}</a> 
+			幸运编号：{$jiexiao['q_user_code']} 】</li>
+			<li><a target="_blank" href="__ROOT__/goods/dataserverForPc/goodsId/{$record['shopid']}.html" class="bluebut">查看详情</a></li></div>
+	</div>
+	<else />
+	<div class="yg_record_goods">
+		<a href="__ROOT__/goods/items/goodsId/{$record['shopid']}.html" target="_blank" class="fl-img"><img src="__PUBLIC__/uploads/{$record['thumb']}"></a>
+		<div class="yg_record_r">
+			<li><span class="orange">(第{$record['shopqishu']}期)</span> <a target="_blank" href="__ROOT__/goods/items/goodsId/{$record['shopid']}.html" class="blue">{$jiexiao['title']}</a></li>
+			<li><a target="_blank" href="__ROOT__/goods/items/goodsId/{$record['shopid']}.html" class="bluebut">查看详情</a></li></div>
+	</div>
+	</if>
+	<div class="goods-tit gray02">
+		<p class="fl">本期商品您总共云购<span>{$record['gonumber']}</span>人次 拥有<span>{$record['gonumber']}</span>个云购码</p><a href="__ROOT__/user/userbuylist" class="blue fr">&lt;&lt; 返回列表</a>
+	</div> 
+
+	<div class="list-tab goodsList" id="userbuylist">
+		<ul class="listTitle">
+			<li class="leftTitle">云购时间</li>
+			<li>云购人次</li>
+			<li class="Code">云购码</li></ul>
+		<ul><li class="leftTitle">{:R('base/microt',array($record['time']))}</li>
+			<li>{$record['gonumber']}人次</li>
+			<li class="Code">{:R('base/yunma',array($record['goucode']))}</li></ul>
+	</div>
+
+	<div class="goods-tit gray02">
+		<a href="__ROOT__/user/userbuylist" class="blue fr">&lt;&lt; 返回列表</a></div>
+</div>
+
+</div>
+<include file="./index/index.footer"/>

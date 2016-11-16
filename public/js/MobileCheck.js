@@ -1,0 +1,1 @@
+Base.getScript(pub+"/JS/MobileCheckFun.js?v=150720");

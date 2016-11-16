@@ -1,0 +1,67 @@
+<link href="__PUBLIC__/piyungou/css/groups.css" rel="stylesheet" type="text/css" />
+<div class="groups-right">
+    <div class="groups-head">
+        <if condition="R('Base/uidcookie',array('uid'))">	
+            <div class="grhead-img"><a href="__ROOT__/user/uname/d/{:R('Base/idjia',array(R('Base/uidcookie',array('uid'))))}" class="fl-img">		
+                    <if condition="!R('Base/userid',array(R('Base/uidcookie',array('uid')),'img'))">
+                        <img src="__PUBLIC__/images/prmimg.jpg" width="50" height="50" />
+                        <else />
+                        <img id="imgUserPhoto" src="__PUBLIC__/uploads/{:R('Base/userid',array(R('Base/uidcookie',array('uid')),'img'))}" width="50" height="50" border="0"/>
+                    </if>	
+            </div>
+            <div class="grhead-info">
+                <p class="grhead-name"><a href="__ROOT__/user/uname/d/{:R('Base/idjia',array(R('Base/uidcookie',array('uid'))))}" class="gray" >{:R('Base/userid',array(R('Base/uidcookie',array('uid')),'username'))}</a></p>
+                <p class="grhead-topic gray02">话题{:R('Base/huati',array('tiezi'))}<span class="gray03"> | </span>回复{:R('Base/huati',array('hueifu'))}</p>
+                <div id="divJoinGroup">
+                    <p id="pJoinGroup" class="grhead-join gray02"> 加入圈子<span id="spJoinGroupNum" class="orange">{:R('Base/qznum')}</span>个<b></b></p>
+                </div>
+            </div>	
+            <else />
+            <div class="groups-login">
+                <p class="grhead-loginc1 gray02">登录查看您的圈子吧！</p>
+                <p class="grhead-login-reg gray02">没账号？ <span><a href="__ROOT__/user/register" target="_blank" class="gray01">简单注册 快捷方便！</a></span></p>
+                <a id="btnLogin" href="__ROOT__/user/login" class="button07">立即登录</a>
+            </div>
+        </if>
+    </div>
+    <div class="blank10"></div>
+    <div id="divHotTopic" class="groups-shadow clearfix">
+        <div class="R-grtit"><h3>热门话题</h3></div>
+        <?php $dongtai = D("quan_tiezi")->group("hueiyuan")->order("id desc")->limit("5")->select(); ?>
+        <foreach name="dongtai" item="tz" >
+            <div class="R-list Topic-list">
+                <div class="groups-Rimg">
+                    <a type="showCard" href="__ROOT__/user/uname/d/{:R('Base/idjia',array($tz['hueiyuan']))}" class="fl-img">				
+                        <if condition="!R('Base/userid',array($tz['hueiyuan'],'img'))">	
+                            <img src="__PUBLIC__/images/prmimg.jpg" width="30" height="30" />
+                            <else />
+                            <img id="imgUserPhoto" src="__PUBLIC__/uploads/{:R('Base/userid',array($tz['hueiyuan'],'img'))}" width="30" height="30" border="0"/>
+                        </if>	
+                    </a></div>
+                <div class="groups-Rinfo">
+                    <p class="groups-ht"><a href="__ROOT__/group/nei/id/{$tz['id']}" class="gray"> {$tz['title']}</a></p>
+                    <p class="groups-c gray02">{:R('Base/strcut',array(R('Base/quanzid',array($tz['qzid'])),10))}<span class="gray03"> | </span>{:R('Base/huifu',array($tz['id']))}条回复</p>
+                </div>
+            </div>
+        </foreach>
+    </div>
+    <div class="blank10"></div>
+    <div class="groups-shadow clearfix">
+        <div class="R-grtit"><h3>活跃成员</h3></div>
+        <div class="Member-list clearfix">
+            <ul id="ulMember">
+                <foreach name="hueifu" item="hf" >	
+                    <li><a type="showCard" href="__ROOT__/user/uname/d/{wc:fun:idjia($hf['hueiyuan'])}" class="blue">
+                            <if condition="!R('Base/userid',array($hf['hueiyuan'],'img'))">	
+                                <img src="__PUBLIC__/images/prmimg.jpg" width="50" height="50" />
+                                <else />
+                                <img id="imgUserPhoto" src="__PUBLIC__/uploads/{:R('Base/userid',array($hf['hueiyuan'],'img'))}" width="50" height="50" border="0"/>
+                            </if>	
+                            <i>{:R('Base/userid',array($hf['hueiyuan'],'username'))}</i></a>
+                    </li>		
+                </foreach>
+
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,392 @@
+<include file="./index/index.header"/>
+<div class="groups-stripes"></div>
+<div class="layout980">
+    <div class="groups-left">
+        <div class="Topic-head">
+            <div class="Topic-Himg"><a href="" class="fl-img"><img src="__PUBLIC__/uploads/{$quanzi['img']}" id="imgGroupIco" border="0"></a></div>
+            <div class="Topic-HC">
+                <div class="Topic-Htit gray03">
+                    <h2><a id="thisGroupName" href="" class="orange">{$quanzi['title']}</a></h2> 
+                    <if condition="$quanzi['jiaru'] eq 'Y'">
+                        <if condition="!$addgroup">
+                            <a id="btnJoinGroup" href="javascript:;" class="button04">申请加入</a>
+                            <else />
+                            <span class="JoinOut" id="spanJoinOut"><s></s>已加入<i>|</i><a id="btnJoinOutGroup" href="javascript:;" class="blue">退出</a></span>
+                        </if>
+                    </if>
+                </div>
+                <p class="Topic-Hinfo gray02">成员：
+                    <span class="gray01">{$quanzi['chengyuan']}</span>&nbsp;&nbsp;&nbsp;话题：
+                    <span class="gray01">{$quanzi['tiezi']}</span>&nbsp;&nbsp;&nbsp;创建时间：
+                    <span class="gray01">{$quanzi['time']|date="Y-m-d H:i",###}</span>
+                </p>
+                <div class="Topic-Hintro"><span id="pGroupAbout" class="gray01">{$quanzi['jianjie']}</span>&nbsp;</div>
+            </div>
+            <div class="Managers">
+                <a class="Managers-icon" type="showCard" href="__ROOT__/user/uname/d/{:R('Base/idjia',array($quanzi['guanli']))}"></a>
+                <div class="Managers-Himg"><a href="__ROOT__/user/uname/d/{:R('Base/idjia',array($quanzi['guanli']))}" type="showCard" class="fl-img">
+                        <if condition="!R('Base/userid',array($quanzi['guanli'],'img'))">
+                            <img src="__PUBLIC__/images/prmimg.jpg" width="50" height="50" />
+                            <else />
+                            <img id="imgUserPhoto" src="__PUBLIC__/uploads/{:R('Base/userid',array($quanzi['guanli'],'img'))}" width="50" height="50" border="0"/>
+                        </if>				
+                    </a>
+                    <p class="Managers-name"><a type="showCard" href="__ROOT__/user/uname/d/{:R('Base/idjia',array($quanzi['guanli']))}" class="blue">{:R('Base/userid',array($quanzi['guanli'],'username'))}</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="msg">
+            <b><i></i>圈子公告：</b>
+            <p id="pGroupNotice" class="gray01">{$quanzi['gongao']}</p>
+        </div>
+        <div class="Publish">
+            <div class="Pub-inp-click">
+                <b></b>
+                <input type="text" id="txtTopicTitle" value="点击展开"><a id="btnPostTopic" href="javascript:;" class="button05">发表话题</a>
+            </div>
+            <div id="divEditor" class="Pub-topic hidden">
+                <form action="__ROOT__/group/showinsert" method="post">
+                    <p class="Pub-tit"><b></b><input id="txtTopicTitleEx" maxlength="100" type="text" name="title" value=""></p>				
+                    <!--编辑器开始-->				
+                    <link href="__PUBLIC__/plugin/umeditor3/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
+                    <script type="text/javascript" src="__PUBLIC__/plugin/umeditor3/third-party/jquery.min.js"></script>
+                    <script type="text/javascript" charset="utf-8" 
+                    src="__PUBLIC__/plugin/umeditor3/umeditor.config.js"></script>
+                    <script type="text/javascript" charset="utf-8" 
+                    src="__PUBLIC__/plugin/umeditor3/umeditor.min.js"></script>
+                    <script type="text/javascript" src="__PUBLIC__/plugin/umeditor3/lang/zh-cn/zh-cn.js"></script>
+                    <p class="Pub-con" style="width:680px;"><b></b><script name="neirong" id="txtTopicContent" type="text/plain"></script></p>
+                    <style type="text/css">
+                        h1{
+                            font-family: "微软雅黑";
+                            font-weight: normal;
+                        }
+                        .btn {
+                            display: inline-block;
+                            *display: inline;
+                            padding: 4px 12px;
+                            margin-bottom: 0;
+                            *margin-left: .3em;
+                            font-size: 14px;
+                            line-height: 20px;
+                            color: #333333;
+                            text-align: center;
+                            text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+                            vertical-align: middle;
+                            cursor: pointer;
+                            background-color: #f5f5f5;
+                            *background-color: #e6e6e6;
+                            background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+                            background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+                            background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+                            background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+                            background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+                            background-repeat: repeat-x;
+                            border: 1px solid #cccccc;
+                            *border: 0;
+                            border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+                            border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+                            border-bottom-color: #b3b3b3;
+                            -webkit-border-radius: 4px;
+                            -moz-border-radius: 4px;
+                            border-radius: 4px;
+                            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', 
+                                GradientType=0);
+                            filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+                            *zoom: 1;
+                            -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+                            -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+                            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+                        }
+
+                        .btn:hover,
+                        .btn:focus,
+                        .btn:active,
+                        .btn.active,
+                        .btn.disabled,
+                        .btn[disabled] {
+                            color: #333333;
+                            background-color: #e6e6e6;
+                            *background-color: #d9d9d9;
+                        }
+
+                        .btn:active,
+                        .btn.active {
+                            background-color: #cccccc \9;
+                        }
+
+                        .btn:first-child {
+                            *margin-left: 0;
+                        }
+
+                        .btn:hover,
+                        .btn:focus {
+                            color: #333333;
+                            text-decoration: none;
+                            background-position: 0 -15px;
+                            -webkit-transition: background-position 0.1s linear;
+                            -moz-transition: background-position 0.1s linear;
+                            -o-transition: background-position 0.1s linear;
+                            transition: background-position 0.1s linear;
+                        }
+
+                        .btn:focus {
+                            outline: thin dotted #333;
+                            outline: 5px auto -webkit-focus-ring-color;
+                            outline-offset: -2px;
+                        }
+
+                        .btn.active,
+                        .btn:active {
+                            background-image: none;
+                            outline: 0;
+                            -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+                            -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+                            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+                        }
+
+                        .btn.disabled,
+                        .btn[disabled] {
+                            cursor: default;
+                            background-image: none;
+                            opacity: 0.65;
+                            filter: alpha(opacity=65);
+                            -webkit-box-shadow: none;
+                            -moz-box-shadow: none;
+                            box-shadow: none;
+                        }
+                    </style>
+                    </head>
+                    <body>
+
+
+                        <!--style给定宽度可以影响编辑器的最终宽度-->
+                        <script type="text/plain" id="txtTopicContent" style="width:680px;height:240px;">
+                            <p>这里我可以写一些输入提示</p>
+                        </script>
+
+
+                        <div class="clear"></div>
+
+                        <script type="text/javascript">
+                            window.UEDITOR_CONFIG.initialContent = '';
+                            window.UEDITOR_CONFIG.initialFrameWidth = 678;
+                            window.UEDITOR_CONFIG.initialFrameHeight = 300;
+                            window.UEDITOR_CONFIG.fontsize = [8, 9, 10, 11, 12];
+                            window.UEDITOR_CONFIG.toolbars = [["source", "fontfamily", "bold", "italic", "justifyleft", "justifycenter", "justifyright", "justifyjustify", "insertunorderedlist", ]];
+                            window.UEDITOR_CONFIG.fontfamily = [{label: '', name: 'songti', val: '宋体,SimSun'}, {label: '', name: 'arial', val: 'arial, helvetica,sans-serif'}];
+                            window.UEDITOR_CONFIG.maximumWords = 60000;
+                            var ue = UE.getEditor('txtTopicContent');
+                        </script>
+                        <script type="text/javascript">
+                            //实例化编辑器
+                            var um = UM.getEditor('txtTopicContent');
+                            um.addListener('blur', function () {
+                                $('#focush2').html('编辑器失去焦点了')
+                            });
+                            um.addListener('focus', function () {
+                                $('#focush2').html('')
+                            });
+                            //按钮的操作
+                            function insertHtml() {
+                                var value = prompt('插入html代码', '');
+                                um.execCommand('insertHtml', value)
+                            }
+                            function isFocus() {
+                                alert(um.isFocus())
+                            }
+                            function doBlur() {
+                                um.blur()
+                            }
+                            function createEditor() {
+                                enableBtn();
+                                um = UM.getEditor('txtTopicContent');
+                            }
+                            function getAllHtml() {
+                                alert(UM.getEditor('txtTopicContent').getAllHtml())
+                            }
+                            function getContent() {
+                                var arr = [];
+                                arr.push("使用editor.getContent()方法可以获得编辑器的内容");
+                                arr.push("内容为：");
+                                arr.push(UM.getEditor('txtTopicContent').getContent());
+                                alert(arr.join("\n"));
+                            }
+                            function getPlainTxt() {
+                                var arr = [];
+                                arr.push("使用editor.getPlainTxt()方法可以获得编辑器的带格式的纯文本内容");
+                                arr.push("内容为：");
+                                arr.push(UM.getEditor('txtTopicContent').getPlainTxt());
+                                alert(arr.join('\n'))
+                            }
+                            function setContent(isAppendTo) {
+                                var arr = [];
+                                arr.push("使用editor.setContent('欢迎使用umeditor')方法可以设置编辑器的内容");
+                                UM.getEditor('txtTopicContent').setContent('欢迎使用umeditor', isAppendTo);
+                                alert(arr.join("\n"));
+                            }
+                            function setDisabled() {
+                                UM.getEditor('txtTopicContent').setDisabled('fullscreen');
+                                disableBtn("enable");
+                            }
+
+                            function setEnabled() {
+                                UM.getEditor('txtTopicContent').setEnabled();
+                                enableBtn();
+                            }
+
+                            function getText() {
+                                //当你点击按钮时编辑区域已经失去了焦点，如果直接用getText将不会得到内容，所以要在选回来，然后取得内容
+                                var range = UM.getEditor('txtTopicContent').selection.getRange();
+                                range.select();
+                                var txt = UM.getEditor('txtTopicContent').selection.getText();
+                                alert(txt)
+                            }
+
+                            function getContentTxt() {
+                                var arr = [];
+                                arr.push("使用editor.getContentTxt()方法可以获得编辑器的纯文本内容");
+                                arr.push("编辑器的纯文本内容为：");
+                                arr.push(UM.getEditor('txtTopicContent').getContentTxt());
+                                alert(arr.join("\n"));
+                            }
+                            function hasContent() {
+                                var arr = [];
+                                arr.push("使用editor.hasContents()方法判断编辑器里是否有内容");
+                                arr.push("判断结果为：");
+                                arr.push(UM.getEditor('txtTopicContent').hasContents());
+                                alert(arr.join("\n"));
+                            }
+                            function setFocus() {
+                                UM.getEditor('txtTopicContent').focus();
+                            }
+                            function deleteEditor() {
+                                disableBtn();
+                                UM.getEditor('txtTopicContent').destroy();
+                            }
+                            function disableBtn(str) {
+                                var div = document.getElementById('btns');
+                                var btns = domUtils.getElementsByTagName(div, "button");
+                                for (var i = 0, btn; btn = btns[i++]; ) {
+                                    if (btn.id == str) {
+                                        domUtils.removeAttributes(btn, ["disabled"]);
+                                    } else {
+                                        btn.setAttribute("disabled", "true");
+                                    }
+                                }
+                            }
+                            function enableBtn() {
+                                var div = document.getElementById('btns');
+                                var btns = domUtils.getElementsByTagName(div, "button");
+                                for (var i = 0, btn; btn = btns[i++]; ) {
+                                    domUtils.removeAttributes(btn, ["disabled"]);
+                                }
+                            }
+                        </script>
+                        <!--编辑器结束-->
+                        <input type="hidden" value="{$quanzi['id']}" name="qzid" />
+                        <div class="Pub-btn-r">
+                            <div  style="line-height:25px;display: inline-block;padding:0px;">
+                                <span style=" float:right"><img onclick="this.src = this.src + '/0'" src="__ROOT__/Tools/checkcode/style/image/type/60_25_0_0_4"/></span>
+                                <span style="color:#aaa;float:left">验证码: </span><input type="text" name="group_code" style="width:80px;height:20px;" />							
+                            </div>	
+                            <a id="btnCancel" href="javascript:;" class="button06">取消</a>
+                            <input type="submit" id="btnPostTopicEx" style="float:right; margin-left:10px" name="submit" class="button05"value="发表话题" />
+                        </div>
+                </form>
+            </div>
+        </div>		
+        <div class="Topic-tab">
+            <ul>
+                <li class="tabcur">话题</li>
+            </ul>
+        </div>
+        <if condition="$zongji eq 0">
+            <div class="tips-con"><i></i>暂无话题，快抢沙发吧！</div>
+            <else />
+            <foreach name="qz" item="dongtai" >
+                <div class="Topiclist">
+                    <div class="Topiclist-img">
+                        <a type="showCard" href="__ROOT__/user/uname/d/{:R('Base/idjia',array($dongtai['hueiyuan']))}" class="head-img">
+                            <if condition="!R('Base/userid',array($dongtai['hueiyuan'],'img'))">
+                                <img src="__PUBLIC__/images/prmimg.jpg" width="50" height="50" />
+                                <else />
+                                <img id="imgUserPhoto" src="__PUBLIC__/uploads/{:R('Base/userid',array($dongtai['hueiyuan'],'img'))}" width="50" height="50" border="0"/>
+                            </if>	
+                        </a>
+                        <a type="showCard" rel="nofollow" href="__ROOT__/user/uname/d/{:R('Base/idjia',array($dongtai['hueiyuan']))}" class="blue">{:R('Base/userid',array($dongtai['hueiyuan'],'username'))}</a>
+                    </div>
+                    <div class="Topiclist-RC "><b class="arrow"></b>
+                        <div class="R-tit gray">
+                            <if condition="$dongtai['zhiding'] eq 'Y'">
+                                <a href="__ROOT__/group/nei/id/{$dongtai['id']}" class="red">{$dongtai['title']}</a>
+                                <i class="zhiding"></i>&nbsp;
+                                <else />
+                                <a href="__ROOT__/group/nei/id/{$dongtai['id']}">{$dongtai['title']}</a> 
+                                <!--  <i class="jing"></i>&nbsp; -->
+                            </if>
+                            <span class="time">{$dongtai['time']|date="Y年m月d日 H:i",###}</span>
+                        </div>
+                        <div class="gray02">{:R("Base/strcut",array($dongtai['neirong'],160))}</div>
+                        <div class="topic-reply">
+                            <div>
+                                <a href="__ROOT__/group/nei/id/{$dongtai['id']}" class="gray02">回复<span class="gray03">({$dongtai['hueifu']})</span></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <a href="__ROOT__/group/nei/id/{$dongtai['id']}" class="gray02">人气<span class="gray03">({$dongtai['dianji']})</span></a>
+                            </div>
+                            <span class="gray03">最后回复：<a href="__ROOT__/user/uname/d/{:R('Base/idjia',array($dongtai['zuihou']))}" class="blue">{:R('Base/userid',array($dongtai['zuihou'],'username'))}</a>&nbsp;&nbsp;{$dongtai['time']|date="Y年m月d日",###}&nbsp;&nbsp;</span>			
+                        </div>
+                    </div><p class="Topicline"></p>
+                </div>					
+            </foreach>
+            <if condition="$zongji gt $num">
+                <div class="pagesx"><?php echo $fenye->show("two");?></div>
+            </if>
+        </if>	
+    </div>
+    <include file="./index/group.right"/>
+</div>
+<script>
+    $(function () {
+        $("#btnJoinGroup,#btnJoinOutGroup").click(function () {
+            var uid = "{$huiyuan['uid']}";
+            if (!uid) {
+                alert("你未登录！");
+            } else {
+                var qzid = "{$quanzi['id']}";
+                var text = $("#btnJoinOutGroup").text();
+                $.ajax({
+                    type: "POST",
+                    url: "__ROOT__/group/goqz",
+                    data: {id: qzid, text: text},
+                    success: function () {
+                        location.replace(location);
+                    }
+                });
+            }
+        });
+        $("#txtTopicTitle,#btnPostTopic").click(function () {
+            var uid = "{:R('Base/uidcookie',array('uid'))}";
+            var text = $("#btnJoinOutGroup").text();
+            if (!uid) {
+                alert("你未登录！");
+            } else if (!text) {
+                alert("你未加入圈子！");
+            } else {
+                $("#divEditor").removeClass("hidden");
+                $(".Pub-inp-click").addClass("hidden");
+            }
+        });
+        $("#btnCancel").click(function () {
+            $("#divEditor").addClass("hidden");
+            $(".Pub-inp-click").removeClass("hidden");
+        });
+        $("form").submit(function () {
+            var text = $("#txtTopicTitleEx").val();
+            if (!text) {
+                alert("标题不能为空!");
+                return false;
+            }
+        })
+    })
+</script>
+<include file="./index/index.footer"/>

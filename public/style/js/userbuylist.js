@@ -1,0 +1,1 @@
+Base.getScript(pub+"/style/JS/UserBuyListFun.js?v=151106");
