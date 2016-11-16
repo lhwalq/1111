@@ -224,7 +224,7 @@
                     </dl> </li> 
                 <li><a href="/user/userrecharge">充值</a></li> 
                 <li><a href="/index/about">帮助</a></li> 
-                <li><a style="border-right:none;" href="/index/group_qq">官方QQ群</a></li> 
+                <!--<li><a style="border-right:none;" href="/index/group_qq">官方QQ群</a></li> -->
             </ul> 
         </div> 
     </div> 
@@ -429,9 +429,9 @@ img{ border:0;}
 
 
 
-<a href="javascript:;" id="launch_qq11" class="btn7 rides-cs">
-<img src=/index.png>
-</a>
+<!--<a href="javascript:;" id="launch_qq11" class="btn7 rides-cs">-->
+<!--<img src=/index.png>-->
+<!--</a>-->
 
 <script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
 <script>

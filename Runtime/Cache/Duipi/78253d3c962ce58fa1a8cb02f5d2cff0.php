@@ -342,25 +342,25 @@
 </div> 
 <!-- 购物袋有商品 end --> 
 <div class="Left-fixed-divs" style="display: none"> 
-    <!--<img src="/Public/style/images/ce.png" style="top:5%;position:relative;">-->
+    <img src="/Public/style/images/ce.png" style="top:5%;position:relative;">
     <ul> 
         <li class="shoppingCartRightFix Left-fixed-divs3"> <a href="/goods/cartlist"> <i></i> <em>购</em> <em>物</em> <em>袋</em> <em id="cartCount"></em> </a> </li> 
-        <!--<li class="YonlineService otherlifix"><a hidefocus="true" href="http://wpa.qq.com/msgrd?V=1&uin=<?php echo C('qq');?>&Menu=yes" target="_blank"><i style="margin-left:12px;"></i><em>在线</em><em>客服</em></a></li> -->
-        <!--<li class="otherlifix otherlifixw"> <a hidefocus="true" href="javascript:void 0"> <i style="background-position:-168px -176px;"></i> <em>官方</em> <em>微信</em> </a> <img width="188" height="216" src="/Public/uploads/<?php echo C('web_logo1');?>" /> -->
-            <!--<s></s> </li> -->
-        <!--<li class="otherlifix otherlifixw"> <a hidefocus="true" href="https://www.pgyer.com/dzmM" target="_blank"> <i style="margin-left:12px;margin-top:0;background-position:-203px -172px;height: 27px;margin-bottom:0;"></i> <em>手机</em><em>App</em> </a> -->
-            <!--&lt;!&ndash; <img width="188" height="188" src="/Public/style/images/weixinlogo.png" style="border:1px solid #adadad;"> &ndash;&gt; </li> -->
-        <!--<li class="otherlifix"> <a hidefocus="true" href="/user/userrecharge"> <i style="margin-left:12px;background-position:-236px -176px;"></i> <em>快速</em><em>充值</em> </a> </li> -->
+        <li class="YonlineService otherlifix"><a hidefocus="true" href="http://wpa.qq.com/msgrd?V=1&uin=<?php echo C('qq');?>&Menu=yes" target="_blank"><i style="margin-left:12px;"></i><em>在线</em><em>客服</em></a></li> 
+        <li class="otherlifix otherlifixw"> <a hidefocus="true" href="javascript:void 0"> <i style="background-position:-168px -176px;"></i> <em>官方</em> <em>微信</em> </a> <img width="188" height="216" src="/Public/uploads/<?php echo C('web_logo1');?>" /> 
+            <s></s> </li> 
+        <li class="otherlifix otherlifixw"> <a hidefocus="true" href="https://www.pgyer.com/dzmM" target="_blank"> <i style="margin-left:12px;margin-top:0;background-position:-203px -172px;height: 27px;margin-bottom:0;"></i> <em>手机</em><em>App</em> </a> 
+            <!-- <img width="188" height="188" src="/Public/style/images/weixinlogo.png" style="border:1px solid #adadad;"> --> </li> 
+        <li class="otherlifix"> <a hidefocus="true" href="/user/userrecharge"> <i style="margin-left:12px;background-position:-236px -176px;"></i> <em>快速</em><em>充值</em> </a> </li> 
         <li class="otherlifix lifixTop"> <i style="background-position:-276px -170px"></i> <em>置</em><em>顶</em> </li> 
     </ul> 
 </div> 
 <!-- 右侧悬浮 end --> 
-<script type="text/javascript" src="/Public/style/js/common.js"></script>
-<script type="text/javascript" src="/Public/style/js/jquery.js"></script>
-<script type="text/javascript" src="/Public/style/js/jquery.lazyload.min.js"></script>
-<script type="text/javascript" src="/Public/style/js/jquery.cookie.js"></script>
-<script type="text/javascript" src="/Public/style/js/jquery.cookies.2.2.0.js"></script>
-<script type="text/javascript" src="/Public/style/js/footer_header.js"></script>
+<script type="text/javascript" src="/Public/style/js/common.js"></script> 
+<script type="text/javascript" src="/Public/style/js/jquery.js"></script> 
+<script type="text/javascript" src="/Public/style/js/jquery.lazyload.min.js"></script> 
+<script type="text/javascript" src="/Public/style/js/jquery.cookie.js"></script> 
+<script type="text/javascript" src="/Public/style/js/jquery.cookies.2.2.0.js"></script> 
+<script type="text/javascript" src="/Public/style/js/footer_header.js"></script> 
 <script>
 
     $(function () {
@@ -390,256 +390,91 @@
 
 <span id="index" style="display:none">index</span> 
 <!-- 导航   end  --> 
-<meta name="keywords" content=<?php if(isset($guanjianzi)): ?>"<?php echo ($guanjianzi); ?>"<?php else: ?>"<?php echo C('web_key');?>"<?php endif; ?> />
-<meta name="description" content=<?php if(isset($miaoshu)): ?>"<?php echo ($miaoshu); ?>"<?php else: ?>"<?php echo C('web_des');?>"<?php endif; ?> />
- 
-      <link rel="stylesheet" type="text/css" href="/Public/piyungou/css/Comm.css"/>
-<link rel="stylesheet" type="text/css" href="/Public/piyungou/css/CartList.css"/>
-<link rel="stylesheet" type="text/css" href="/Public/piyungou/css/style.css"/>
+<link rel="stylesheet" type="text/css" href="/Public/piyungou/css/ygRecord.css"/>
+<link rel="stylesheet" href="/Public/plugin/calendar/calendar-blue.css" type="text/css"> 
+<script type="text/javascript" charset="utf-8" src="/Public/plugin/calendar/calendar.js"></script>
+<div class="ygRecord">
+    <h3><span>历史云购记录</span><p><a href="/index/buyrecordbai">查看最新云购记录&gt;&gt;</a></p></h3>
+    <div class="border"></div>
+    <div class="RecordSearch">
+        <form action="" method="post">
+            <div class="from">
+                <p>起止时间</p>
+                <input value="<?php echo ($time); ?>" id="txtFirstT1" name="start_time_data" class="time" readonly="readonly" type="text">     
+                <script type="text/javascript">
+                    date = new Date();
+                    Calendar.setup({
+                        inputField: "txtFirstT1",
+                        ifFormat: "%Y-%m-%d",
+                        showsTime: true,
+                        timeFormat: "24"
+                    });
+                </script>	
+                <select id="sltFirstT2" name="start_time_h">
+                    <?php  for($i=0;$i<23;$i++){ if($i==($this_time_h-2)){ $selecteds = ' selected="selected"'; }else{ $selecteds = ''; } if($i<10)$i='0'.$i; ?>
+                    <option value="<?php echo ($i); ?>"<?php echo ($selecteds); ?>><?php echo ($i); ?></option>
+                    <?php  } ?>
+                </select>
+                <p>时</p>
+                <select id="sltFirstT3" name="start_time_i">
+                    <?php  for($i=0;$i<60;$i++){ if($i==$this_time_i){ $selecteds = ' selected="selected"'; }else{ $selecteds = ''; } if($i<10)$i='0'.$i; ?>
+                    <option value="<?php echo ($i); ?>"<?php echo ($selecteds); ?>><?php echo ($i); ?></option>
+                    <?php  } ?>
+                </select>
+                <p>分&nbsp;&nbsp;&nbsp;至</p>
+            </div>        
+            <div class="over">
+                <input value="<?php echo ($time); ?>" name="end_time_data"  id="txtEndT1" class="time" readonly="readonly" type="text">	
+                <script type="text/javascript">
+                    date = new Date();
+                    Calendar.setup({
+                        inputField: "txtEndT1",
+                        ifFormat: "%Y-%m-%d",
+                        showsTime: true,
+                        timeFormat: "24"
+                    });
+                </script>	
 
-<script type="text/javascript" src="/Public/plugin/style/global/js/jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="/Public/piyungou/js/jquery.cookie.js"></script>
-</head>
-<body>
-    <div class="logo">
-        <div class="float">
-            <span class="logo_pic">
-                <h2>确认订单</h2>
-                </a></span>
-            <ul class="ui-step" style='float:right;margin-top:10px'>
-                <li class="ui-step-start ui-step-active">
-                    <div class="ui-step-line">-</div>
-                    <div class="ui-step-icon">
-                        <i class="ui-step-number">提交</i>
-                        <span class="ui-step-text">&nbsp;</span>
-                    </div>
-                </li>
-                <li class="ui-step-center">
-                    <div class="ui-step-line">-</div>
-                    <div class="ui-step-icon">
-                        <i class="ui-step-number">支付</i>
-                        <span class="ui-step-text">&nbsp;</span>
-                    </div>
-                </li>
-                <li class="ui-step-center">
-                    <div class="ui-step-line">-</div>
-                    <div class="ui-step-icon">
-                        <i class="ui-step-number">开奖</i>
-                        <span class="ui-step-text">&nbsp;</span>
-                    </div>
-                </li>
-                <li class="ui-step-end">
-                    <div class="ui-step-line">-</div>
-                    <div class="ui-step-icon">
-                        <i class="ui-step-number">揭晓</i>
-                        <span class="ui-step-text">&nbsp;</span>
-                    </div>
-                </li>
-            </ul>
-        </div>
+                <select id="sltEndT2" name="end_time_h">
+                    <?php  for($i=0;$i<23;$i++){ if($i==$this_time_h){ $selecteds = ' selected="selected"'; }else{ $selecteds = ''; } if($i<10)$i='0'.$i; ?>
+                    <option value="<?php echo ($i); ?>"<?php echo ($selecteds); ?>><?php echo ($i); ?></option>
+                    <?php  } ?>				
+                </select>
+                <p>时</p>
+                <select id="sltEndT3" name="end_time_i">
+                    <?php  for($i=0;$i<60;$i++){ if($i==$this_time_i){ $selecteds = ' selected="selected"'; }else{ $selecteds = ''; } if($i<10)$i='0'.$i; ?>
+                    <option value="<?php echo ($i); ?>"<?php echo ($selecteds); ?>><?php echo ($i); ?></option>
+                    <?php  } ?>
+                </select>
+                <p>分</p>
+            </div>
+            <input id="btnQuery" class="Recordcx" value="查询"  name="dosubmit" type="submit">
+            <span id="spanServerTime" style="display:none">2013-10-22 08:52:53</span>
     </div>
+    <div id="recordList">
+        <ul class="Record_title">
+            <li class="time">云购时间</li>
+            <li class="nem">云购账号</li>
+            <li class="name">云购商品名称</li>
+            <li class="much">云购人次</li>
+        </ul>
+        <?php $n=1; ?>    
+        <?php if(is_array($RecordList)): foreach($RecordList as $key=>$Record): $n++; $Record['time'] = explode(".",$Record['time']); if($n%2==0){ $class='Record_content'; }else{ $class='Record_contents'; } ?>
+        <ul class="<?php echo ($class); ?>">
+            <li class="time"><?php echo (date("Y-m-d H:i:s",$Record['time'][0])); ?>.<?php echo ($Record['time'][1]); ?></li>
+            <li class="nem"><a class="blue" href="/user/uname/d/<?php echo ($Record['uid']); ?>.html" target="_blank"><?php echo ($Record['username']); ?></a></li>
+            <li class="name"><a href="/goods/items/goodsId/<?php echo ($Record['shopid']); ?>.html">（第<?php echo ($Record['shopqishu']); ?>期）<?php echo R("Base/strcut",array($Record['shopname'],60,null));?></a></li>
+            <li class="much"><?php echo ($Record['gonumber']); ?>人次</li>
+        </ul><?php endforeach; endif; ?>
 
-    <div class="shop_process">
-        <div class="i_tips"></div>
-        <div class="submitted">
-            <ul class="order">
-                <li class="top">
-                    <span class="goods">商品</span>
-                    <span class="name">名称</span>
-                    <span class="moneys">价值</span>
-                    <span class="money">云购价</span>
-                    <span class="num">云购人次</span>
-                    <span class="xj">小计</span>
-                    <span class="do">操作</span>
-                </li>
-                  <script>
-                        var chooselist = localStorage.getItem('chooselist');
-                        if(!chooselist){
-                                            var datas = {};
-                                    }else{
-                                            var datas = $.evalJSON(chooselist);
-                                            if((typeof datas) !== 'object'){
-                                                    var datas = {};
-                                            }
-                                    }
-                        </script>
-                <?php if(is_array($yyslist)): foreach($yyslist as $key=>$shops): ?><li class="end" id="shoplist<?php echo ($shops['id']); ?>">
-                    <span class="goods">
-                        <a href="/goods/items/goodsId/<?php echo ($shops['id']); ?>.html">
-                            <img src="/Public/uploads/<?php echo ($shops['thumb']); ?>" />
-                        </a>                    
-                    </span>
-                    <span class="name">
-                        <a href="/goods/items/goodsId/<?php echo ($shops['id']); ?>.html" ><?php echo ($shops['title']); ?></a>
-                        <?php if($shops['pay_ygb'] == 1): ?><p style="color:red">此商品只限福分消费</p><?php endif; ?>
-                        <p>总需 <span class="color"><?php echo ($shops['zongrenshu']); ?></span>人次参与，还剩 
-                            <span class="gorenci"><?php echo ($shops['cart_shenyu']); ?></span> 人次
-                        </p>
-                    </span>
-                    <span class="moneys">￥<?php echo ($shops['money']); ?></span>
-                    <span class="money"><span class="color">￥<b><?php echo ($shops['yunjiage']); ?></b></span></span>	
-                    <?php if($shops['cart_shenyu']=='0'): ?><span class="num">				
-                        <dl class="add">					
-                            <dd><input type="type" val="<?php echo ($shops['id']); ?>" onkeyup="value = value.replace(/\D/g, '')" value="<?php echo ($shops['cart_gorenci']); ?>" class="amount" disabled style="width:55px"/></dd>                    
-                        </dl>
-                        <p class="message" style="margin-left:12px;color:black">商品已揭晓，请购买下期商品</p>
-                    </span> 
-                    <span  class="xj">0.00</span> 
-                    <?php elseif($shops['is_choose'] == 1): ?>
-                     <span class="num">				
-							<dl class="add">					
-							<dd><input type="type" val="<?php echo ($shops['id']); ?>" onkeyup="value=value.replace(/\D/g,'')" value="<?php echo ($shops['cart_gorenci']); ?>" class="amount" disabled /></dd>                    
-							<dd>
-									<a href="JavaScript:;" val="<?php echo ($shops['id']); ?>" class="jia" style="display:none"></a>
-									<a href="JavaScript:;" val="<?php echo ($shops['id']); ?>" class="jian" style="display:none"></a>
-								</dd>      
-                                                        </dl>
-		                    <p class="message" style="margin-left:12px;color:black" >该商品为选购商品，请返回再修改选购号码</p>
-						</span> 
-						<span  class="xj"><?php echo ($shops['cart_xiaoji']); ?></span>  
-
-                                            <script>
-                                              var shopsid="<?php echo ($shops['id']); ?>";
-                                              if(!datas[shopsid]){
-                                                $(".add input[val="+shopsid+"]").removeAttr("disabled");
-                                                $(".add input[val="+shopsid+"]").parent().parent().next().text("");
-                                                $(".add a[val="+shopsid+"]").attr("style","");
-                                              }
-                                            </script>
-                    <?php else: ?>
-                    <span class="num">				
-                        <dl class="add">					
-                            <dd><input type="type" val="<?php echo ($shops['id']); ?>" onkeyup="value = value.replace(/\D/g, '')" value="<?php echo ($shops['cart_gorenci']); ?>" class="amount" /></dd>
-                            <dd>
-                                <a href="JavaScript:;" val="<?php echo ($shops['id']); ?>" class="jia"></a>
-                                <a href="JavaScript:;" val="<?php echo ($shops['id']); ?>" class="jian"></a>
-                            </dd>                        
-                        </dl>
-                        <p class="message"></p>
-                    </span> 
-                    <span  class="xj"><?php echo ($shops['cart_xiaoji']); ?></span><?php endif; ?>
-                    <span class="do"><a href="javascript:;" onclick="delcart(<?php echo ($shops['id']); ?>)"  class="delgood">删除</a></span> 
-                </li><?php endforeach; endif; ?>
-                <li class="ts">
-                    <p class="right">云购金额总计:￥<span id="moenyCount"><?php echo ($MoenyCount); ?></span></p>
-                </li>
+        <div class="page_nav">
+            <ul class="pageULEx">
             </ul>
         </div>
-        <h5>
-            <a href="/index/index" id="but_on"></a>
-            <input id="but_ok" type="button" value=""  name="submit"/>
-        </h5>
-    </div> 
 
-    <script type="text/javascript">
-        var info = "<?php echo ($gouwucheshopinfo); ?>";
-        info = eval('(' + info + ')');  
-        var numberadd = $(".jia");
-        var numbersub = $(".jian");
-        var xiaoji = $(".xj");
-        var num = $(".amount");
-        var message = $(".message");
-        var moenyCount = $("#moenyCount");
-
-        $(function () {
-            $("#but_ok").click(function () {
-                var countmoney = parseInt(moenyCount.text());
-                if (countmoney > 0) {
-                    $.cookie('Cartlist','',{path:'/'});
-                    $.cookie('Cartlist', $.toJSON(info), {expires: 7, path: '/'});
-                    document.location.href = '/pay/pay/' + new Date().getTime();
-                } else {
-                    alert("购物车为空!");
-                }
-            });
-        });
-        function UpdataMoney(shopid, number, zindex) {
-            var number = parseInt(number);
-            info['MoenyCount'] = info['MoenyCount'] - info[shopid]['money'] * info[shopid]['num'] + info[shopid]['money'] * number;
-            info[shopid]['num'] = number;
-            var xjmoney = xiaoji.eq(zindex + 1);
-            xjmoney.text(info[shopid]['money'] * number + '.00');
-            moenyCount.text(info['MoenyCount'] + '.00');
-        }
-
-
-        function delcart(id) {
-            info['MoenyCount'] = info['MoenyCount'] - info[id]['money'] * info[id]['num'];
-            $("#shoplist" + id).hide();
-            $("#moenyCount").text(info['MoenyCount'] + ".00");
-            delete info[id];
-            //$.cookie('Cartlist','',{path:'/'});
-            $.cookie('Cartlist', $.toJSON(info), {expires: 30, path: '/'});
-            var choose=localStorage.getItem('chooselist');
-            if(choose)
-            {
-                data = $.evalJSON(choose);
-                var data1 = {};
-
-                $.each(data, function(i, n){
-                    if(i!=id)
-                    {
-                        data1[i]={};
-                        data1[i]['code']=n.code; 
-                    }
-                });
-
-                localStorage.setItem('chooselist',$.toJSON(data1));
-                if($.toJSON(data1)=="{}")
-                {
-                    localStorage.removeItem('chooselist');
-                }
-            }
-        }
-
-        num.keyup(function () {
-            var shopid = $(this).attr("val");
-            var zindex = num.index(this);
-
-            if ($(this).val() > info[shopid]['shenyu']) {
-                message.eq(zindex).text("云购次数不能超过" + info[shopid]['shenyu'] + "次");
-                $(this).val(info[shopid]['shenyu']);
-                UpdataMoney(shopid, $(this).val(), zindex);
-                return;
-            }
-            if ($(this).val() < 1) {
-                message.eq(zindex).text("云购次数不能少于1次");
-                $(this).val(1);
-                UpdataMoney(shopid, $(this).val(), zindex);
-                return;
-            }
-            UpdataMoney(shopid, $(this).val(), zindex);
-        });
-        numberadd.click(function () {
-            var shopid = $(this).attr('val');
-            var zindex = numberadd.index(this);
-            var thisnum = num.eq(zindex);
-            if (info[shopid]['num'] >= info[shopid]['shenyu']) {
-                message.eq(zindex).text("云购次数不能超过" + info[shopid]['shenyu'] + "次");
-                return;
-            }
-            var number = info[shopid]['num'] + 1;
-            thisnum.val(number);
-            UpdataMoney(shopid, number, zindex);
-        });
-        numbersub.click(function () {
-            var shopid = $(this).attr('val');
-            var zindex = numbersub.index(this);
-            var thisnum = num.eq(zindex);
-            if (info[shopid]['num'] <= 1) {
-                message.eq(zindex).text("云购次数不能少于1次");
-                return;
-            }
-            var number = info[shopid]['num'] - 1;
-            thisnum.val(number);
-            UpdataMoney(shopid, number, zindex);
-        });
-
-    </script> 
-
-
-
-   <style>
+    </div>
+</div>
+<style>
 
 *{ margin:0; padding:0; list-style:none;}
 img{ border:0;}

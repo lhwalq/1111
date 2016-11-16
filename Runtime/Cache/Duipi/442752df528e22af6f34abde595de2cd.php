@@ -224,7 +224,7 @@
                     </dl> </li> 
                 <li><a href="/user/userrecharge">充值</a></li> 
                 <li><a href="/index/about">帮助</a></li> 
-                <li><a style="border-right:none;" href="/index/group_qq">官方QQ群</a></li> 
+                <!--<li><a style="border-right:none;" href="/index/group_qq">官方QQ群</a></li> -->
             </ul> 
         </div> 
     </div> 
@@ -342,25 +342,25 @@
 </div> 
 <!-- 购物袋有商品 end --> 
 <div class="Left-fixed-divs" style="display: none"> 
-    <img src="/Public/style/images/ce.png" style="top:5%;position:relative;">
+    <!--<img src="/Public/style/images/ce.png" style="top:5%;position:relative;">-->
     <ul> 
         <li class="shoppingCartRightFix Left-fixed-divs3"> <a href="/goods/cartlist"> <i></i> <em>购</em> <em>物</em> <em>袋</em> <em id="cartCount"></em> </a> </li> 
-        <li class="YonlineService otherlifix"><a hidefocus="true" href="http://wpa.qq.com/msgrd?V=1&uin=<?php echo C('qq');?>&Menu=yes" target="_blank"><i style="margin-left:12px;"></i><em>在线</em><em>客服</em></a></li> 
-        <li class="otherlifix otherlifixw"> <a hidefocus="true" href="javascript:void 0"> <i style="background-position:-168px -176px;"></i> <em>官方</em> <em>微信</em> </a> <img width="188" height="216" src="/Public/uploads/<?php echo C('web_logo1');?>" /> 
-            <s></s> </li> 
-        <li class="otherlifix otherlifixw"> <a hidefocus="true" href="https://www.pgyer.com/dzmM" target="_blank"> <i style="margin-left:12px;margin-top:0;background-position:-203px -172px;height: 27px;margin-bottom:0;"></i> <em>手机</em><em>App</em> </a> 
-            <!-- <img width="188" height="188" src="/Public/style/images/weixinlogo.png" style="border:1px solid #adadad;"> --> </li> 
-        <li class="otherlifix"> <a hidefocus="true" href="/user/userrecharge"> <i style="margin-left:12px;background-position:-236px -176px;"></i> <em>快速</em><em>充值</em> </a> </li> 
+        <!--<li class="YonlineService otherlifix"><a hidefocus="true" href="http://wpa.qq.com/msgrd?V=1&uin=<?php echo C('qq');?>&Menu=yes" target="_blank"><i style="margin-left:12px;"></i><em>在线</em><em>客服</em></a></li> -->
+        <!--<li class="otherlifix otherlifixw"> <a hidefocus="true" href="javascript:void 0"> <i style="background-position:-168px -176px;"></i> <em>官方</em> <em>微信</em> </a> <img width="188" height="216" src="/Public/uploads/<?php echo C('web_logo1');?>" /> -->
+            <!--<s></s> </li> -->
+        <!--<li class="otherlifix otherlifixw"> <a hidefocus="true" href="https://www.pgyer.com/dzmM" target="_blank"> <i style="margin-left:12px;margin-top:0;background-position:-203px -172px;height: 27px;margin-bottom:0;"></i> <em>手机</em><em>App</em> </a> -->
+            <!--&lt;!&ndash; <img width="188" height="188" src="/Public/style/images/weixinlogo.png" style="border:1px solid #adadad;"> &ndash;&gt; </li> -->
+        <!--<li class="otherlifix"> <a hidefocus="true" href="/user/userrecharge"> <i style="margin-left:12px;background-position:-236px -176px;"></i> <em>快速</em><em>充值</em> </a> </li> -->
         <li class="otherlifix lifixTop"> <i style="background-position:-276px -170px"></i> <em>置</em><em>顶</em> </li> 
     </ul> 
 </div> 
 <!-- 右侧悬浮 end --> 
-<script type="text/javascript" src="/Public/style/js/common.js"></script> 
-<script type="text/javascript" src="/Public/style/js/jquery.js"></script> 
-<script type="text/javascript" src="/Public/style/js/jquery.lazyload.min.js"></script> 
-<script type="text/javascript" src="/Public/style/js/jquery.cookie.js"></script> 
-<script type="text/javascript" src="/Public/style/js/jquery.cookies.2.2.0.js"></script> 
-<script type="text/javascript" src="/Public/style/js/footer_header.js"></script> 
+<script type="text/javascript" src="/Public/style/js/common.js"></script>
+<script type="text/javascript" src="/Public/style/js/jquery.js"></script>
+<script type="text/javascript" src="/Public/style/js/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="/Public/style/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/Public/style/js/jquery.cookies.2.2.0.js"></script>
+<script type="text/javascript" src="/Public/style/js/footer_header.js"></script>
 <script>
 
     $(function () {
@@ -391,361 +391,435 @@
 <span id="index" style="display:none">index</span> 
 <!-- 导航   end  --> 
 
-  <!-- banner   start -->
-	<div class="yBanner">
-              <?php if(is_array($slides)): foreach($slides as $key=>$slide): ?><div class="yBannerList" style="background:<?php echo ($slide['bac']); ?>;">
-			<div class="yBannerListIn">
-					<a href="/<?php echo ($slide['link']); ?>" target="_blank">
-						<img class="ymainBanner" src="/Public/uploads/<?php echo ($slide['img']); ?>">
-                                                <?php $slide_s=D("flash")->where(array("pid"=>$slide['id']))->order("`sort` ASC")->select(); ?>
-					</a>
-					<?php if(!empty($slide_s[0]['img'])){ ?>
-				<div class="yBannerListInRight" target="_blank">
-					<a href="/<?php echo ($slide_s[0]['link']); ?>"><img src="/Public/uploads/<?php echo ($slide_s[0]['img']); ?>"/></a>
-					<b class="yimaginaryLine"></b>
-					<a href="/<?php echo ($slide_s[1]['link']); ?>" target="_blank"><img src="/Public/uploads/<?php echo ($slide_s[1]['img']); ?>"/></a>
-				</div>
-				<?php } ?>
-				
-			</div>
-		</div><?php endforeach; endif; ?>
+<!-- banner   start -->
+<div class="yBanner">
+    <?php if(is_array($slides)): foreach($slides as $key=>$slide): ?><div class="yBannerList" style="background:<?php echo ($slide['bac']); ?>;">
+            <div class="yBannerListIn">
+                <a href="/<?php echo ($slide['link']); ?>" target="_blank">
+                    <img class="ymainBanner" src="/Public/uploads/<?php echo ($slide['img']); ?>">
+                    <?php $slide_s=D("flash")->where(array("pid"=>$slide['id']))->order("`sort` ASC")->select(); ?>
+                </a>
+                <?php if(!empty($slide_s[0]['img'])){ ?>
+                <div class="yBannerListInRight" target="_blank">
+                    <a href="/<?php echo ($slide_s[0]['link']); ?>"><img src="/Public/uploads/<?php echo ($slide_s[0]['img']); ?>"/></a>
+                    <b class="yimaginaryLine"></b>
+                    <a href="/<?php echo ($slide_s[1]['link']); ?>" target="_blank"><img
+                            src="/Public/uploads/<?php echo ($slide_s[1]['img']); ?>"/></a>
+                </div>
+                <?php } ?>
 
-		<script>
-		$(function(){
-			$($(".pullDownList li")[0]).addClass("menuliselected");
-			$($(".yBannerList")[0]).addClass("ybannerExposure");
-			$($(".yBannerList")[0]).show().siblings().hide();
-		})
-		</script>
-	</div>
-	<!-- banner   end -->
- </body>
+            </div>
+        </div><?php endforeach; endif; ?>
+
+    <script>
+        $(function () {
+            $($(".pullDownList li")[0]).addClass("menuliselected");
+            $($(".yBannerList")[0]).addClass("ybannerExposure");
+            $($(".yBannerList")[0]).show().siblings().hide();
+        })
+    </script>
+</div>
+<!-- banner   end -->
+</body>
 </html>
-  <!-- 最新动态 -->
- 	<div class="yscroll_list">
-		<div class="yscroll_listin">
-			<span><i></i><a href="/index/show/d/17.html">最新动态：</a></span>
-			<ul style="margin-top: -87.9129px;" class="yscroll_list_left">
-			
-			<?php  $gonggaoid=D("fenlei")->where(array("name"=>"网站公告"))->order("`order`")->find(); $gonggao=D("wenzhang")->where(array("cateid"=>$gonggaoid['cateid']))->order("`posttime` DESC")->select(); ?>
-                        
-                        <?php if(is_array($gonggao)): foreach($gonggao as $key=>$gonggaos): ?><li><p class="yscrollfont"><a href="/index/show/d/<?php echo ($gonggaos[id]); ?>.html" title="<?php echo ($gonggaos[title]); ?>"><?php echo ($gonggaos[title]); ?></a></p><p class="yscrolltime"><?php  echo date('Y/m/d',$gonggaos[posttime]); ?></p></li><?php endforeach; endif; ?>
-  </ul> 
-  <ul class="yscroll_list_right"> 
-   <a href="/index/show/d/17.html"><span></span><em>更多</em></a> 
-  </ul>
-		</div>
-	</div>
-	<div class="yContent">
-		<!-- 最新揭晓  -->
-   <div class="yConNew yCon"> 
-    <h2><a href="/goods_lottery">最新揭晓</a><span></span><a href="/index/map" target="_blank" class="yMoreLink yMorenearby"><img src="/Public/style/images/999999.gif" style="position:relative;top:4px;" />查看地图获奖商品</a></h2> 
-    <div class="yConulout"> 
-     <div style="display: none;" class="yConuloutLeft yConuloutbtn">
-      <i></i>
-     </div> 
-     <div style="display: none;" class="yConuloutright yConuloutbtn">
-      <i></i>
-     </div> 
-     <ul style="width: 5103px;" id='jiexiao'>
-      
+<!-- 最新动态 -->
+<div class="yscroll_list">
+    <div class="yscroll_listin">
+        <span><i></i><a href="/index/show/d/17.html">最新动态：</a></span>
+        <ul style="margin-top: -87.9129px;" class="yscroll_list_left">
 
+            <?php
+ $gonggaoid=D("fenlei")->where(array("name"=>"网站公告"))->order("`order`")->find(); $gonggao=D("wenzhang")->where(array("cateid"=>$gonggaoid['cateid']))->order("`posttime` DESC")->select(); ?>
 
-
-        <?php  $shopqishub=D("shangpin")->where("q_end_time is not null and q_showtime = 'N'")->order("q_end_time DESC")->LIMIT("10")->field("qishu,id,sid,thumb,title,q_uid,q_user,q_user_code,zongrenshu")->select(); ?>
-                                 <?php if(is_array($shopqishub)): foreach($shopqishub as $key=>$qishu): $qishu['q_user'] = unserialize($qishu['q_user']); $weer_shop_number = D("yonghu_yys_record")->field("sum(gonumber) as gonumber")->where(array("uid"=>$qishu['q_uid'],"shopid"=>$qishu['id'],"shopqishu"=>$qishu['qishu']))->find(); $weer_shop_number = $weer_shop_number['gonumber']; ?>
-      <li class="goods<?php echo ($qishu['id']); ?>">
-       <dl>
-        <dd class="yddImg">
-         <a href="/goods/dataserverForPc/goodsId/<?php echo ($qishu['id']); ?>.html" target="_blank"><img style="display: block;" src="/Public/uploads/<?php echo ($qishu['thumb']); ?>" class="lazyjx" data-original="/Public/uploads/<?php echo ($qishu['thumb']); ?>" />
-          <noscript>
-           <img src="/Public/uploads/<?php echo ($qishu['thumb']); ?>" alt="" />
-          </noscript></a>
-        </dd>
-        <dd class="yddName">
-         恭喜 
-
-         <a href="/user/uname/tab/uname/d/<?php echo R('base/idjia',array($qishu['q_uid']));?>.html" class="yddNameas"><?php echo R('base/huode_user_name',array($qishu['q_user']));?></a> 获得
-
-        </dd>
-        <dd class="yGray">
-
-         <a href="/goods/dataserverForPc/goodsId/<?php echo ($qishu['id']); ?>.html" target="_blank" title="<?php echo ($qishu['title']); ?>">(第<?php echo ($qishu['qishu']); ?>期)<?php echo ($qishu['title']); ?></a>
-
-        </dd>
-        <dd class="yGray">
-         幸运号码：<?php echo ($qishu['q_user_code']); ?>
-        </dd>
-       </dl><i></i></li><?php endforeach; endif; ?>
-
-
-     
-     
-     </ul> 
-     <?php if(C('ssc')){ ?>
-      <script type="text/javascript" src="/Public/piyungou/js/GLotteryFunssc.js"></script>
-	                <script type="text/javascript">
-						$(document).ready(function(){gg_show_time_init("jiexiao",'',0);});	
-				    </script> 
-				      <?php }else{ ?>
- <script type="text/javascript" src="/Public/piyungou/js/GLotteryFun.js"></script>
-	                <script type="text/javascript">
-						$(document).ready(function(){gg_show_time_init("jiexiao",'',0);});	
-				    </script> 
-				        <?php } ?>
-    </div> 
-   </div> 
-
-<?php  $g=2; $mm=0; ?>
-
-
-
-
-
-<!-- 热门推荐 start -->
-
-   <div class="yCon yCon1 yConCenter">
-    <h2><i>1F</i><a  class="yCon-title">热门推荐</a><a href="/goods/glist/type/0_0_2.html" class="yMoreLink"><em>更多</em></a>
-     <ul>
-    
-      <span></span>
-     </ul></h2>
-    <div class="yConCenterIn">
-     <div style="display: none;" class="y_btn_all y_btn_left">
-      <i></i>
-     </div>
-     <div style="display: none;" class="y_btn_all y_btn_right">
-      <i></i>
-     </div>
-     <div class="yConCenterInList" style="display:block;">
-      <ul class="w_goods_one goods12">
-
-<?php if(is_array($remen)): foreach($remen as $key=>$shop): ?><li class="w_goods_details" >
-        <div  class="w_imgOut" data-gid="<?php echo ($shop['id']); ?>" data-pid="<?php echo ($shop['zongrenshu']); ?>" data-pid1="<?php echo ($shop['zongrenshu']); ?>" data-pid2="<?php echo ($shop['canyurenshu']); ?>" data-pid3="1">
-         <a class="w_goods_img" data-gid="<?php echo ($shop['id']); ?>" data-pid="<?php echo ($shop['zongrenshu']); ?>" data-pid1="<?php echo ($shop['zongrenshu']); ?>" data-pid2="<?php echo ($shop['canyurenshu']); ?>" data-pid3="1" href="javascript:void%200"><img style="display: inline;" src="/Public/uploads/<?php echo ($shop['thumb']); ?>" id="img_<?php echo ($shop['id']); ?>" class="lazy12" data-original="/Public/uploads/<?php echo ($shop['thumb']); ?>" data-gid="<?php echo ($shop['id']); ?>" data-pid="<?php echo ($shop['zongrenshu']); ?>" data-pid1="<?php echo ($shop['zongrenshu']); ?>" data-pid2="<?php echo ($shop['canyurenshu']); ?>" data-pid3="1" />
-          <noscript>
-           <img src="/Public/uploads/<?php echo ($shop['thumb']); ?>" alt="" />
-          </noscript></a>
-        </div><a class="w_goods_three" href="javascript:void%200" title="<?php echo ($shop['title']); ?>" data-gid="<?php echo ($shop['id']); ?>" data-pid="<?php echo ($shop['zongrenshu']); ?>" data-pid1="<?php echo ($shop['zongrenshu']); ?>" data-pid2="<?php echo ($shop['canyurenshu']); ?>" data-pid3="1">(第<?php echo ($shop['qishu']); ?>期) <?php echo ($shop['title']); ?></a><b>价值：￥<?php echo ($shop['money']); ?></b>
-        <div class="w_line">
-         <span style="width:<?php echo R('base/width',array($shop['canyurenshu'],$shop['zongrenshu'],245));?>px;"></span>
-        </div>
-        <ul class="w_number">
-         <li class="w_amount"><?php echo ($shop['canyurenshu']); ?></li>
-         <li class="w_amount"><?php echo ($shop['zongrenshu']); ?></li>
-         <li class="w_amount"><?php echo ($shop['zongrenshu']-$shop['canyurenshu']); ?></li>
-         <li>已云购次数</li>
-         <li>总需人次</li>
-         <li>剩余人次</li>
+            <?php if(is_array($gonggao)): foreach($gonggao as $key=>$gonggaos): ?><li><p class="yscrollfont"><a href="/index/show/d/<?php echo ($gonggaos[id]); ?>.html"
+                                              title="<?php echo ($gonggaos[title]); ?>"><?php echo ($gonggaos[title]); ?></a></p>
+                    <p class="yscrolltime"><?php  echo date('Y/m/d',$gonggaos[posttime]); ?></p></li><?php endforeach; endif; ?>
         </ul>
-        <dl class="w_rob">
-         <dd>
-          <a class="w_slip" data-gid="<?php echo ($shop['id']); ?>" data-pid="<?php echo ($shop['zongrenshu']); ?>" data-pid1="<?php echo ($shop['zongrenshu']); ?>" data-pid2="<?php echo ($shop['canyurenshu']); ?>" data-pid3="1" href="javascript:void%200">立即云购</a>
-          <a href="javascript:void(0);" class="w_slip2" data-gid="<?php echo ($shop['id']); ?>" data-pid="<?php echo ($shop['zongrenshu']); ?>" data-pid1="<?php echo ($shop['zongrenshu']); ?>" data-pid2="<?php echo ($shop['canyurenshu']); ?>" data-pid3="1"></a>
-         </dd>
-        </dl><input id="priceArea_<?php echo ($shop['id']); ?>" value="1" type="hidden" /></li><?php endforeach; endif; ?>
-       
-      
-      </ul>
-     </div> 
-    
-    </div>
-   </div> 
-  
-
-   <!-- 热门推荐 end -->
-
-
-
-
-
-  <!-- 楼层 start -->
-  <?php if(is_array($daodao)): foreach($daodao as $key=>$categoryx): ?><div class="yCon yCon<?php  echo $mm; $mm++; ?> yConCenter">
-    <h2><i><?php  echo $g; $g++; ?>F</i><a href="/goods/glist/type/<?php echo ($categoryy['cateid']); ?>.html" class="yCon-title"><?php echo ($categoryx['name']); ?></a><a href="/goods/glist/type/<?php echo ($categoryy['cateid']); ?>.html" class="yMoreLink"><em>更多</em></a>
-     <ul>
-     <?php $data1=D("fenlei")->where(array("model"=>1,"parentid"=>$categoryx['cateid']))->order("`order` DESC")->select() ?>
-<?php if(is_array($data1)): foreach($data1 as $key=>$categoryy): ?><li><a href="/goods/glist/type/<?php echo ($categoryy['cateid']); ?>.html" class="yhoversH1List"><?php echo ($categoryy['name']); ?></a></li><?php endforeach; endif; ?>
- 
-      <span></span>
-     </ul></h2>
-    <div class="yConCenterIn">
-     <div style="display: none;" class="y_btn_all y_btn_left">
-      <i></i>
-     </div>
-     <div style="display: none;" class="y_btn_all y_btn_right">
-      <i></i>
-     </div>
-     <div class="yConCenterInList" style="display:block;">
-      <ul class="w_goods_one goods12">
-
-
-						<?php  $sun_id_str = "''"; foreach($data1 as $v){ $sun_id_str .= ","."'".$v['cateid']."'"; } ?>
-			 		 
-
-<?php  $shop=D("shangpin")->where("cateid in ($sun_id_str) and pos!=1 and q_uid is null")->field("id,sid,cateid,brandid,title,title,title2,keywords,description,money,yunjiage,zongrenshu,canyurenshu,shenyurenshu,def_renshu,qishu,maxqishu,thumb,picarr,codes_table,xsjx_time,pos,renqi,time,q_uid,q_user,q_user_code,q_content,q_counttime,q_end_time,q_showtime,renqi1,ka,mi,ex_yuedingzhongjiang,cardId,cardPwd,cardId1,leixing,yuanjia,q_end_cp,q_end_qishu,fahuo")->order("canyurenshu DESC,shenyurenshu")->LIMIT("4")->select(); ?>
-                                        <?php if(is_array($shop)): foreach($shop as $key=>$shop): ?><li class="w_goods_details" >
-        <div  class="w_imgOut" data-gid="<?php echo ($shop['id']); ?>" data-pid="<?php echo ($shop['zongrenshu']); ?>" data-pid1="<?php echo ($shop['zongrenshu']); ?>" data-pid2="<?php echo ($shop['canyurenshu']); ?>" data-pid3="1">
-         <a class="w_goods_img" data-gid="<?php echo ($shop['id']); ?>" data-pid="<?php echo ($shop['zongrenshu']); ?>" data-pid1="<?php echo ($shop['zongrenshu']); ?>" data-pid2="<?php echo ($shop['canyurenshu']); ?>" data-pid3="1" href="javascript:void%200"><img style="display: inline;" src="/Public/uploads/<?php echo ($shop['thumb']); ?>" id="img_<?php echo ($shop['id']); ?>" class="lazy12" data-original="/Public/uploads/<?php echo ($shop['thumb']); ?>" data-gid="<?php echo ($shop['id']); ?>" data-pid="<?php echo ($shop['zongrenshu']); ?>" data-pid1="<?php echo ($shop['zongrenshu']); ?>" data-pid2="<?php echo ($shop['canyurenshu']); ?>" data-pid3="1" />
-          <noscript>
-           <img src="/Public/uploads/<?php echo ($shop['thumb']); ?>" alt="" />
-          </noscript></a>
-        </div><a class="w_goods_three" href="javascript:void%200" title="<?php echo ($shop['title']); ?>" data-gid="<?php echo ($shop['id']); ?>" data-pid="<?php echo ($shop['zongrenshu']); ?>" data-pid1="<?php echo ($shop['zongrenshu']); ?>" data-pid2="<?php echo ($shop['canyurenshu']); ?>" data-pid3="1">(第<?php echo ($shop['qishu']); ?>期) <?php echo ($shop['title']); ?></a><b>价值：￥<?php echo ($shop['money']); ?></b>
-        <div class="w_line">
-         <span style="width:<?php echo R('base/width',array($shop['canyurenshu'],$shop['zongrenshu'],245));?>px;"></span>
-        </div>
-        <ul class="w_number">
-         <li class="w_amount"><?php echo ($shop['canyurenshu']); ?></li>
-         <li class="w_amount"><?php echo ($shop['zongrenshu']); ?></li>
-         <li class="w_amount"><?php echo ($shop['zongrenshu']-$shop['canyurenshu']); ?></li>
-         <li>已云购次数</li>
-         <li>总需人次</li>
-         <li>剩余人次</li>
+        <ul class="yscroll_list_right">
+            <a href="/index/show/d/17.html"><span></span><em>更多</em></a>
         </ul>
-        <dl class="w_rob">
-         <dd>
-          <a class="w_slip" data-gid="<?php echo ($shop['id']); ?>" data-pid="<?php echo ($shop['zongrenshu']); ?>" data-pid1="<?php echo ($shop['zongrenshu']); ?>" data-pid2="<?php echo ($shop['canyurenshu']); ?>" data-pid3="1" href="javascript:void%200">立即云购</a>
-          <a href="javascript:void(0);" class="w_slip2" data-gid="<?php echo ($shop['id']); ?>" data-pid="<?php echo ($shop['zongrenshu']); ?>" data-pid1="<?php echo ($shop['zongrenshu']); ?>" data-pid2="<?php echo ($shop['canyurenshu']); ?>" data-pid3="1"></a>
-         </dd>
-        </dl><input id="priceArea_<?php echo ($shop['id']); ?>" value="1" type="hidden" /></li><?php endforeach; endif; ?>
-       
-      
-      </ul>
-     </div> 
-    
     </div>
-   </div><?php endforeach; endif; ?>
-   <!-- 楼层 end -->
-   
-   
-   
-  </div> 
-  <!-- 云购社区部分 start --> 
-  <div> 
-   <div class="yCon yConCenter"> 
-    <h2><i><?php  echo $g; ?>F</i><a href="" class="yCon-title">云购社区</a> 
-     <div class="y_switch_tips"> 
-      <em>试试键盘上的</em> 
-      <span class="y_arrows"></span> 
-     </div> 
-     <!-- 2015 6 2 start--> <span class="yCon8span" style="width:1070px;"></span> 
-     <!-- 2015 6 2 end--> </h2> 
-    <div class="yCon8Centerin"> 
-     <div class="yCon8CenterinList yCon8CenterinList1"> 
-      <h4><a href="/group" style="float:left;">官方动态</a><a href="/group" target="_blank" class="yMoreas"><em>更多</em></a></h4> 
-      <ul>
-         <?php $gonggao1=D("wenzhang")->where(array("cateid"=>$gonggaoid['cateid']))->order("`posttime` DESC")->limit("4")->select(); ?>
-         <?php if(is_array($gonggao1)): foreach($gonggao1 as $key=>$gonggaos): ?><li>
-<div class="yCon8Calendar">
-<b><?php  echo date('d',$gonggaos[posttime]); ?></b>
-<br>
-<span><?php  echo date('Y-m',$gonggaos[posttime]); ?></span>
 </div>
-<div class="yCon8Li1a">
-<a target="_blank" title="<?php echo ($gonggaos[title]); ?>" href="/index/show/d/<?php echo ($gonggaos[id]); ?>.html">
-<span><?php echo ($gonggaos[title]); ?></span>
-</a>
-<span class="new-con8Cale-span"><?php echo ($gonggaos[content]); ?></span>
-</div>
-</li><?php endforeach; endif; ?>
+<div class="yContent">
+    <!-- 最新揭晓  -->
+    <div class="yConNew yCon">
+        <h2><a href="/goods_lottery">最新揭晓</a><span></span><!--<a href="/index/map" target="_blank"
+                                                                     class="yMoreLink yMorenearby"><img
+                src="/Public/style/images/999999.gif" style="position:relative;top:4px;"/>查看地图获奖商品</a>--></h2>
+        <div class="yConulout">
+            <div style="display: none;" class="yConuloutLeft yConuloutbtn">
+                <i></i>
+            </div>
+            <div style="display: none;" class="yConuloutright yConuloutbtn">
+                <i></i>
+            </div>
+            <ul style="width: 5103px;" id='jiexiao'>
 
 
-</ul> 
-     </div> 
-     <div class="yCon8CenterinList yCon8CenterinList2"> 
-      <h4 style="border-bottom:0px;"><a href="" style="float:left;">晒单分享</a><a href="/index/shaidan/" class="yMoreas"><em>更多</em></a></h4> 
-     <div class="yCon8Centerscroll"> 
-   <ul>
-       <?php if(is_array($shaidingdan)): foreach($shaidingdan as $key=>$sd): ?><li><a href="/index/detail/id/<?php echo ($sd['sd_id']); ?>" class="List2Imga"><img style="display: block;" src="/Public/uploads/<?php echo ($sd['sd_thumbs']); ?>" class="lazysd" data-original="/Public/uploads/<?php echo ($sd['sd_thumbs']); ?>" />
-      <noscript>
-       <img src="/Public/uploads/<?php echo ($sd['sd_thumbs']); ?>" alt="" />
-      </noscript></a>
-     <div class="List2ImgRight">
-      <p><a href="/index/detail/id/<?php echo ($sd['sd_id']); ?>"><?php echo ($sd['sd_title']); ?></a></p>
-     </div></li><?php endforeach; endif; ?>
- 
-   </ul> 
-  </div>
-     </div> 
-    </div> 
-   </div> 
-  </div> 
-  <!-- 云购社区部分 end --> 
-  <input type="hidden" id="yg_sq" value="" /> 
-  <!-- 内容区结束 --> 
-  <!-- 2015 6 10 start--> 
-  <!-- 2015 6 10 end--> 
-  <!-- 底部 -->
+                <?php
+ $shopqishub=D("shangpin")->where("q_end_time is not null and q_showtime =
+                'N'")->order("q_end_time
+                DESC")->LIMIT("10")->field("qishu,id,sid,thumb,title,q_uid,q_user,q_user_code,zongrenshu")->select(); ?>
+                <?php if(is_array($shopqishub)): foreach($shopqishub as $key=>$qishu): $qishu['q_user'] = unserialize($qishu['q_user']); $weer_shop_number = D("yonghu_yys_record")->field("sum(gonumber) as
+                    gonumber")->where(array("uid"=>$qishu['q_uid'],"shopid"=>$qishu['id'],"shopqishu"=>$qishu['qishu']))->find(); $weer_shop_number = $weer_shop_number['gonumber']; ?>
+                    <li class="goods<?php echo ($qishu['id']); ?>">
+                        <dl>
+                            <dd class="yddImg">
+                                <a href="/goods/dataserverForPc/goodsId/<?php echo ($qishu['id']); ?>.html"
+                                   target="_blank"><img style="display: block;"
+                                                        src="/Public/uploads/<?php echo ($qishu['thumb']); ?>" class="lazyjx"
+                                                        data-original="/Public/uploads/<?php echo ($qishu['thumb']); ?>"/>
+                                    <noscript>
+                                        <img src="/Public/uploads/<?php echo ($qishu['thumb']); ?>" alt=""/>
+                                    </noscript>
+                                </a>
+                            </dd>
+                            <dd class="yddName">
+                                恭喜
+
+                                <a href="/user/uname/tab/uname/d/<?php echo R('base/idjia',array($qishu['q_uid']));?>.html"
+                                   class="yddNameas"><?php echo R('base/huode_user_name',array($qishu['q_user']));?></a> 获得
+
+                            </dd>
+                            <dd class="yGray">
+
+                                <a href="/goods/dataserverForPc/goodsId/<?php echo ($qishu['id']); ?>.html" target="_blank"
+                                   title="<?php echo ($qishu['title']); ?>">(第<?php echo ($qishu['qishu']); ?>期)<?php echo ($qishu['title']); ?></a>
+
+                            </dd>
+                            <dd class="yGray">
+                                幸运号码：<?php echo ($qishu['q_user_code']); ?>
+                            </dd>
+                        </dl>
+                        <i></i></li><?php endforeach; endif; ?>
+
+
+            </ul>
+            <?php if(C('ssc')){ ?>
+            <script type="text/javascript" src="/Public/piyungou/js/GLotteryFunssc.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    gg_show_time_init("jiexiao", '', 0);
+                });
+            </script>
+            <?php }else{ ?>
+            <script type="text/javascript" src="/Public/piyungou/js/GLotteryFun.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    gg_show_time_init("jiexiao", '', 0);
+                });
+            </script>
+            <?php } ?>
+        </div>
+    </div>
+
+    <?php
+ $g=2; $mm=0; ?>
+
+
+    <!-- 热门推荐 start -->
+
+    <div class="yCon yCon1 yConCenter">
+        <h2><i>1F</i><a class="yCon-title">热门推荐</a><a href="/goods/glist/type/0_0_2.html" class="yMoreLink"><em>更多</em></a>
+            <ul>
+
+                <span></span>
+            </ul>
+        </h2>
+        <div class="yConCenterIn">
+            <div style="display: none;" class="y_btn_all y_btn_left">
+                <i></i>
+            </div>
+            <div style="display: none;" class="y_btn_all y_btn_right">
+                <i></i>
+            </div>
+            <div class="yConCenterInList" style="display:block;">
+                <ul class="w_goods_one goods12">
+
+                    <?php if(is_array($remen)): foreach($remen as $key=>$shop): ?><li class="w_goods_details">
+                            <div class="w_imgOut" data-gid="<?php echo ($shop['id']); ?>" data-pid="<?php echo ($shop['zongrenshu']); ?>"
+                                 data-pid1="<?php echo ($shop['zongrenshu']); ?>" data-pid2="<?php echo ($shop['canyurenshu']); ?>" data-pid3="1">
+                                <a class="w_goods_img" data-gid="<?php echo ($shop['id']); ?>" data-pid="<?php echo ($shop['zongrenshu']); ?>"
+                                   data-pid1="<?php echo ($shop['zongrenshu']); ?>" data-pid2="<?php echo ($shop['canyurenshu']); ?>" data-pid3="1"
+                                   href="javascript:void%200"><img style="display: inline;"
+                                                                   src="/Public/uploads/<?php echo ($shop['thumb']); ?>"
+                                                                   id="img_<?php echo ($shop['id']); ?>" class="lazy12"
+                                                                   data-original="/Public/uploads/<?php echo ($shop['thumb']); ?>"
+                                                                   data-gid="<?php echo ($shop['id']); ?>"
+                                                                   data-pid="<?php echo ($shop['zongrenshu']); ?>"
+                                                                   data-pid1="<?php echo ($shop['zongrenshu']); ?>"
+                                                                   data-pid2="<?php echo ($shop['canyurenshu']); ?>" data-pid3="1"/>
+                                    <noscript>
+                                        <img src="/Public/uploads/<?php echo ($shop['thumb']); ?>" alt=""/>
+                                    </noscript>
+                                </a>
+                            </div>
+                            <a class="w_goods_three" href="javascript:void%200" title="<?php echo ($shop['title']); ?>"
+                               data-gid="<?php echo ($shop['id']); ?>" data-pid="<?php echo ($shop['zongrenshu']); ?>"
+                               data-pid1="<?php echo ($shop['zongrenshu']); ?>" data-pid2="<?php echo ($shop['canyurenshu']); ?>" data-pid3="1">(第<?php echo ($shop['qishu']); ?>期)
+                                <?php echo ($shop['title']); ?></a><b>价值：￥<?php echo ($shop['money']); ?></b>
+                            <div class="w_line">
+                                <span style="width:<?php echo R('base/width',array($shop['canyurenshu'],$shop['zongrenshu'],245));?>px;"></span>
+                            </div>
+                            <ul class="w_number">
+                                <li class="w_amount"><?php echo ($shop['canyurenshu']); ?></li>
+                                <li class="w_amount"><?php echo ($shop['zongrenshu']); ?></li>
+                                <li class="w_amount"><?php echo ($shop['zongrenshu']-$shop['canyurenshu']); ?></li>
+                                <li>已云购次数</li>
+                                <li>总需人次</li>
+                                <li>剩余人次</li>
+                            </ul>
+                            <dl class="w_rob">
+                                <dd>
+                                    <a class="w_slip" data-gid="<?php echo ($shop['id']); ?>" data-pid="<?php echo ($shop['zongrenshu']); ?>"
+                                       data-pid1="<?php echo ($shop['zongrenshu']); ?>" data-pid2="<?php echo ($shop['canyurenshu']); ?>"
+                                       data-pid3="1" href="javascript:void%200">立即云购</a>
+                                    <a href="javascript:void(0);" class="w_slip2" data-gid="<?php echo ($shop['id']); ?>"
+                                       data-pid="<?php echo ($shop['zongrenshu']); ?>" data-pid1="<?php echo ($shop['zongrenshu']); ?>"
+                                       data-pid2="<?php echo ($shop['canyurenshu']); ?>" data-pid3="1"></a>
+                                </dd>
+                            </dl>
+                            <input id="priceArea_<?php echo ($shop['id']); ?>" value="1" type="hidden"/></li><?php endforeach; endif; ?>
+
+
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- 热门推荐 end -->
+
+
+    <!-- 楼层 start -->
+    <?php if(is_array($daodao)): foreach($daodao as $key=>$categoryx): ?><div class="yCon yCon<?php
+ echo $mm; $mm++; ?> yConCenter">
+            <h2><i><?php
+ echo $g; $g++; ?>F</i><a href="/goods/glist/type/<?php echo ($categoryy['cateid']); ?>.html" class="yCon-title"><?php echo ($categoryx['name']); ?></a><a
+                    href="/goods/glist/type/<?php echo ($categoryy['cateid']); ?>.html" class="yMoreLink"><em>更多</em></a>
+                <ul>
+                    <?php $data1=D("fenlei")->where(array("model"=>1,"parentid"=>$categoryx['cateid']))->order("`order`
+                    DESC")->select() ?>
+                    <?php if(is_array($data1)): foreach($data1 as $key=>$categoryy): ?><li><a href="/goods/glist/type/<?php echo ($categoryy['cateid']); ?>.html" class="yhoversH1List"><?php echo ($categoryy['name']); ?></a>
+                        </li><?php endforeach; endif; ?>
+
+                    <span></span>
+                </ul>
+            </h2>
+            <div class="yConCenterIn">
+                <div style="display: none;" class="y_btn_all y_btn_left">
+                    <i></i>
+                </div>
+                <div style="display: none;" class="y_btn_all y_btn_right">
+                    <i></i>
+                </div>
+                <div class="yConCenterInList" style="display:block;">
+                    <ul class="w_goods_one goods12">
+
+
+                        <?php
+ $sun_id_str = "''"; foreach($data1 as $v){ $sun_id_str .= ","."'".$v['cateid']."'"; } ?>
+
+
+                        <?php
+ $shop=D("shangpin")->where("cateid in ($sun_id_str) and pos!=1 and q_uid is
+                        null")->field("id,sid,cateid,brandid,title,title,title2,keywords,description,money,yunjiage,zongrenshu,canyurenshu,shenyurenshu,def_renshu,qishu,maxqishu,thumb,picarr,codes_table,xsjx_time,pos,renqi,time,q_uid,q_user,q_user_code,q_content,q_counttime,q_end_time,q_showtime,renqi1,ka,mi,ex_yuedingzhongjiang,cardId,cardPwd,cardId1,leixing,yuanjia,q_end_cp,q_end_qishu,fahuo")->order("canyurenshu
+                        DESC,shenyurenshu")->LIMIT("4")->select(); ?>
+                        <?php if(is_array($shop)): foreach($shop as $key=>$shop): ?><li class="w_goods_details">
+                                <div class="w_imgOut" data-gid="<?php echo ($shop['id']); ?>" data-pid="<?php echo ($shop['zongrenshu']); ?>"
+                                     data-pid1="<?php echo ($shop['zongrenshu']); ?>" data-pid2="<?php echo ($shop['canyurenshu']); ?>" data-pid3="1">
+                                    <a class="w_goods_img" data-gid="<?php echo ($shop['id']); ?>" data-pid="<?php echo ($shop['zongrenshu']); ?>"
+                                       data-pid1="<?php echo ($shop['zongrenshu']); ?>" data-pid2="<?php echo ($shop['canyurenshu']); ?>"
+                                       data-pid3="1" href="javascript:void%200"><img style="display: inline;"
+                                                                                     src="/Public/uploads/<?php echo ($shop['thumb']); ?>"
+                                                                                     id="img_<?php echo ($shop['id']); ?>"
+                                                                                     class="lazy12"
+                                                                                     data-original="/Public/uploads/<?php echo ($shop['thumb']); ?>"
+                                                                                     data-gid="<?php echo ($shop['id']); ?>"
+                                                                                     data-pid="<?php echo ($shop['zongrenshu']); ?>"
+                                                                                     data-pid1="<?php echo ($shop['zongrenshu']); ?>"
+                                                                                     data-pid2="<?php echo ($shop['canyurenshu']); ?>"
+                                                                                     data-pid3="1"/>
+                                        <noscript>
+                                            <img src="/Public/uploads/<?php echo ($shop['thumb']); ?>" alt=""/>
+                                        </noscript>
+                                    </a>
+                                </div>
+                                <a class="w_goods_three" href="javascript:void%200" title="<?php echo ($shop['title']); ?>"
+                                   data-gid="<?php echo ($shop['id']); ?>" data-pid="<?php echo ($shop['zongrenshu']); ?>"
+                                   data-pid1="<?php echo ($shop['zongrenshu']); ?>" data-pid2="<?php echo ($shop['canyurenshu']); ?>" data-pid3="1">(第<?php echo ($shop['qishu']); ?>期)
+                                    <?php echo ($shop['title']); ?></a><b>价值：￥<?php echo ($shop['money']); ?></b>
+                                <div class="w_line">
+                                    <span style="width:<?php echo R('base/width',array($shop['canyurenshu'],$shop['zongrenshu'],245));?>px;"></span>
+                                </div>
+                                <ul class="w_number">
+                                    <li class="w_amount"><?php echo ($shop['canyurenshu']); ?></li>
+                                    <li class="w_amount"><?php echo ($shop['zongrenshu']); ?></li>
+                                    <li class="w_amount"><?php echo ($shop['zongrenshu']-$shop['canyurenshu']); ?></li>
+                                    <li>已云购次数</li>
+                                    <li>总需人次</li>
+                                    <li>剩余人次</li>
+                                </ul>
+                                <dl class="w_rob">
+                                    <dd>
+                                        <a class="w_slip" data-gid="<?php echo ($shop['id']); ?>" data-pid="<?php echo ($shop['zongrenshu']); ?>"
+                                           data-pid1="<?php echo ($shop['zongrenshu']); ?>" data-pid2="<?php echo ($shop['canyurenshu']); ?>"
+                                           data-pid3="1" href="javascript:void%200">立即云购</a>
+                                        <a href="javascript:void(0);" class="w_slip2" data-gid="<?php echo ($shop['id']); ?>"
+                                           data-pid="<?php echo ($shop['zongrenshu']); ?>" data-pid1="<?php echo ($shop['zongrenshu']); ?>"
+                                           data-pid2="<?php echo ($shop['canyurenshu']); ?>" data-pid3="1"></a>
+                                    </dd>
+                                </dl>
+                                <input id="priceArea_<?php echo ($shop['id']); ?>" value="1" type="hidden"/></li><?php endforeach; endif; ?>
+
+
+                    </ul>
+                </div>
+
+            </div>
+        </div><?php endforeach; endif; ?>
+    <!-- 楼层 end -->
+
+
+</div>
+<!-- 云购社区部分 start -->
+<div>
+    <div class="yCon yConCenter">
+        <h2><i><?php
+ echo $g; ?>F</i><a href="" class="yCon-title">云购社区</a>
+            <div class="y_switch_tips">
+                <em>试试键盘上的</em>
+                <span class="y_arrows"></span>
+            </div>
+            <!-- 2015 6 2 start--> <span class="yCon8span" style="width:1070px;"></span>
+            <!-- 2015 6 2 end--> </h2>
+        <div class="yCon8Centerin">
+            <div class="yCon8CenterinList yCon8CenterinList1">
+                <h4><a href="/group" style="float:left;">官方动态</a><a href="/group" target="_blank"
+                                                                            class="yMoreas"><em>更多</em></a></h4>
+                <ul>
+                    <?php $gonggao1=D("wenzhang")->where(array("cateid"=>$gonggaoid['cateid']))->order("`posttime`
+                    DESC")->limit("4")->select(); ?>
+                    <?php if(is_array($gonggao1)): foreach($gonggao1 as $key=>$gonggaos): ?><li>
+                            <div class="yCon8Calendar">
+                                <b><?php  echo date('d',$gonggaos[posttime]); ?></b>
+                                <br>
+                                <span><?php  echo date('Y-m',$gonggaos[posttime]); ?></span>
+                            </div>
+                            <div class="yCon8Li1a">
+                                <a target="_blank" title="<?php echo ($gonggaos[title]); ?>"
+                                   href="/index/show/d/<?php echo ($gonggaos[id]); ?>.html">
+                                    <span><?php echo ($gonggaos[title]); ?></span>
+                                </a>
+                                <span class="new-con8Cale-span"><?php echo ($gonggaos[content]); ?></span>
+                            </div>
+                        </li><?php endforeach; endif; ?>
+
+
+                </ul>
+            </div>
+            <div class="yCon8CenterinList yCon8CenterinList2">
+                <h4 style="border-bottom:0px;"><a href="" style="float:left;">晒单分享</a><a href="/index/shaidan/"
+                                                                                         class="yMoreas"><em>更多</em></a>
+                </h4>
+                <div class="yCon8Centerscroll">
+                    <ul>
+                        <?php if(is_array($shaidingdan)): foreach($shaidingdan as $key=>$sd): ?><li><a href="/index/detail/id/<?php echo ($sd['sd_id']); ?>" class="List2Imga"><img
+                                    style="display: block;" src="/Public/uploads/<?php echo ($sd['sd_thumbs']); ?>" class="lazysd"
+                                    data-original="/Public/uploads/<?php echo ($sd['sd_thumbs']); ?>"/>
+                                <noscript>
+                                    <img src="/Public/uploads/<?php echo ($sd['sd_thumbs']); ?>" alt=""/>
+                                </noscript>
+                            </a>
+                                <div class="List2ImgRight">
+                                    <p><a href="/index/detail/id/<?php echo ($sd['sd_id']); ?>"><?php echo ($sd['sd_title']); ?></a></p>
+                                </div>
+                            </li><?php endforeach; endif; ?>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 云购社区部分 end -->
+<input type="hidden" id="yg_sq" value=""/>
+<!-- 内容区结束 -->
+<!-- 2015 6 10 start-->
+<!-- 2015 6 10 end-->
+<!-- 底部 -->
 
 
 <script type="text/javascript">
-$(function(){
-	$("#ulGoodsList a.u-cart").click(function(){ 
-		var sw = $("#ulGoodsList a.u-cart").index(this);
-		var src = $("#ulGoodsList .g-soon-pic a img").eq(sw).attr('src');				
-		var $shadow = $('<img id="cart_dh" style="display:none; border:1px solid #aaa; z-index:99999;" width="200" height="200" src="'+src+'" />').prependTo("body");  			
-		var $img = $("#ulGoodsList .g-soon-pic").eq(sw);
-		$shadow.css({ 
-			'width' : 200, 
-			'height': 200, 
-			'position' : 'absolute',      
-			"left":$img.offset().left+16, 
-			"top":$img.offset().top+9,
-			'opacity' : 1    
-		}).show();
-		var $cart = $("#btnMyCart");
-		$shadow.animate({   
-			width: 1, 
-			height: 1, 
-			top: $cart.offset().top,    
-			left: $cart.offset().left, 
-			opacity: 0
-		},500,function(){
-			Cartcookie(sw,false);
-		});	
-		
-	});
-	$("#ulGoodsList a.go_Shopping").click(function(){	
-		var sw = $("#ulGoodsList a.go_Shopping").index(this);
+    $(function () {
+        $("#ulGoodsList a.u-cart").click(function () {
+            var sw = $("#ulGoodsList a.u-cart").index(this);
+            var src = $("#ulGoodsList .g-soon-pic a img").eq(sw).attr('src');
+            var $shadow = $('<img id="cart_dh" style="display:none; border:1px solid #aaa; z-index:99999;" width="200" height="200" src="' + src + '" />').prependTo("body");
+            var $img = $("#ulGoodsList .g-soon-pic").eq(sw);
+            $shadow.css({
+                'width': 200,
+                'height': 200,
+                'position': 'absolute',
+                "left": $img.offset().left + 16,
+                "top": $img.offset().top + 9,
+                'opacity': 1
+            }).show();
+            var $cart = $("#btnMyCart");
+            $shadow.animate({
+                width: 1,
+                height: 1,
+                top: $cart.offset().top,
+                left: $cart.offset().left,
+                opacity: 0
+            }, 500, function () {
+                Cartcookie(sw, false);
+            });
 
-		Cartcookie(sw,true); 
-	});	
-	$(".naz").click(function(){
-		$(this).parent().find("a").removeClass("on"),
-		$(this).addClass("on") 
-	});
-});
-//存到COOKIE
-function show(cat1,cat2){
-	$(".floor_"+cat1).addClass("hidden"),
-	$("#show_"+cat2).removeClass("hidden");	
-	}
-function Cartcookie(sw,cook){
-	var shopid = $(".Curbor_id").eq(sw).text(),
-		shenyu = $(".Curbor_yunjiage").eq(sw).text(),
-		money = $(".Curbor_shenyu").eq(sw).text();
-	var Cartlist = $.cookie('Cartlist');
-	if(!Cartlist){
-		var info = {};
-	}else{
-		var info = $.evalJSON(Cartlist);
-	}
-	if(!info[shopid]){
-		var CartTotal=$("#sCartTotal").text();
-			$("#sCartTotal").text(parseInt(CartTotal)+1);
-			$("#btnMyCart em").text(parseInt(CartTotal)+1);
-	}	
-	info[shopid]={};
-	info[shopid]['num']=1;
-	info[shopid]['shenyu']=shenyu;
-	info[shopid]['money']=money;
-	info['MoenyCount']='0.00';
-	$.cookie('Cartlist',$.toJSON(info),{expires:30,path:'/'});
-	if(cook){
-		window.location.href="/goods/cartlist";
-	}
-}
+        });
+        $("#ulGoodsList a.go_Shopping").click(function () {
+            var sw = $("#ulGoodsList a.go_Shopping").index(this);
+
+            Cartcookie(sw, true);
+        });
+        $(".naz").click(function () {
+            $(this).parent().find("a").removeClass("on"),
+                    $(this).addClass("on")
+        });
+    });
+    //存到COOKIE
+    function show(cat1, cat2) {
+        $(".floor_" + cat1).addClass("hidden"),
+                $("#show_" + cat2).removeClass("hidden");
+    }
+    function Cartcookie(sw, cook) {
+        var shopid = $(".Curbor_id").eq(sw).text(),
+                shenyu = $(".Curbor_yunjiage").eq(sw).text(),
+                money = $(".Curbor_shenyu").eq(sw).text();
+        var Cartlist = $.cookie('Cartlist');
+        if (!Cartlist) {
+            var info = {};
+        } else {
+            var info = $.evalJSON(Cartlist);
+        }
+        if (!info[shopid]) {
+            var CartTotal = $("#sCartTotal").text();
+            $("#sCartTotal").text(parseInt(CartTotal) + 1);
+            $("#btnMyCart em").text(parseInt(CartTotal) + 1);
+        }
+        info[shopid] = {};
+        info[shopid]['num'] = 1;
+        info[shopid]['shenyu'] = shenyu;
+        info[shopid]['money'] = money;
+        info['MoenyCount'] = '0.00';
+        $.cookie('Cartlist', $.toJSON(info), {expires: 30, path: '/'});
+        if (cook) {
+            window.location.href = "/goods/cartlist";
+        }
+    }
 </script>
-<script type="text/javascript" src="/Public/js/IndexFun.js"></script> 
+<script type="text/javascript" src="/Public/js/IndexFun.js"></script>
 <style>
 
 *{ margin:0; padding:0; list-style:none;}
@@ -774,9 +848,9 @@ img{ border:0;}
 
 
 
-<a href="javascript:;" id="launch_qq11" class="btn7 rides-cs">
-<img src=/index.png>
-</a>
+<!--<a href="javascript:;" id="launch_qq11" class="btn7 rides-cs">-->
+<!--<img src=/index.png>-->
+<!--</a>-->
 
 <script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
 <script>
@@ -802,44 +876,46 @@ img{ border:0;}
 				</ul><?php endforeach; endif; ?>
 				 
 			</div>
-			<div class="g-side1">
+			<!--<div class="g-side1">-->
 				<div class="g-side-l">
-					<ul class="m-instruction-state f-clear">						
+					<ul class="m-instruction-state f-clear">
 						<li><i class="ico ico-state-l ico-state-l-2"></i>100%正品保证</li>
 						<li><i class="ico ico-state-l ico-state-l-3"></i>100%权益保障</li>
 						<li><i class="ico ico-state-l ico-state-l-1"></i>100%公平公正公开</li>
 					</ul>
 				</div>
-				<div class="g-side-r">
-					<div class="m-instruction-yxCode">
-						<img width="100%" src="/Public/uploads/<?php echo C('web_logo1');?>" />
-						<p style="line-height: 12px;margin-top:2px;">微信公共号</p>
-					</div>
-					<div class="m-instruction-service">
-						
-						<p>服务热线：<font color="#da3553"><?php echo C('cell');?></font></p>
-						<?php  if(C('qq_qun')){ $qq_qun_list = C('qq_qun'); $qq_qun_list = explode("|",$qq_qun_list); foreach($qq_qun_list as $qq){ $qq = trim($qq); ?>
-						<p><span class="ft-qqicon"><a style="text-indent:0em; background:none;width:160px;" target="_blank" rel="nofollow" href="javascript:;">官方QQ群：<em class="orange Fb"><?php echo ($qq); ?></em></a>  </span></p>
-						<?php  } } ?>
-					</div>
-				</div>
-			</div>
+				<!--<div class="g-side-r">-->
+					<!--<div class="m-instruction-yxCode">-->
+						<!--<img width="100%" src="/Public/uploads/<?php echo C('web_logo1');?>" />-->
+						<!--<p style="line-height: 12px;margin-top:2px;">微信公共号</p>-->
+					<!--</div>-->
+					<!--<div class="m-instruction-service">-->
+
+						<!--<p>服务热线：<font color="#da3553"><?php echo C('cell');?></font></p>-->
+						<?php
+ if(C('qq_qun')){ $qq_qun_list = C('qq_qun'); $qq_qun_list = explode("|",$qq_qun_list); foreach($qq_qun_list as $qq){ $qq = trim($qq); ?>
+						<!--<p><span class="ft-qqicon"><a style="text-indent:0em; background:none;width:160px;" target="_blank" rel="nofollow" href="javascript:;">官方QQ群：<em class="orange Fb"><?php echo ($qq); ?></em></a>  </span></p>-->
+						<?php
+ } } ?>
+					<!--</div>-->
+				<!--</div>-->
+			<!--</div>-->
 		</div>
 	</div>
-	<div class="m-copyright">
-		<?php echo R('base/Getheader',array('foot'));?>&nbsp;|&nbsp;<?php echo C('web_copyright');?> &nbsp;&nbsp;
-	</div>
-        <div class="m-copyright">
-		<div class="g-wrap">
-			<ul class="m-QC-list">
-				<li><a style="width: 108px;"  target="_blank">&nbsp;</a></li>
-				<li><a style="width: 84px;" target="_blank">&nbsp;</a></li>
-				<li><a style="width: 104px;" target="_blank">&nbsp;</a></li>
-				<li><a style="width: 82px;" target="_blank">&nbsp;</a></li>
-				
-			</ul>
-		</div>
-		</div>
+	<!--<div class="m-copyright">-->
+		<!--<?php echo R('base/Getheader',array('foot'));?>&nbsp;|&nbsp;<?php echo C('web_copyright');?> &nbsp;&nbsp;-->
+	<!--</div>-->
+        <!--<div class="m-copyright">-->
+		<!--<div class="g-wrap">-->
+			<!--<ul class="m-QC-list">-->
+				<!--<li><a style="width: 108px;"  target="_blank">&nbsp;</a></li>-->
+				<!--<li><a style="width: 84px;" target="_blank">&nbsp;</a></li>-->
+				<!--<li><a style="width: 104px;" target="_blank">&nbsp;</a></li>-->
+				<!--<li><a style="width: 82px;" target="_blank">&nbsp;</a></li>-->
+				<!---->
+			<!--</ul>-->
+		<!--</div>-->
+		<!--</div>-->
 
 </div>      
 <!--footer end-->

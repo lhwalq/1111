@@ -342,25 +342,25 @@
 </div> 
 <!-- 购物袋有商品 end --> 
 <div class="Left-fixed-divs" style="display: none"> 
-    <!--<img src="/Public/style/images/ce.png" style="top:5%;position:relative;">-->
+    <img src="/Public/style/images/ce.png" style="top:5%;position:relative;">
     <ul> 
         <li class="shoppingCartRightFix Left-fixed-divs3"> <a href="/goods/cartlist"> <i></i> <em>购</em> <em>物</em> <em>袋</em> <em id="cartCount"></em> </a> </li> 
-        <!--<li class="YonlineService otherlifix"><a hidefocus="true" href="http://wpa.qq.com/msgrd?V=1&uin=<?php echo C('qq');?>&Menu=yes" target="_blank"><i style="margin-left:12px;"></i><em>在线</em><em>客服</em></a></li> -->
-        <!--<li class="otherlifix otherlifixw"> <a hidefocus="true" href="javascript:void 0"> <i style="background-position:-168px -176px;"></i> <em>官方</em> <em>微信</em> </a> <img width="188" height="216" src="/Public/uploads/<?php echo C('web_logo1');?>" /> -->
-            <!--<s></s> </li> -->
-        <!--<li class="otherlifix otherlifixw"> <a hidefocus="true" href="https://www.pgyer.com/dzmM" target="_blank"> <i style="margin-left:12px;margin-top:0;background-position:-203px -172px;height: 27px;margin-bottom:0;"></i> <em>手机</em><em>App</em> </a> -->
-            <!--&lt;!&ndash; <img width="188" height="188" src="/Public/style/images/weixinlogo.png" style="border:1px solid #adadad;"> &ndash;&gt; </li> -->
-        <!--<li class="otherlifix"> <a hidefocus="true" href="/user/userrecharge"> <i style="margin-left:12px;background-position:-236px -176px;"></i> <em>快速</em><em>充值</em> </a> </li> -->
+        <li class="YonlineService otherlifix"><a hidefocus="true" href="http://wpa.qq.com/msgrd?V=1&uin=<?php echo C('qq');?>&Menu=yes" target="_blank"><i style="margin-left:12px;"></i><em>在线</em><em>客服</em></a></li> 
+        <li class="otherlifix otherlifixw"> <a hidefocus="true" href="javascript:void 0"> <i style="background-position:-168px -176px;"></i> <em>官方</em> <em>微信</em> </a> <img width="188" height="216" src="/Public/uploads/<?php echo C('web_logo1');?>" /> 
+            <s></s> </li> 
+        <li class="otherlifix otherlifixw"> <a hidefocus="true" href="https://www.pgyer.com/dzmM" target="_blank"> <i style="margin-left:12px;margin-top:0;background-position:-203px -172px;height: 27px;margin-bottom:0;"></i> <em>手机</em><em>App</em> </a> 
+            <!-- <img width="188" height="188" src="/Public/style/images/weixinlogo.png" style="border:1px solid #adadad;"> --> </li> 
+        <li class="otherlifix"> <a hidefocus="true" href="/user/userrecharge"> <i style="margin-left:12px;background-position:-236px -176px;"></i> <em>快速</em><em>充值</em> </a> </li> 
         <li class="otherlifix lifixTop"> <i style="background-position:-276px -170px"></i> <em>置</em><em>顶</em> </li> 
     </ul> 
 </div> 
 <!-- 右侧悬浮 end --> 
-<script type="text/javascript" src="/Public/style/js/common.js"></script>
-<script type="text/javascript" src="/Public/style/js/jquery.js"></script>
-<script type="text/javascript" src="/Public/style/js/jquery.lazyload.min.js"></script>
-<script type="text/javascript" src="/Public/style/js/jquery.cookie.js"></script>
-<script type="text/javascript" src="/Public/style/js/jquery.cookies.2.2.0.js"></script>
-<script type="text/javascript" src="/Public/style/js/footer_header.js"></script>
+<script type="text/javascript" src="/Public/style/js/common.js"></script> 
+<script type="text/javascript" src="/Public/style/js/jquery.js"></script> 
+<script type="text/javascript" src="/Public/style/js/jquery.lazyload.min.js"></script> 
+<script type="text/javascript" src="/Public/style/js/jquery.cookie.js"></script> 
+<script type="text/javascript" src="/Public/style/js/jquery.cookies.2.2.0.js"></script> 
+<script type="text/javascript" src="/Public/style/js/footer_header.js"></script> 
 <script>
 
     $(function () {
@@ -390,256 +390,556 @@
 
 <span id="index" style="display:none">index</span> 
 <!-- 导航   end  --> 
-<meta name="keywords" content=<?php if(isset($guanjianzi)): ?>"<?php echo ($guanjianzi); ?>"<?php else: ?>"<?php echo C('web_key');?>"<?php endif; ?> />
-<meta name="description" content=<?php if(isset($miaoshu)): ?>"<?php echo ($miaoshu); ?>"<?php else: ?>"<?php echo C('web_des');?>"<?php endif; ?> />
- 
-      <link rel="stylesheet" type="text/css" href="/Public/piyungou/css/Comm.css"/>
-<link rel="stylesheet" type="text/css" href="/Public/piyungou/css/CartList.css"/>
-<link rel="stylesheet" type="text/css" href="/Public/piyungou/css/style.css"/>
+<div class="main-content clearfix">
+    <link rel="stylesheet" type="text/css" href="/Public/css/layout-Frame.css"/>
+<div class="left">
+	<div class="head">
+		<a href="/user/uname/d/<?php echo R('base/idjia',array($huiyuan['uid']));?>" target="_blank">			
+			<img id="imgUserPhoto" src="/Public/uploads/<?php echo R('base/huode_user_img',array('160160'));?>" width="160" height="160" border="0"/>			
+		</a>
+	</div>
+	<div class="head-but">
+		<a href="/user/userphoto" class="blue">修改头像</a>
+		<a href="/user/userModify" class="blue fr">编辑资料</a>
+	</div>
+	<div class="sidebar-nav">
+		<p class="sid-line"></p>
+		<h2 id="wdwzg" class="sid-icon01"><a href="/user/home"><b></b>我的<?php echo C('web_name_two');?></a></h2>
+		<p class="sid-line"></p>
+		<h3 id="grsz" class="sid-icon09" hasChild="1"><a href="/user/userModify"><b></b>个人设置</a></h3>		
+		<p class="sid-line"></p>
+		<h3 id="grsz" class="sid-icon09" hasChild="1"><a href="/user/qiandao"><b></b>每日签到</a></h3>		
+		<p class="sid-line"></p>
+		<h3 class="sid-icon02" hasChild="1">
+			<a href="javascript:void();"><b></b>我的云购 <s title="收起"></s></a>
+		</h3>
+		<ul>
+			<li id="zgjl" class=""><a href="/user/userbuylist">云购记录</a></li>
+			<li id="hddsp" class=""><a href="/user/orderlist">获得的商品</a></li>
+			<li id="sd" class=""><a href="/user/singlelist">晒单</a></li>
+		</ul>
+		<p class="sid-line"></p>
 
-<script type="text/javascript" src="/Public/plugin/style/global/js/jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="/Public/piyungou/js/jquery.cookie.js"></script>
-</head>
-<body>
-    <div class="logo">
-        <div class="float">
-            <span class="logo_pic">
-                <h2>确认订单</h2>
-                </a></span>
-            <ul class="ui-step" style='float:right;margin-top:10px'>
-                <li class="ui-step-start ui-step-active">
-                    <div class="ui-step-line">-</div>
-                    <div class="ui-step-icon">
-                        <i class="ui-step-number">提交</i>
-                        <span class="ui-step-text">&nbsp;</span>
-                    </div>
-                </li>
-                <li class="ui-step-center">
-                    <div class="ui-step-line">-</div>
-                    <div class="ui-step-icon">
-                        <i class="ui-step-number">支付</i>
-                        <span class="ui-step-text">&nbsp;</span>
-                    </div>
-                </li>
-                <li class="ui-step-center">
-                    <div class="ui-step-line">-</div>
-                    <div class="ui-step-icon">
-                        <i class="ui-step-number">开奖</i>
-                        <span class="ui-step-text">&nbsp;</span>
-                    </div>
-                </li>
-                <li class="ui-step-end">
-                    <div class="ui-step-line">-</div>
-                    <div class="ui-step-icon">
-                        <i class="ui-step-number">揭晓</i>
-                        <span class="ui-step-text">&nbsp;</span>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
+		<h3 class="sid-icon06" hasChild="1">
+			<a href="javascript:void();"><b></b>商户专区<s title="收起"></s></a>
+		</h3>
+		<ul>
+                        <?php if($huiyuan['type'] == 1): ?><li  class=""><a href="/seller/goods_add">发布商品</a></li>
+                        <li  class=""><a href="/seller/goods_list">商品列表</a></li>
+                        <li  class=""><a href="/seller/goods_list/type/1">待审核商品</a></li>
+                        <li  class=""><a href="/seller/seller_order_list">我的订单</a></li>
+                        <?php else: ?>
+                        <li  class=""><a href="/seller/seller_register">入驻商户</a></li><?php endif; ?>
+		</ul>
+<h3 class="sid-icon02" hasChild="1">
+			<a href="javascript:void();"><b></b>我的网盘 <s title="收起"></s></a>
+		</h3>
+		<ul>
+			<li id="zgjl" class=""><a href="/user/wangpan">网盘上传</a></li>
+			
+		</ul>
+		<h3 class="sid-icon02" hasChild="1">
+			<a href="javascript:void();"><b></b>直购管理 <s title="收起"></s></a>
+		</h3>
+		<ul>
+			<li id="zgjl" class=""><a href="/user/userbuylistzg">直购记录</a></li>
+		</ul>
+		<p class="sid-line"></p>
+		<h3 class="sid-icon03 " hasChild="1">
+			<a href="javascript:void();"><b></b>圈子管理 <s title="收起"></s></a>
+		</h3>
+		<ul>
+			<li id="jrdqz" class=""><a href="/user/joingroup">加入的圈子</a></li>
+			<li id="qzht" class=""><a href="/user/topic">圈子话题</a></li>
+		</ul>
+		<p class="sid-line"></p>
+		<h3 class="sid-icon04 " hasChild="1">
+			<a href="javascript:void();"><b></b>邀请管理 <s title="收起"></s></a>
+		</h3>
+		<ul>
+			<li id="yqhy" class=""><a href="/user/invitefriends">邀请好友</a></li>
+			<li id="yjmx" class=""><a href="/user/commissions">1级佣金明细</a></li>
+			<li id="yjmx" class=""><a href="/user/commissions/d/2">2级佣金明细</a></li>
+			<li id="yjmx" class=""><a href="/user/commissions/d/3">3级佣金明细</a></li>
+			<li id="yjmx" class=""><a href="/user/commissionszg">直购1级佣金明细</a></li>
+			<li id="yjmx" class=""><a href="/user/commissionszg/d/2">直购2级佣金明细</a></li>
+			<li id="yjmx" class=""><a href="/user/commissionszg/d/3">直购3级佣金明细</a></li>
+			<li id="yjmx" class=""><a href="/user/commissions4">冲值到余额明细</a></li>
+			<li id="sqtx" class=""><a href="/user/cashout">申请提现</a></li>
+			<li id="txjl" class=""><a href="/user/record">提现记录</a></li>
+		</ul>
+		<p class="sid-line"></p>		
+		<h3 class="sid-icon05 " hasChild="1">
+			<a href="javascript:void();"><b></b>账户管理 <s title="收起"></s></a>
+		</h3>
+		<ul>
+			<li id="zhmx" class=""><a href="/user/userbalance">账户明细</a></li>
+			<li id="zhcz" class=""><a href="/user/userrecharge">账户充值</a></li>
+		</ul>
+		<p class="sid-line"></p>
+		
+		<h3 id="wdff" class="sid-icon07" hasChild="0" url=""><a href="/user/userfufen"><b></b>我的福分</a></h3>
 
-    <div class="shop_process">
-        <div class="i_tips"></div>
-        <div class="submitted">
-            <ul class="order">
-                <li class="top">
-                    <span class="goods">商品</span>
-                    <span class="name">名称</span>
-                    <span class="moneys">价值</span>
-                    <span class="money">云购价</span>
-                    <span class="num">云购人次</span>
-                    <span class="xj">小计</span>
-                    <span class="do">操作</span>
-                </li>
-                  <script>
-                        var chooselist = localStorage.getItem('chooselist');
-                        if(!chooselist){
-                                            var datas = {};
-                                    }else{
-                                            var datas = $.evalJSON(chooselist);
-                                            if((typeof datas) !== 'object'){
-                                                    var datas = {};
-                                            }
-                                    }
-                        </script>
-                <?php if(is_array($yyslist)): foreach($yyslist as $key=>$shops): ?><li class="end" id="shoplist<?php echo ($shops['id']); ?>">
-                    <span class="goods">
-                        <a href="/goods/items/goodsId/<?php echo ($shops['id']); ?>.html">
-                            <img src="/Public/uploads/<?php echo ($shops['thumb']); ?>" />
-                        </a>                    
-                    </span>
-                    <span class="name">
-                        <a href="/goods/items/goodsId/<?php echo ($shops['id']); ?>.html" ><?php echo ($shops['title']); ?></a>
-                        <?php if($shops['pay_ygb'] == 1): ?><p style="color:red">此商品只限福分消费</p><?php endif; ?>
-                        <p>总需 <span class="color"><?php echo ($shops['zongrenshu']); ?></span>人次参与，还剩 
-                            <span class="gorenci"><?php echo ($shops['cart_shenyu']); ?></span> 人次
-                        </p>
-                    </span>
-                    <span class="moneys">￥<?php echo ($shops['money']); ?></span>
-                    <span class="money"><span class="color">￥<b><?php echo ($shops['yunjiage']); ?></b></span></span>	
-                    <?php if($shops['cart_shenyu']=='0'): ?><span class="num">				
-                        <dl class="add">					
-                            <dd><input type="type" val="<?php echo ($shops['id']); ?>" onkeyup="value = value.replace(/\D/g, '')" value="<?php echo ($shops['cart_gorenci']); ?>" class="amount" disabled style="width:55px"/></dd>                    
-                        </dl>
-                        <p class="message" style="margin-left:12px;color:black">商品已揭晓，请购买下期商品</p>
-                    </span> 
-                    <span  class="xj">0.00</span> 
-                    <?php elseif($shops['is_choose'] == 1): ?>
-                     <span class="num">				
-							<dl class="add">					
-							<dd><input type="type" val="<?php echo ($shops['id']); ?>" onkeyup="value=value.replace(/\D/g,'')" value="<?php echo ($shops['cart_gorenci']); ?>" class="amount" disabled /></dd>                    
-							<dd>
-									<a href="JavaScript:;" val="<?php echo ($shops['id']); ?>" class="jia" style="display:none"></a>
-									<a href="JavaScript:;" val="<?php echo ($shops['id']); ?>" class="jian" style="display:none"></a>
-								</dd>      
-                                                        </dl>
-		                    <p class="message" style="margin-left:12px;color:black" >该商品为选购商品，请返回再修改选购号码</p>
-						</span> 
-						<span  class="xj"><?php echo ($shops['cart_xiaoji']); ?></span>  
+	</div>
+	<div class="sid-service">
+		<p>
+			<a href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo C("qq");?>&site=qq&menu=yes" target="_blank" class="service-btn">
+				<s></s><img border="0"  style="display:none;">在线客服
+			</a>
+		</p>
+		<span>客服热线</span>
+		<b class="tel"><?php echo C("cell");?></b>
+	</div>
+</div>
+<script type="text/javascript">
+var _NavState = [true, true, true, true, true];  
+$("div.sidebar-nav").find("h3").each(function(i,v){
+	var _This = $(this);
+	var _HasClild = _This.attr("hasChild")=="1"; 
+	var _SObj = _This.find("s");
+	_This.click(function(e){
+		if(_HasClild){
+			var _State = _NavState[i];                
+			/* 一级栏目更改样式 */
+			if(_State){
+				_This.addClass("sid-iconcur");
+				_SObj.attr("title","展开");
+			}
+			else {
+				_This.removeClass("sid-iconcur");
+				_SObj.attr("title","收起");
+			}                
+			/* 二级栏目显示或隐藏 */
+			_This.next("ul").children().each(function(){
+				if(_State){
+					$(this).hide(50);
+				}
+				else {
+					$(this).show(50);
+				}
+			});
+			_NavState[i] = !_State;
+		}
+	});
+});   
+</script>
 
-                                            <script>
-                                              var shopsid="<?php echo ($shops['id']); ?>";
-                                              if(!datas[shopsid]){
-                                                $(".add input[val="+shopsid+"]").removeAttr("disabled");
-                                                $(".add input[val="+shopsid+"]").parent().parent().next().text("");
-                                                $(".add a[val="+shopsid+"]").attr("style","");
-                                              }
-                                            </script>
-                    <?php else: ?>
-                    <span class="num">				
-                        <dl class="add">					
-                            <dd><input type="type" val="<?php echo ($shops['id']); ?>" onkeyup="value = value.replace(/\D/g, '')" value="<?php echo ($shops['cart_gorenci']); ?>" class="amount" /></dd>
-                            <dd>
-                                <a href="JavaScript:;" val="<?php echo ($shops['id']); ?>" class="jia"></a>
-                                <a href="JavaScript:;" val="<?php echo ($shops['id']); ?>" class="jian"></a>
-                            </dd>                        
-                        </dl>
-                        <p class="message"></p>
-                    </span> 
-                    <span  class="xj"><?php echo ($shops['cart_xiaoji']); ?></span><?php endif; ?>
-                    <span class="do"><a href="javascript:;" onclick="delcart(<?php echo ($shops['id']); ?>)"  class="delgood">删除</a></span> 
-                </li><?php endforeach; endif; ?>
-                <li class="ts">
-                    <p class="right">云购金额总计:￥<span id="moenyCount"><?php echo ($MoenyCount); ?></span></p>
-                </li>
-            </ul>
-        </div>
-        <h5>
-            <a href="/index/index" id="but_on"></a>
-            <input id="but_ok" type="button" value=""  name="submit"/>
-        </h5>
-    </div> 
-
-    <script type="text/javascript">
-        var info = "<?php echo ($gouwucheshopinfo); ?>";
-        info = eval('(' + info + ')');  
-        var numberadd = $(".jia");
-        var numbersub = $(".jian");
-        var xiaoji = $(".xj");
-        var num = $(".amount");
-        var message = $(".message");
-        var moenyCount = $("#moenyCount");
-
+<!--content left end-->
+    <link rel="stylesheet" type="text/css" href="/Public/piyungou/css/layout-recharge.css"/>
+    <script type="text/javascript" src="/Public/piyungou/js/jquery-webox.js"></script>
+    <link rel="stylesheet" type="text/css" href="/Public/piyungou/images/jquery-webox.css"/>
+    <script>
         $(function () {
-            $("#but_ok").click(function () {
-                var countmoney = parseInt(moenyCount.text());
-                if (countmoney > 0) {
-                    $.cookie('Cartlist','',{path:'/'});
-                    $.cookie('Cartlist', $.toJSON(info), {expires: 7, path: '/'});
-                    document.location.href = '/pay/pay/' + new Date().getTime();
-                } else {
-                    alert("购物车为空!");
-                }
+            var je = $("#ulMoneyList li");
+            //var dx=/\D/;
+            var dx = /^\+?[1-9][0-9]*$/;
+            je.click(function () {
+                je.removeClass("selected");
+                je.find("input").removeAttr("checked");
+                var radio = je.index(this);
+                je.eq(radio).find("input").attr('checked', 'checked');
+                je.eq(radio).addClass("selected");
+                var valx = je.eq(radio).find("input").val();
+                $("#Money").text(valx);
+                $("#hidMoney").val(valx);
             });
-        });
-        function UpdataMoney(shopid, number, zindex) {
-            var number = parseInt(number);
-            info['MoenyCount'] = info['MoenyCount'] - info[shopid]['money'] * info[shopid]['num'] + info[shopid]['money'] * number;
-            info[shopid]['num'] = number;
-            var xjmoney = xiaoji.eq(zindex + 1);
-            xjmoney.text(info[shopid]['money'] * number + '.00');
-            moenyCount.text(info['MoenyCount'] + '.00');
-        }
-
-
-        function delcart(id) {
-            info['MoenyCount'] = info['MoenyCount'] - info[id]['money'] * info[id]['num'];
-            $("#shoplist" + id).hide();
-            $("#moenyCount").text(info['MoenyCount'] + ".00");
-            delete info[id];
-            //$.cookie('Cartlist','',{path:'/'});
-            $.cookie('Cartlist', $.toJSON(info), {expires: 30, path: '/'});
-            var choose=localStorage.getItem('chooselist');
-            if(choose)
-            {
-                data = $.evalJSON(choose);
-                var data1 = {};
-
-                $.each(data, function(i, n){
-                    if(i!=id)
-                    {
-                        data1[i]={};
-                        data1[i]['code']=n.code; 
-                    }
-                });
-
-                localStorage.setItem('chooselist',$.toJSON(data1));
-                if($.toJSON(data1)=="{}")
-                {
-                    localStorage.removeItem('chooselist');
+            var tel = $("#txtOtherMoney").val();
+            $("#txtOtherMoney").keyup(function () {
+                if (!dx.test($("#txtOtherMoney").val())) {
+                    $("#txtOtherMoney").val(tel);
+                } else {
+                    tel = $("#txtOtherMoney").val();
                 }
-            }
-        }
+                $("#Money").text(tel);
+                $("#hidMoney").val(tel);
+            });
+        })
+    </script>
+    <div class="R-content">
+        <div class="member-t"><h2>账户充值</h2></div>
 
-        num.keyup(function () {
-            var shopid = $(this).attr("val");
-            var zindex = num.index(this);
+        <!--增加部分-->
+        <div>
 
-            if ($(this).val() > info[shopid]['shenyu']) {
-                message.eq(zindex).text("云购次数不能超过" + info[shopid]['shenyu'] + "次");
-                $(this).val(info[shopid]['shenyu']);
-                UpdataMoney(shopid, $(this).val(), zindex);
-                return;
-            }
-            if ($(this).val() < 1) {
-                message.eq(zindex).text("云购次数不能少于1次");
-                $(this).val(1);
-                UpdataMoney(shopid, $(this).val(), zindex);
-                return;
-            }
-            UpdataMoney(shopid, $(this).val(), zindex);
+            <iframe name='czifr' style="width:0px;height:0px; display:none" width="0" height="0" frameborder="0"></iframe>
+            <?php $uid = R("base/huode_user_uid");$ext=R("base/huode_user_arr"); ?>
+            <script>
+                function echeck() {
+                    if (!$('input[name=uid]').val()) {
+                        alert('用户名不能为空');$('input[name=uid]').focus();return false;}
+                    if (!$('input[name=title]').val()) {
+                        alert('充值卡不能为空');
+                        $('input[name=title]').focus();
+                        return false;}
+                    if (!$('input[name=pwd]').val()) {
+                        alert('密码不能为空');
+                        $('input[name=pwd]').focus();
+                        return false;
+                    }
+                }
+            </script>
+            <div style="width:600px; border:5px solid #f60;" align="left">
+
+                <form class='myform' action='/card/cardRecharge' method='post' onsubmit='return echeck()'>
+                    <input name='uid' type="hidden" style='width:150px;' value='<?php echo ($uid); ?>'><br><br>
+                    <span  style="font-size:16px; font-weight:bold; margin-left:30px;">充值卡号：</span><input name='title'   style='width:350px;height:30px;font-size:16px; border:1px solid #f60;'><br><br>
+                    <span  style="font-size:16px; font-weight:bold; margin-left:30px;">充值卡密：</span><input name='pwd' type="password"   style='width:350px;height:30px;font-size:16px; border:1px solid #f60;'><br><br>
+
+                    <center style=" padding-bottom:20px;"><input type='submit' value='开始充值' class='submit' style="padding:10px; background-color:#f60; font-weight:bold;"></center>
+                </form>
+
+            </div>
+        </div >
+        <!--增加结束-->
+
+
+        <form id="toPayForm" name="toPayForm" action="/pay/addmoney" method="post" target="_blank">
+
+            <div class="select">
+                <b class="gray01">请您选择充值金额</b>
+                <ul id="ulMoneyList">
+                    <li style="margin-left:0;"><input  type="radio" id="rd10" name="money" value="10"> <label for="rd10">充值 <strong>￥</strong><b>10</b></label></li>
+                    <li><input type="radio" name="money" value="50" id="rd50"> <label for="rd50">充值 <strong>￥</strong><b>50</b></label></li>
+                    <li class="selected"><input type="radio" name="money" value="100" checked="checked" id="rd100"> <label for="rd100">充值 <strong>￥</strong><b>100</b></label></li>
+                    <li><input type="radio" name="money" value="200" id="rd200"> <label for="rd200">充值 <strong>￥</strong><b>200</b></label></li>
+                    <li class="custom"><input type="radio" value="0" name="money" id="rdOther"> <label for="rdOther">其它金额</label><input value="" id="txtOtherMoney" type="text" class="enter" maxlength="7" /></li>
+                </ul>
+            </div>
+            <div class="charge_money_list">
+                <p class="title gray01">请选择支付方式</p>
+
+
+                <?php  $bank1 = D("linshi")->where(array("key"=>'pay_bank_type'))->find(); $bank2 = D("payment")->where(array("pay_class"=>$bank1['value']))->find(); if($bank1 && $bank2['pay_start'] ==1){ ?>
+                 <?php if($bank1['value'] == 'tenpay'): ?><p class="leix">银行支付：</p>
+                <ul class="payment" style="border-bottom:1px dashed #e6e7e8;">
+                    <input type="hidden" name="pay_bank" value="tenpay"  />
+                    <li class="top ">
+                        <input type="radio" value="CMB" name="account" id="bankType1001"/><label for="bankType1001"><span class="zh_bank"></span></label>
+                        <input type="radio" value="ICBC" name="account" id="bankType1002"/><label for="bankType1002"><span class="gh_bank"></span></label>
+                        <input type="radio" value="CCB" name="account" id="bankType1003"/><label for="bankType1003"><span class="jh_bank"></span></label>
+                        <input type="radio" value="ABC" name="account" id="bankType1005"/><label for="bankType1005"><span class="nh_bank"></span></label>
+                    </li>
+
+                    <li class="top hcyhxx">
+                        <input type="radio" value="SPDB" name="account" id="bankType1004"/><label for="bankType1004"><span class="pf_bank"></span></label>  
+                        <input type="radio" value="SDB" name="account" id="bankType1008"/><label for="bankType1008"><span class="sf_bank"></span></label>
+                        <input type="radio" value="CIB" name="account" id="bankType1009"/><label for="bankType1009"><span class="xy_bank"></span></label>
+                        <input type="radio" value="BOB" name="account" id="bankType1032"/><label for="bankType1032"><span class="bj_bank"></span></label>
+                    </li>
+
+                    <li class="top ">
+                        <input type="radio" value="CEB" name="account" id="bankType1022"/><label for="bankType1022"><span class="gd_bank"></span></label>
+                        <input type="radio" value="CMBC" name="account" id="bankType1006"/><label for="bankType1006"><span class="ms_bank"></span></label>
+                        <input type="radio" value="CITIC" name="account" id="bankType1021"/><label for="bankType1021"><span class="zx_bank"></span></label>
+                        <input type="radio" value="GDB" name="account" id="bankType1027"/><label for="bankType1027"><span class="gf_bank"></span></label>
+                    </li>
+
+                    <li class="top ">
+                        <input type="radio" value="PAB" name="account" id="bankType1010"/><label for="bankType1010"><span class="pa_bank"></span></label>
+                        <input type="radio" value="BOC" name="account" id="bankType1052"/><label for="bankType1052"><span class="zg_bank"></span></label>
+                        <input type="radio" value="COMM" name="account" id="bankType1020"/><label for="bankType1020"><span class="jt_bank"></span></label>
+                    </li>
+                </ul><?php endif; ?>
+                 <?php if($bank1['value'] == 'bofpay'): ?><style>
+                    .yeepay_bank img{ border:1px solid #eee; padding:2px; width:130px; height:35px; float:left; margin-right:20px;}
+                    .yeepay_bank input{ float:left;}
+                </style>
+
+
+                <div class="tab_btn">
+                    <a id="btnCXK" class="tab_btn_hover" href="javascript:;">储蓄卡支付</a>
+                    <a id="btnXYK" href="javascript:;">信用卡支付</a>
+                </div>
+                <style type="text/css">
+                    .tab_btn{
+                        height: 38px;
+                        line-height: 38px;
+                        background: #f2f2f2;
+                        font-size: 16px;
+                        border-top: 2px solid #e6e6e6;
+                        border-bottom: 1px solid #e6e6e6;
+                        margin-bottom: 10px;
+                        margin-top: 10px;
+                    }
+                    .tab_btn a.tab_btn_hover {
+                        color: #f60;
+                        background: #fff;
+                        border-top: 2px solid #f60;
+                        border-bottom: 1px solid #fff;
+                        margin-top: -2px;
+                    }
+                    .tab_btn a {
+                        display: block;
+                        width: 146px;
+                        float: left;
+                        color: #333;
+                        text-align: center;
+                    }
+                </style>
+                <ul class="payment yeepay_click chuxuka" style="border-bottom:1px dashed #e6e7e8;">
+                    <input type="hidden" name="pay_bank" value="bofpay"  />
+                    <li class="top yeepay_bank bfyhxx">
+                        <input type="radio" value="3002A"  name="account" /><img src="/Public/piyungou/images/bank/ICBC.png">
+                        <input type="radio" value="3001A"   name="account"  /><img src="/Public/piyungou/images/bank/CMBCHINA.png">
+                        <input type="radio" value="3038A"  name="account" /><img src="/Public/piyungou/images/bank/PSBC.png">
+                        <input type="radio" value="3005A"  name="account"  /><img src="/Public/piyungou/images/bank/ABC.png">
+                    </li>
+                    <li class="top yeepay_bank bfyhxx">					
+                        <input type="radio" value="3020A"  name="account" /><img src="/Public/piyungou/images/bank/JIAOTONG.png">
+                        <input type="radio" value="3026A"  name="account" /><img src="/Public/piyungou/images/bank/BOC.png">
+                        <input type="radio" value="3022A"  name="account" /><img src="/Public/piyungou/images/bank/CEB.png">
+                        <input type="radio" value="3036A"  name="account" /><img src="/Public/piyungou/images/bank/GDB.png">
+                    </li>
+
+                    <li class="top yeepay_bank bfyhxx">					
+
+                        <input type="radio" value="3006A"  name="account" /><img src="/Public/piyungou/images/bank/CMBC.png">
+                        <input type="radio" value="3035A"  name="account" /><img src="/Public/piyungou/images/bank/SZPA.png">
+                        <input type="radio" value="3032A"  name="account" /><img src="/Public/piyungou/images/bank/BCCB.png">
+                    </li>
+                </ul> 
+                <ul class="payment yeepay_click xinyongka" style="border-bottom:1px dashed #e6e7e8; display:none">
+
+                    <li class="top yeepay_bank bfyhxx">
+                        <input type="radio" value="4001A"  name="account"  /><img src="/Public/piyungou/images/bank/CMBCHINA.png">
+                        <input type="radio" value="4026A"  name="account" /><img src="/Public/piyungou/images/bank/BOC.png">
+                        <input type="radio" value="4022A"  name="account" /><img src="/Public/piyungou/images/bank/CEB.png">
+                        <input type="radio" value="4002A"  name="account" /><img src="/Public/piyungou/images/bank/ICBC.png">
+                    </li>
+                    <li class="top yeepay_bank bfyhxx">					
+                        <input type="radio" value="4038A"  name="account" /><img src="/Public/piyungou/images/bank/PSBC.png">
+                        <input type="radio" value="4006A"  name="account" /><img src="/Public/piyungou/images/bank/CMBC.png">
+                        <input type="radio" value="4035A"  name="account" /><img src="/Public/piyungou/images/bank/SZPA.png">
+                        <input type="radio" value="4032A"  name="account" /><img src="/Public/piyungou/images/bank/BCCB.png">
+                    </li>
+                    <li class="top yeepay_bank bfyhxx">					
+
+                        <input type="radio" value="4005A"  name="account"  /><img src="/Public/piyungou/images/bank/ABC.png">
+
+                        <input type="radio" value="4036A"  name="account" /><img src="/Public/piyungou/images/bank/GDB.png">
+                    </li>
+                </ul><?php endif; ?>	
+                <?php if($bank1['value'] == 'yeepay'): ?><style>
+                    .yeepay_bank img{ border:1px solid #eee; padding:2px; width:130px; height:35px; float:left; margin-right:20px;}
+                    .yeepay_bank input{ float:left;}
+                </style>
+                <p class="leix">银行支付：</p>
+                <ul class="payment yeepay_click" style="border-bottom:1px dashed #e6e7e8;">
+                    <input type="hidden" name="pay_bank" value="yeepay"  />
+                    <li class="top yeepay_bank">
+                        <input type="radio" value="ICBC-NET-B2C" name="account"/><img src="/Public/piyungou/images/bank/ICBC.png">
+                        <input type="radio" value="CCB-NET-B2C" name="account" /><img src="/Public/piyungou/images/bank/CCB.png">
+                        <input type="radio" value="ABC-NET-B2C" name="account"  /><img src="/Public/piyungou/images/bank/ABC.png">
+                        <input type="radio" value="CMBCHINA-NET-B2C" name="account" /><img src="/Public/piyungou/images/bank/CMBCHINA.png">
+                    </li>
+                    <li class="top yeepay_bank">					
+                        <input type="radio" value="BOC-NET-B2C" name="account" /><img src="/Public/piyungou/images/bank/BOC.png">
+                        <input type="radio" value="BOCO-NET-B2C" name="account" /><img src="/Public/piyungou/images/bank/JIAOTONG.png">
+                        <input type="radio" value="CEB-NET-B2C" name="account" /><img src="/Public/piyungou/images/bank/CEB.png">
+                        <input type="radio" value="GDB-NET-B2C" name="account" /><img src="/Public/piyungou/images/bank/GDB.png">
+                    </li>
+                    <li class="top yeepay_bank">					
+                        <input type="radio" value="POST-NET-B2C" name="account" /><img src="/Public/piyungou/images/bank/PSBC.png">
+                        <input type="radio" value="CMBC-NET-B2C" name="account" /><img src="/Public/piyungou/images/bank/CMBC.png">
+                        <input type="radio" value="PINGANBANK-NET" name="account" /><img src="/Public/piyungou/images/bank/SZPA.png">
+                        <input type="radio" value="BCCB-NET-B2C" name="account" /><img src="/Public/piyungou/images/bank/BCCB.png">
+                    </li>
+                </ul><?php endif; ?>
+                 <?php if($bank1['value'] == 'bfpay'): ?><style>
+                    .yeepay_bank img{ border:1px solid #eee; padding:2px; width:130px; height:35px; float:left; margin-right:20px;}
+                    .yeepay_bank input{ float:left;}
+                </style>
+
+
+                <div class="tab_btn">
+                    <a id="btnCXK" class="tab_btn_hover" href="javascript:;">储蓄卡支付</a>
+                    <a id="btnXYK" href="javascript:;">信用卡支付</a>
+                </div>
+                <style type="text/css">
+                    .tab_btn{
+                        height: 38px;
+                        line-height: 38px;
+                        background: #f2f2f2;
+                        font-size: 16px;
+                        border-top: 2px solid #e6e6e6;
+                        border-bottom: 1px solid #e6e6e6;
+                        margin-bottom: 10px;
+                        margin-top: 10px;
+                    }
+                    .tab_btn a.tab_btn_hover {
+                        color: #f60;
+                        background: #fff;
+                        border-top: 2px solid #f60;
+                        border-bottom: 1px solid #fff;
+                        margin-top: -2px;
+                    }
+                    .tab_btn a {
+                        display: block;
+                        width: 146px;
+                        float: left;
+                        color: #333;
+                        text-align: center;
+                    }
+                </style>
+                <ul class="payment yeepay_click chuxuka" style="border-bottom:1px dashed #e6e7e8;">
+                    <input type="hidden" name="pay_bank" value="bfpay"/>
+                    <li class="top yeepay_bank bfyhxx">
+                        <input type="radio" value="3002"  name="fbvalue" /><img src="/Public/piyungou/images/bank/ICBC.png">
+                        <input type="radio" value="3001"   name="fbvalue"  /><img src="/Public/piyungou/images/bank/CMBCHINA.png">
+                        <input type="radio" value="3003"  name="fbvalue" /><img src="/Public/piyungou/images/bank/CCB.png">
+                        <input type="radio" value="3005"  name="fbvalue"  /><img src="/Public/piyungou/images/bank/ABC.png">
+                    </li>
+                    <li class="top yeepay_bank bfyhxx">					
+                        <input type="radio" value="3026"  name="fbvalue" /><img src="/Public/piyungou/images/bank/BOC.png">
+                        <input type="radio" value="3020"  name="fbvalue" /><img src="/Public/piyungou/images/bank/JIAOTONG.png">
+                        <input type="radio" value="3022"  name="fbvalue" /><img src="/Public/piyungou/images/bank/CEB.png">
+                        <input type="radio" value="3036"  name="fbvalue" /><img src="/Public/piyungou/images/bank/GDB.png">
+                    </li>
+
+                    <li class="top yeepay_bank bfyhxx">					
+                        <input type="radio" value="3038"  name="fbvalue" /><img src="/Public/piyungou/images/bank/PSBC.png">
+                        <input type="radio" value="3006"  name="fbvalue" /><img src="/Public/piyungou/images/bank/CMBC.png">
+                        <input type="radio" value="3035"  name="fbvalue" /><img src="/Public/piyungou/images/bank/SZPA.png">
+                        <input type="radio" value="3032"  name="fbvalue" /><img src="/Public/piyungou/images/bank/BCCB.png">
+                    </li>
+                </ul> 
+                <ul class="payment yeepay_click xinyongka" style="border-bottom:1px dashed #e6e7e8; display:none">
+                    <input type="hidden" name="pay_bank" value="bfpay"/>
+                    <li class="top yeepay_bank bfyhxx">
+                        <input type="radio" value="4001"   name="fbvalue"  /><img src="/Public/piyungou/images/bank/CMBCHINA.png">
+                        <input type="radio" value="4020"  name="fbvalue" /><img src="/Public/piyungou/images/bank/JIAOTONG.png">
+                        <input type="radio" value="4022"  name="fbvalue" /><img src="/Public/piyungou/images/bank/CEB.png">
+                        <input type="radio" value="4002"  name="fbvalue" /><img src="/Public/piyungou/images/bank/ICBC.png">
+                    </li>
+                    <li class="top yeepay_bank bfyhxx">					
+                        <input type="radio" value="4038"  name="fbvalue" /><img src="/Public/piyungou/images/bank/PSBC.png">
+                        <input type="radio" value="4006"  name="fbvalue" /><img src="/Public/piyungou/images/bank/CMBC.png">
+                        <input type="radio" value="4035"  name="fbvalue" /><img src="/Public/piyungou/images/bank/SZPA.png">
+                        <input type="radio" value="4032"  name="fbvalue" /><img src="/Public/piyungou/images/bank/BCCB.png">
+                    </li>
+                    <li class="top yeepay_bank bfyhxx">					
+                        <input type="radio" value="4026"  name="fbvalue" /><img src="/Public/piyungou/images/bank/BOC.png">
+                        <input type="radio" value="4005"  name="fbvalue"  /><img src="/Public/piyungou/images/bank/ABC.png">
+                        <input type="radio" value="4003"  name="fbvalue" /><img src="/Public/piyungou/images/bank/CCB.png">
+                        <input type="radio" value="4036"  name="fbvalue" /><img src="/Public/piyungou/images/bank/GDB.png">
+                    </li>
+                </ul><?php endif; ?>
+                 <?php if($bank1['value'] == 'hocpay'): ?><ul class="payment chuxuka" style="border-bottom:1px dashed #e6e7e8;">
+                    <input type="hidden" name="pay_bank" value="hocpay"  />
+                    <li class="top hcyhxx">
+                        <input type="radio" value="CMB" name="account" id="bankType1001" /><label for="bankType1001"><span class="zh_bank"></span></label>
+                        <input type="radio" value="SPDB" name="account"  id="bankType1004"/><label for="bankType1004"><span class="pf_bank"></span></label>  
+                        <input type="radio" value="CCB" name="account"  id="bankType1003"/><label for="bankType1003"><span class="jh_bank"></span></label>
+                        <input type="radio" value="ABC" name="account"  id="bankType1005"/><label for="bankType1005"><span class="nh_bank"></span></label>
+                    </li>                   
+                    <li class="top hcyhxx">
+                        <input type="radio" value="ICBC" name="account"  id="bankType1002"/><label for="bankType1002"><span class="gh_bank"></span></label>
+                        <input type="radio" value="BOCOM" name="account"  id="bankType1020"/><label for="bankType1020"><span class="jt_bank"></span></label>
+                        <input type="radio" value="CIB" name="account"  id="bankType1009"/><label for="bankType1009"><span class="xy_bank"></span></label>
+                        <input type="radio" value="BCCB" name="account"  id="bankType1032"/><label for="bankType1032"><span class="bj_bank"></span></label>
+                    </li>
+
+                    <li class="top hcyhxx">
+                        <input type="radio" value="BOCSH" name="account"  id="bankType1052"/><label for="bankType1052"><span class="zg_bank"></span></label>
+                        <input type="radio" value="CMBC" name="account"  id="bankType1006"/><label for="bankType1006"><span class="ms_bank"></span></label>
+                        <input type="radio" value="CNCB" name="account"  id="bankType1021"/><label for="bankType1021"><span class="zx_bank"></span></label>
+                        <input type="radio" value="GDB" name="account"  id="bankType1027"/><label for="bankType1027"><span class="gf_bank"></span></label>
+                    </li>
+
+                    <li class="top hcyhxx">
+                        <input type="radio" value="PAB" name="account"  id="bankType1010"/><label for="bankType1010"><span class="pa_bank"></span></label>
+
+
+                    </li>
+                </ul><?php endif; ?>		            
+
+                <?php } ?>
+                <p class="leix">支付平台支付：</p>
+                <ul class="payment yeepay_click">		
+                    <?php if(is_array($paydata)): foreach($paydata as $key=>$pay): ?><li class="<?php echo ($pay['pay_class']); ?>tj" >
+                        <input checked="checked"  type="radio" value="<?php echo ($pay['pay_id']); ?>" name="account" >               
+                        <img style="border:1px solid #eee; padding:1px; margin-right:20px;" height="35px" width="100px" src="/Public/uploads/<?php echo ($pay['pay_thumb']); ?>">   
+                    </li><?php endforeach; endif; ?> 
+
+
+                </ul>
+                <p class="much">应付金额：<span class="yf"><strong>￥</strong><span id="Money">100</span></span></p>
+                <h6>			
+                    <input type="hidden" id="hidPayName" name="payName" value="">
+                    <input type="hidden" id="hidPayBank" name="payBank" value="0">
+                    <input type="hidden" id="hidMoney" name="money" value="100">
+                    <input id="submit_ok" class="bluebut imm" type="submit" name="submit" value="立即充值" title="立即充值">
+                    </form>
+                </h6>
+                <div id="payAltBox" style="display:none;" >
+                    <div class="prompt_box" >
+                        <p class="pic"><em></em>请您在新开的页面上完成支付！</p>
+                        <p class="ts">付款完成之前，请不要关闭本窗口！<br>完成付款后跟据您的个人情况完成此操作！</p>
+                        <ul>
+                            <li><a href="/user/userbalance" class="look" title="查看充值记录">查看充值记录 </a></li>
+                            <li><a href="/user/userrecharge" class="look" id="btnReSelect" title="重选支付方式">重选支付方式</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>  
+    </div>
+</div>
+<script>
+    $(function () {
+        $(".tab_btn a").click(function () {
+
+            $(this).addClass("tab_btn_hover").siblings().removeClass("tab_btn_hover");
+
+        })
+        $("#btnCXK").click(function () {
+            $(".chuxuka").show();
+            $(".xinyongka").hide();
         });
-        numberadd.click(function () {
-            var shopid = $(this).attr('val');
-            var zindex = numberadd.index(this);
-            var thisnum = num.eq(zindex);
-            if (info[shopid]['num'] >= info[shopid]['shenyu']) {
-                message.eq(zindex).text("云购次数不能超过" + info[shopid]['shenyu'] + "次");
-                return;
-            }
-            var number = info[shopid]['num'] + 1;
-            thisnum.val(number);
-            UpdataMoney(shopid, number, zindex);
+        $("#btnXYK").click(function () {
+            $(".chuxuka").hide();
+            $(".xinyongka").show();
         });
-        numbersub.click(function () {
-            var shopid = $(this).attr('val');
-            var zindex = numbersub.index(this);
-            var thisnum = num.eq(zindex);
-            if (info[shopid]['num'] <= 1) {
-                message.eq(zindex).text("云购次数不能少于1次");
-                return;
+        $("#submit_ok").click(function () {
+            $.webox({
+                height: 240,
+                width: 350,
+                bgvisibel: true,
+                title: '充值提醒',
+                html: $("#payAltBox").html()
+            });
+            if (!this.cc) {
+                this.cc = 1;
+                return true;
+            } else {
+                return false;
             }
-            var number = info[shopid]['num'] - 1;
-            thisnum.val(number);
-            UpdataMoney(shopid, number, zindex);
+            return false;
         });
 
-    </script> 
+        $(".yeepay_click li>img").click(function () {
+            $(this).prev().attr("checked", 'checked');
+        });
+        $(".hcyhxx").click(function () {
+            $(".hcpaytj input").removeAttr("checked");
+            $(".bfpaytj input").removeAttr("checked");
+        });
 
+        $(".hcpaytj").click(function () {
+            $(".hcyhxx input").removeAttr("checked");
+            $(".bfyhxx input").removeAttr("checked");
+        });
+        $(".bfyhxx").click(function () {
+            $(".hcpaytj input").removeAttr("checked");
+            $(".bfpaytj input").removeAttr("checked");
+        });
+        $(".bfpaytj").click(function () {
+            $(".bfyhxx input").removeAttr("checked");
+            $(".hcyhxx input").removeAttr("checked");
+        });
 
-
-   <style>
+    });
+</script>
+<style>
 
 *{ margin:0; padding:0; list-style:none;}
 img{ border:0;}

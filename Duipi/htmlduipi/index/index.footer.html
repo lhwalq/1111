@@ -26,9 +26,9 @@ img{ border:0;}
 
 
 
-<a href="javascript:;" id="launch_qq11" class="btn7 rides-cs">
-<img src=/index.png>
-</a>
+<!--<a href="javascript:;" id="launch_qq11" class="btn7 rides-cs">-->
+<!--<img src=/index.png>-->
+<!--</a>-->
 
 <script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
 <script>
@@ -62,52 +62,52 @@ img{ border:0;}
 				</foreach>
 				 
 			</div>
-			<div class="g-side1">
+			<!--<div class="g-side1">-->
 				<div class="g-side-l">
-					<ul class="m-instruction-state f-clear">						
+					<ul class="m-instruction-state f-clear">
 						<li><i class="ico ico-state-l ico-state-l-2"></i>100%正品保证</li>
 						<li><i class="ico ico-state-l ico-state-l-3"></i>100%权益保障</li>
 						<li><i class="ico ico-state-l ico-state-l-1"></i>100%公平公正公开</li>
 					</ul>
 				</div>
-				<div class="g-side-r">
-					<div class="m-instruction-yxCode">
-						<img width="100%" src="__PUBLIC__/uploads/{:C('web_logo1')}" />
-						<p style="line-height: 12px;margin-top:2px;">微信公共号</p>
-					</div>
-					<div class="m-instruction-service">
-						
-						<p>服务热线：<font color="#da3553">{:C('cell')}</font></p>
-						<?php 
+				<!--<div class="g-side-r">-->
+					<!--<div class="m-instruction-yxCode">-->
+						<!--<img width="100%" src="__PUBLIC__/uploads/{:C('web_logo1')}" />-->
+						<!--<p style="line-height: 12px;margin-top:2px;">微信公共号</p>-->
+					<!--</div>-->
+					<!--<div class="m-instruction-service">-->
+
+						<!--<p>服务热线：<font color="#da3553">{:C('cell')}</font></p>-->
+						<?php
 						if(C('qq_qun')){
 						$qq_qun_list = C('qq_qun');
 						$qq_qun_list = explode("|",$qq_qun_list);
 						foreach($qq_qun_list as $qq){
 						$qq = trim($qq);
 						 ?>
-						<p><span class="ft-qqicon"><a style="text-indent:0em; background:none;width:160px;" target="_blank" rel="nofollow" href="javascript:;">官方QQ群：<em class="orange Fb">{$qq}</em></a>  </span></p>
-						<?php 
+						<!--<p><span class="ft-qqicon"><a style="text-indent:0em; background:none;width:160px;" target="_blank" rel="nofollow" href="javascript:;">官方QQ群：<em class="orange Fb">{$qq}</em></a>  </span></p>-->
+						<?php
 							} }
 						 ?>
-					</div>
-				</div>
-			</div>
+					<!--</div>-->
+				<!--</div>-->
+			<!--</div>-->
 		</div>
 	</div>
-	<div class="m-copyright">
-		{:R('base/Getheader',array('foot'))}&nbsp;|&nbsp;{:C('web_copyright')} &nbsp;&nbsp;
-	</div>
-        <div class="m-copyright">
-		<div class="g-wrap">
-			<ul class="m-QC-list">
-				<li><a style="width: 108px;"  target="_blank">&nbsp;</a></li>
-				<li><a style="width: 84px;" target="_blank">&nbsp;</a></li>
-				<li><a style="width: 104px;" target="_blank">&nbsp;</a></li>
-				<li><a style="width: 82px;" target="_blank">&nbsp;</a></li>
-				
-			</ul>
-		</div>
-		</div>
+	<!--<div class="m-copyright">-->
+		<!--{:R('base/Getheader',array('foot'))}&nbsp;|&nbsp;{:C('web_copyright')} &nbsp;&nbsp;-->
+	<!--</div>-->
+        <!--<div class="m-copyright">-->
+		<!--<div class="g-wrap">-->
+			<!--<ul class="m-QC-list">-->
+				<!--<li><a style="width: 108px;"  target="_blank">&nbsp;</a></li>-->
+				<!--<li><a style="width: 84px;" target="_blank">&nbsp;</a></li>-->
+				<!--<li><a style="width: 104px;" target="_blank">&nbsp;</a></li>-->
+				<!--<li><a style="width: 82px;" target="_blank">&nbsp;</a></li>-->
+				<!---->
+			<!--</ul>-->
+		<!--</div>-->
+		<!--</div>-->
 
 </div>      
 <!--footer end-->

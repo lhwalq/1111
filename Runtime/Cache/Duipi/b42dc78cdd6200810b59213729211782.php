@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); $daodao = D("fenlei")->where(array("model" => 1, "parentid" => 0))->order("`order` DESC")->LIMIT("15")->select(); $guanggao = D("guanggao_shuju")->where(array("title" => "首页头", "parentid" => 0))->find(); $lou = '-22'; $louname = '0'; $user_arr = R("Base/huode_user_arr"); $user_name = R("Base/huode_user_name",array($user_arr,"username")); $pinpin = D("pinpai")->where(array("status" => "Y"))->order("`order` DESC")->select(); ?>
+<?php if (!defined('THINK_PATH')) exit(); $daodao = D("fenlei")->where(array("model" => 1, "parentid" => 0))->order("`order` DESC")->LIMIT("15")->select(); $guanggao = D("guanggao_shuju")->where(array("title" => "首页头", "parentid" => 0))->find(); $lou = '-22'; $user_arr = R("Base/huode_user_arr"); $user_name = R("Base/huode_user_name",array($user_arr,"username")); $pinpin = D("pinpai")->where(array("status" => "Y"))->order("`order` DESC")->select(); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head> 
@@ -152,13 +152,14 @@
 </head> 
 <body onselectstart="return false"> 
 
-<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2067456131&site=qq&menu=yes">
+<!-- 顶部guang gao -->
+<!-- <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2067456131&site=qq&menu=yes">
 <img src="http://yyygcms.cn/ad.gif">
-</a>
-    <?php echo ($guanggao[content]); ?>
+</a> -->
+    <!-- <?php echo ($guanggao[content]); ?> -->
 
     <!-- 左侧悬浮 -->
-    <ul style="left: 186.5px;" class="y-fixed-divs">
+    <!-- <ul style="left: 186.5px;" class="y-fixed-divs">
 
         <li><i style="background-position: -22px <?php echo $lou+6;$lou=$lou+6-15; ?>px;"></i><em>
                 热门推荐</em></li>
@@ -167,7 +168,7 @@
                     <?php  $namename=mb_substr($daodao[$louname][name],0,4,'utf-8'); echo $namename; $louname++; ?></em></li><?php endforeach; endif; ?>
         <li><i style="background-position: -22px <?php echo $lou;$lou=$lou-15; ?>px;"></i><em>
                 云购社区</em><b></b></li>					 
-    </ul> 
+    </ul>  -->
     <!-- 左侧悬浮 end-->   
     <!-- 导航   start  --> 
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /> 
@@ -188,17 +189,17 @@
 <div class="header header_fixed"> 
     <div class="header1"> 
         <div class="header1in"> 
-            <ul class="headerul1"> 
-                <li><a style="padding-left:40px;font-size: 14px;"><i class="header-tel"></i><?php echo C('cell');?></a></li> 
-                <li class="hreder-hover" style="border-right:none;"><a href="http://wpa.qq.com/msgrd?V=1&uin=<?php echo C('qq');?>&Menu=yes" target="_blank">在线客服</a></li> 
-                <li class="phoneli header-WeChatli"> <a  style=" padding-bottom: 0px;">关注我们<i class="i-header-WeChat"></i></a> <img src="/Public/uploads/<?php echo C('web_logo1');?>" /> </li> 
-                <li class="phoneli header-phoneli"> <a href="https://www.pgyer.com/dzmM" style="border-right:0px;">手机客户端<i class="i-header-phone"></i></a>
-                    <!-- /footer/app_client.html --> 
-                    <!-- <img src="/Public/style/images/weixinlogo.png"> --> </li> 
-            </ul> 
-            <ul class="headerul2"> 
-                <li><a href="https://www.pgyer.com/dzmM">APP</a></li>
-                <li><a href="/user/qiandao">签到</a></li> 
+            <!--<ul class="headerul1"> -->
+                <!--<li><a style="padding-left:40px;font-size: 14px;"><i class="header-tel"></i><?php echo C('cell');?></a></li> -->
+                <!--&lt;!&ndash;<li class="hreder-hover" style="border-right:none;"><a href="http://wpa.qq.com/msgrd?V=1&uin=<?php echo C('qq');?>&Menu=yes" target="_blank">在线客服</a></li> &ndash;&gt;-->
+                <!--&lt;!&ndash;<li class="phoneli header-WeChatli"> <a  style=" padding-bottom: 0px;">关注我们<i class="i-header-WeChat"></i></a> <img src="/Public/uploads/<?php echo C('web_logo1');?>" /> </li> &ndash;&gt;-->
+                <!--&lt;!&ndash;<li class="phoneli header-phoneli"> <a href="https://www.pgyer.com/dzmM" style="border-right:0px;">手机客户端<i class="i-header-phone"></i></a>&ndash;&gt;-->
+                    <!--&lt;!&ndash; /footer/app_client.html &ndash;&gt; -->
+                    <!--&lt;!&ndash; <img src="/Public/style/images/weixinlogo.png"> &ndash;&gt; </li> -->
+            <!--</ul> -->
+            <ul class="headerul2">
+                <!--<li><a href="https://www.pgyer.com/dzmM">APP</a></li>
+                <li><a href="/user/qiandao">签到</a></li>-->
 
                 <?php if(($huiyuan)): ?><li><a href="/user/home"><?php echo R("base/huode_user_name",array($huiyuan,"username"));?></a></li>
                     <li><a href="/user/cook_end">退出</a></li> 
@@ -223,14 +224,15 @@
                     </dl> </li> 
                 <li><a href="/user/userrecharge">充值</a></li> 
                 <li><a href="/index/about">帮助</a></li> 
-                <li><a style="border-right:none;" href="/index/group_qq">官方QQ群</a></li> 
+                <!--<li><a style="border-right:none;" href="/index/group_qq">官方QQ群</a></li> -->
             </ul> 
         </div> 
     </div> 
     <div class="header2"> 
+    	<!-- logo -->
         <a href="/index/index" class="header_logo"><img src="/Public/uploads/<?php echo R('base/Getlogo',array());?>" /></a> 
 
-
+		<!-- 随机出现 -->
         <div class="yJoinNum" style='margin-left:190px'>
             <input type="hidden" value="<?php echo R('base/go_count_renci',array());?>">
             <a href="/index/buyrecord" target="_blank" class="allNums">
@@ -340,25 +342,25 @@
 </div> 
 <!-- 购物袋有商品 end --> 
 <div class="Left-fixed-divs" style="display: none"> 
-    <img src="/Public/style/images/ce.png" style="top:5%;position:relative;">
+    <!--<img src="/Public/style/images/ce.png" style="top:5%;position:relative;">-->
     <ul> 
         <li class="shoppingCartRightFix Left-fixed-divs3"> <a href="/goods/cartlist"> <i></i> <em>购</em> <em>物</em> <em>袋</em> <em id="cartCount"></em> </a> </li> 
-        <li class="YonlineService otherlifix"><a hidefocus="true" href="http://wpa.qq.com/msgrd?V=1&uin=<?php echo C('qq');?>&Menu=yes" target="_blank"><i style="margin-left:12px;"></i><em>在线</em><em>客服</em></a></li> 
-        <li class="otherlifix otherlifixw"> <a hidefocus="true" href="javascript:void 0"> <i style="background-position:-168px -176px;"></i> <em>官方</em> <em>微信</em> </a> <img width="188" height="216" src="/Public/uploads/<?php echo C('web_logo1');?>" /> 
-            <s></s> </li> 
-        <li class="otherlifix otherlifixw"> <a hidefocus="true" href="https://www.pgyer.com/dzmM" target="_blank"> <i style="margin-left:12px;margin-top:0;background-position:-203px -172px;height: 27px;margin-bottom:0;"></i> <em>手机</em><em>App</em> </a> 
-            <!-- <img width="188" height="188" src="/Public/style/images/weixinlogo.png" style="border:1px solid #adadad;"> --> </li> 
-        <li class="otherlifix"> <a hidefocus="true" href="/user/userrecharge"> <i style="margin-left:12px;background-position:-236px -176px;"></i> <em>快速</em><em>充值</em> </a> </li> 
+        <!--<li class="YonlineService otherlifix"><a hidefocus="true" href="http://wpa.qq.com/msgrd?V=1&uin=<?php echo C('qq');?>&Menu=yes" target="_blank"><i style="margin-left:12px;"></i><em>在线</em><em>客服</em></a></li> -->
+        <!--<li class="otherlifix otherlifixw"> <a hidefocus="true" href="javascript:void 0"> <i style="background-position:-168px -176px;"></i> <em>官方</em> <em>微信</em> </a> <img width="188" height="216" src="/Public/uploads/<?php echo C('web_logo1');?>" /> -->
+            <!--<s></s> </li> -->
+        <!--<li class="otherlifix otherlifixw"> <a hidefocus="true" href="https://www.pgyer.com/dzmM" target="_blank"> <i style="margin-left:12px;margin-top:0;background-position:-203px -172px;height: 27px;margin-bottom:0;"></i> <em>手机</em><em>App</em> </a> -->
+            <!--&lt;!&ndash; <img width="188" height="188" src="/Public/style/images/weixinlogo.png" style="border:1px solid #adadad;"> &ndash;&gt; </li> -->
+        <!--<li class="otherlifix"> <a hidefocus="true" href="/user/userrecharge"> <i style="margin-left:12px;background-position:-236px -176px;"></i> <em>快速</em><em>充值</em> </a> </li> -->
         <li class="otherlifix lifixTop"> <i style="background-position:-276px -170px"></i> <em>置</em><em>顶</em> </li> 
     </ul> 
 </div> 
 <!-- 右侧悬浮 end --> 
-<script type="text/javascript" src="/Public/style/js/common.js"></script> 
-<script type="text/javascript" src="/Public/style/js/jquery.js"></script> 
-<script type="text/javascript" src="/Public/style/js/jquery.lazyload.min.js"></script> 
-<script type="text/javascript" src="/Public/style/js/jquery.cookie.js"></script> 
-<script type="text/javascript" src="/Public/style/js/jquery.cookies.2.2.0.js"></script> 
-<script type="text/javascript" src="/Public/style/js/footer_header.js"></script> 
+<script type="text/javascript" src="/Public/style/js/common.js"></script>
+<script type="text/javascript" src="/Public/style/js/jquery.js"></script>
+<script type="text/javascript" src="/Public/style/js/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="/Public/style/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/Public/style/js/jquery.cookies.2.2.0.js"></script>
+<script type="text/javascript" src="/Public/style/js/footer_header.js"></script>
 <script>
 
     $(function () {
@@ -592,9 +594,9 @@ img{ border:0;}
 
 
 
-<a href="javascript:;" id="launch_qq11" class="btn7 rides-cs">
-<img src=/index.png>
-</a>
+<!--<a href="javascript:;" id="launch_qq11" class="btn7 rides-cs">-->
+<!--<img src=/index.png>-->
+<!--</a>-->
 
 <script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
 <script>
