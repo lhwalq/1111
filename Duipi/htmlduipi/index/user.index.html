@@ -50,33 +50,33 @@
 				<span class="money-red"><s></s>{:R("base/uidcookie",array("money"))}</span>&nbsp;&nbsp;
 				<a href="__ROOT__/user/userrecharge" title="充值" class="blue">充值</a>
 			</li>
-			 佣金邀请二维码<br>	
-		 <img src=__ROOT__/index/ers width=320 height=480>  
+			 <!--佣金邀请二维码<br>	-->
+		 <!--<img src=__ROOT__/index/ers width=320 height=480>  -->
 		</ul>		
 	</div>
 </div>
 <!--center_center_end-->
-<div class="right">				
-	<div class="groups-shadow clearfix">
-		<div class="R-grtit">
-			<h3>圈子热门话题</h3>
-		</div>
-		<ul class="R-list">
-                        <?php 
-                            $tiezi=D("quan_tiezi")->where("hueifu!='0'")->order("hueifu DESC")->limit("8")->select(); 
+<!--<div class="right">-->
+	<!--<div class="groups-shadow clearfix">-->
+		<!--<div class="R-grtit">-->
+			<!--<h3>圈子热门话题</h3>-->
+		<!--</div>-->
+		<!--<ul class="R-list">-->
+                        <?php
+                            $tiezi=D("quan_tiezi")->where("hueifu!='0'")->order("hueifu DESC")->limit("8")->select();
                             $title=R("base/strcut",array(R("base/quanzid",array($tz['qzid'])),10));
                         ?>
-                        <foreach name="dongtai" item="tz" >
-			<li>
-				<p class="groups-t"><a href="__ROOT__/group/nei/id/{$tz['id']}.html" class="gray"> {$tz['title']}</a></p>
-				<p class="groups-c gray02">{$title}<span class="gray03"> | </span>{$tz['hueifu']}条回复</p>
-			</li>
-			</foreach>
-			 
-		</ul>
-	</div> 
-	<p class="r-line"></p>
-</div>
+                        <!--<foreach name="dongtai" item="tz" >-->
+			<!--<li>-->
+				<!--<p class="groups-t"><a href="__ROOT__/group/nei/id/{$tz['id']}.html" class="gray"> {$tz['title']}</a></p>-->
+				<!--<p class="groups-c gray02">{$title}<span class="gray03"> | </span>{$tz['hueifu']}条回复</p>-->
+			<!--</li>-->
+			<!--</foreach>-->
+
+		<!--</ul>-->
+	<!--</div>-->
+	<!--<p class="r-line"></p>-->
+<!--</div>-->
 
 
 </div>

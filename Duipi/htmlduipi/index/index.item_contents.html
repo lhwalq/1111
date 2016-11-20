@@ -1,102 +1,124 @@
 <style type="text/css">
 
-    .w_winner_bg b{ float:left; padding:1px 5px 5px 0;  margin:0px;word-break: keep-all;overflow:hidden;}
+    .w_winner_bg b {
+        float: left;
+        padding: 1px 5px 5px 0;
+        margin: 0px;
+        word-break: keep-all;
+        overflow: hidden;
+    }
 
 </style>
 
-<div class="w_details_top">     <div class="w_details_choose">         
+<div class="w_details_top">
+    <div class="w_details_choose">
 
-        <dl class="w_big_img">   
-            <foreach name="xiangmu['picarr']" item="imgtu" >
-                <dd style="display: block;"><img style="display: inline;" src="__PUBLIC__/uploads/{$imgtu}" class="lazy400" data-original="__PUBLIC__/uploads/{$imgtu}"><noscript><img src="__PUBLIC__/uploads/{$xiangmu['picarr'][0]}" /></noscript></dd>       
-            </foreach>      
+        <dl class="w_big_img">
+            <foreach name="xiangmu['picarr']" item="imgtu">
+                <dd style="display: block;"><img style="display: inline;" src="__PUBLIC__/uploads/{$imgtu}"
+                                                 class="lazy400" data-original="__PUBLIC__/uploads/{$imgtu}">
+                    <noscript><img src="__PUBLIC__/uploads/{$xiangmu['picarr'][0]}"/></noscript>
+                </dd>
+            </foreach>
 
 
-        </dl>        
+        </dl>
         <ul class="w_small_img">
             <i class="w_modified" style="left: 38px;"></i>
-            <div id="imageMenu" >
+            <div id="imageMenu">
                 <?php 
                 $ttt=1;
                 ?>
-                <foreach name="xiangmu['picarr']" item="imgtu" >
+                <foreach name="xiangmu['picarr']" item="imgtu">
                     <li class="" style="display: <?php 
                         if ($ttt>5){echo none;}$ttt++;
-                        ?>;"><img style="display: inline;" src="__PUBLIC__/uploads/{$imgtu}" class="lazy54" data-original="__PUBLIC__/uploads/{$imgtu}"><noscript><img src="__PUBLIC__/uploads/{$imgtu}" /></noscript></li>                     
-                </foreach>                             
+                        ?>;"><img style="display: inline;" src="__PUBLIC__/uploads/{$imgtu}" class="lazy54"
+                                  data-original="__PUBLIC__/uploads/{$imgtu}">
+                        <noscript><img src="__PUBLIC__/uploads/{$imgtu}"/></noscript>
+                    </li>
+                </foreach>
 
-            </div>  
+            </div>
 
-        </ul>     
-    </div>     
-    <div class="w_details_text">         
-        <div class="baoyuan" >                                      
-            <dl class="w_rob w_rob_another">             
-                <!-- 2015-5-22 - 新增类  class="w_slip_out" -->             
-                <!-- 2015-6-11 修改 start -->                                       
-                <!-- 2015-6-11 修改 end -->                
-                <div class="w_clear"></div>            
-            </dl>   
-        </div>   
-        <div class="zhengchang">    <!-- 正常购买 -->   
-            <p>（第{$xiangmu['qishu']}期）<strong>
-                    <c id="cart_title">{$xiangmu['title']}
-                        <span style="color:red">{$xiangmu['title2']}</span>
-                    </c>
-                </strong><i></i>
-            </p>          
-            <input value="1" id="cart_priceArea" type="hidden">          
-            <b>价值：￥<c id="cart_priceTotal">{$xiangmu['money']}</c></b> <br/>
-            <b>商家：<?php  if($xiangmu['seller_id']){echo R("base/huode_user_name",array($xiangmu['seller_id']));}else{echo "平台自营";} ?></b>         
-            <div class="w_line"><span style="width:{:R("base/width",array($xiangmu['canyurenshu'],$xiangmu['zongrenshu'],490))}px;"></span>
-            </div>          
-            <ul class="w_number">              
-                <li class="w_amount w_amount_one" id="cart_priceSell">{$xiangmu['canyurenshu']}</li>              
-                <li class="w_amount" id="cart_need">{$xiangmu['zongrenshu']}</li>              
-                <li class="w_amount  w_amount_two w_amount_val" id="cart_surplus">{$nomal}</li>              
-                <li class="w_amount_one">已参与</li>              
-                <li>总需人次</li>             
-                <li class="w_amount_two">剩余人次</li>          
-            </ul>          
-            <div class="w_cumulative w_cumulative_another">              
-                <strong>云购：</strong>              
-                <input class="w_detailsinputs w_detailsinputs_one times num_dig"  id="num_dig" value="1" min="1" max="{$xiangmu['shenyurenshu']}" maxlength="7" type="text">              
-                <span class="w_subtracts_one"></span>              
-                <span class="w_pluss_one"></span>          
-                <i>10</i><i>20</i><i>50</i><i>100</i><em>包尾</em>              
-                <strong class="w_tail">次</strong>          
-                <div class="y-hide-span">                 
-                    <span>获得机率0.000%<i></i></span>              
-                </div>          
-            </div>                    
-            <dl class="w_rob w_rob_another">    
-                <if condition="$xiangmu['is_choose'] eq 1">
-                <dd><a class="" data-gid="{$xiangmu['id']}" data-pid="" href="javascript:;" onclick="showResidueCodes({$xiangmu['id']})">选购幸运号码</a></dd> 
-                </if>
-                <dd><a class="w_slip Det_Shopbut" data-gid="{$xiangmu['id']}" data-pid="" href="javascript:;">我要云购</a></dd>
-                <dd class="w_rob_out"><a class="w_rob_in" href="javascript:void%200" onclick="cartoonmai({$xiangmu['id']})">加入购物袋</a></dd>
+        </ul>
+    </div>
+    <div class="w_details_text">
+        <div class="baoyuan">
+            <dl class="w_rob w_rob_another">
+                <!-- 2015-5-22 - 新增类  class="w_slip_out" -->
+                <!-- 2015-6-11 修改 start -->
+                <!-- 2015-6-11 修改 end -->
                 <div class="w_clear"></div>
-            </dl>       
-        </div>         
+            </dl>
+        </div>
+        <div class="zhengchang">    <!-- 正常购买 -->
+            <p>（第{$xiangmu['qishu']}期）<strong>
+                <c id="cart_title">{$xiangmu['title']}
+                    <span style="color:red">{$xiangmu['title2']}</span>
+                </c>
+            </strong><i></i>
+            </p>
+            <input value="1" id="cart_priceArea" type="hidden">
+            <b>价值：￥
+                <c id="cart_priceTotal">{$xiangmu['money']}</c>
+            </b> <br/>
+            <b>商家：<?php  if($xiangmu['seller_id']){echo R("base/huode_user_name",array($xiangmu['seller_id']));}else{echo "平台自营";} ?></b>
+            <div class="w_line"><span style="width:{:R(" base/width",array($xiangmu['canyurenshu'],$xiangmu['zongrenshu'],490))}px;"></span>
+            </div>
+            <ul class="w_number">
+                <li class="w_amount w_amount_one" id="cart_priceSell">{$xiangmu['canyurenshu']}</li>
+                <li class="w_amount" id="cart_need">{$xiangmu['zongrenshu']}</li>
+                <li class="w_amount  w_amount_two w_amount_val" id="cart_surplus">{$nomal}</li>
+                <li class="w_amount_one">已参与</li>
+                <li>总需人次</li>
+                <li class="w_amount_two">剩余人次</li>
+            </ul>
+            <div class="w_cumulative w_cumulative_another">
+                <strong>云购：</strong>
+                <input class="w_detailsinputs w_detailsinputs_one times num_dig" id="num_dig" value="1" min="1"
+                       max="{$xiangmu['shenyurenshu']}" maxlength="7" type="text">
+                <span class="w_subtracts_one"></span>
+                <span class="w_pluss_one"></span>
+                <i>10</i><i>20</i><i>50</i><i>100</i><em>包尾</em>
+                <strong class="w_tail">次</strong>
+                <div class="y-hide-span">
+                    <span>获得机率0.000%<i></i></span>
+                </div>
+            </div>
+            <dl class="w_rob w_rob_another">
+                <if condition="$xiangmu['is_choose'] eq 1">
+                    <dd><a class="" data-gid="{$xiangmu['id']}" data-pid="" href="javascript:;"
+                           onclick="showResidueCodes({$xiangmu['id']})">选购幸运号码</a></dd>
+                </if>
+                <dd><a class="w_slip Det_Shopbut" data-gid="{$xiangmu['id']}" data-pid="" href="javascript:;">我要云购</a>
+                </dd>
+                <dd class="w_rob_out"><a class="w_rob_in" href="javascript:void%200"
+                                         onclick="cartoonmai({$xiangmu['id']})">加入购物袋</a></dd>
+                <div class="w_clear"></div>
+            </dl>
+        </div>
         <ul class="w_security">
             <li class="w_security_one">公平公正公开</li>
-            <li class="w_security_two">品质保障</li> 
-            <li class="w_security_three">全国免运费（港澳除外）</li> 
+            <li class="w_security_two">品质保障</li>
+            <li class="w_security_three">全国免运费（港澳除外）</li>
             <li class="w_security_four">权益保障</li>
             <div class="w_clear"></div>
-        </ul>               
-        <!--您的本期云购码结束-->  
+        </ul>
+        <!--您的本期云购码结束-->
 
-        <if condition="($xiangmu['shenyurenshu'] eq '0') AND ($xiangmu['xsjx_time'] eq '0') AND (empty($item['q_uid']))"> 
+        <if condition="($xiangmu['shenyurenshu'] eq '0') AND ($xiangmu['xsjx_time'] eq '0') AND (empty($item['q_uid']))">
             <div class="Immediate">
-                <span style="left:10px;right:0px;">这个商品未揭晓成功,请联系客服手动揭晓！</span> 
-            </div>  
-            <if condition="!C('ssc')">	
+                <span style="left:10px;right:0px;">这个商品未揭晓成功,请联系客服手动揭晓！</span>
+            </div>
+            <if condition="!C('ssc')">
                 <if condition="$xiangmu['q_showtime'] eq 'N'">
                     <script type="text/javascript">
                         window.setTimeout(function () {
-                        $.post("__ROOT__/goods/lottery_shop_set111/", {"lottery_sub": "true", "gid": {$xiangmu['id']}}, null);
-                        setTimeout("location.reload();", 500);
+                            $.post("__ROOT__/goods/lottery_shop_set111/", {
+                                "lottery_sub": "true",
+                                "gid": {$xiangmu['id']}
+                            }, null);
+                            setTimeout("location.reload();", 500);
                         }, 1000);
                     </script>
                 </if>
@@ -106,25 +128,39 @@
         </if>
         <?php 
         $uuiid=R("base/huode_user_uid");
-        $record=D("yonghu_yys_record")->where(array("shopid"=>$xiangmu['id'],"shopqishu"=>$xiangmu['qishu'],"uid"=>$uuiid))->find();
+        $record=D("yonghu_yys_record")->
+        where(array("shopid"=>$xiangmu['id'],"shopqishu"=>$xiangmu['qishu'],"uid"=>$uuiid))->find();
 
         if($uuiid){ ?>
-        <dd class="w_winner_bg" style="height:135px;">          
-            {:R("base/yunma1",array($record['goucode'],"b"))} <a target="_blank" href="__ROOT__/user/userbuylist/" >查看全部</a>
+        <dd class="w_winner_bg" style="height:135px;">
+            {:R("base/yunma1",array($record['goucode'],"b"))} <a target="_blank"
+                                                                 href="__ROOT__/user/userbuylist/">查看全部</a>
 
-            <strong></strong>        
-        </dd> 
+            <strong></strong>
+        </dd>
         <?php }else{ ?>
-        <!--未参加云购开始-->  
+        <!--未参加云购开始-->
 
-        <div class="w_winner_bg">            
-            <span class="w_not_join"><a href="__ROOT__/member/user/login" >看不到？是不是没登录或是没注册？ 登录后看看</a></span> 
+        <div class="w_winner_bg">
+            <span class="w_not_join"><a href="__ROOT__/member/user/login">看不到？是不是没登录或是没注册？ 登录后看看</a></span>
 
-            <strong></strong>        
-        </div>   
+            <strong></strong>
+        </div>
         <?php } ?>
-        <!--未登录结束-->         
-        <div data-bd-bind="1440953827063" class="bdsharebuttonbox bdshare-button-style0-16">    <a href="#" class="bds_more" data-cmd="more"></a>    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>   </div>             </div> </div>   </div>
+        <!--未登录结束-->
+        <div data-bd-bind="1440953827063" class="bdsharebuttonbox bdshare-button-style0-16"><a href="#" class="bds_more"
+                                                                                               data-cmd="more"></a> <a
+                href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a> <a href="#" class="bds_tsina"
+                                                                                    data-cmd="tsina"
+                                                                                    title="分享到新浪微博"></a> <a href="#"
+                                                                                                            class="bds_tqq"
+                                                                                                            data-cmd="tqq"
+                                                                                                            title="分享到腾讯微博"></a>
+            <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a> <a href="#" class="bds_weixin"
+                                                                                    data-cmd="weixin" title="分享到微信"></a>
+        </div>
+    </div>
+</div>   </div>
 <!--揭晓前-->
 <if condition="$zongji gt 1 ">
     <div class="w_details_right" style="position:relative;">
@@ -132,7 +168,8 @@
         <div class="w_time_info">
             <div class="w_addss_img" style="display: none;">
                 <span class="w_spans_bg"></span>
-                <img width="200;" style="margin-top:0px;position:relative;z-index:2;" src="/static/img/front/module_loading.gif">
+                <img width="200;" style="margin-top:0px;position:relative;z-index:2;"
+                     src="/static/img/front/module_loading.gif">
             </div>
             <div id="onePublishWait" class="w_time_backward" style="display: none">
                 <h6>谁会是本期幸运儿</h6>
@@ -158,12 +195,15 @@
                 <if condition="$sid_code[q_showtime] neq 'Y'">
                     <div class="w_information_img">
                         <a id="WinmemberId" href="__ROOT__/user/uname/d/{:R('base/idjia',array($sid_code['q_uid']))}">
-                            <img id="WinmemberIcon" class="lazy54" data-original="__PUBLIC__/uploads/{:R('base/huode_user_key',array($sid_code['q_uid'],'img'))}" src="__PUBLIC__/uploads/{:R('base/huode_user_key',array($sid_code['q_uid'],'img'))}" style="display: inline;">
-                            <noscript><img id="WinmemberIconN" src="" /></noscript>
+                            <img id="WinmemberIcon" class="lazy54"
+                                 data-original="__PUBLIC__/uploads/{:R('base/huode_user_key',array($sid_code['q_uid'],'img'))}"
+                                 src="__PUBLIC__/uploads/{:R('base/huode_user_key',array($sid_code['q_uid'],'img'))}"
+                                 style="display: inline;">
+                            <noscript><img id="WinmemberIconN" src=""/></noscript>
                         </a>
 
                     </div>
-                    <else />
+                    <else/>
                     <div class="w_time_backward w_time_backward_other" style="display: block">
                         <h6>谁会是上期幸运儿</h6>
 
@@ -173,10 +213,10 @@
                 <p>
 
 
-
-                <if condition="$sid_code[q_showtime] neq 'Y'">
-                    恭喜
-                <a id="WinmemberNickNameId" href="__ROOT__/user/uname/d/{:R('base/idjia',array($sid_code['q_uid']))}">{:R('base/huode_user_name',array($sid_code['q_uid']))}</a>
+                    <if condition="$sid_code[q_showtime] neq 'Y'">
+                        恭喜
+                        <a id="WinmemberNickNameId"
+                           href="__ROOT__/user/uname/d/{:R('base/idjia',array($sid_code['q_uid']))}">{:R('base/huode_user_name',array($sid_code['q_uid']))}</a>
                    <span id="WinmemberAddress">(
 
                         <if condition="$sid_go_record['ip']">
@@ -184,67 +224,78 @@
                         </if>
 
                         )</span>
-                    获得该期奖品
-                    </p>
-                    <dl class="w_winner_wen">
-                        <dd>
-                            幸运号码：
-                            <label id="WinmemberCode">{$sid_code['q_user_code']}</label>
-                        </dd>
+                        获得该期奖品
+                </p>
+                <dl class="w_winner_wen">
+                    <dd>
+                        幸运号码：
+                        <label id="WinmemberCode">{$sid_code['q_user_code']}</label>
+                    </dd>
 
-                        <dd id="WinmemberPTime">揭晓时间：{:R("base/microt",array($sid_code['q_end_time']))}</dd>
-                        <dd id="WinmemberBuyTime">云购时间：{:R("base/microt",array($sid_go_record['time']))}</dd>
-                        <dd>
-                            <a id="lookPublishDetail" href="__ROOT__/goods/dataserverForPc/goodsId/{$sid_code['id']}.html">查看详情</a>
-                        </dd>
-                    </dl></if>
+                    <dd id="WinmemberPTime">揭晓时间：{:R("base/microt",array($sid_code['q_end_time']))}</dd>
+                    <dd id="WinmemberBuyTime">云购时间：{:R("base/microt",array($sid_go_record['time']))}</dd>
+                    <dd>
+                        <a id="lookPublishDetail" href="__ROOT__/goods/dataserverForPc/goodsId/{$sid_code['id']}.html">查看详情</a>
+                    </dd>
+                </dl>
+</if>
 
-                <!--1 1  ifend-->
+<!--1 1  ifend-->
 
 
-
-            </div>
-            <div class="w_time_backward w_time_backward_other" style="display: none">
-                <h6>谁会是本期幸运儿</h6>
-                <p class="w_backward_other"></p>
-                <div class="w_boy_other"></div>
-            </div>
-            <p class="w_deng" style="display: none">敬请期待...</p>
-        </div>
-        <ul class="w_period">
-            {$wangqiqishu}
-        </ul>
-        <div class="w_clear"></div>
-        <div class="w_page_on">
-            <?php 
+</div>
+<div class="w_time_backward w_time_backward_other" style="display: none">
+    <h6>谁会是本期幸运儿</h6>
+    <p class="w_backward_other"></p>
+    <div class="w_boy_other"></div>
+</div>
+<p class="w_deng" style="display: none">敬请期待...</p>
+</div>
+<ul class="w_period">
+    {$wangqiqishu}
+</ul>
+<div class="w_clear"></div>
+<div class="w_page_on">
+    <?php
             if(isset($_GET['p'])){
             $fenyenum=$_GET['p'];
             }else{
             $fenyenum=1;
             }	
             ?>
-            <if condition="$fenyenum gt 1 ">
-                <a class="pageUp"  href="__ROOT__/goods/items/goodsId/{$xiangmu['id']}.html?p={$fenyenum-1}">上一页</a>
-                <else />
-                <a class="pageUp w_page_in" >上一页</a>
-            </if>
-            <if condition="$fenyenum lt $xx ">
-                <a class="pageDown"  href="__ROOT__/goods/items/goodsId/{$xiangmu['id']}.html?p={$fenyenum+1}">下一页</a>
-                <else />
-                <a class="pageDown w_page_in"">下一页</a>
-            </if>
-        </div>
+    <if condition="$fenyenum gt 1 ">
+        <a class="pageUp" href="__ROOT__/goods/items/goodsId/{$xiangmu['id']}.html?p={$fenyenum-1}">上一页</a>
+        <else/>
+        <a class="pageUp w_page_in">上一页</a>
+    </if>
+    <if condition="$fenyenum lt $xx ">
+        <a class="pageDown" href="__ROOT__/goods/items/goodsId/{$xiangmu['id']}.html?p={$fenyenum+1}">下一页</a>
+        <else/>
+        <a class="pageDown w_page_in"">下一页</a>
+    </if>
+</div>
+</div>
+<div class="w_clear"></div>
+<else/>
+<!--揭晓前-->
+<div class="w_details_right"><h3>揭晓信息</h3>
+    <div class="w_time_backward w_time_backward_other"><h6>谁会是本期幸运儿</h6>
+        <p class="w_backward_other"></p>
+        <div class="w_boy_other"></div>
     </div>
-    <div class="w_clear"></div>
-    <else/>
-    <!--揭晓前-->
-    <div class="w_details_right"><h3>揭晓信息</h3><div class="w_time_backward w_time_backward_other"><h6>谁会是本期幸运儿</h6><p class="w_backward_other"></p><div class="w_boy_other"></div></div><p class="w_deng">敬请期待...<br>商品二维码带佣金</p><br>	
+    <p class="w_deng">敬请期待...</p><br>
 
-        <if condition="R('base/huode_user_uid')">  <img src=__ROOT__/Invite/sperweima/id/{$xiangmu['id']} width=160 height=160> <else /><div class="w_deng">请登陆后获取</div> </if></div>  
-    <div class="w_clear"></div>
+    <if condition="R('base/huode_user_uid')">
+        <!--<img src=__ROOT__/Invite/sperweima/id/{$xiangmu['id']} width=160-->
+                                                  <!--height=160>-->
+        <else/>
+        <div class="w_deng">请登陆后获取</div>
+    </if>
+</div>
+<div class="w_clear"></div>
 
 
-    <!--揭晓后结束-->
+<!--揭晓后结束-->
 
 </if>
 <div class="w_details_bottom">
@@ -254,25 +305,47 @@
         <div class="w_shelves_top">
             <h3>最新上架</h3>
 
-            <ul class="w_shelves_one">   
+            <ul class="w_shelves_one">
                 <?php 
                 $yyslistrenqib= D("shangpin")->where("q_uid is null")->order("q_counttime DESC")->limit("4")->select();
 
                 ?>
-                <foreach name="yyslistrenqib" item="zuixin" >
-                    <li>   <a href="__ROOT__/goods/items/goodsId/{$zuixin['id']}.html">    <img style="display: inline;" src="__PUBLIC__/uploads/{$zuixin['thumb']}" class="lazy200" data-original="__PUBLIC__/uploads/{$zuixin['thumb']}">    <noscript><img src="__PUBLIC__/uploads/{$zuixin['thumb']}" alt=""/></noscript>   </a>  </li>   <b>总需人次：{$zuixin['zongrenshu']}人次</b>   <a href="__ROOT__/goods/items/goodsId/{$zuixin['id']}.html">{$zuixin['title']}</a> </ul>  <ul class="w_shelves_one"> 
+                <foreach name="yyslistrenqib" item="zuixin">
+                    <li><a href="__ROOT__/goods/items/goodsId/{$zuixin['id']}.html"> <img style="display: inline;"
+                                                                                          src="__PUBLIC__/uploads/{$zuixin['thumb']}"
+                                                                                          class="lazy200"
+                                                                                          data-original="__PUBLIC__/uploads/{$zuixin['thumb']}">
+                        <noscript><img src="__PUBLIC__/uploads/{$zuixin['thumb']}" alt=""/></noscript>
+                    </a></li>
+                    <b>总需人次：{$zuixin['zongrenshu']}人次</b> <a href="__ROOT__/goods/items/goodsId/{$zuixin['id']}.html">{$zuixin['title']}</a>
+            </ul>
+            <ul class="w_shelves_one">
                 </foreach>
-            </ul>  </div>
+            </ul>
+        </div>
         <div class="w_shelves_bottom">
             <h3>最新参与记录</h3>
 
-            <div class="w_record_out"> 
+            <div class="w_record_out">
 
                 <?php 
-                $yyslistrenqib= D("shangpin")->where("renqi='1' and q_uid is null")->order("q_counttime DESC")->limit("5")->select();
+                $yyslistrenqib= D("shangpin")->where("renqi='1' and q_uid is null")->order("q_counttime
+                DESC")->limit("5")->select();
                 ?>
-                <foreach name="yyslistrenqib" item="renqi" >
-                    <div class="w_record_in">  <div class="w_record">    <div class="w_record_img">   <img style="display: inline;" src="__PUBLIC__/uploads/{$renqi['thumb']}" class="lazy54" data-original="__PUBLIC__/uploads/{$renqi['thumb']}">   <noscript><img src="__PUBLIC__/uploads/{$renqi['thumb']}" /></noscript>  </div>    <p class="w_record_con" style="word-break: break-all; word-wrap:break-word;"><a href="__ROOT__/goods/items/goodsId/{$renqi['id']}.html">{$renqi['title']} </a><span><br>剩余{$renqi['zongrenshu']-$renqi['canyurenshu']}人次</span></p>    <div class="w_clear"></div> </div>        </div>
+                <foreach name="yyslistrenqib" item="renqi">
+                    <div class="w_record_in">
+                        <div class="w_record">
+                            <div class="w_record_img"><img style="display: inline;"
+                                                           src="__PUBLIC__/uploads/{$renqi['thumb']}" class="lazy54"
+                                                           data-original="__PUBLIC__/uploads/{$renqi['thumb']}">
+                                <noscript><img src="__PUBLIC__/uploads/{$renqi['thumb']}"/></noscript>
+                            </div>
+                            <p class="w_record_con" style="word-break: break-all; word-wrap:break-word;"><a
+                                    href="__ROOT__/goods/items/goodsId/{$renqi['id']}.html">{$renqi['title']} </a><span><br>剩余{$renqi['zongrenshu']-$renqi['canyurenshu']}人次</span>
+                            </p>
+                            <div class="w_clear"></div>
+                        </div>
+                    </div>
                 </foreach>
             </div>
 
@@ -293,20 +366,17 @@
             <!--所有参与记录-->
 
 
-
             <div class="w_calculate_one w_calculate_two ">
                 <div class="w_clear"></div>
 
 
-
-
-
                 <table class="w_yun_con" cellpadding="0" cellspacing="0">
-                    <iframe src="__ROOT__/goods/go_record_ifram/id/{$xiangmuid}/len/20" style="width:978px; border:block;height:1250px" frameborder="0" scrolling="no"></iframe>	
+                    <iframe src="__ROOT__/goods/go_record_ifram/id/{$xiangmuid}/len/20"
+                            style="width:978px; border:block;height:1250px" frameborder="0" scrolling="no"></iframe>
                 </table>
                 <div id="kkpager2" style="margin: 64px auto;"></div>
                 <div class="w-msgbox m-detail-codesDetail" id="pro-view-9" style="z-index:10000;">
-                    <a data-pro="close" href="javascript:void(0);" class="w-msgbox-close"></a>	
+                    <a data-pro="close" href="javascript:void(0);" class="w-msgbox-close"></a>
                     <div class="w-msgbox-hd" data-pro="header">
                         <h3></h3>
                     </div>
@@ -317,7 +387,7 @@
                                 </dl>
                             </div>
                         </div>
-                    </div>	
+                    </div>
                 </div>
                 <script type="text/javascript" src="__PUBLIC__/style/js/pager2.js"></script>
                 <script type="text/javascript" src="__PUBLIC__/style/js/timeline.js"></script>
@@ -330,43 +400,53 @@
                 <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/css/pager1.css">
 
 
-
                 <div class="sun"></div>
-                <div  style="margin: 64px auto;">
+                <div style="margin: 64px auto;">
 
                     <if condition="$error eq 0">
                         <div id="divPost" class="Single_Content">
-                            <foreach name="shaidingdan" item="v" >
+                            <foreach name="shaidingdan" item="v">
                                 <div class="Single_list">
                                     <div class="SingleL fl Topiclist-img">
-                                     <a rel="nofollow" class="head-img" href="__ROOT__/user/uname/d/{:R('base/idjia',array($huiyuan_id[$v['sd_id']]))}.html" type="showCard" uweb="1000371861" target="_blank">
-                                           <img border="0" alt="" src=<if condition="$huiyuan_img[$v['sd_id']] neq ''"> __PUBLIC__/uploads/{$huiyuan_img[$v['sd_id']]}<else/>__PUBLIC__/uploads/photo/member.jpg_30.jpg</if>>
-                                        </a>
-                                       <a class="blue" href="__ROOT__/user/uname/d/{:R('base/idjia',array($huiyuan_id[$v['sd_id']]))}.html" type="showCard" uweb="1000371861" target="_blank">{$huiyuan_username[$v['sd_id']]}</a>
-                                      <!--span class="class-icon02"><s></s>云购少将</span-->
-                                    </div>
-                                    <div class="SingleR fl">
-                                        <div class="SingleR_TC"><i></i> <s></s>
-                                            <h3><span class="gray02">第{$v['sd_qishu']}期晒单</span><a href="__ROOT__/index/shaidan/detail/{$v['sd_id']}.html" target="_blank">{$v['sd_title']}</a>   <em class="gray02">{$v['sd_time']|date="Y-m-d",###}</em></h3>
-                                            <p class="gray01">{:R("base/strcut",array($v['sd_content'],220))}</p>
-                                        </div>
-                                        <div class="SingleR_Comment" postID="2676" count="7">
-                                            <div class="Comment_smile gray02"><span><i></i>{$v['sd_zhan']}人羡慕嫉妒恨</span><span><s></s>{$v['sd_ping']}条评论</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </foreach>
-                            <if condition="$zongji gt $num">
-                                <div class="pagesx"><?php echo $fenye->show('two'); ?></div>
-                            </if>
-                        </div>
-                        <else>
-                            <div style="text-align:center;width:100%;height:80px;line-height:80px;">
-                                <h1 style='text-align:center;width:100%;font-size:22px; font-weight:bold;color:#555;'>该商品还未有晒单！</h1>
-                            </div>
+                                        <a rel="nofollow" class="head-img"
+                                           href="__ROOT__/user/uname/d/{:R('base/idjia',array($huiyuan_id[$v['sd_id']]))}.html"
+                                           type="showCard" uweb="1000371861" target="_blank">
+                                            <img border="0" alt="" src=<if condition="$huiyuan_img[$v['sd_id']] neq ''">
+                                            __PUBLIC__/uploads/{$huiyuan_img[$v['sd_id']]}
+                                            <else/>
+                                            __PUBLIC__/uploads/photo/member.jpg_30.jpg
                     </if>
-
-
-
+                    >
+                    </a>
+                    <a class="blue" href="__ROOT__/user/uname/d/{:R('base/idjia',array($huiyuan_id[$v['sd_id']]))}.html"
+                       type="showCard" uweb="1000371861" target="_blank">{$huiyuan_username[$v['sd_id']]}</a>
+                    <!--span class="class-icon02"><s></s>云购少将</span-->
                 </div>
+                <div class="SingleR fl">
+                    <div class="SingleR_TC"><i></i> <s></s>
+                        <h3><span class="gray02">第{$v['sd_qishu']}期晒单</span><a
+                                href="__ROOT__/index/shaidan/detail/{$v['sd_id']}.html"
+                                target="_blank">{$v['sd_title']}</a> <em
+                                class="gray02">{$v['sd_time']|date="Y-m-d",###}</em></h3>
+                        <p class="gray01">{:R("base/strcut",array($v['sd_content'],220))}</p>
+                    </div>
+                    <div class="SingleR_Comment" postID="2676" count="7">
+                        <div class="Comment_smile gray02"><span><i></i>{$v['sd_zhan']}人羡慕嫉妒恨</span><span><s></s>{$v['sd_ping']}条评论</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </foreach>
+            <if condition="$zongji gt $num">
+                <div class="pagesx"><?php echo $fenye->show('two'); ?></div>
+            </if>
+        </div>
+        <else>
+            <div style="text-align:center;width:100%;height:80px;line-height:80px;">
+                <h1 style='text-align:center;width:100%;font-size:22px; font-weight:bold;color:#555;'>该商品还未有晒单！</h1>
+            </div>
+            </if>
+
+
+    </div>
 

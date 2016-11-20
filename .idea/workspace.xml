@@ -2,11 +2,103 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62f0d558-1e3c-4dc2-b0d4-450a34d22f5a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/uploads/shopimg/20161106/30690546397361.png" afterPath="$PROJECT_DIR$/public/uploads/shopimg/20161106/30690546397361.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/uploads/shopimg/20161106/65241658397330.png" afterPath="$PROJECT_DIR$/public/uploads/shopimg/20161106/65241658397330.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/qrcode.png" afterPath="$PROJECT_DIR$/qrcode.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yyygcms/install.lock" afterPath="$PROJECT_DIR$/yyygcms/install.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/htmlduipi/index/article_show.help.html" afterPath="$PROJECT_DIR$/Duipi/htmlduipi/index/article_show.help.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/htmlduipi/index/index.footer.html" afterPath="$PROJECT_DIR$/Duipi/htmlduipi/index/index.footer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/yyg.iml" afterPath="$PROJECT_DIR$/.idea/yyg.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.settings/org.eclipse.php.debug.core.Debug_Process_Preferences.prefs" afterPath="$PROJECT_DIR$/.settings/org.eclipse.php.debug.core.Debug_Process_Preferences.prefs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/Common/Lang/zh-cn.php" afterPath="$PROJECT_DIR$/Duipi/Common/Lang/zh-cn.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/Common/tags.php" afterPath="$PROJECT_DIR$/Duipi/Common/tags.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/htmlduipi/index/index.header.html" afterPath="$PROJECT_DIR$/Duipi/htmlduipi/index/index.header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/htmlduipi/index/index.index.html" afterPath="$PROJECT_DIR$/Duipi/htmlduipi/index/index.index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/htmlduipi/index/index.item_contents.html" afterPath="$PROJECT_DIR$/Duipi/htmlduipi/index/index.item_contents.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/htmlduipi/index/lottery_index.html" afterPath="$PROJECT_DIR$/Duipi/htmlduipi/index/lottery_index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/htmlduipi/index/member.left.html" afterPath="$PROJECT_DIR$/Duipi/htmlduipi/index/member.left.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/htmlduipi/index/user.index.html" afterPath="$PROJECT_DIR$/Duipi/htmlduipi/index/user.index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/06e795b7308005e692f0ee29866cea15.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/06e795b7308005e692f0ee29866cea15.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/070c4a87c423c6ce5d33a1bb33943e1d.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/070c4a87c423c6ce5d33a1bb33943e1d.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/07758596228b77d78040d2854b3bc377.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/07758596228b77d78040d2854b3bc377.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/0a4e2a41cdde444ef55e49e13c915391.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/0a4e2a41cdde444ef55e49e13c915391.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/0e807e823569f6229b12c4826876e431.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/0e807e823569f6229b12c4826876e431.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/104ee7dfbb08e174101390e93a605f7f.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/104ee7dfbb08e174101390e93a605f7f.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/12b4784264f52a9138cd3433a78ca7e3.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/12b4784264f52a9138cd3433a78ca7e3.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/156e70a07d372e7f04a20dd1a3f2b5d4.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/156e70a07d372e7f04a20dd1a3f2b5d4.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/15fca7eae2e721345081723256e4daa1.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/15fca7eae2e721345081723256e4daa1.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/27f69d3357eef2f5d90c416fd359e490.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/27f69d3357eef2f5d90c416fd359e490.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/2b390210d82b9231f5ced21e540af534.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/2b390210d82b9231f5ced21e540af534.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/2ed2e0297107dcde9e5da752a8d40ae9.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/2ed2e0297107dcde9e5da752a8d40ae9.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/3799abd5f4765cd8d398cb0777ae90a7.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/3799abd5f4765cd8d398cb0777ae90a7.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/37cd4a2f3593cb69fc789b7e26b226fb.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/37cd4a2f3593cb69fc789b7e26b226fb.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/3aee53ea7ab5d7bb464ec942d2ee71d3.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/3aee53ea7ab5d7bb464ec942d2ee71d3.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/3e2efd3aaca0f9a0dc00a7f939136f6f.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/3e2efd3aaca0f9a0dc00a7f939136f6f.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/4354c9f01ae61ef6de8121b3374ebcae.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/4354c9f01ae61ef6de8121b3374ebcae.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/465dfe4e3963ce49d8c6930e0992fc19.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/465dfe4e3963ce49d8c6930e0992fc19.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/4ebcca333effa8decb90b19077a1127e.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/4ebcca333effa8decb90b19077a1127e.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/4f0b39a7050b3cbbe558bcaeef477ea5.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/4f0b39a7050b3cbbe558bcaeef477ea5.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/53085ca6a4fa7d4d1cddcfe65f89a648.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/53085ca6a4fa7d4d1cddcfe65f89a648.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/5505f3c202f149049663c5097ced85f5.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/5505f3c202f149049663c5097ced85f5.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/5c83c3d39f35ce7a3ce0bb0e6a08daf3.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/5c83c3d39f35ce7a3ce0bb0e6a08daf3.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/611ee2c356924378a9128cde747657f0.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/611ee2c356924378a9128cde747657f0.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/61f2f2e73da2164ad8646608a16e214d.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/61f2f2e73da2164ad8646608a16e214d.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/66568b238dd30893de3e6952eeab52ab.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/66568b238dd30893de3e6952eeab52ab.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/67ed04da8df51bef0162fc08aa78110a.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/67ed04da8df51bef0162fc08aa78110a.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/69e021e3fa9a27e27134b07381de9320.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/69e021e3fa9a27e27134b07381de9320.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/6a9d0e63975350403e80525937cd92d8.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/6a9d0e63975350403e80525937cd92d8.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/6b07a917edf2ead163577ec8a0f8de3e.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/6b07a917edf2ead163577ec8a0f8de3e.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/6dadba336cb0f43c60b6754af9dc8ac2.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/6dadba336cb0f43c60b6754af9dc8ac2.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/71b5fc520c22a7f1c4d6ae24494cb1e0.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/71b5fc520c22a7f1c4d6ae24494cb1e0.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/736a754fb072e8b2265249a5dafc1399.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/736a754fb072e8b2265249a5dafc1399.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/739889762e0ad058f7ffc6d274875987.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/739889762e0ad058f7ffc6d274875987.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/78253d3c962ce58fa1a8cb02f5d2cff0.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/78253d3c962ce58fa1a8cb02f5d2cff0.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/782647d40964725fa88bd5e5186f335c.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/782647d40964725fa88bd5e5186f335c.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/78f49f2800d747fa0c4ad231fe094560.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/78f49f2800d747fa0c4ad231fe094560.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/7bede3ff33f387f30530d1a3a32dd171.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/7bede3ff33f387f30530d1a3a32dd171.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/7dac8b65bd5bada64156b21711e85297.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/7dac8b65bd5bada64156b21711e85297.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/7e125cc9cdc2086bb9ad07f9213588c2.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/7e125cc9cdc2086bb9ad07f9213588c2.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/7f4faed54571009781801ca59705bd4f.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/7f4faed54571009781801ca59705bd4f.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/81b7880b504e80721f4043457a80f8c9.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/81b7880b504e80721f4043457a80f8c9.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/84049fabe2a7e09940593b8e3a95236a.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/84049fabe2a7e09940593b8e3a95236a.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/8c682c8f3983bc894062c692b00b5bf9.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/8c682c8f3983bc894062c692b00b5bf9.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/8cf04d01ef98de32fd9a0d4d8996bcc5.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/8cf04d01ef98de32fd9a0d4d8996bcc5.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/8ff442eb0cbc7b8bceeed3020a77e090.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/8ff442eb0cbc7b8bceeed3020a77e090.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/9015a32130011ec449db548bcc4b2b8d.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/9015a32130011ec449db548bcc4b2b8d.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/97efd38a7751a7bad465d3e105046c9a.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/97efd38a7751a7bad465d3e105046c9a.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/9a9e4bb186ac857575b184c3871034d5.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/9a9e4bb186ac857575b184c3871034d5.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/a6d305d9e14c3cbe64e34a3b961dae49.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/a6d305d9e14c3cbe64e34a3b961dae49.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/b1f6397c8f1d62a1ced3f10a92015e3c.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/b1f6397c8f1d62a1ced3f10a92015e3c.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/b2b81c3f2ec81484578112fa753a28f6.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/b2b81c3f2ec81484578112fa753a28f6.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/b42dc78cdd6200810b59213729211782.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/b42dc78cdd6200810b59213729211782.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/bd7ad9df1ae3cb84a7c440f1b9e08f0c.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/bd7ad9df1ae3cb84a7c440f1b9e08f0c.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/c499debcda7ba12f09207ec3e80e6d6c.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/c499debcda7ba12f09207ec3e80e6d6c.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/d25d8f81f02a982394aa06e55e4a0c59.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/d25d8f81f02a982394aa06e55e4a0c59.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/d43beb5aa761365b46803de25b9b594c.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/d43beb5aa761365b46803de25b9b594c.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/d72b22f1eec8aeaf110c352153a513bb.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/d72b22f1eec8aeaf110c352153a513bb.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/db6db87b904242448a5a59f958243ef8.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/db6db87b904242448a5a59f958243ef8.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/dc63d56732a92618e4329e6ce65cef96.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/dc63d56732a92618e4329e6ce65cef96.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/de73206ab3ad7cbeda338814d6329b67.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/de73206ab3ad7cbeda338814d6329b67.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/e13f33dbce5261cfd185a1b242933be9.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/e13f33dbce5261cfd185a1b242933be9.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/e380309263c344c96fc4166386a8e9cd.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/e380309263c344c96fc4166386a8e9cd.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/e9d74fd745640edae1600d2225aad413.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/e9d74fd745640edae1600d2225aad413.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/ec82e18a3116343963ab73256c2c636e.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/ec82e18a3116343963ab73256c2c636e.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/ef5f773e7810749028656625b0ae48eb.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/ef5f773e7810749028656625b0ae48eb.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/f941c10b75cc05cbffc5a4207551dc37.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/f941c10b75cc05cbffc5a4207551dc37.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/f98b31f093f3393053e7ad66217588f3.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/f98b31f093f3393053e7ad66217588f3.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Duipi/fe398e2f54c9d5722fae007ca7f263bd.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Duipi/fe398e2f54c9d5722fae007ca7f263bd.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Logs/Duipi/1479309651-16_11_16.log" afterPath="$PROJECT_DIR$/Runtime/Logs/Duipi/1479309651-16_11_16.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Logs/Duipi/16_11_03.log" afterPath="$PROJECT_DIR$/Runtime/Logs/Duipi/16_11_03.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Logs/Duipi/16_11_04.log" afterPath="$PROJECT_DIR$/Runtime/Logs/Duipi/16_11_04.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Logs/Duipi/16_11_05.log" afterPath="$PROJECT_DIR$/Runtime/Logs/Duipi/16_11_05.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Logs/Duipi/16_11_06.log" afterPath="$PROJECT_DIR$/Runtime/Logs/Duipi/16_11_06.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Logs/Duipi/16_11_12.log" afterPath="$PROJECT_DIR$/Runtime/Logs/Duipi/16_11_12.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Logs/Duipi/16_11_14.log" afterPath="$PROJECT_DIR$/Runtime/Logs/Duipi/16_11_14.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Logs/Duipi/16_11_15.log" afterPath="$PROJECT_DIR$/Runtime/Logs/Duipi/16_11_15.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Logs/Duipi/16_11_16.log" afterPath="$PROJECT_DIR$/Runtime/Logs/Duipi/16_11_16.log" />
     </list>
     <ignored path="yyg.iws" />
@@ -29,27 +121,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="IndexController.class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Duipi/Controller/IndexController.class.php">
+      <file leaf-file-name="UserController.class.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Duipi/Controller/UserController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.470588">
-              <caret line="161" column="45" selection-start-line="161" selection-start-column="45" selection-end-line="161" selection-end-column="45" />
+            <state vertical-scroll-proportion="1.689911">
+              <caret line="1838" column="44" selection-start-line="1838" selection-start-column="44" selection-end-line="1838" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/user.index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.833333">
+              <caret line="57" column="24" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
               <folding>
-                <element signature="e#7#42#0#PHP" expanded="true" />
-                <marker date="1479310543000" expanded="true" signature="11243:11313" placeholder="select id,si... @#_shangpin" />
-                <marker date="1479310543000" expanded="true" signature="11501:11560" placeholder="select id fr... @#_shai" />
-                <marker date="1479310543000" expanded="true" signature="11904:11985" placeholder="select * fro... @#_shai" />
-                <marker date="1479310543000" expanded="true" signature="12162:12217" placeholder="select * fro... @#_yonghu" />
+                <marker date="1479481707000" expanded="true" signature="2740:3010" placeholder="..." />
+                <marker date="1479481707000" expanded="true" signature="2756:2989" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="article_show.help.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/article_show.help.html">
+      <file leaf-file-name="PayController.class.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Duipi/Controller/PayController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33774835">
-              <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
+            <state vertical-scroll-proportion="-2.3333333">
+              <caret line="1084" column="41" selection-start-line="1084" selection-start-column="41" selection-end-line="1084" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="member.left.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/member.left.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="17" column="110" selection-start-line="16" selection-start-column="12" selection-end-line="17" selection-end-column="110" />
               <folding />
             </state>
           </provider>
@@ -58,34 +167,11 @@
       <file leaf-file-name="index.header.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.header.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.254902">
-              <caret line="372" column="52" selection-start-line="372" selection-start-column="52" selection-end-line="372" selection-end-column="52" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="238" column="23" selection-start-line="238" selection-start-column="23" selection-end-line="240" selection-end-column="34" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1479308038000" expanded="true" signature="22756:22781" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.footer.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.footer.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.708334">
-              <caret line="96" column="4" selection-start-line="96" selection-start-column="8" selection-end-line="98" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="223.29167">
-              <caret line="77" column="18" selection-start-line="77" selection-start-column="18" selection-end-line="77" selection-end-column="18" />
-              <folding>
-                <element signature="n#style#0;n#ul#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-                <marker date="1479309003000" expanded="true" signature="20859:20910" placeholder="..." />
+                <marker date="1479481597000" expanded="true" signature="22777:22802" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -100,12 +186,16 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/user.register.html" />
-        <option value="$PROJECT_DIR$/Duipi/Controller/UserController.class.php" />
-        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/index.header.html" />
         <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/index.index.html" />
         <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/index.footer.html" />
         <option value="$PROJECT_DIR$/Duipi/Controller/IndexController.class.php" />
         <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/article_show.help.html" />
+        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/lottery_index.html" />
+        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/index.item_contents.html" />
+        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/member.left.html" />
+        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/index.header.html" />
+        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/user.index.html" />
+        <option value="$PROJECT_DIR$/Duipi/Controller/UserController.class.php" />
       </list>
     </option>
   </component>
@@ -147,6 +237,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -289,8 +381,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -352,7 +442,6 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -361,8 +450,10 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -383,17 +474,42 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/article_show.help.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="372" column="52" selection-start-line="372" selection-start-column="52" selection-end-line="372" selection-end-column="52" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1479481597000" expanded="true" signature="22777:22802" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="96" column="4" selection-start-line="96" selection-start-column="8" selection-end-line="98" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="77" column="18" selection-start-line="77" selection-start-column="18" selection-end-line="77" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Duipi/Controller/IndexController.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <element signature="e#7#42#0#PHP" expanded="true" />
-            <marker date="1479310543000" expanded="true" signature="11243:11313" placeholder="select id,si... @#_shangpin" />
-            <marker date="1479310543000" expanded="true" signature="11501:11560" placeholder="select id fr... @#_shai" />
-            <marker date="1479310543000" expanded="true" signature="11904:11985" placeholder="select * fro... @#_shai" />
-            <marker date="1479310543000" expanded="true" signature="12162:12217" placeholder="select * fro... @#_yonghu" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -403,7 +519,7 @@
           <caret line="221" column="56" selection-start-line="221" selection-start-column="56" selection-end-line="221" selection-end-column="56" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1479308038000" expanded="true" signature="22756:22781" placeholder="..." />
+            <marker date="1479481597000" expanded="true" signature="22777:22802" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -412,7 +528,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -420,9 +535,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="87" column="32" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="32" />
-          <folding>
-            <marker date="1479221516000" expanded="true" signature="667:744" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -430,10 +542,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="372" column="42" selection-start-line="372" selection-start-column="42" selection-end-line="372" selection-end-column="42" />
-          <folding>
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <marker date="1479309003000" expanded="true" signature="20859:20910" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -441,13 +549,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <element signature="e#7#42#0#PHP" expanded="true" />
-            <marker date="1479310543000" expanded="true" signature="11243:11313" placeholder="select id,si... @#_shangpin" />
-            <marker date="1479310543000" expanded="true" signature="11501:11560" placeholder="select id fr... @#_shai" />
-            <marker date="1479310543000" expanded="true" signature="11904:11985" placeholder="select * fro... @#_shai" />
-            <marker date="1479310543000" expanded="true" signature="12162:12217" placeholder="select * fro... @#_yonghu" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -457,7 +558,7 @@
           <caret line="221" column="56" selection-start-line="221" selection-start-column="56" selection-end-line="221" selection-end-column="56" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1479308038000" expanded="true" signature="22756:22781" placeholder="..." />
+            <marker date="1479481597000" expanded="true" signature="22777:22802" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -466,7 +567,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -474,9 +574,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="87" column="32" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="32" />
-          <folding>
-            <marker date="1479221516000" expanded="true" signature="667:744" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -484,10 +581,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="372" column="42" selection-start-line="372" selection-start-column="42" selection-end-line="372" selection-end-column="42" />
-          <folding>
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <marker date="1479309003000" expanded="true" signature="20859:20910" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -495,13 +588,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#7#42#0#PHP" expanded="true" />
-            <marker date="1479310543000" expanded="true" signature="11243:11313" placeholder="select id,si... @#_shangpin" />
-            <marker date="1479310543000" expanded="true" signature="11501:11560" placeholder="select id fr... @#_shai" />
-            <marker date="1479310543000" expanded="true" signature="11904:11985" placeholder="select * fro... @#_shai" />
-            <marker date="1479310543000" expanded="true" signature="12162:12217" placeholder="select * fro... @#_yonghu" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -509,10 +595,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="307" column="0" selection-start-line="307" selection-start-column="0" selection-end-line="307" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <marker date="1479309003000" expanded="true" signature="20859:20910" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -520,13 +602,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#7#42#0#PHP" expanded="true" />
-            <marker date="1479310543000" expanded="true" signature="11243:11313" placeholder="select id,si... @#_shangpin" />
-            <marker date="1479310543000" expanded="true" signature="11501:11560" placeholder="select id fr... @#_shai" />
-            <marker date="1479310543000" expanded="true" signature="11904:11985" placeholder="select * fro... @#_shai" />
-            <marker date="1479310543000" expanded="true" signature="12162:12217" placeholder="select * fro... @#_yonghu" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -534,13 +609,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#7#42#0#PHP" expanded="true" />
-            <marker date="1479310543000" expanded="true" signature="11243:11313" placeholder="select id,si... @#_shangpin" />
-            <marker date="1479310543000" expanded="true" signature="11501:11560" placeholder="select id fr... @#_shai" />
-            <marker date="1479310543000" expanded="true" signature="11904:11985" placeholder="select * fro... @#_shai" />
-            <marker date="1479310543000" expanded="true" signature="12162:12217" placeholder="select * fro... @#_yonghu" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -571,9 +639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
           <caret line="418" column="175" selection-start-line="418" selection-start-column="166" selection-end-line="418" selection-end-column="175" />
-          <folding>
-            <marker date="1467297616000" expanded="true" signature="126:209" placeholder="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -581,47 +646,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.5">
           <caret line="12" column="50" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
-          <folding>
-            <marker date="1479221516000" expanded="true" signature="667:744" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Duipi/Controller/UserController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1655629">
-          <caret line="516" column="17" selection-start-line="516" selection-start-column="17" selection-end-line="516" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.254902">
-          <caret line="372" column="52" selection-start-line="372" selection-start-column="52" selection-end-line="372" selection-end-column="52" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1479308038000" expanded="true" signature="22756:22781" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="223.29167">
-          <caret line="77" column="18" selection-start-line="77" selection-start-column="18" selection-end-line="77" selection-end-column="18" />
-          <folding>
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <marker date="1479309003000" expanded="true" signature="20859:20910" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.footer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.708334">
-          <caret line="96" column="4" selection-start-line="96" selection-start-column="8" selection-end-line="98" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -629,15 +653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.9957204">
           <caret line="140" column="24" selection-start-line="140" selection-start-column="24" selection-end-line="140" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/软件说明.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22012578">
-          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="62" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -645,28 +660,198 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.397351">
           <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Duipi/Controller/IndexController.class.php">
+    <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.470588">
-          <caret line="161" column="45" selection-start-line="161" selection-start-column="45" selection-end-line="161" selection-end-column="45" />
-          <folding>
-            <element signature="e#7#42#0#PHP" expanded="true" />
-            <marker date="1479310543000" expanded="true" signature="11243:11313" placeholder="select id,si... @#_shangpin" />
-            <marker date="1479310543000" expanded="true" signature="11501:11560" placeholder="select id fr... @#_shai" />
-            <marker date="1479310543000" expanded="true" signature="11904:11985" placeholder="select * fro... @#_shai" />
-            <marker date="1479310543000" expanded="true" signature="12162:12217" placeholder="select * fro... @#_yonghu" />
-          </folding>
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thinkphp/Library/Think/Storage/Driver/File.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.66333807">
+          <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/article_show.help.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33774835">
+        <state vertical-scroll-proportion="-18.75">
           <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/single_web.newbie.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17118402">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="96" column="4" selection-start-line="96" selection-start-column="8" selection-end-line="98" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/lottery_index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="93" column="35" selection-start-line="93" selection-start-column="35" selection-end-line="93" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/Controller/GoodszgController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="654" column="27" selection-start-line="654" selection-start-column="20" selection-end-line="654" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.glistzg.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/Controller/MobileController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3323442">
+          <caret line="371" column="27" selection-start-line="371" selection-start-column="23" selection-end-line="371" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/public/moblie.message.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.4336662">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/mobile/new/jweixin-1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="8497" selection-start-line="0" selection-start-column="8497" selection-end-line="0" selection-end-column="8497" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/lib/font-awesome/docs/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="7.4834437">
+          <caret line="370" column="25" selection-start-line="370" selection-start-column="25" selection-end-line="370" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/Controller/ToolsController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.89624727">
+          <caret line="261" column="42" selection-start-line="261" selection-start-column="42" selection-end-line="261" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/Controller/LotteryController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.03311258">
+          <caret line="45" column="25" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.shaidan.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.25">
+          <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/Controller/IndexController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="24.375">
+          <caret line="166" column="27" selection-start-line="166" selection-start-column="20" selection-end-line="166" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.8807945">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/Controller/GoodsController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="20.607843">
+          <caret line="455" column="95" selection-start-line="455" selection-start-column="88" selection-end-line="455" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.item_contents.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59343797">
+          <caret line="289" column="65" selection-start-line="288" selection-start-column="12" selection-end-line="289" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.28931752">
+          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.headerl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/user.index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.833333">
+          <caret line="57" column="24" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
+          <folding>
+            <marker date="1479481707000" expanded="true" signature="2740:3010" placeholder="..." />
+            <marker date="1479481707000" expanded="true" signature="2756:2989" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/member.left.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="110" selection-start-line="16" selection-start-column="12" selection-end-line="17" selection-end-column="110" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="238" column="23" selection-start-line="238" selection-start-column="23" selection-end-line="240" selection-end-column="34" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1479481597000" expanded="true" signature="22777:22802" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/Controller/PayController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.3333333">
+          <caret line="1084" column="41" selection-start-line="1084" selection-start-column="41" selection-end-line="1084" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/Controller/UserController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.689911">
+          <caret line="1838" column="44" selection-start-line="1838" selection-start-column="44" selection-end-line="1838" selection-end-column="44" />
           <folding />
         </state>
       </provider>

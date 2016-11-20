@@ -218,9 +218,9 @@
                         <dd>
                             <a href="/user/userModify">个人设置</a>
                         </dd> 
-                        <dd>
-                            <a href="/user/wangpan">我的网盘</a>
-                        </dd> 
+                        <!--<dd>-->
+                            <!--<a href="/user/wangpan">我的网盘</a>-->
+                        <!--</dd> -->
                     </dl> </li> 
                 <li><a href="/user/userrecharge">充值</a></li> 
                 <li><a href="/index/about">帮助</a></li> 
