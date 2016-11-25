@@ -219,13 +219,13 @@
 
                 <if condition="($huiyuan)">
                     <li><a href="__ROOT__/user/home">{:R("base/huode_user_name",array($huiyuan,"username"))}</a></li>
-                    <li><a href="__ROOT__/user/cook_end">退出</a></li> 
+                    <li><a href="__ROOT__/user/cook_end">{$Think.lang.web_user_back}</a></li>
 
-                    <else />
-                    <li><a href="__ROOT__/user/login">登录</a></li> 
-                    <li><a href="__ROOT__/user/register">免费注册</a></li> 
+                    <else />t h l
+                    <li><a href="__ROOT__/user/login">{$Think.lang.web_user_login}</a></li>
+                    <li><a href="__ROOT__/user/register">{$Think.lang.web_user_register}</a></li>
                 </if>
-                <li class="MyzhLi"> <a href="__ROOT__/user/home">我的{:C('web_name_two')}<i class="top"></i></a> 
+                <li class="MyzhLi"> <a href="__ROOT__/user/home">{$Think.lang.web_user_me}{:C('web_name_two')}<i class="top"></i></a>
                     <dl class="Myzh"> 
                         <dd>
                             <a href="__ROOT__/user/userbuylist">购买记录</a>

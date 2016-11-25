@@ -202,11 +202,11 @@
                 <li><a href="/user/qiandao">签到</a></li>-->
 
                 <?php if(($huiyuan)): ?><li><a href="/user/home"><?php echo R("base/huode_user_name",array($huiyuan,"username"));?></a></li>
-                    <li><a href="/user/cook_end">退出</a></li> 
+                    <li><a href="/user/cook_end"><?php echo (L("web_user_back")); ?></a></li>
 
                     <?php else: ?>
-                    <li><a href="/user/login">登录</a></li> 
-                    <li><a href="/user/register">免费注册</a></li><?php endif; ?>
+                    <li><a href="/user/login"><?php echo (L("web_user_login")); ?></a></li>
+                    <li><a href="/user/register"><?php echo (L("web_user_register")); ?></a></li><?php endif; ?>
                 <li class="MyzhLi"> <a href="/user/home">我的<?php echo C('web_name_two');?><i class="top"></i></a> 
                     <dl class="Myzh"> 
                         <dd>

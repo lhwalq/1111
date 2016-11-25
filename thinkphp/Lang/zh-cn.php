@@ -48,4 +48,11 @@ return array(
     '_NOT_ALLOW_PHP_'        => '模板禁用PHP代码',
     '_PARAM_ERROR_'          => '参数错误或者未定义',
     '_ERROR_QUERY_EXPRESS_'  => '错误的查询条件',
+
+
+    'web_user_login'         => '登录',
+    'web_user_back'          => '退出',
+    'web_user_register'      => '免费注册',
+    'web_user_me'      => '我的',
+
 );

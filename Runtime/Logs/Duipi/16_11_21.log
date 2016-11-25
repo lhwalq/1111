@@ -1,0 +1,869 @@
+[ 2016-11-21T10:44:15+08:00 ] ::1 /yyg/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000560s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000611s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000689s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000034s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000082s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006185s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006272s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000370s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000403s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000717s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000747s ]
+
+[ 2016-11-21T10:44:20+08:00 ] ::1 /index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000293s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000420s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000502s ]
+NOTIC: [2048] Declaration of Duipi\Controller\IndexController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /Applications/XAMPP/xamppfiles/htdocs/yyg/Duipi/Controller/IndexController.class.php 第 12 行.
+SQL: SHOW COLUMNS FROM `yys_shai` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `yys_shai` WHERE `shenhe` = 1 ORDER BY `sd_id` LIMIT 6   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `yys_shangpin` [ RunTime:0.0025s ]
+SQL: SELECT `id`,`sid`,`cateid`,`brandid`,`title`,`title`,`title2`,`keywords`,`description`,`money`,`yunjiage`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`def_renshu`,`qishu`,`maxqishu`,`thumb`,`picarr`,`codes_table`,`xsjx_time`,`pos`,`renqi`,`time`,`q_uid`,`q_user`,`q_user_code`,`q_content`,`q_counttime`,`q_end_time`,`q_showtime`,`renqi1`,`ka`,`mi`,`ex_yuedingzhongjiang`,`cardId`,`cardPwd`,`cardId1`,`leixing`,`yuanjia`,`q_end_cp`,`fahuo` FROM `yys_shangpin` WHERE (  q_uid is null and pos = '1' ) ORDER BY canyurenshu DESC LIMIT 8   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `yys_flash` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 0 ORDER BY `sort`  [ RunTime:0.0012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000376s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000463s ]
+SQL: SHOW COLUMNS FROM `yys_fenlei` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 0 ORDER BY `order` DESC LIMIT 15   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `yys_guanggao_shuju` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `yys_guanggao_shuju` WHERE `title` = '首页头' LIMIT 1   [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `yys_yonghu` [ RunTime:0.0055s ]
+SQL: SELECT `username`,`email`,`mobile` FROM `yys_yonghu` WHERE `uid` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yys_pinpai` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `yys_pinpai` WHERE `status` = 'Y' ORDER BY `order` DESC  [ RunTime:0.0016s ]
+NOTIC: [8] Use of undefined constant content - assumed 'content' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 159 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+NOTIC: [8] Undefined variable: louname /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+NOTIC: [8] Undefined index:  /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+NOTIC: [8] Undefined variable: louname /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+SQL: SHOW COLUMNS FROM `yys_configs` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `yys_configs` WHERE `name` = 'web_logo' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `yys_linshi` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `yys_linshi` WHERE `key` = 'goods_count_num' LIMIT 1   [ RunTime:0.0009s ]
+NOTIC: [8] Undefined variable: i /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 288 行.
+NOTIC: [8] Undefined variable: i /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 288 行.
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 30 ORDER BY `order` DESC  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 41 ORDER BY `order` DESC  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 51 ORDER BY `order` DESC  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 54 ORDER BY `order` DESC  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 57 ORDER BY `order` DESC  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 91 ORDER BY `order` DESC  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `yys_daohang` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `yys_daohang` WHERE `status` = 'Y' AND `type` = 'index' ORDER BY `order` desc  [ RunTime:0.0015s ]
+SQL: SELECT * FROM `yys_daohang` WHERE `status` = 'Y' AND `type` = 'faxian' ORDER BY `order` desc  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 34 ORDER BY `sort` ASC  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 15 ORDER BY `sort` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 14 ORDER BY `sort` ASC  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 30 ORDER BY `sort` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 31 ORDER BY `sort` ASC  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 32 ORDER BY `sort` ASC  [ RunTime:0.0012s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 35 ORDER BY `sort` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 36 ORDER BY `sort` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 37 ORDER BY `sort` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 38 ORDER BY `sort` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 39 ORDER BY `sort` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 40 ORDER BY `sort` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 41 ORDER BY `sort` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `name` = '网站公告' ORDER BY `order` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `yys_wenzhang` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `yys_wenzhang` WHERE `cateid` = '81' ORDER BY `posttime` DESC  [ RunTime:0.0014s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 434 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 435 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 435 行.
+NOTIC: [8] Use of undefined constant posttime - assumed 'posttime' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 436 行.
+SQL: SELECT `qishu`,`id`,`sid`,`thumb`,`title`,`q_uid`,`q_user`,`q_user_code`,`zongrenshu` FROM `yys_shangpin` WHERE ( q_end_time is not null and q_showtime =
+                'N' ) ORDER BY q_end_time
+                DESC LIMIT 10   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 30 ORDER BY `order`
+                    DESC  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`sid`,`cateid`,`brandid`,`title`,`title`,`title2`,`keywords`,`description`,`money`,`yunjiage`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`def_renshu`,`qishu`,`maxqishu`,`thumb`,`picarr`,`codes_table`,`xsjx_time`,`pos`,`renqi`,`time`,`q_uid`,`q_user`,`q_user_code`,`q_content`,`q_counttime`,`q_end_time`,`q_showtime`,`renqi1`,`ka`,`mi`,`ex_yuedingzhongjiang`,`cardId`,`cardPwd`,`cardId1`,`leixing`,`yuanjia`,`q_end_cp`,`q_end_qishu`,`fahuo` FROM `yys_shangpin` WHERE ( cateid in ('','31','84') and pos!=1 and q_uid is
+                        null ) ORDER BY canyurenshu
+                        DESC,shenyurenshu LIMIT 4   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 41 ORDER BY `order`
+                    DESC  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`sid`,`cateid`,`brandid`,`title`,`title`,`title2`,`keywords`,`description`,`money`,`yunjiage`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`def_renshu`,`qishu`,`maxqishu`,`thumb`,`picarr`,`codes_table`,`xsjx_time`,`pos`,`renqi`,`time`,`q_uid`,`q_user`,`q_user_code`,`q_content`,`q_counttime`,`q_end_time`,`q_showtime`,`renqi1`,`ka`,`mi`,`ex_yuedingzhongjiang`,`cardId`,`cardPwd`,`cardId1`,`leixing`,`yuanjia`,`q_end_cp`,`q_end_qishu`,`fahuo` FROM `yys_shangpin` WHERE ( cateid in ('','42','43') and pos!=1 and q_uid is
+                        null ) ORDER BY canyurenshu
+                        DESC,shenyurenshu LIMIT 4   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 51 ORDER BY `order`
+                    DESC  [ RunTime:0.0008s ]
+SQL: SELECT `id`,`sid`,`cateid`,`brandid`,`title`,`title`,`title2`,`keywords`,`description`,`money`,`yunjiage`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`def_renshu`,`qishu`,`maxqishu`,`thumb`,`picarr`,`codes_table`,`xsjx_time`,`pos`,`renqi`,`time`,`q_uid`,`q_user`,`q_user_code`,`q_content`,`q_counttime`,`q_end_time`,`q_showtime`,`renqi1`,`ka`,`mi`,`ex_yuedingzhongjiang`,`cardId`,`cardPwd`,`cardId1`,`leixing`,`yuanjia`,`q_end_cp`,`q_end_qishu`,`fahuo` FROM `yys_shangpin` WHERE ( cateid in ('','52','53') and pos!=1 and q_uid is
+                        null ) ORDER BY canyurenshu
+                        DESC,shenyurenshu LIMIT 4   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 54 ORDER BY `order`
+                    DESC  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`sid`,`cateid`,`brandid`,`title`,`title`,`title2`,`keywords`,`description`,`money`,`yunjiage`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`def_renshu`,`qishu`,`maxqishu`,`thumb`,`picarr`,`codes_table`,`xsjx_time`,`pos`,`renqi`,`time`,`q_uid`,`q_user`,`q_user_code`,`q_content`,`q_counttime`,`q_end_time`,`q_showtime`,`renqi1`,`ka`,`mi`,`ex_yuedingzhongjiang`,`cardId`,`cardPwd`,`cardId1`,`leixing`,`yuanjia`,`q_end_cp`,`q_end_qishu`,`fahuo` FROM `yys_shangpin` WHERE ( cateid in ('','55','56','83') and pos!=1 and q_uid is
+                        null ) ORDER BY canyurenshu
+                        DESC,shenyurenshu LIMIT 4   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 57 ORDER BY `order`
+                    DESC  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`sid`,`cateid`,`brandid`,`title`,`title`,`title2`,`keywords`,`description`,`money`,`yunjiage`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`def_renshu`,`qishu`,`maxqishu`,`thumb`,`picarr`,`codes_table`,`xsjx_time`,`pos`,`renqi`,`time`,`q_uid`,`q_user`,`q_user_code`,`q_content`,`q_counttime`,`q_end_time`,`q_showtime`,`renqi1`,`ka`,`mi`,`ex_yuedingzhongjiang`,`cardId`,`cardPwd`,`cardId1`,`leixing`,`yuanjia`,`q_end_cp`,`q_end_qishu`,`fahuo` FROM `yys_shangpin` WHERE ( cateid in ('','58','59','60') and pos!=1 and q_uid is
+                        null ) ORDER BY canyurenshu
+                        DESC,shenyurenshu LIMIT 4   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 91 ORDER BY `order`
+                    DESC  [ RunTime:0.0005s ]
+SQL: SELECT `id`,`sid`,`cateid`,`brandid`,`title`,`title`,`title2`,`keywords`,`description`,`money`,`yunjiage`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`def_renshu`,`qishu`,`maxqishu`,`thumb`,`picarr`,`codes_table`,`xsjx_time`,`pos`,`renqi`,`time`,`q_uid`,`q_user`,`q_user_code`,`q_content`,`q_counttime`,`q_end_time`,`q_showtime`,`renqi1`,`ka`,`mi`,`ex_yuedingzhongjiang`,`cardId`,`cardPwd`,`cardId1`,`leixing`,`yuanjia`,`q_end_cp`,`q_end_qishu`,`fahuo` FROM `yys_shangpin` WHERE ( cateid in ('','82','92') and pos!=1 and q_uid is
+                        null ) ORDER BY canyurenshu
+                        DESC,shenyurenshu LIMIT 4   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `yys_wenzhang` WHERE `cateid` = '81' ORDER BY `posttime`
+                    DESC LIMIT 4   [ RunTime:0.0010s ]
+NOTIC: [8] Use of undefined constant posttime - assumed 'posttime' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 706 行.
+NOTIC: [8] Use of undefined constant posttime - assumed 'posttime' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 708 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 711 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 712 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 713 行.
+NOTIC: [8] Use of undefined constant content - assumed 'content' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 715 行.
+SQL: SELECT * FROM `yys_fenlei` WHERE ( parentid='1' and name!='网站公告' ) ORDER BY `order`  [ RunTime:0.0017s ]
+SQL: SELECT * FROM `yys_wenzhang` WHERE `cateid` = '2'  [ RunTime:0.0014s ]
+SQL: SELECT * FROM `yys_wenzhang` WHERE `cateid` = '3'  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `yys_wenzhang` WHERE `cateid` = '4'  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yys_wenzhang` WHERE `cateid` = '95'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_daohang` WHERE `status` = 'Y' AND `type` = 'foot' ORDER BY `order` desc  [ RunTime:0.0003s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.134716s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.134779s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000258s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000303s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000565s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000619s ]
+
+[ 2016-11-21T15:04:31+08:00 ] 127.0.0.1 /app/geoip.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001325s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000724s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000809s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000051s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000133s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016165s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016383s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000426s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000468s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000944s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001013s ]
+
+[ 2016-11-21T15:04:33+08:00 ] 127.0.0.1 /app/geoip.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000260s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000257s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000286s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000075s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002873s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002915s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000141s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000166s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000327s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000366s ]
+
+[ 2016-11-21T15:05:07+08:00 ] 127.0.0.1 /app/geoip.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001113s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000426s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000483s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000047s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000155s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.051548s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.051637s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000257s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000302s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000731s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000786s ]
+
+[ 2016-11-21T15:05:08+08:00 ] 127.0.0.1 /app/geoip.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000424s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000530s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000601s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000072s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003887s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003937s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000141s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000167s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000323s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000354s ]
+
+[ 2016-11-21T20:43:30+08:00 ] ::1 /yyg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000589s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000742s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000822s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000067s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006006s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006069s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000356s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000385s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000682s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000726s ]
+
+[ 2016-11-21T20:43:34+08:00 ] ::1 /yyg/install
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000293s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000303s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000371s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000020s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000050s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002822s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002853s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000119s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000141s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000331s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000355s ]
+
+[ 2016-11-21T20:43:39+08:00 ] ::1 /index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000182s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000405s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000463s ]
+NOTIC: [2048] Declaration of Duipi\Controller\IndexController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /Applications/XAMPP/xamppfiles/htdocs/yyg/Duipi/Controller/IndexController.class.php 第 12 行.
+SQL: SHOW COLUMNS FROM `yys_shai` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `yys_shai` WHERE `shenhe` = 1 ORDER BY `sd_id` LIMIT 6   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `yys_shangpin` [ RunTime:0.0026s ]
+SQL: SELECT `id`,`sid`,`cateid`,`brandid`,`title`,`title`,`title2`,`keywords`,`description`,`money`,`yunjiage`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`def_renshu`,`qishu`,`maxqishu`,`thumb`,`picarr`,`codes_table`,`xsjx_time`,`pos`,`renqi`,`time`,`q_uid`,`q_user`,`q_user_code`,`q_content`,`q_counttime`,`q_end_time`,`q_showtime`,`renqi1`,`ka`,`mi`,`ex_yuedingzhongjiang`,`cardId`,`cardPwd`,`cardId1`,`leixing`,`yuanjia`,`q_end_cp`,`fahuo` FROM `yys_shangpin` WHERE (  q_uid is null and pos = '1' ) ORDER BY canyurenshu DESC LIMIT 8   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yys_flash` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 0 ORDER BY `sort`  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000258s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000294s ]
+SQL: SHOW COLUMNS FROM `yys_fenlei` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 0 ORDER BY `order` DESC LIMIT 15   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `yys_guanggao_shuju` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `yys_guanggao_shuju` WHERE `title` = '首页头' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yys_yonghu` [ RunTime:0.0016s ]
+SQL: SELECT `username`,`email`,`mobile` FROM `yys_yonghu` WHERE `uid` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `yys_pinpai` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `yys_pinpai` WHERE `status` = 'Y' ORDER BY `order` DESC  [ RunTime:0.0017s ]
+NOTIC: [8] Use of undefined constant content - assumed 'content' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 159 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+NOTIC: [8] Undefined variable: louname /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+NOTIC: [8] Undefined index:  /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+NOTIC: [8] Undefined variable: louname /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+SQL: SHOW COLUMNS FROM `yys_configs` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `yys_configs` WHERE `name` = 'web_logo' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yys_linshi` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `yys_linshi` WHERE `key` = 'goods_count_num' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: i /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 288 行.
+NOTIC: [8] Undefined variable: i /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 288 行.
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 30 ORDER BY `order` DESC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 41 ORDER BY `order` DESC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 51 ORDER BY `order` DESC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 54 ORDER BY `order` DESC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 57 ORDER BY `order` DESC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 91 ORDER BY `order` DESC  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `yys_daohang` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `yys_daohang` WHERE `status` = 'Y' AND `type` = 'index' ORDER BY `order` desc  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `yys_daohang` WHERE `status` = 'Y' AND `type` = 'faxian' ORDER BY `order` desc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 34 ORDER BY `sort` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 15 ORDER BY `sort` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 14 ORDER BY `sort` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 30 ORDER BY `sort` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 31 ORDER BY `sort` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 32 ORDER BY `sort` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 35 ORDER BY `sort` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 36 ORDER BY `sort` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 37 ORDER BY `sort` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 38 ORDER BY `sort` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 39 ORDER BY `sort` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 40 ORDER BY `sort` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 41 ORDER BY `sort` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `name` = '网站公告' ORDER BY `order` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `yys_wenzhang` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `yys_wenzhang` WHERE `cateid` = '81' ORDER BY `posttime` DESC  [ RunTime:0.0006s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 434 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 435 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 435 行.
+NOTIC: [8] Use of undefined constant posttime - assumed 'posttime' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 436 行.
+SQL: SELECT `qishu`,`id`,`sid`,`thumb`,`title`,`q_uid`,`q_user`,`q_user_code`,`zongrenshu` FROM `yys_shangpin` WHERE ( q_end_time is not null and q_showtime =
+                'N' ) ORDER BY q_end_time
+                DESC LIMIT 10   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 30 ORDER BY `order`
+                    DESC  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`sid`,`cateid`,`brandid`,`title`,`title`,`title2`,`keywords`,`description`,`money`,`yunjiage`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`def_renshu`,`qishu`,`maxqishu`,`thumb`,`picarr`,`codes_table`,`xsjx_time`,`pos`,`renqi`,`time`,`q_uid`,`q_user`,`q_user_code`,`q_content`,`q_counttime`,`q_end_time`,`q_showtime`,`renqi1`,`ka`,`mi`,`ex_yuedingzhongjiang`,`cardId`,`cardPwd`,`cardId1`,`leixing`,`yuanjia`,`q_end_cp`,`q_end_qishu`,`fahuo` FROM `yys_shangpin` WHERE ( cateid in ('','31','84') and pos!=1 and q_uid is
+                        null ) ORDER BY canyurenshu
+                        DESC,shenyurenshu LIMIT 4   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 41 ORDER BY `order`
+                    DESC  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`sid`,`cateid`,`brandid`,`title`,`title`,`title2`,`keywords`,`description`,`money`,`yunjiage`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`def_renshu`,`qishu`,`maxqishu`,`thumb`,`picarr`,`codes_table`,`xsjx_time`,`pos`,`renqi`,`time`,`q_uid`,`q_user`,`q_user_code`,`q_content`,`q_counttime`,`q_end_time`,`q_showtime`,`renqi1`,`ka`,`mi`,`ex_yuedingzhongjiang`,`cardId`,`cardPwd`,`cardId1`,`leixing`,`yuanjia`,`q_end_cp`,`q_end_qishu`,`fahuo` FROM `yys_shangpin` WHERE ( cateid in ('','42','43') and pos!=1 and q_uid is
+                        null ) ORDER BY canyurenshu
+                        DESC,shenyurenshu LIMIT 4   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 51 ORDER BY `order`
+                    DESC  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`sid`,`cateid`,`brandid`,`title`,`title`,`title2`,`keywords`,`description`,`money`,`yunjiage`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`def_renshu`,`qishu`,`maxqishu`,`thumb`,`picarr`,`codes_table`,`xsjx_time`,`pos`,`renqi`,`time`,`q_uid`,`q_user`,`q_user_code`,`q_content`,`q_counttime`,`q_end_time`,`q_showtime`,`renqi1`,`ka`,`mi`,`ex_yuedingzhongjiang`,`cardId`,`cardPwd`,`cardId1`,`leixing`,`yuanjia`,`q_end_cp`,`q_end_qishu`,`fahuo` FROM `yys_shangpin` WHERE ( cateid in ('','52','53') and pos!=1 and q_uid is
+                        null ) ORDER BY canyurenshu
+                        DESC,shenyurenshu LIMIT 4   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 54 ORDER BY `order`
+                    DESC  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`sid`,`cateid`,`brandid`,`title`,`title`,`title2`,`keywords`,`description`,`money`,`yunjiage`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`def_renshu`,`qishu`,`maxqishu`,`thumb`,`picarr`,`codes_table`,`xsjx_time`,`pos`,`renqi`,`time`,`q_uid`,`q_user`,`q_user_code`,`q_content`,`q_counttime`,`q_end_time`,`q_showtime`,`renqi1`,`ka`,`mi`,`ex_yuedingzhongjiang`,`cardId`,`cardPwd`,`cardId1`,`leixing`,`yuanjia`,`q_end_cp`,`q_end_qishu`,`fahuo` FROM `yys_shangpin` WHERE ( cateid in ('','55','56','83') and pos!=1 and q_uid is
+                        null ) ORDER BY canyurenshu
+                        DESC,shenyurenshu LIMIT 4   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 57 ORDER BY `order`
+                    DESC  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`sid`,`cateid`,`brandid`,`title`,`title`,`title2`,`keywords`,`description`,`money`,`yunjiage`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`def_renshu`,`qishu`,`maxqishu`,`thumb`,`picarr`,`codes_table`,`xsjx_time`,`pos`,`renqi`,`time`,`q_uid`,`q_user`,`q_user_code`,`q_content`,`q_counttime`,`q_end_time`,`q_showtime`,`renqi1`,`ka`,`mi`,`ex_yuedingzhongjiang`,`cardId`,`cardPwd`,`cardId1`,`leixing`,`yuanjia`,`q_end_cp`,`q_end_qishu`,`fahuo` FROM `yys_shangpin` WHERE ( cateid in ('','58','59','60') and pos!=1 and q_uid is
+                        null ) ORDER BY canyurenshu
+                        DESC,shenyurenshu LIMIT 4   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 91 ORDER BY `order`
+                    DESC  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`sid`,`cateid`,`brandid`,`title`,`title`,`title2`,`keywords`,`description`,`money`,`yunjiage`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`def_renshu`,`qishu`,`maxqishu`,`thumb`,`picarr`,`codes_table`,`xsjx_time`,`pos`,`renqi`,`time`,`q_uid`,`q_user`,`q_user_code`,`q_content`,`q_counttime`,`q_end_time`,`q_showtime`,`renqi1`,`ka`,`mi`,`ex_yuedingzhongjiang`,`cardId`,`cardPwd`,`cardId1`,`leixing`,`yuanjia`,`q_end_cp`,`q_end_qishu`,`fahuo` FROM `yys_shangpin` WHERE ( cateid in ('','82','92') and pos!=1 and q_uid is
+                        null ) ORDER BY canyurenshu
+                        DESC,shenyurenshu LIMIT 4   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_wenzhang` WHERE `cateid` = '81' ORDER BY `posttime`
+                    DESC LIMIT 4   [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant posttime - assumed 'posttime' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 706 行.
+NOTIC: [8] Use of undefined constant posttime - assumed 'posttime' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 708 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 711 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 712 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 713 行.
+NOTIC: [8] Use of undefined constant content - assumed 'content' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 715 行.
+SQL: SELECT * FROM `yys_fenlei` WHERE ( parentid='1' and name!='网站公告' ) ORDER BY `order`  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `yys_wenzhang` WHERE `cateid` = '2'  [ RunTime:0.0012s ]
+SQL: SELECT * FROM `yys_wenzhang` WHERE `cateid` = '3'  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `yys_wenzhang` WHERE `cateid` = '4'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_wenzhang` WHERE `cateid` = '95'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_daohang` WHERE `status` = 'Y' AND `type` = 'foot' ORDER BY `order` desc  [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.067883s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.067947s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000158s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000180s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000429s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000466s ]
+
+[ 2016-11-21T20:43:40+08:00 ] ::1 /goods/lottery_shop_json/1479732220463?gid=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000350s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000455s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000517s ]
+SQL: SHOW COLUMNS FROM `yys_fenlei` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 0 ORDER BY `order` DESC LIMIT 15   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yys_guanggao_shuju` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `yys_guanggao_shuju` WHERE `title` = '首页头' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `yys_yonghu` [ RunTime:0.0030s ]
+SQL: SELECT `username`,`email`,`mobile` FROM `yys_yonghu` WHERE `uid` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `yys_pinpai` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `yys_pinpai` WHERE `status` = 'Y' ORDER BY `order` DESC  [ RunTime:0.0023s ]
+SQL: SHOW COLUMNS FROM `yys_shangpin` [ RunTime:0.0031s ]
+SQL: SELECT `qishu`,`xsjx_time`,`id`,`zongrenshu`,`thumb`,`title`,`q_uid`,`q_user`,`q_user_code`,`q_end_time` FROM `yys_shangpin` WHERE `q_showtime` = 'Y' ORDER BY q_end_time LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000611s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000688s ]
+
+[ 2016-11-21T20:43:40+08:00 ] ::1 /goods/buy_count
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000515s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000806s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000908s ]
+SQL: SHOW COLUMNS FROM `yys_fenlei` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 0 ORDER BY `order` DESC LIMIT 15   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `yys_guanggao_shuju` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `yys_guanggao_shuju` WHERE `title` = '首页头' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yys_yonghu` [ RunTime:0.0094s ]
+SQL: SELECT `username`,`email`,`mobile` FROM `yys_yonghu` WHERE `uid` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yys_pinpai` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `yys_pinpai` WHERE `status` = 'Y' ORDER BY `order` DESC  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `yys_shangpin` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `yys_shangpin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant success - assumed 'success' /Applications/XAMPP/xamppfiles/htdocs/yyg/Duipi/Controller/GoodsController.class.php 第 2897 行.
+NOTIC: [8] Undefined index: count /Applications/XAMPP/xamppfiles/htdocs/yyg/Duipi/Controller/GoodsController.class.php 第 2898 行.
+NOTIC: [8] Undefined index: count /Applications/XAMPP/xamppfiles/htdocs/yyg/Duipi/Controller/GoodsController.class.php 第 2899 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/yyg/Duipi/Controller/GoodsController.class.php 第 2901 行.
+
+[ 2016-11-21T20:44:28+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000214s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000340s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000376s ]
+NOTIC: [2048] Declaration of Duipi\Controller\IndexController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /Applications/XAMPP/xamppfiles/htdocs/yyg/Duipi/Controller/IndexController.class.php 第 12 行.
+SQL: SHOW COLUMNS FROM `yys_yonghu` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `yys_yonghu` WHERE `uid` = 25 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yys_shai` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `yys_shai` WHERE `shenhe` = 1 ORDER BY `sd_id` LIMIT 6   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `yys_shangpin` [ RunTime:0.0018s ]
+SQL: SELECT `id`,`sid`,`cateid`,`brandid`,`title`,`title`,`title2`,`keywords`,`description`,`money`,`yunjiage`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`def_renshu`,`qishu`,`maxqishu`,`thumb`,`picarr`,`codes_table`,`xsjx_time`,`pos`,`renqi`,`time`,`q_uid`,`q_user`,`q_user_code`,`q_content`,`q_counttime`,`q_end_time`,`q_showtime`,`renqi1`,`ka`,`mi`,`ex_yuedingzhongjiang`,`cardId`,`cardPwd`,`cardId1`,`leixing`,`yuanjia`,`q_end_cp`,`fahuo` FROM `yys_shangpin` WHERE (  q_uid is null and pos = '1' ) ORDER BY canyurenshu DESC LIMIT 8   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `yys_flash` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 0 ORDER BY `sort`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000212s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000247s ]
+SQL: SHOW COLUMNS FROM `yys_fenlei` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 0 ORDER BY `order` DESC LIMIT 15   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `yys_guanggao_shuju` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `yys_guanggao_shuju` WHERE `title` = '首页头' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `uid`,`username`,`password`,`email`,`mobile`,`img` FROM `yys_yonghu` WHERE `uid` = 25 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `username`,`email`,`mobile` FROM `yys_yonghu` WHERE `uid` = 0 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `yys_pinpai` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `yys_pinpai` WHERE `status` = 'Y' ORDER BY `order` DESC  [ RunTime:0.0007s ]
+NOTIC: [8] Use of undefined constant content - assumed 'content' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 159 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+NOTIC: [8] Undefined variable: louname /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+NOTIC: [8] Undefined index:  /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+NOTIC: [8] Undefined variable: louname /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+SQL: SHOW COLUMNS FROM `yys_configs` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `yys_configs` WHERE `name` = 'web_logo' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `yys_linshi` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `yys_linshi` WHERE `key` = 'goods_count_num' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: i /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 288 行.
+NOTIC: [8] Undefined variable: i /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 288 行.
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 30 ORDER BY `order` DESC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 41 ORDER BY `order` DESC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 51 ORDER BY `order` DESC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 54 ORDER BY `order` DESC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 57 ORDER BY `order` DESC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 91 ORDER BY `order` DESC  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `yys_daohang` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `yys_daohang` WHERE `status` = 'Y' AND `type` = 'index' ORDER BY `order` desc  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yys_daohang` WHERE `status` = 'Y' AND `type` = 'faxian' ORDER BY `order` desc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 34 ORDER BY `sort` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 15 ORDER BY `sort` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 14 ORDER BY `sort` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 30 ORDER BY `sort` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 31 ORDER BY `sort` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 32 ORDER BY `sort` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 35 ORDER BY `sort` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 36 ORDER BY `sort` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 37 ORDER BY `sort` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 38 ORDER BY `sort` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 39 ORDER BY `sort` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 40 ORDER BY `sort` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 41 ORDER BY `sort` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `name` = '网站公告' ORDER BY `order` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `yys_wenzhang` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `yys_wenzhang` WHERE `cateid` = '81' ORDER BY `posttime` DESC  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 434 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 435 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 435 行.
+NOTIC: [8] Use of undefined constant posttime - assumed 'posttime' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 436 行.
+SQL: SELECT `qishu`,`id`,`sid`,`thumb`,`title`,`q_uid`,`q_user`,`q_user_code`,`zongrenshu` FROM `yys_shangpin` WHERE ( q_end_time is not null and q_showtime =
+                'N' ) ORDER BY q_end_time
+                DESC LIMIT 10   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 30 ORDER BY `order`
+                    DESC  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`sid`,`cateid`,`brandid`,`title`,`title`,`title2`,`keywords`,`description`,`money`,`yunjiage`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`def_renshu`,`qishu`,`maxqishu`,`thumb`,`picarr`,`codes_table`,`xsjx_time`,`pos`,`renqi`,`time`,`q_uid`,`q_user`,`q_user_code`,`q_content`,`q_counttime`,`q_end_time`,`q_showtime`,`renqi1`,`ka`,`mi`,`ex_yuedingzhongjiang`,`cardId`,`cardPwd`,`cardId1`,`leixing`,`yuanjia`,`q_end_cp`,`q_end_qishu`,`fahuo` FROM `yys_shangpin` WHERE ( cateid in ('','31','84') and pos!=1 and q_uid is
+                        null ) ORDER BY canyurenshu
+                        DESC,shenyurenshu LIMIT 4   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 41 ORDER BY `order`
+                    DESC  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`sid`,`cateid`,`brandid`,`title`,`title`,`title2`,`keywords`,`description`,`money`,`yunjiage`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`def_renshu`,`qishu`,`maxqishu`,`thumb`,`picarr`,`codes_table`,`xsjx_time`,`pos`,`renqi`,`time`,`q_uid`,`q_user`,`q_user_code`,`q_content`,`q_counttime`,`q_end_time`,`q_showtime`,`renqi1`,`ka`,`mi`,`ex_yuedingzhongjiang`,`cardId`,`cardPwd`,`cardId1`,`leixing`,`yuanjia`,`q_end_cp`,`q_end_qishu`,`fahuo` FROM `yys_shangpin` WHERE ( cateid in ('','42','43') and pos!=1 and q_uid is
+                        null ) ORDER BY canyurenshu
+                        DESC,shenyurenshu LIMIT 4   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 51 ORDER BY `order`
+                    DESC  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`sid`,`cateid`,`brandid`,`title`,`title`,`title2`,`keywords`,`description`,`money`,`yunjiage`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`def_renshu`,`qishu`,`maxqishu`,`thumb`,`picarr`,`codes_table`,`xsjx_time`,`pos`,`renqi`,`time`,`q_uid`,`q_user`,`q_user_code`,`q_content`,`q_counttime`,`q_end_time`,`q_showtime`,`renqi1`,`ka`,`mi`,`ex_yuedingzhongjiang`,`cardId`,`cardPwd`,`cardId1`,`leixing`,`yuanjia`,`q_end_cp`,`q_end_qishu`,`fahuo` FROM `yys_shangpin` WHERE ( cateid in ('','52','53') and pos!=1 and q_uid is
+                        null ) ORDER BY canyurenshu
+                        DESC,shenyurenshu LIMIT 4   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 54 ORDER BY `order`
+                    DESC  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`sid`,`cateid`,`brandid`,`title`,`title`,`title2`,`keywords`,`description`,`money`,`yunjiage`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`def_renshu`,`qishu`,`maxqishu`,`thumb`,`picarr`,`codes_table`,`xsjx_time`,`pos`,`renqi`,`time`,`q_uid`,`q_user`,`q_user_code`,`q_content`,`q_counttime`,`q_end_time`,`q_showtime`,`renqi1`,`ka`,`mi`,`ex_yuedingzhongjiang`,`cardId`,`cardPwd`,`cardId1`,`leixing`,`yuanjia`,`q_end_cp`,`q_end_qishu`,`fahuo` FROM `yys_shangpin` WHERE ( cateid in ('','55','56','83') and pos!=1 and q_uid is
+                        null ) ORDER BY canyurenshu
+                        DESC,shenyurenshu LIMIT 4   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 57 ORDER BY `order`
+                    DESC  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`sid`,`cateid`,`brandid`,`title`,`title`,`title2`,`keywords`,`description`,`money`,`yunjiage`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`def_renshu`,`qishu`,`maxqishu`,`thumb`,`picarr`,`codes_table`,`xsjx_time`,`pos`,`renqi`,`time`,`q_uid`,`q_user`,`q_user_code`,`q_content`,`q_counttime`,`q_end_time`,`q_showtime`,`renqi1`,`ka`,`mi`,`ex_yuedingzhongjiang`,`cardId`,`cardPwd`,`cardId1`,`leixing`,`yuanjia`,`q_end_cp`,`q_end_qishu`,`fahuo` FROM `yys_shangpin` WHERE ( cateid in ('','58','59','60') and pos!=1 and q_uid is
+                        null ) ORDER BY canyurenshu
+                        DESC,shenyurenshu LIMIT 4   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 91 ORDER BY `order`
+                    DESC  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`sid`,`cateid`,`brandid`,`title`,`title`,`title2`,`keywords`,`description`,`money`,`yunjiage`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`def_renshu`,`qishu`,`maxqishu`,`thumb`,`picarr`,`codes_table`,`xsjx_time`,`pos`,`renqi`,`time`,`q_uid`,`q_user`,`q_user_code`,`q_content`,`q_counttime`,`q_end_time`,`q_showtime`,`renqi1`,`ka`,`mi`,`ex_yuedingzhongjiang`,`cardId`,`cardPwd`,`cardId1`,`leixing`,`yuanjia`,`q_end_cp`,`q_end_qishu`,`fahuo` FROM `yys_shangpin` WHERE ( cateid in ('','82','92') and pos!=1 and q_uid is
+                        null ) ORDER BY canyurenshu
+                        DESC,shenyurenshu LIMIT 4   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_wenzhang` WHERE `cateid` = '81' ORDER BY `posttime`
+                    DESC LIMIT 4   [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant posttime - assumed 'posttime' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 706 行.
+NOTIC: [8] Use of undefined constant posttime - assumed 'posttime' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 708 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 711 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 712 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 713 行.
+NOTIC: [8] Use of undefined constant content - assumed 'content' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 715 行.
+SQL: SELECT * FROM `yys_fenlei` WHERE ( parentid='1' and name!='网站公告' ) ORDER BY `order`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_wenzhang` WHERE `cateid` = '2'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_wenzhang` WHERE `cateid` = '3'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_wenzhang` WHERE `cateid` = '4'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_wenzhang` WHERE `cateid` = '95'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_daohang` WHERE `status` = 'Y' AND `type` = 'foot' ORDER BY `order` desc  [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.053223s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.053259s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000170s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000191s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000396s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000432s ]
+
+[ 2016-11-21T20:44:28+08:00 ] 127.0.0.1 /goods/che1/1479732268905
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000322s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000428s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000480s ]
+SQL: SHOW COLUMNS FROM `yys_yonghu` [ RunTime:0.0083s ]
+SQL: SELECT * FROM `yys_yonghu` WHERE `uid` = 25 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yys_fenlei` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 0 ORDER BY `order` DESC LIMIT 15   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yys_guanggao_shuju` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `yys_guanggao_shuju` WHERE `title` = '首页头' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `uid`,`username`,`password`,`email`,`mobile`,`img` FROM `yys_yonghu` WHERE `uid` = 25 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username`,`email`,`mobile` FROM `yys_yonghu` WHERE `uid` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `yys_pinpai` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `yys_pinpai` WHERE `status` = 'Y' ORDER BY `order` DESC  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `yys_shangpin` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `yys_shangpin` WHERE ( id in(0) )  [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000447s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000494s ]
+
+[ 2016-11-21T20:44:29+08:00 ] 127.0.0.1 /goods/lottery_shop_json/1479732268910?gid=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000685s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000663s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000757s ]
+SQL: SHOW COLUMNS FROM `yys_yonghu` [ RunTime:0.0023s ]
+SQL: SELECT * FROM `yys_yonghu` WHERE `uid` = 25 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yys_fenlei` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 0 ORDER BY `order` DESC LIMIT 15   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `yys_guanggao_shuju` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `yys_guanggao_shuju` WHERE `title` = '首页头' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `uid`,`username`,`password`,`email`,`mobile`,`img` FROM `yys_yonghu` WHERE `uid` = 25 LIMIT 1   [ RunTime:0.0185s ]
+SQL: SELECT `username`,`email`,`mobile` FROM `yys_yonghu` WHERE `uid` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yys_pinpai` [ RunTime:0.0113s ]
+SQL: SELECT * FROM `yys_pinpai` WHERE `status` = 'Y' ORDER BY `order` DESC  [ RunTime:0.0073s ]
+SQL: SHOW COLUMNS FROM `yys_shangpin` [ RunTime:0.0045s ]
+SQL: SELECT `qishu`,`xsjx_time`,`id`,`zongrenshu`,`thumb`,`title`,`q_uid`,`q_user`,`q_user_code`,`q_end_time` FROM `yys_shangpin` WHERE `q_showtime` = 'Y' ORDER BY q_end_time LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004245s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004343s ]
+
+[ 2016-11-21T20:44:29+08:00 ] 127.0.0.1 /goods/buy_count
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001430s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000507s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000575s ]
+SQL: SHOW COLUMNS FROM `yys_yonghu` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `yys_yonghu` WHERE `uid` = 25 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yys_fenlei` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 0 ORDER BY `order` DESC LIMIT 15   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `yys_guanggao_shuju` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `yys_guanggao_shuju` WHERE `title` = '首页头' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `uid`,`username`,`password`,`email`,`mobile`,`img` FROM `yys_yonghu` WHERE `uid` = 25 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `username`,`email`,`mobile` FROM `yys_yonghu` WHERE `uid` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `yys_pinpai` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `yys_pinpai` WHERE `status` = 'Y' ORDER BY `order` DESC  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `yys_shangpin` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `yys_shangpin` LIMIT 1   [ RunTime:0.0007s ]
+NOTIC: [8] Use of undefined constant success - assumed 'success' /Applications/XAMPP/xamppfiles/htdocs/yyg/Duipi/Controller/GoodsController.class.php 第 2897 行.
+NOTIC: [8] Undefined index: count /Applications/XAMPP/xamppfiles/htdocs/yyg/Duipi/Controller/GoodsController.class.php 第 2898 行.
+NOTIC: [8] Undefined index: count /Applications/XAMPP/xamppfiles/htdocs/yyg/Duipi/Controller/GoodsController.class.php 第 2899 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/yyg/Duipi/Controller/GoodsController.class.php 第 2901 行.
+
+[ 2016-11-21T20:44:34+08:00 ] 127.0.0.1 /goods/lottery_shop_json/1479732274671?gid=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000190s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000294s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000324s ]
+SQL: SHOW COLUMNS FROM `yys_yonghu` [ RunTime:0.0023s ]
+SQL: SELECT * FROM `yys_yonghu` WHERE `uid` = 25 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `yys_fenlei` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 0 ORDER BY `order` DESC LIMIT 15   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yys_guanggao_shuju` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `yys_guanggao_shuju` WHERE `title` = '首页头' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `uid`,`username`,`password`,`email`,`mobile`,`img` FROM `yys_yonghu` WHERE `uid` = 25 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username`,`email`,`mobile` FROM `yys_yonghu` WHERE `uid` = 0 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `yys_pinpai` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `yys_pinpai` WHERE `status` = 'Y' ORDER BY `order` DESC  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `yys_shangpin` [ RunTime:0.0012s ]
+SQL: SELECT `qishu`,`xsjx_time`,`id`,`zongrenshu`,`thumb`,`title`,`q_uid`,`q_user`,`q_user_code`,`q_end_time` FROM `yys_shangpin` WHERE `q_showtime` = 'Y' ORDER BY q_end_time LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000321s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000346s ]
+
+[ 2016-11-21T21:31:13+08:00 ] 127.0.0.1 /yyg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000470s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000610s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000662s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000021s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000057s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004574s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004611s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000355s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000382s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001230s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001268s ]
+
+[ 2016-11-21T21:31:18+08:00 ] 127.0.0.1 /index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000182s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000248s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000277s ]
+NOTIC: [2048] Declaration of Duipi\Controller\IndexController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /Applications/XAMPP/xamppfiles/htdocs/yyg/Duipi/Controller/IndexController.class.php 第 12 行.
+SQL: SHOW COLUMNS FROM `yys_shai` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `yys_shai` WHERE `shenhe` = 1 ORDER BY `sd_id` LIMIT 6   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `yys_shangpin` [ RunTime:0.0015s ]
+SQL: SELECT `id`,`sid`,`cateid`,`brandid`,`title`,`title`,`title2`,`keywords`,`description`,`money`,`yunjiage`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`def_renshu`,`qishu`,`maxqishu`,`thumb`,`picarr`,`codes_table`,`xsjx_time`,`pos`,`renqi`,`time`,`q_uid`,`q_user`,`q_user_code`,`q_content`,`q_counttime`,`q_end_time`,`q_showtime`,`renqi1`,`ka`,`mi`,`ex_yuedingzhongjiang`,`cardId`,`cardPwd`,`cardId1`,`leixing`,`yuanjia`,`q_end_cp`,`fahuo` FROM `yys_shangpin` WHERE (  q_uid is null and pos = '1' ) ORDER BY canyurenshu DESC LIMIT 8   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yys_flash` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 0 ORDER BY `sort`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000137s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000172s ]
+SQL: SHOW COLUMNS FROM `yys_fenlei` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 0 ORDER BY `order` DESC LIMIT 15   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `yys_guanggao_shuju` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `yys_guanggao_shuju` WHERE `title` = '首页头' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yys_yonghu` [ RunTime:0.0015s ]
+SQL: SELECT `username`,`email`,`mobile` FROM `yys_yonghu` WHERE `uid` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `yys_pinpai` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `yys_pinpai` WHERE `status` = 'Y' ORDER BY `order` DESC  [ RunTime:0.0007s ]
+NOTIC: [8] Use of undefined constant content - assumed 'content' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 159 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+NOTIC: [8] Undefined variable: louname /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+NOTIC: [8] Undefined index:  /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+NOTIC: [8] Undefined variable: louname /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 168 行.
+SQL: SHOW COLUMNS FROM `yys_configs` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `yys_configs` WHERE `name` = 'web_logo' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yys_linshi` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `yys_linshi` WHERE `key` = 'goods_count_num' LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: i /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 288 行.
+NOTIC: [8] Undefined variable: i /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 288 行.
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 30 ORDER BY `order` DESC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 41 ORDER BY `order` DESC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 51 ORDER BY `order` DESC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 54 ORDER BY `order` DESC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 57 ORDER BY `order` DESC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 91 ORDER BY `order` DESC  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `yys_daohang` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `yys_daohang` WHERE `status` = 'Y' AND `type` = 'index' ORDER BY `order` desc  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yys_daohang` WHERE `status` = 'Y' AND `type` = 'faxian' ORDER BY `order` desc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 34 ORDER BY `sort` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 15 ORDER BY `sort` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 14 ORDER BY `sort` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 30 ORDER BY `sort` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 31 ORDER BY `sort` ASC  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 32 ORDER BY `sort` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 35 ORDER BY `sort` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 36 ORDER BY `sort` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 37 ORDER BY `sort` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 38 ORDER BY `sort` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 39 ORDER BY `sort` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 40 ORDER BY `sort` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `yys_flash` WHERE `pid` = 41 ORDER BY `sort` ASC  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `name` = '网站公告' ORDER BY `order` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `yys_wenzhang` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `yys_wenzhang` WHERE `cateid` = '81' ORDER BY `posttime` DESC  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 434 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 435 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 435 行.
+NOTIC: [8] Use of undefined constant posttime - assumed 'posttime' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 436 行.
+SQL: SELECT `qishu`,`id`,`sid`,`thumb`,`title`,`q_uid`,`q_user`,`q_user_code`,`zongrenshu` FROM `yys_shangpin` WHERE ( q_end_time is not null and q_showtime =
+                'N' ) ORDER BY q_end_time
+                DESC LIMIT 10   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 30 ORDER BY `order`
+                    DESC  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`sid`,`cateid`,`brandid`,`title`,`title`,`title2`,`keywords`,`description`,`money`,`yunjiage`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`def_renshu`,`qishu`,`maxqishu`,`thumb`,`picarr`,`codes_table`,`xsjx_time`,`pos`,`renqi`,`time`,`q_uid`,`q_user`,`q_user_code`,`q_content`,`q_counttime`,`q_end_time`,`q_showtime`,`renqi1`,`ka`,`mi`,`ex_yuedingzhongjiang`,`cardId`,`cardPwd`,`cardId1`,`leixing`,`yuanjia`,`q_end_cp`,`q_end_qishu`,`fahuo` FROM `yys_shangpin` WHERE ( cateid in ('','31','84') and pos!=1 and q_uid is
+                        null ) ORDER BY canyurenshu
+                        DESC,shenyurenshu LIMIT 4   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 41 ORDER BY `order`
+                    DESC  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`sid`,`cateid`,`brandid`,`title`,`title`,`title2`,`keywords`,`description`,`money`,`yunjiage`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`def_renshu`,`qishu`,`maxqishu`,`thumb`,`picarr`,`codes_table`,`xsjx_time`,`pos`,`renqi`,`time`,`q_uid`,`q_user`,`q_user_code`,`q_content`,`q_counttime`,`q_end_time`,`q_showtime`,`renqi1`,`ka`,`mi`,`ex_yuedingzhongjiang`,`cardId`,`cardPwd`,`cardId1`,`leixing`,`yuanjia`,`q_end_cp`,`q_end_qishu`,`fahuo` FROM `yys_shangpin` WHERE ( cateid in ('','42','43') and pos!=1 and q_uid is
+                        null ) ORDER BY canyurenshu
+                        DESC,shenyurenshu LIMIT 4   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 51 ORDER BY `order`
+                    DESC  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`sid`,`cateid`,`brandid`,`title`,`title`,`title2`,`keywords`,`description`,`money`,`yunjiage`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`def_renshu`,`qishu`,`maxqishu`,`thumb`,`picarr`,`codes_table`,`xsjx_time`,`pos`,`renqi`,`time`,`q_uid`,`q_user`,`q_user_code`,`q_content`,`q_counttime`,`q_end_time`,`q_showtime`,`renqi1`,`ka`,`mi`,`ex_yuedingzhongjiang`,`cardId`,`cardPwd`,`cardId1`,`leixing`,`yuanjia`,`q_end_cp`,`q_end_qishu`,`fahuo` FROM `yys_shangpin` WHERE ( cateid in ('','52','53') and pos!=1 and q_uid is
+                        null ) ORDER BY canyurenshu
+                        DESC,shenyurenshu LIMIT 4   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 54 ORDER BY `order`
+                    DESC  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`sid`,`cateid`,`brandid`,`title`,`title`,`title2`,`keywords`,`description`,`money`,`yunjiage`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`def_renshu`,`qishu`,`maxqishu`,`thumb`,`picarr`,`codes_table`,`xsjx_time`,`pos`,`renqi`,`time`,`q_uid`,`q_user`,`q_user_code`,`q_content`,`q_counttime`,`q_end_time`,`q_showtime`,`renqi1`,`ka`,`mi`,`ex_yuedingzhongjiang`,`cardId`,`cardPwd`,`cardId1`,`leixing`,`yuanjia`,`q_end_cp`,`q_end_qishu`,`fahuo` FROM `yys_shangpin` WHERE ( cateid in ('','55','56','83') and pos!=1 and q_uid is
+                        null ) ORDER BY canyurenshu
+                        DESC,shenyurenshu LIMIT 4   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 57 ORDER BY `order`
+                    DESC  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`sid`,`cateid`,`brandid`,`title`,`title`,`title2`,`keywords`,`description`,`money`,`yunjiage`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`def_renshu`,`qishu`,`maxqishu`,`thumb`,`picarr`,`codes_table`,`xsjx_time`,`pos`,`renqi`,`time`,`q_uid`,`q_user`,`q_user_code`,`q_content`,`q_counttime`,`q_end_time`,`q_showtime`,`renqi1`,`ka`,`mi`,`ex_yuedingzhongjiang`,`cardId`,`cardPwd`,`cardId1`,`leixing`,`yuanjia`,`q_end_cp`,`q_end_qishu`,`fahuo` FROM `yys_shangpin` WHERE ( cateid in ('','58','59','60') and pos!=1 and q_uid is
+                        null ) ORDER BY canyurenshu
+                        DESC,shenyurenshu LIMIT 4   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 91 ORDER BY `order`
+                    DESC  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`sid`,`cateid`,`brandid`,`title`,`title`,`title2`,`keywords`,`description`,`money`,`yunjiage`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`def_renshu`,`qishu`,`maxqishu`,`thumb`,`picarr`,`codes_table`,`xsjx_time`,`pos`,`renqi`,`time`,`q_uid`,`q_user`,`q_user_code`,`q_content`,`q_counttime`,`q_end_time`,`q_showtime`,`renqi1`,`ka`,`mi`,`ex_yuedingzhongjiang`,`cardId`,`cardPwd`,`cardId1`,`leixing`,`yuanjia`,`q_end_cp`,`q_end_qishu`,`fahuo` FROM `yys_shangpin` WHERE ( cateid in ('','82','92') and pos!=1 and q_uid is
+                        null ) ORDER BY canyurenshu
+                        DESC,shenyurenshu LIMIT 4   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_wenzhang` WHERE `cateid` = '81' ORDER BY `posttime`
+                    DESC LIMIT 4   [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant posttime - assumed 'posttime' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 706 行.
+NOTIC: [8] Use of undefined constant posttime - assumed 'posttime' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 708 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 711 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 712 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 713 行.
+NOTIC: [8] Use of undefined constant content - assumed 'content' /Applications/XAMPP/xamppfiles/htdocs/yyg/Runtime/Cache/Duipi/442752df528e22af6f34abde595de2cd.php 第 715 行.
+SQL: SELECT * FROM `yys_fenlei` WHERE ( parentid='1' and name!='网站公告' ) ORDER BY `order`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_wenzhang` WHERE `cateid` = '2'  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `yys_wenzhang` WHERE `cateid` = '3'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_wenzhang` WHERE `cateid` = '4'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_wenzhang` WHERE `cateid` = '95'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yys_daohang` WHERE `status` = 'Y' AND `type` = 'foot' ORDER BY `order` desc  [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.061814s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.061853s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000175s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000197s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000527s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000571s ]
+
+[ 2016-11-21T21:31:19+08:00 ] 127.0.0.1 /goods/buy_count
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000405s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000452s ]
+SQL: SHOW COLUMNS FROM `yys_fenlei` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 0 ORDER BY `order` DESC LIMIT 15   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yys_guanggao_shuju` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `yys_guanggao_shuju` WHERE `title` = '首页头' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `yys_yonghu` [ RunTime:0.0033s ]
+SQL: SELECT `username`,`email`,`mobile` FROM `yys_yonghu` WHERE `uid` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `yys_pinpai` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `yys_pinpai` WHERE `status` = 'Y' ORDER BY `order` DESC  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yys_shangpin` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `yys_shangpin` LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant success - assumed 'success' /Applications/XAMPP/xamppfiles/htdocs/yyg/Duipi/Controller/GoodsController.class.php 第 2897 行.
+NOTIC: [8] Undefined index: count /Applications/XAMPP/xamppfiles/htdocs/yyg/Duipi/Controller/GoodsController.class.php 第 2898 行.
+NOTIC: [8] Undefined index: count /Applications/XAMPP/xamppfiles/htdocs/yyg/Duipi/Controller/GoodsController.class.php 第 2899 行.
+NOTIC: [8] Undefined offset: 1 /Applications/XAMPP/xamppfiles/htdocs/yyg/Duipi/Controller/GoodsController.class.php 第 2901 行.
+
+[ 2016-11-21T21:31:19+08:00 ] 127.0.0.1 /goods/lottery_shop_json/1479735078949?gid=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000340s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000398s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000438s ]
+SQL: SHOW COLUMNS FROM `yys_fenlei` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `yys_fenlei` WHERE `model` = 1 AND `parentid` = 0 ORDER BY `order` DESC LIMIT 15   [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `yys_guanggao_shuju` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `yys_guanggao_shuju` WHERE `title` = '首页头' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `yys_yonghu` [ RunTime:0.0021s ]
+SQL: SELECT `username`,`email`,`mobile` FROM `yys_yonghu` WHERE `uid` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `yys_pinpai` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `yys_pinpai` WHERE `status` = 'Y' ORDER BY `order` DESC  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `yys_shangpin` [ RunTime:0.0024s ]
+SQL: SELECT `qishu`,`xsjx_time`,`id`,`zongrenshu`,`thumb`,`title`,`q_uid`,`q_user`,`q_user_code`,`q_end_time` FROM `yys_shangpin` WHERE `q_showtime` = 'Y' ORDER BY q_end_time LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001287s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001381s ]
+
+[ 2016-11-21T21:31:19+08:00 ] 127.0.0.1 /yyg/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000205s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000242s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000269s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000022s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000049s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002663s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002689s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000105s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000125s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000258s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000280s ]
+
