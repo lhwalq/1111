@@ -213,93 +213,93 @@ $(function(){
 </script>
 <div class="R-content">
         <include file="./index/user.shezhi"/>
-	<div class="prompt orange">完善以下资料，{:C('web_name_two')}不会以任何形式公开您的个人隐私，请放心填写！<s></s></div>
+	<div class="prompt orange">{$Think.lang.web_setting_perfect_first}{:C('web_name_two')}{$Think.lang.web_setting_perfect_last}<s></s></div>
 	<div class="info">
 		<table border="0" cellpadding="0" cellspacing="8">
-			<tr>    <if condition="($huiyuan['mobile'] neq null) AND ($huiyuan['mobilecode'] eq '1') ">		
-				<td align="right"><em><font>*</font><label>手机：</label></em></td>
-				<td style='width:300px'>
-					<b calss="mobilecode">{$huiyuan['mobile']}</b> 
-					 已验证
-				</td>
-				
-				<else />
-				<td align="right"><em><font>*</font><label>手机：</label></em></td>
-				<td>
-					<a style="margin-left:0;" href="__ROOT__/user/mobilechecking" title="绑定手机">绑定手机</a>
-				</td>
-				</if>
-			</tr>
-			<tr>
-                                <if condition="($huiyuan['email'] neq null) AND ($huiyuan['emailcode'] eq '1') ">		
-				<td align="right"><em><font>*</font><label>邮箱：</label></em></td>
-				<td style='width:300px'>
-					<b>{$huiyuan['email']}</b> 
-					 已验证
-					<div class="y_account_div_a" style='display:inline' index="email" emailinfo="{$huiyuan['email']}" uid="{$huiyuan['uid']}">
-						<a href="javascript:void(0);">修改</a>
-					</div>
-				</td>
-				<td>
-					<div class="c_update_detail email">
-						<!-- 第一步 -->
-						<div class="c_update_way">
-							<div class="c_by_way" style="display:block;">
-								<!-- 第一步 -->
-								<div class="c_mobile_valid first" style="padding-left:50px;margin-right:300px">
-									<dl class="c_tel_info c_set_pwd">
-										<dd>
-											<label style="display:inline-block;width:84px;text-align:right;">填写新邮箱</label>
-											<input type="text" class="c_new_email c_email_number"/>
-											<span class="c_tel_msg_b c_email_msg" style="width:360px;color:red"></span>
-										</dd>
-										<dd><input type="button" class="c_mobile_confirm tijiao" value="提交" index="email"></dd>				
-									</dl>
-								</div>
-								<!-- 第二步 -->
-								<div class="c_mobile_valid secondemail" style="display:none">
-									<div class="c_mobile_info" style="width:690px;margin-left:0;">我们给你的邮箱<a href="javascript:;" style="color:#0697da;display:inline;" class="newemail"></a>发送了一封验证邮件
-									<p>注意：原邮箱已不可用，若不去新邮箱激活，则需重新<a href="__ROOT__/member/user/login">登陆</a></p>
-									</div>
-									<a href='' class='c_mobile_confirm qu' style='color:#fff;text-align:center;line-height:34px'>去邮箱查看</a>
-								</div>
-								<!-- 第三步 -->
-							</div>
-						</div>
-					</div>
-				</td>
-				<else/>
-				<td align="right"><em><font>*</font><label>邮箱：</label></em></td>
-				<td>
-					<a style="margin-left:0;" href="__ROOT__/user/mailchecking" title="绑定邮箱">绑定邮箱</a>
-				</td>
-				</if>
-			</tr>
-			<tr>
-                                 <if condition="($huiyuan_qq['b_id'] neq null) OR ($huiyuan_qq['b_type'] eq 'qq') ">		
-				<td align="right"><em><font>*</font><label>QQ：</label></em></td>
-				<td>
-					 已绑定
-				</td>
-				<else />
-				<td align="right"><em><font>*</font><label>QQ：</label></em></td>
-				<td>
-					<a style="margin-left:0;" href="__ROOT__/user/qqclock" title="请绑定qq">请绑定qq</a>
-				</td>
-				</if>
-			</tr>
+			<!--<tr>    <if condition="($huiyuan['mobile'] neq null) AND ($huiyuan['mobilecode'] eq '1') ">		-->
+				<!--<td align="right"><em><font>*</font><label>手机：</label></em></td>-->
+				<!--<td style='width:300px'>-->
+					<!--<b calss="mobilecode">{$huiyuan['mobile']}</b> -->
+					 <!--已验证-->
+				<!--</td>-->
+				<!---->
+				<!--<else />-->
+				<!--<td align="right"><em><font>*</font><label>手机：</label></em></td>-->
+				<!--<td>-->
+					<!--<a style="margin-left:0;" href="__ROOT__/user/mobilechecking" title="绑定手机">绑定手机</a>-->
+				<!--</td>-->
+				<!--</if>-->
+			<!--</tr>-->
+			<!--<tr>-->
+                                <!--<if condition="($huiyuan['email'] neq null) AND ($huiyuan['emailcode'] eq '1') ">		-->
+				<!--<td align="right"><em><font>*</font><label>邮箱：</label></em></td>-->
+				<!--<td style='width:300px'>-->
+					<!--<b>{$huiyuan['email']}</b> -->
+					 <!--已验证-->
+					<!--<div class="y_account_div_a" style='display:inline' index="email" emailinfo="{$huiyuan['email']}" uid="{$huiyuan['uid']}">-->
+						<!--<a href="javascript:void(0);">修改</a>-->
+					<!--</div>-->
+				<!--</td>-->
+				<!--<td>-->
+					<!--<div class="c_update_detail email">-->
+						<!--&lt;!&ndash; 第一步 &ndash;&gt;-->
+						<!--<div class="c_update_way">-->
+							<!--<div class="c_by_way" style="display:block;">-->
+								<!--&lt;!&ndash; 第一步 &ndash;&gt;-->
+								<!--<div class="c_mobile_valid first" style="padding-left:50px;margin-right:300px">-->
+									<!--<dl class="c_tel_info c_set_pwd">-->
+										<!--<dd>-->
+											<!--<label style="display:inline-block;width:84px;text-align:right;">填写新邮箱</label>-->
+											<!--<input type="text" class="c_new_email c_email_number"/>-->
+											<!--<span class="c_tel_msg_b c_email_msg" style="width:360px;color:red"></span>-->
+										<!--</dd>-->
+										<!--<dd><input type="button" class="c_mobile_confirm tijiao" value="提交" index="email"></dd>				-->
+									<!--</dl>-->
+								<!--</div>-->
+								<!--&lt;!&ndash; 第二步 &ndash;&gt;-->
+								<!--<div class="c_mobile_valid secondemail" style="display:none">-->
+									<!--<div class="c_mobile_info" style="width:690px;margin-left:0;">我们给你的邮箱<a href="javascript:;" style="color:#0697da;display:inline;" class="newemail"></a>发送了一封验证邮件-->
+									<!--<p>注意：原邮箱已不可用，若不去新邮箱激活，则需重新<a href="__ROOT__/member/user/login">登陆</a></p>-->
+									<!--</div>-->
+									<!--<a href='' class='c_mobile_confirm qu' style='color:#fff;text-align:center;line-height:34px'>去邮箱查看</a>-->
+								<!--</div>-->
+								<!--&lt;!&ndash; 第三步 &ndash;&gt;-->
+							<!--</div>-->
+						<!--</div>-->
+					<!--</div>-->
+				<!--</td>-->
+				<!--<else/>-->
+				<!--<td align="right"><em><font>*</font><label>邮箱：</label></em></td>-->
+				<!--<td>-->
+					<!--<a style="margin-left:0;" href="__ROOT__/user/mailchecking" title="绑定邮箱">绑定邮箱</a>-->
+				<!--</td>-->
+				<!--</if>-->
+			<!--</tr>-->
+			<!--<tr>-->
+                                 <!--<if condition="($huiyuan_qq['b_id'] neq null) OR ($huiyuan_qq['b_type'] eq 'qq') ">		-->
+				<!--<td align="right"><em><font>*</font><label>QQ：</label></em></td>-->
+				<!--<td>-->
+					 <!--已绑定-->
+				<!--</td>-->
+				<!--<else />-->
+				<!--<td align="right"><em><font>*</font><label>QQ：</label></em></td>-->
+				<!--<td>-->
+					<!--<a style="margin-left:0;" href="__ROOT__/user/qqclock" title="请绑定qq">请绑定qq</a>-->
+				<!--</td>-->
+				<!--</if>-->
+			<!--</tr>-->
 	<form class="registerform" method="post" action="__ROOT__/user/nicheng">
 			<tr>
-				<td align="right"><em><font>*</font><label>昵称：</label></em></td>
+				<td align="right"><em><font>*</font><label>{$Think.lang.web_setting_nickname}：</label></em></td>
 				<td>
-					<input id="nicxx" datatype="nic" nullmsg="昵称不能为空" name="txtnicheng" value="{$huiyuan['username']}" type="text"  class="txt gray" maxlength="20" />					
+					<input id="nicxx" datatype="nic" nullmsg={$Think.lang.web_setting_nickname_no} name="txtnicheng" value="{$huiyuan['username']}" type="text"  class="txt gray" maxlength="20" />
 				</td>					
-				<td><div class="Validform_checktip">昵称为2-20个汉字、字母、数字、“_”字符组成</div></td>
+				<td><div class="Validform_checktip">{$Think.lang.web_setting_nickname_hint}</div></td>
 			</tr>
 			<tr>
-				<td align="right"><em><font>&nbsp;</font><label>签名：</label></em></td>
+				<td align="right"><em><font>&nbsp;</font><label>{$Think.lang.web_setting_sign}：</label></em></td>
                                  <if condition="($huiyuan['qianming'] eq null)">		
-				<td><textarea name="qianming" class="info_txtarea gray03" >让别人看到不一样的你！</textarea></td>
+				<td><textarea name="qianming" class="info_txtarea gray03" >{$Think.lang.web_setting_me}</textarea></td>
 				<else/>
 				<td><textarea name="qianming" class="info_txtarea gray03" >{$huiyuan['qianming']}</textarea></td>
 				</if>

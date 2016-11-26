@@ -6,8 +6,8 @@
 <link href="__PUBLIC__/piyungou/js/demo.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="__PUBLIC__/piyungou/js/jquery.Validform.min.js"></script>
 <div class="subMenu">
-	<if condition="$biaoti eq '编辑个人资料'"><a class="current2 current" href="__ROOT__/user/userModify"> <else /><a class="current2" href="__ROOT__/user/userModify"></if>个人资料</a>
-	<if condition="$biaoti eq '修改头像'"><a class="current" href="__ROOT__/user/userphoto"> <else /><a href="__ROOT__/user/userphoto"></if>修改头像</a>
-	<if condition="$biaoti eq '收货地址'"><a class="current" href="__ROOT__/user/address"> <else /><a href="__ROOT__/user/address"></if>收货地址</a>
-	<if condition="$biaoti eq '密码修改'"><a class="current" href="__ROOT__/user/password"> <else /><a href="__ROOT__/user/password"></if>密码修改</a>
+	<if condition="$biaoti eq '编辑个人资料'"><a class="current2 current" href="__ROOT__/user/userModify"> <else /><a class="current2" href="__ROOT__/user/userModify"></if>{$Think.lang.web_setting_persion}</a>
+	<if condition="$biaoti eq '修改头像'"><a class="current" href="__ROOT__/user/userphoto"> <else /><a href="__ROOT__/user/userphoto"></if>{$Think.lang.web_setting_icon_change}</a>
+	<if condition="$biaoti eq '收货地址'"><a class="current" href="__ROOT__/user/address"> <else /><a href="__ROOT__/user/address"></if>{$Think.lang.web_setting_address}</a>
+	<if condition="$biaoti eq '密码修改'"><a class="current" href="__ROOT__/user/password"> <else /><a href="__ROOT__/user/password"></if>{$Think.lang.web_setting_password_change}</a>
 </div>

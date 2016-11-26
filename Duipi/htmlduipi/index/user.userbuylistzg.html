@@ -3,14 +3,14 @@
     <include file="./index/member.left"/>
     <link rel="stylesheet" type="text/css" href="__PUBLIC__/piyungou/css/layout-records.css"/>
     <div class="R-content">
-        <div class="member-t"><h2>直购记录</h2></div>
+        <div class="member-t"><h2>{$Think.lang.web_setting_pokemon}</h2></div>
         <div id="GoodsList" class="goods_show">
             <ul class="gtitle">
-                <li>商品图片</li>
-                <li class="gname">商品名称</li>
-                <li class="yg_status">发货状态</li>
-                <li class="joinInfo">购买件数</li>
-                <li class="do">操作</li>
+                <li>{$Think.lang.web_setting_goods_pic}</li>
+                <li class="gname">{$Think.lang.web_setting_goods_name}</li>
+                <li class="yg_status">{$Think.lang.web_setting_fahuo_state}</li>
+                <li class="joinInfo">{$Think.lang.web_setting_mai_jian}</li>
+                <li class="do">{$Think.lang.web_cart_chaozuo}</li>
             </ul>	
 
             <foreach name="record" item="rt" >
@@ -34,31 +34,31 @@
 
                             <if condition="($status[1] eq '已发货') ">
                                 <br>
-                                {$rt['company']}---单号:{$rt['company_code']}
+                                {$rt['company']}---{$Think.lang.web_setting_numbers}:{$rt['company_code']}
                             </if><br>
 
                             <if condition="($status[2] eq '待收货') ">
-                                <a class="wuliubtn" oid="{$rt[id]}" uid="{$rt[uid]}">确认收货</a> 
+                                <a class="wuliubtn" oid="{$rt[id]}" uid="{$rt[uid]}">{$Think.lang.web_setting_yes_shouhuo}</a>
                             </if>
                         </span></li>
-                    <li class="joinInfo" style="margin:23px 0 0 0;"><p><em>{$rt['gonumber']}</em>件</p></li>
+                    <li class="joinInfo" style="margin:23px 0 0 0;"><p><em>{$rt['gonumber']}</em>{$Think.lang.web_lottery_jian}</p></li>
 
 
                     <if condition="($status[3] eq '待收货') ">
-                        <li class="do" style="margin:23px 0 0 0;"><a  class="blue" title="详情">已提交地址</a></li>
+                        <li class="do" style="margin:23px 0 0 0;"><a  class="blue" title={$Think.lang.web_setting_detail}>{$Think.lang.web_setting_add_addr}</a></li>
 
                         <else />
                         <if condition="($status[2] eq '待收货') ">
-                            <li class="do" style="margin:23px 0 0 0;"><a href="__ROOT__/user/orderDetailzg/id/{$rt['id']}" class="blue" title="详情">已提交地址,待收货</a></li>
+                            <li class="do" style="margin:23px 0 0 0;"><a href="__ROOT__/user/orderDetailzg/id/{$rt['id']}" class="blue" title={$Think.lang.web_setting_detail}>{$Think.lang.web_setting_gogogo}</a></li>
                             <else />
 
                             <if condition="($status[2] eq '已完成') ">
-                                <li class="do" style="margin:23px 0 0 0;"><a href="__ROOT__/user/orderDetailzg/id/{$rt['id']}" class="blue" title="详情">已付款,已发货,已完成</a></li>
+                                <li class="do" style="margin:23px 0 0 0;"><a href="__ROOT__/user/orderDetailzg/id/{$rt['id']}" class="blue" title={$Think.lang.web_setting_detail}>{$Think.lang.web_setting_three_go}</a></li>
                                 <else />
-                                <li class="do" style="margin:23px 0 0 0;"><a href="__ROOT__/user/orderDetailzg/id/{$rt['id']}" class="blue" title="详情">已提交地址</a></li>
+                                <li class="do" style="margin:23px 0 0 0;"><a href="__ROOT__/user/orderDetailzg/id/{$rt['id']}" class="blue" title={$Think.lang.web_setting_detail}>{$Think.lang.web_setting_add_addr}</a></li>
                             </if>
                             <if condition="($status[3] eq '未提交地址') ">
-                                <li class="do" style="margin:23px 0 0 0;"><a href="__ROOT__/user/orderDetailzg/id/{$rt['id']}" class="blue" title="详情">未提交地址</a></li>
+                                <li class="do" style="margin:23px 0 0 0;"><a href="__ROOT__/user/orderDetailzg/id/{$rt['id']}" class="blue" title={$Think.lang.web_setting_detail}>{$Think.lang.web_setting_no_addr}</a></li>
                             </if>
                         </if>
                     </if>
@@ -73,7 +73,7 @@
             </style>
             <div id="divPageNav" class="page_nav">
 
-                <?php echo $fenye->show('one');?> <li>共 {$zongji} 条</li>
+                <?php echo $fenye->show('one');?> <li>{$Think.lang.web_shaidan_gong} {$zongji} {$Think.lang.web_index_tiao}</li>
             </div>
         </div>
     </div>

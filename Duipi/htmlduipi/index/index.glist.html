@@ -7,9 +7,9 @@
   
  
   <div class="w_con"> 
-   <h4 class="w_guide"><a href="__ROOT__/index/index">首页</a><a class="w_accord" href="__ROOT__/goods/glist">全部商品</a></h4> 
+   <h4 class="w_guide"><a href="__ROOT__/index/index">{$Think.lang.web_glist_first}</a><a class="w_accord" href="__ROOT__/goods/glist">{$Think.lang.web_glist_all_goods}</a></h4>
    <div class="w_goods_nav"> 
-    <h2>全部商品<span>（共<a href="javascript:void%200">{$zongji}</a>件商品）</span></h2> 
+    <h2>{$Think.lang.web_glist_all_goods}<span>（{$Think.lang.web_shaidan_gong}<a href="javascript:void%200">{$zongji}</a>{$Think.lang.web_glist_all_jian}）</span></h2>
     <div class="w_choose"> 
      <dl class="w_choose_list" >
      <?php 
@@ -61,11 +61,11 @@ var height=$("#ddBrandList_brand").innerHeight();
 	if(height==60){
 		$("#ddBrandList_brand").css("height","auto");
 		$(".list_classMore").addClass("MoreClick");
-		$(".list_classMore").html("收起<i></i>");
+		$(".list_classMore").html("{$Think.lang.web_glist_all_pack_up}<i></i>");
 	}else{
 		$("#ddBrandList_brand").css("height","60px");
 		$(".list_classMore").removeClass("MoreClick");
-		$(".list_classMore").html("展开<i></i>");
+		$(".list_classMore").html("{$Think.lang.web_glist_all_develop}<i></i>");
 	};
 }
 $(function(){	
@@ -78,7 +78,7 @@ $(function(){
 
 	 <dl class="w_goods_brand"> 
         <dd>
-         分类
+            {$Think.lang.web_glist_classify}
         </dd> 
  
 	
@@ -86,7 +86,7 @@ $(function(){
 		
          <ul>
 <li>
-<a class="w_effect" href="__ROOT__/goods/glist/type/type/{$cid}_0_0.html">全部</a>
+<a class="w_effect" href="__ROOT__/goods/glist/type/type/{$cid}_0_0.html">{$Think.lang.web_glist_all}</a>
 </li>
 <foreach name="two_cate_list" item="two_cate" >
                                         <if condition="$cid eq $two_cate['cateid'] ">
@@ -109,7 +109,7 @@ $(function(){
 
        <dl class="w_goods_brand"> 
         <dd>
-         品牌
+            {$Think.lang.web_glist_brand}
         </dd> 
         <if condition="count($pinpai) gt 17">
 		<dd id="ddBrandList_brand" class="w_specific_class1" style="height: 60px;">
@@ -118,7 +118,7 @@ $(function(){
 		</if>
          <ul>
 <li>
-<a class="w_effect" href="__ROOT__/goods/glist/type/{$cid}_0_{$order}.html">全部</a>
+<a class="w_effect" href="__ROOT__/goods/glist/type/{$cid}_0_{$order}.html">{$Think.lang.web_glist_all}</a>
 </li>
   <foreach name="pinpai" item="pinpais" > 
                                  <if condition="$pinpais['id'] eq $bid">
@@ -134,7 +134,7 @@ $(function(){
 
 </ul>
 <if condition="count($pinpai) gt 17">
-	<a class="list_classMore" href="javascript:;">展开<i></i></a>
+	<a class="list_classMore" href="javascript:;">{$Think.lang.web_glist_all_develop}<i></i></a>
 </if>
         </dd> 
         <div class="w_clear"></div> 
@@ -146,28 +146,28 @@ $(function(){
    <div class="w_product_con"> 
     <dl class="w_new"> 
      <dd>
-      排列：
+         {$Think.lang.web_glist_arrange}：
      </dd> 
       <dd>
-      <a href="__ROOT__/goods/glist/type/{$cid}_{$bid}_1.html"  <if condition="$order eq '1'"> class="w_announced" </if> data-id="publicTime">即将揭晓</a>
+      <a href="__ROOT__/goods/glist/type/{$cid}_{$bid}_1.html"  <if condition="$order eq '1'"> class="w_announced" </if> data-id="publicTime">{$Think.lang.web_lottery_unveiled}</a>
      </dd> 
      <dd>
-      <a href="__ROOT__/goods/glist/type/{$cid}_{$bid}_3.html"  <if condition="$order eq '3'">  class="w_announced" </if>  data-id="takedout">剩余人次</a>
+      <a href="__ROOT__/goods/glist/type/{$cid}_{$bid}_3.html"  <if condition="$order eq '3'">  class="w_announced" </if>  data-id="takedout">{$Think.lang.web_lottery_residue}</a>
      </dd> 
      <dd>
-      <a href="__ROOT__/goods/glist/type/{$cid}_{$bid}_2.html"  <if condition="$order eq '2'">  class="w_announced" </if>  data-id="periods">热卖</a>
+      <a href="__ROOT__/goods/glist/type/{$cid}_{$bid}_2.html"  <if condition="$order eq '2'">  class="w_announced" </if>  data-id="periods">{$Think.lang.web_glist_hot_sale}</a>
      </dd> 
      <dd>
-      <a href="__ROOT__/goods/glist/type/{$cid}_{$bid}_4.html"  <if condition="$order eq '4'">  class="w_announced" </if> data-id="addTime">最新商品</a>
+      <a href="__ROOT__/goods/glist/type/{$cid}_{$bid}_4.html"  <if condition="$order eq '4'">  class="w_announced" </if> data-id="addTime">{$Think.lang.web_glist_new_goods}</a>
      </dd> 
      <dd>
       <if condition="$order eq '5'"> 
-      <a class="w_last" href="__ROOT__/goods/glist/type/{$cid}_{$bid}_6.html" data-id="totalPrice_up">价格<span><img src="__PUBLIC__/style/images/jia_03.png" /></span><span class="w_jian_tou"><img src="__PUBLIC__/style/images/jia_06.png" /></span></a>
+      <a class="w_last" href="__ROOT__/goods/glist/type/{$cid}_{$bid}_6.html" data-id="totalPrice_up">{$Think.lang.web_glist_price}<span><img src="__PUBLIC__/style/images/jia_03.png" /></span><span class="w_jian_tou"><img src="__PUBLIC__/style/images/jia_06.png" /></span></a>
  <else />
      <if condition="$order eq '6'"> 
-      <a class="w_last" href="__ROOT__/goods/glist/type/{$cid}_{$bid}_5.html" data-id="totalPrice_up">价格<span><img src="__PUBLIC__/style/images/jia_03.png" /></span><span class="w_jian_tou"><img src="__PUBLIC__/style/images/jia_06.png" /></span></a>
+      <a class="w_last" href="__ROOT__/goods/glist/type/{$cid}_{$bid}_5.html" data-id="totalPrice_up">{$Think.lang.web_glist_price}<span><img src="__PUBLIC__/style/images/jia_03.png" /></span><span class="w_jian_tou"><img src="__PUBLIC__/style/images/jia_06.png" /></span></a>
       <else />
-            <a class="w_last" href="__ROOT__/goods/glist/type/{$cid}_{$bid}_5.html" data-id="totalPrice_up">价格<span><img src="__PUBLIC__/style/images/jia_03.png" /></span><span class="w_jian_tou"><img src="__PUBLIC__/style/images/jia_06.png" /></span></a>
+            <a class="w_last" href="__ROOT__/goods/glist/type/{$cid}_{$bid}_5.html" data-id="totalPrice_up">{$Think.lang.web_glist_price}<span><img src="__PUBLIC__/style/images/jia_03.png" /></span><span class="w_jian_tou"><img src="__PUBLIC__/style/images/jia_06.png" /></span></a>
 </if>
 </if>
      </dd> 
@@ -187,7 +187,7 @@ $(function(){
         <noscript>
          <img src="__PUBLIC__/uploads/{$shop['picarr']}" alt="" />
         </noscript></a>
-      </div><a class="w_goods_three" target="_blank" href="__ROOT__/goods/items/goodsId/{$shop['id']}.html" data-gid="{$shop['id']}" data-pid="{$shop['zongrenshu']}" title="{$shop['title']}">(第{$shop['qishu']}期){$shop['title']}</a><b>价值：￥{$shop['money']}</b>
+      </div><a class="w_goods_three" target="_blank" href="__ROOT__/goods/items/goodsId/{$shop['id']}.html" data-gid="{$shop['id']}" data-pid="{$shop['zongrenshu']}" title="{$shop['title']}">({$Think.lang.web_user_di}{$shop['qishu']}{$Think.lang.web_user_qi}){$shop['title']}</a><b>{$Think.lang.web_glist_value}：{$Think.lang.web_lottery_mark}{$shop['money']}</b>
       <div class="w_line">
        <span style="width:{:R("base/width",array($shop['canyurenshu'],$shop['zongrenshu'],244))}px;"></span>
       </div>
@@ -203,18 +203,18 @@ $(function(){
        <input id="title_0" value="{$shop['title']}" type="hidden" />
        <li class="w_amount">{$shop['zongrenshu']}</li>
        <li class="w_amount">{$shop['zongrenshu']-$shop['canyurenshu']}</li>
-       <li>已云购次数</li>
-       <li>总需人次</li>
-       <li>剩余人次</li>
+       <li>{$Think.lang.web_user_cloud_num}</li>
+       <li>{$Think.lang.web_glist_all_person}</li>
+       <li>{$Think.lang.web_lottery_residue}</li>
       </ul>
       <dl class="w_rob">
        <dd>
-        <a class="w_slip" target="_blank" href="__ROOT__/goods/items/goodsId/{$shop['id']}.html" data-gid="{$shop['id']}" data-pid="{$shop['zongrenshu']}">立即抢购</a>
+        <a class="w_slip" target="_blank" href="__ROOT__/goods/items/goodsId/{$shop['id']}.html" data-gid="{$shop['id']}" data-pid="{$shop['zongrenshu']}">{$Think.lang.web_glist_immediately}</a>
        </dd>
        <dd class="w_rob_out">
         <a class="w_rob_in" href="javascript:void(0);" onclick="cartoong(<?php 
 		echo $shop['id'].",".$ii;$ii++;
-	 ?>)">加入购物袋</a>
+	 ?>)">{$Think.lang.web_glist_gouwudai}</a>
        </dd>
       </dl>
       

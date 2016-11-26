@@ -17,7 +17,7 @@
 	</div>
 	<div class="help-left-part">
 		<div class="help-nav">
-			<h3>帮助中心</h3>			
+			<h3>{$Think.lang.web_article_help}</h3>
             <?php $category=D("fenlei")-> where(array('parentid'=> 1))-> select(); ?>
 			
 			<foreach name="category" item="help" >

@@ -5,19 +5,19 @@
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/piyungou/css/layout-topic.css"/>
 <div class="R-content">
 	<div class="subMenu">
-		<a class="current">已晒单</a>
-		<a >未晒单</a>
+		<a class="current">{$Think.lang.web_setting_yes_shai}</a>
+		<a >{$Think.lang.web_setting_no_shai}</a>
 	</div>
 	<div class="list-tab topic" style="display: block;">
 		<ul class="listTitle">
-			<li style="text-align:center;" class="w100">晒单图片</li>
-			<li class="w400">晒单信息</li>
-			<li class="w130">晒单状态</li>
-			<li class="w85 fr">操作</li>
+			<li style="text-align:center;" class="w100">{$Think.lang.web_setting_shai_pic}</li>
+			<li class="w400">{$Think.lang.web_setting_shai_xinxi}</li>
+			<li class="w130">{$Think.lang.web_setting_shai_state}</li>
+			<li class="w85 fr">{$Think.lang.web_cart_chaozuo}</li>
 		</ul>
 		
 		<if condition="$shaidan eq  null">
-		<div class="tips-con"><i></i>暂无记录！</div>
+		<div class="tips-con"><i></i>{$Think.lang.web_setting_no_record}！</div>
 		<else />
 		
 		<foreach name="shaidan" item="sd">
@@ -28,22 +28,22 @@
 ?>
 					<li class="w100" style="text-align:center;"><a href="__ROOT__/index/detail/id/{$sd['sd_id']}" target="_blank" class="blue"><img width="50" src="__PUBLIC__/uploads/{$sd['sd_thumbs']}"/></a></li>
 					<li class="w400"><a href="__ROOT__/index/detail/id/{$sd['sd_id']}" target="_blank" class="gray01">{$sd['sd_title']}</a></li>
-					<li class="w130" style='color:red'>审核中...</a></li>
-					<li class="w85 fr"><font color="#666">不可修改</font></li>
+					<li class="w130" style='color:red'>{$Think.lang.web_setting_audit_ing}...</a></li>
+					<li class="w85 fr"><font color="#666">{$Think.lang.web_setting_no_change}</font></li>
 			<?php
 				}elseif($sd['shenhe']!=0){
 			?>
 					<li class="w100" style="text-align:center;"><a href="__ROOT__/index/detail/id/{$sd['sd_id']}" target="_blank" class="blue"><img width="50" src="__PUBLIC__/uploads/{$sd['sd_thumbs']}"/></a></li>
 					<li class="w400"><a href="__ROOT__/index/detail/id/{$sd['sd_id']}" target="_blank" class="gray01">{$sd['sd_title']}</a></li>
-					<li class="w130" style='color:green'>审核通过</a></li>
-					<li class="w85 fr"><font color="#666">不可修改</font></li>
+					<li class="w130" style='color:green'>{$Think.lang.web_setting_audit_go}</a></li>
+					<li class="w85 fr"><font color="#666">{$Think.lang.web_setting_no_change}</font></li>
 			<?php
 				}else{
 			?>
 					<li class="w100" style="text-align:center;"><a href="__ROOT__/index/detail/id/{$sd['sd_id']}" target="_blank" class="blue"><img width="50" src="__PUBLIC__/uploads/{$sd['sd_thumbs']}"/></a></li>
 					<li class="w400"><a href="__ROOT__/index/detail/id/{$sd['sd_id']}" target="_blank" class="gray01">{$sd['sd_title']}</a></li>
-					<li class="w130" style='color:green'>审核通过</a></li>
-					<li class="w85 fr"><font color="#666">不可修改</font></li>
+					<li class="w130" style='color:green'>{$Think.lang.web_setting_audit_go}</a></li>
+					<li class="w85 fr"><font color="#666">{$Think.lang.web_setting_no_change}</font></li>
 			<?php
 				}
 			?>
@@ -54,13 +54,13 @@
 	</div>
 	<div class="list-tab topic" style="display: none;">
 		<ul class="listTitle">
-			<li style="text-align:center;" class="w100">商品图片</li>
-			<li class="w630">商品信息</li>
-			<li class="w85 fr">操作</li>
+			<li style="text-align:center;" class="w100">{$Think.lang.web_setting_goods_pic}</li>
+			<li class="w630">{$Think.lang.web_setting_goods_detail}</li>
+			<li class="w85 fr">{$Think.lang.web_cart_chaozuo}</li>
 		</ul>
 		
 		<if condition="$record eq  null">
-		<div class="tips-con"><i></i>暂无记录！</div>
+		<div class="tips-con"><i></i>{$Think.lang.web_setting_no_record}！</div>
 		
 		<else />
 		
@@ -68,7 +68,7 @@
 		<ul class="listCon">
 			<li style="text-align:center;" class="w100"><div class="listConT"><img width="50" src="__PUBLIC__/uploads/{:R('Base/shoplisext',array($sd['shopid'],'thumb'))}"/></div></li>
 			<li style="text-indent:1em;" class="w400"><a href="__ROOT__/goods/items/goodsId/{$sd['shopid']}.html" target="_blank">{:R('Base/shoplisext',array($sd['shopid'],'title'))}</a></li>
-			<li class="w50 fr"><a name="delete" href="__ROOT__/user/singleinsert/id/{$sd['shopid']}" class="blue">添加晒单</a></li>
+			<li class="w50 fr"><a name="delete" href="__ROOT__/user/singleinsert/id/{$sd['shopid']}" class="blue">{$Think.lang.web_setting_add_shai}</a></li>
 		</ul>
 		</foreach>
 		</if>
@@ -84,14 +84,14 @@ $xx=ceil($zongji/10);
 ?>
 
 <if condition=" $fenyenum gt 1">
-<a class="pageUp"  href="__ROOT__/user/home/singlelist?p={$fenyenum-1}">上一页</a>
+<a class="pageUp"  href="__ROOT__/user/home/singlelist?p={$fenyenum-1}">{$Think.lang.web_setting_previou}</a>
 <else />
 <!-- <a class="pageUp w_page_in" >上一页</a> -->
 </if>
 
 <foreach name="fenyenum" item="xx">
 
-<a class="pageDown"  href="__ROOT__/user/home/singlelist?p={$fenyenum+1}">下一页</a>
+<a class="pageDown"  href="__ROOT__/user/home/singlelist?p={$fenyenum+1}">{$Think.lang.web_setting_next}</a>
 </foreach>
 </div>
 </div>

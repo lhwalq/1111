@@ -3,12 +3,12 @@
 <link rel="stylesheet" href="__PUBLIC__/plugin/calendar/calendar-blue.css" type="text/css"> 
 <script type="text/javascript" charset="utf-8" src="__PUBLIC__/plugin/calendar/calendar.js"></script>
 <div class="ygRecord">
-    <h3><span>历史云购记录</span><p><a href="__ROOT__/index/buyrecordbai">查看最新云购记录&gt;&gt;</a></p></h3>
+    <h3><span>{$Think.lang.web_index_history}</span><p><a href="__ROOT__/index/buyrecordbai">{$Think.lang.web_index_look_new}&gt;&gt;</a></p></h3>
     <div class="border"></div>
     <div class="RecordSearch">
         <form action="" method="post">
             <div class="from">
-                <p>起止时间</p>
+                <p>{$Think.lang.web_index_start_time}</p>
                 <input value="{$time}" id="txtFirstT1" name="start_time_data" class="time" readonly="readonly" type="text">     
                 <script type="text/javascript">
                     date = new Date();
@@ -32,7 +32,7 @@
                     <option value="{$i}"{$selecteds}>{$i}</option>
                     <?php  }  ?>
                 </select>
-                <p>时</p>
+                <p>{$Think.lang.web_index_shi}</p>
                 <select id="sltFirstT3" name="start_time_i">
                     <?php 								
                     for($i=0;$i<60;$i++){		
@@ -46,7 +46,7 @@
                     <option value="{$i}"{$selecteds}>{$i}</option>
                     <?php  }  ?>
                 </select>
-                <p>分&nbsp;&nbsp;&nbsp;至</p>
+                <p>{$Think.lang.web_index_fen}&nbsp;&nbsp;&nbsp;{$Think.lang.web_index_zhi}</p>
             </div>        
             <div class="over">
                 <input value="{$time}" name="end_time_data"  id="txtEndT1" class="time" readonly="readonly" type="text">	
@@ -73,7 +73,7 @@
                     <option value="{$i}"{$selecteds}>{$i}</option>
                     <?php  }  ?>				
                 </select>
-                <p>时</p>
+                <p>{$Think.lang.web_index_shi}</p>
                 <select id="sltEndT3" name="end_time_i">
                     <?php 								
                     for($i=0;$i<60;$i++){		
@@ -87,17 +87,17 @@
                     <option value="{$i}"{$selecteds}>{$i}</option>
                     <?php  }  ?>
                 </select>
-                <p>分</p>
+                <p>{$Think.lang.web_index_fen}</p>
             </div>
-            <input id="btnQuery" class="Recordcx" value="查询"  name="dosubmit" type="submit">
+            <input id="btnQuery" class="Recordcx" value="{$Think.lang.web_index_select}"  name="dosubmit" type="submit">
             <span id="spanServerTime" style="display:none">2013-10-22 08:52:53</span>
     </div>
     <div id="recordList">
         <ul class="Record_title">
-            <li class="time">云购时间</li>
-            <li class="nem">云购账号</li>
-            <li class="name">云购商品名称</li>
-            <li class="much">云购人次</li>
+            <li class="time">{$Think.lang.web_index_cloud_time}</li>
+            <li class="nem">{$Think.lang.web_index_cloud_account}</li>
+            <li class="name">{$Think.lang.web_index_cloud_goods}</li>
+            <li class="much">{$Think.lang.web_index_cloud_num}</li>
         </ul>
         <?php $n=1; ?>    
         <foreach name="RecordList" item="Record" >
@@ -113,8 +113,8 @@
         <ul class="{$class}">
             <li class="time">{$Record['time'][0]|date="Y-m-d H:i:s",###}.{$Record['time'][1]}</li>
             <li class="nem"><a class="blue" href="__ROOT__/user/uname/d/{$Record['uid']}.html" target="_blank">{$Record['username']}</a></li>
-            <li class="name"><a href="__ROOT__/goods/items/goodsId/{$Record['shopid']}.html">（第{$Record['shopqishu']}期）{:R("Base/strcut",array($Record['shopname'],60,null))}</a></li>
-            <li class="much">{$Record['gonumber']}人次</li>
+            <li class="name"><a href="__ROOT__/goods/items/goodsId/{$Record['shopid']}.html">（{$Think.lang.web_user_di}{$Record['shopqishu']}{$Think.lang.web_user_qi}）{:R("Base/strcut",array($Record['shopname'],60,null))}</a></li>
+            <li class="much">{$Record['gonumber']}{$Think.lang.web_lottery_person}</li>
         </ul>
         </foreach>
 

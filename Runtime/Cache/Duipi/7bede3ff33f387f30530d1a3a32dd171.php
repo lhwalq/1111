@@ -202,28 +202,28 @@
                 <li><a href="/user/qiandao">签到</a></li>-->
 
                 <?php if(($huiyuan)): ?><li><a href="/user/home"><?php echo R("base/huode_user_name",array($huiyuan,"username"));?></a></li>
-                    <li><a href="/user/cook_end">退出</a></li> 
+                    <li><a href="/user/cook_end"><?php echo (L("web_user_back")); ?></a></li>
 
-                    <?php else: ?>
-                    <li><a href="/user/login">登录</a></li> 
-                    <li><a href="/user/register">免费注册</a></li><?php endif; ?>
-                <li class="MyzhLi"> <a href="/user/home">我的<?php echo C('web_name_two');?><i class="top"></i></a> 
+                    <?php else: ?>t h l
+                    <li><a href="/user/login"><?php echo (L("web_user_login")); ?></a></li>
+                    <li><a href="/user/register"><?php echo (L("web_user_register")); ?></a></li><?php endif; ?>
+                <li class="MyzhLi"> <a href="/user/home"><?php echo (L("web_user_me")); echo C('web_name_two');?><i class="top"></i></a>
                     <dl class="Myzh"> 
                         <dd>
-                            <a href="/user/userbuylist">购买记录</a>
+                            <a href="/user/userbuylist"><?php echo (L("web_user_purchase")); ?></a>
                         </dd> 
                         <dd>
-                            <a href="/user/orderlist">获得的商品</a>
+                            <a href="/user/orderlist"><?php echo (L("web_user_order_list")); ?></a>
                         </dd> 
                         <dd>
-                            <a href="/user/userModify">个人设置</a>
+                            <a href="/user/userModify"><?php echo (L("web_user_user_modify")); ?></a>
                         </dd> 
                         <!--<dd>-->
                             <!--<a href="/user/wangpan">我的网盘</a>-->
                         <!--</dd> -->
-                    </dl> </li> 
-                <li><a href="/user/userrecharge">充值</a></li> 
-                <li><a href="/index/about">帮助</a></li> 
+                    </dl> </li>
+                <li><a href="/user/userrecharge"><?php echo (L("web_user_user_recharge")); ?></a></li>
+                <li><a href="/index/about"><?php echo (L("web_user_about")); ?></a></li>
                 <!--<li><a style="border-right:none;" href="/index/group_qq">官方QQ群</a></li> -->
             </ul> 
         </div> 
@@ -236,7 +236,7 @@
         <div class="yJoinNum" style='margin-left:190px'>
             <input type="hidden" value="<?php echo R('base/go_count_renci',array());?>">
             <a href="/index/buyrecord" target="_blank" class="allNums">
-                <span class="yBefore">已有</span>
+                <span class="yBefore"><?php echo (L("web_user_has")); ?></span>
                 <span class="yNumList">
                     <ul style="margin-top: -270px;">
                         <li t="9">9</li>
@@ -252,21 +252,20 @@
                     </ul>
                 </span>
                 <span class="w_ci_bg"></span>
-                <span>人次参加</span>
+                <span><?php echo (L("web_user_part_in")); ?></span>
             </a>
         </div>
 
 
         <!-- 2015 6 9 start--> 
         <div class="search_header2"> 
-            <s></s> 
-            <input type="text" placeholder="搜索您需要的商品" value="" id="q" /> 
-            <a href="javascript:;" class="btnHSearch">搜索</a> 
+            <s></s>
+            <input type="text" placeholder=<?php echo (L("web_user_search_has")); ?> value="" id="q" />
+            <a href="javascript:;" class="btnHSearch"><?php echo (L("web_user_search")); ?></a>
             <span class="search_span_a">
-                <a href="/index/s_tag/val/手机">手机</a>
-                <a href="/index/s_tag/val/电脑">电脑</a>
-                <a href="/index/s_tag/val/手机">手机</a>
-                <a href="/index/s_tag/val/笔记本">笔记本</a>
+                <a href="/index/s_tag/val/<?php echo (L("web_user_phone")); ?>"><?php echo (L("web_user_phone")); ?></a>
+                <a href="/index/s_tag/val/<?php echo (L("web_user_computer")); ?>"><?php echo (L("web_user_computer")); ?></a>
+                <a href="/index/s_tag/val/<?php echo (L("web_user_notebook")); ?>"><?php echo (L("web_user_notebook")); ?></a>
             </span>
         </div> 
 
@@ -281,7 +280,7 @@
     <div class="yNavIndex">
         <div class="pullDown">
             <h4 class="pullDownTitle">
-                <a target="" href="/goods/glist">所有商品分类</a>
+                <a target="" href="/goods/glist"><?php echo (L("web_user_classification")); ?></a>
             </h4>
             <ul class="pullDownList" style="<?php if(($isindex == 'Y')): ?>display:block;overflow: hidden;<?php else: ?>display:none;<?php endif; ?>">
                 <?php if(is_array($daodao)): foreach($daodao as $key=>$categoryx): ?><li class="">
@@ -296,7 +295,7 @@
                         <?php if(is_array($data)): foreach($data as $key=>$categoryy): ?><div class="yMenuLCinList">
                                 <h3>
                                     <a class="yListName" href="/goods/glist/type/<?php echo ($categoryy['cateid']); ?>.html"><?php echo ($categoryy['name']); ?></a>
-                                    <a class="yListMore" href="/goods/glist/type/<?php echo ($categoryy['cateid']); ?>.html">更多 ></a>
+                                    <a class="yListMore" href="/goods/glist/type/<?php echo ($categoryy['cateid']); ?>.html"><?php echo (L("web_user_more")); ?></a>
                                 </h3>
                                 <p>
                                 <?php if(is_array($pinpin)): foreach($pinpin as $key=>$vo): $cateid=explode(',',$vo['cateid']); if(in_array($categoryy['cateid'],$cateid)){ ?>
@@ -314,7 +313,7 @@
             <?php echo R('base/Getheader',array('index'));?>
             <li class="hide-menu-nav" style="padding: 0 13px 0px 15px;">
                 <span></span>
-                <a class="hide-menu-nava" href="javascript:void(0)">发现</a>
+                <a class="hide-menu-nava" href="javascript:void(0)"><?php echo (L("web_user_find")); ?></a>
                 <dl>
                     <?php echo R('base/Getheader',array('faxian'));?>
                 </dl>
@@ -329,29 +328,29 @@
 <!-- 滑过右侧购物车时未登录时的登陆框 --> 
 
 <!-- 滑过右侧购物车时登录后的列表 --> 
-<div class="Left-fixed-divs2 Left-fixed-divs3"> 
+<div class="Left-fixed-divs2 Left-fixed-divs3">
     <!-- 无商品时 --> 
-    <p id="noCart" class="yNocommodity">你的购物袋还是空的赶紧行动吧！</p> 
+    <p id="noCart" class="yNocommodity"><?php echo (L("web_user_shopping_bag")); ?></p>
     <!-- 购物袋有商品 start --> 
     <dl id="list"> 
-    </dl> 
-    <div class="fixed-divbottom"> 
-        <p>已选<span id="row">0</span>件商品 <span class="yflr">￥<em id="hpriceTotal">0</em>元</span></p> 
-        <a href="/goods/cartlist">结 算</a> 
+    </dl> web_user_shopping
+    <div class="fixed-divbottom">
+        <p><?php echo (L("web_user_select")); ?><span id="row">0</span><?php echo (L("web_user_select")); ?><span class="yflr"><?php echo (L("web_lottery_mark")); ?><em id="hpriceTotal">0</em><?php echo (L("web_user_money")); ?></span></p>
+        <a href="/goods/cartlist"><?php echo (L("web_user_account")); ?></a>
     </div> 
 </div> 
 <!-- 购物袋有商品 end --> 
 <div class="Left-fixed-divs" style="display: none"> 
     <!--<img src="/Public/style/images/ce.png" style="top:5%;position:relative;">-->
     <ul> 
-        <li class="shoppingCartRightFix Left-fixed-divs3"> <a href="/goods/cartlist"> <i></i> <em>购</em> <em>物</em> <em>袋</em> <em id="cartCount"></em> </a> </li> 
+        <li class="shoppingCartRightFix Left-fixed-divs3"> <a href="/goods/cartlist"> <i></i> <em><?php echo (L("web_user_gou")); ?></em> <em><?php echo (L("web_user_wu")); ?></em> <em><?php echo (L("web_user_dai")); ?></em> <em id="cartCount"></em> </a> </li>
         <!--<li class="YonlineService otherlifix"><a hidefocus="true" href="http://wpa.qq.com/msgrd?V=1&uin=<?php echo C('qq');?>&Menu=yes" target="_blank"><i style="margin-left:12px;"></i><em>在线</em><em>客服</em></a></li> -->
         <!--<li class="otherlifix otherlifixw"> <a hidefocus="true" href="javascript:void 0"> <i style="background-position:-168px -176px;"></i> <em>官方</em> <em>微信</em> </a> <img width="188" height="216" src="/Public/uploads/<?php echo C('web_logo1');?>" /> -->
             <!--<s></s> </li> -->
         <!--<li class="otherlifix otherlifixw"> <a hidefocus="true" href="https://www.pgyer.com/dzmM" target="_blank"> <i style="margin-left:12px;margin-top:0;background-position:-203px -172px;height: 27px;margin-bottom:0;"></i> <em>手机</em><em>App</em> </a> -->
             <!--&lt;!&ndash; <img width="188" height="188" src="/Public/style/images/weixinlogo.png" style="border:1px solid #adadad;"> &ndash;&gt; </li> -->
         <!--<li class="otherlifix"> <a hidefocus="true" href="/user/userrecharge"> <i style="margin-left:12px;background-position:-236px -176px;"></i> <em>快速</em><em>充值</em> </a> </li> -->
-        <li class="otherlifix lifixTop"> <i style="background-position:-276px -170px"></i> <em>置</em><em>顶</em> </li> 
+        <li class="otherlifix lifixTop"> <i style="background-position:-276px -170px"></i> <em>$Think.lang.web_user_zhi}</em><em>$Think.lang.web_user_ding}</em> </li>
     </ul> 
 </div> 
 <!-- 右侧悬浮 end --> 
@@ -1896,9 +1895,9 @@ img{ border:0;}
 			<!--<div class="g-side1">-->
 				<div class="g-side-l">
 					<ul class="m-instruction-state f-clear">
-						<li><i class="ico ico-state-l ico-state-l-2"></i>100%正品保证</li>
-						<li><i class="ico ico-state-l ico-state-l-3"></i>100%权益保障</li>
-						<li><i class="ico ico-state-l ico-state-l-1"></i>100%公平公正公开</li>
+						<li><i class="ico ico-state-l ico-state-l-2"></i><?php echo (L("web_user_guaranteed")); ?></li>
+						<li><i class="ico ico-state-l ico-state-l-3"></i><?php echo (L("web_user_protection")); ?></li>
+						<li><i class="ico ico-state-l ico-state-l-1"></i><?php echo (L("web_user_impartial")); ?></li>
 					</ul>
 				</div>
 				<!--<div class="g-side-r">-->
@@ -1934,9 +1933,9 @@ img{ border:0;}
 		<!--</div>-->
 		<!--</div>-->
 
-</div>      
+</div>
 <!--footer end-->
-       <div style="display:none"><dd title="服务器时间" style="background:url(/Public/plugin/style/images/img/time.png) no-repeat 0px 6px;background-size:21px;"  class="specialFamily" id='sp_ServerTime'> </div>
+       <div style="display:none"><dd title=<?php echo (L("web_user_date_time")); ?> style="background:url(/Public/plugin/style/images/img/time.png) no-repeat 0px 6px;background-size:21px;"  class="specialFamily" id='sp_ServerTime'> </div>
 			
  <script type="text/javascript" src="/Public/piyungou/js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="/Public/piyungou/js/jquery.cookie.js"></script>
@@ -2013,7 +2012,7 @@ function loadCart(){
 		url:"/goods/che/"+ new Date().getTime(),
 		dataType:'json',
 		success:function(headJosn){
-			var str ='<dt><b>购物袋</b><a href="/goods/cartlist">全屏查看</a></dt><div id="cartListDiv" class="right-hide-scroll">';
+			var str ='<dt><b><?php echo (L("web_user_gouwudai")); ?></b><a href="/goods/cartlist"><?php echo (L("web_user_fullscreen")); ?></a></dt><div id="cartListDiv" class="right-hide-scroll">';
 			row = headJosn.cartList.length;
 			if(headJosn.cartList.length > 0){
 				for(i=0;i<headJosn.cartList.length;i++){
@@ -2028,16 +2027,16 @@ function loadCart(){
 					
 					if(headJosn.cartList[i].type!=3){
 						str += '<div class="yfixed-divs-r"> <div class="yfixed-divs-rfsss">';     
-						str += '<p>云购人次 <em id="htime_'+i+'">'+headJosn.cartList[i].times+'</em></p>'; 
+						str += '<p><?php echo (L("web_user_cloud")); ?><em id="htime_'+i+'">'+headJosn.cartList[i].times+'</em></p>';
 						var price = headJosn.cartList[i].times*(headJosn.cartList[i].buyPeriod);
-						str += '<p>小计 <em id="hprice_'+i+'">￥'+price+'</em></p>';  
+						str += '<p><?php echo (L("web_user_subtotal")); ?><em id="hprice_'+i+'">￥'+price+'</em></p>';
 						str += '</div><div class="yfixed-divs-rtsss"><p> </p>';    
 						str += '</p><i onclick="delshop('+headJosn.cartList[i].gid+','+i+')"></i></div></div>';
 					}else{
 						str += '<div class="yfixed-divs-r">';     
 						str +='<input  type="hidden" id="htimes_'+i+'" value="'+headJosn.cartList[i].online.priceAll+'"/>';     
-						str += '<p>云购人次 <em id="htimes_'+i+'">'+headJosn.cartList[i].online.priceAll+'</em></p>';  
-						str += '<p>小计 <em id="hprice_'+i+'">￥'+headJosn.cartList[i].online.priceAll+'</em></p><i onclick="delshop('+headJosn.cartList[i].gid+','+i+')"></i></div>';  
+						str += '<p><?php echo (L("web_user_cloud")); ?><em id="htimes_'+i+'">'+headJosn.cartList[i].online.priceAll+'</em></p>';
+						str += '<p><?php echo (L("web_user_subtotal")); ?><em id="hprice_'+i+'">￥'+headJosn.cartList[i].online.priceAll+'</em></p><i onclick="delshop('+headJosn.cartList[i].gid+','+i+')"></i></div>';
 					}
 					str +='<input  type="hidden" id="harea_'+i+'" value="'+headJosn.cartList[i].online.priceArea+'"/>';     
 					str +='<input  type="hidden" id="gid_'+i+'" value="'+headJosn.cartList[i].gid+'"/>'; 

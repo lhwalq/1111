@@ -13,34 +13,34 @@
     <div class="logo">
         <div class="float">
             <span class="logo_pic">
-                <h2>确认订单</h2>
+                <h2>{$Think.lang.web_index_confirm_order}</h2>
                 </a></span>
             <ul class="ui-step" style='float:right;margin-top:10px'>
                 <li class="ui-step-start ui-step-active">
                     <div class="ui-step-line">-</div>
                     <div class="ui-step-icon">
-                        <i class="ui-step-number">提交</i>
+                        <i class="ui-step-number">{$Think.lang.web_index_submit}</i>
                         <span class="ui-step-text">&nbsp;</span>
                     </div>
                 </li>
                 <li class="ui-step-center">
                     <div class="ui-step-line">-</div>
                     <div class="ui-step-icon">
-                        <i class="ui-step-number">支付</i>
+                        <i class="ui-step-number">{$Think.lang.web_index_pay}</i>
                         <span class="ui-step-text">&nbsp;</span>
                     </div>
                 </li>
                 <li class="ui-step-center">
                     <div class="ui-step-line">-</div>
                     <div class="ui-step-icon">
-                        <i class="ui-step-number">开奖</i>
+                        <i class="ui-step-number">{$Think.lang.web_index_draw}</i>
                         <span class="ui-step-text">&nbsp;</span>
                     </div>
                 </li>
                 <li class="ui-step-end">
                     <div class="ui-step-line">-</div>
                     <div class="ui-step-icon">
-                        <i class="ui-step-number">揭晓</i>
+                        <i class="ui-step-number">{$Think.lang.web_index_announce}</i>
                         <span class="ui-step-text">&nbsp;</span>
                     </div>
                 </li>
@@ -53,13 +53,13 @@
         <div class="submitted">
             <ul class="order">
                 <li class="top">
-                    <span class="goods">商品</span>
-                    <span class="name">名称</span>
-                    <span class="moneys">价值</span>
-                    <span class="money">云购价</span>
-                    <span class="num">云购人次</span>
-                    <span class="xj">小计</span>
-                    <span class="do">操作</span>
+                    <span class="goods">{$Think.lang.web_lottery_goods}</span>
+                    <span class="name">{$Think.lang.web_cart_name}</span>
+                    <span class="moneys">{$Think.lang.web_glist_value}</span>
+                    <span class="money">{$Think.lang.web_cart_money}</span>
+                    <span class="num">{$Think.lang.web_cart_num}</span>
+                    <span class="xj">{$Think.lang.web_cart_xiaoji}</span>
+                    <span class="do">{$Think.lang.web_cart_chaozuo}</span>
                 </li>
                   <script>
                         var chooselist = localStorage.getItem('chooselist');
@@ -82,20 +82,20 @@
                     <span class="name">
                         <a href="__ROOT__/goods/items/goodsId/{$shops['id']}.html" >{$shops['title']}</a>
                         <if condition="$shops['pay_ygb'] eq 1">
-                        <p style="color:red">此商品只限福分消费</p>
+                        <p style="color:red">{$Think.lang.web_cart_point}</p>
                         </if>
-                        <p>总需 <span class="color">{$shops['zongrenshu']}</span>人次参与，还剩 
-                            <span class="gorenci">{$shops['cart_shenyu']}</span> 人次
+                        <p>{$Think.lang.web_lottery_all_has} <span class="color">{$shops['zongrenshu']}</span>{$Think.lang.web_cart_person}
+                            <span class="gorenci">{$shops['cart_shenyu']}</span> {$Think.lang.web_lottery_person}
                         </p>
                     </span>
-                    <span class="moneys">￥{$shops['money']}</span>
-                    <span class="money"><span class="color">￥<b>{$shops['yunjiage']}</b></span></span>	
+                    <span class="moneys">{$Think.lang.web_lottery_mark}{$shops['money']}</span>
+                    <span class="money"><span class="color">{$Think.lang.web_lottery_mark}<b>{$shops['yunjiage']}</b></span></span>
                     <if condition="$shops['cart_shenyu']=='0'">	
                     <span class="num">				
                         <dl class="add">					
                             <dd><input type="type" val="{$shops['id']}" onkeyup="value = value.replace(/\D/g, '')" value="{$shops['cart_gorenci']}" class="amount" disabled style="width:55px"/></dd>                    
                         </dl>
-                        <p class="message" style="margin-left:12px;color:black">商品已揭晓，请购买下期商品</p>
+                        <p class="message" style="margin-left:12px;color:black">{$Think.lang.web_cart_goods}</p>
                     </span> 
                     <span  class="xj">0.00</span> 
                     <elseif condition="$shops['is_choose'] eq 1"/>
@@ -107,7 +107,7 @@
 									<a href="JavaScript:;" val="{$shops['id']}" class="jian" style="display:none"></a>
 								</dd>      
                                                         </dl>
-		                    <p class="message" style="margin-left:12px;color:black" >该商品为选购商品，请返回再修改选购号码</p>
+		                    <p class="message" style="margin-left:12px;color:black" >{$Think.lang.web_cart_phone}</p>
 						</span> 
 						<span  class="xj">{$shops['cart_xiaoji']}</span>  
 
@@ -132,11 +132,11 @@
                     </span> 
                     <span  class="xj">{$shops['cart_xiaoji']}</span>  
                     </if>
-                    <span class="do"><a href="javascript:;" onclick="delcart({$shops['id']})"  class="delgood">删除</a></span> 
+                    <span class="do"><a href="javascript:;" onclick="delcart({$shops['id']})"  class="delgood">{$Think.lang.web_cart_delete}</a></span>
                 </li>     		
                 </foreach>
                 <li class="ts">
-                    <p class="right">云购金额总计:￥<span id="moenyCount">{$MoenyCount}</span></p>
+                    <p class="right">{$Think.lang.web_cart_yungou}:{$Think.lang.web_lottery_mark}<span id="moenyCount">{$MoenyCount}</span></p>
                 </li>
             </ul>
         </div>

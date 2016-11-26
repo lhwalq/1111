@@ -65,9 +65,9 @@ img{ border:0;}
 			<!--<div class="g-side1">-->
 				<div class="g-side-l">
 					<ul class="m-instruction-state f-clear">
-						<li><i class="ico ico-state-l ico-state-l-2"></i>100%正品保证</li>
-						<li><i class="ico ico-state-l ico-state-l-3"></i>100%权益保障</li>
-						<li><i class="ico ico-state-l ico-state-l-1"></i>100%公平公正公开</li>
+						<li><i class="ico ico-state-l ico-state-l-2"></i>{$Think.lang.web_user_guaranteed}</li>
+						<li><i class="ico ico-state-l ico-state-l-3"></i>{$Think.lang.web_user_protection}</li>
+						<li><i class="ico ico-state-l ico-state-l-1"></i>{$Think.lang.web_user_impartial}</li>
 					</ul>
 				</div>
 				<!--<div class="g-side-r">-->
@@ -109,9 +109,9 @@ img{ border:0;}
 		<!--</div>-->
 		<!--</div>-->
 
-</div>      
+</div>
 <!--footer end-->
-       <div style="display:none"><dd title="服务器时间" style="background:url(__PUBLIC__/plugin/style/images/img/time.png) no-repeat 0px 6px;background-size:21px;"  class="specialFamily" id='sp_ServerTime'> </div>
+       <div style="display:none"><dd title={$Think.lang.web_user_date_time} style="background:url(__PUBLIC__/plugin/style/images/img/time.png) no-repeat 0px 6px;background-size:21px;"  class="specialFamily" id='sp_ServerTime'> </div>
 			
  <script type="text/javascript" src="__PUBLIC__/piyungou/js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/piyungou/js/jquery.cookie.js"></script>
@@ -188,7 +188,7 @@ function loadCart(){
 		url:"__ROOT__/goods/che/"+ new Date().getTime(),
 		dataType:'json',
 		success:function(headJosn){
-			var str ='<dt><b>购物袋</b><a href="__ROOT__/goods/cartlist">全屏查看</a></dt><div id="cartListDiv" class="right-hide-scroll">';
+			var str ='<dt><b>{$Think.lang.web_user_gouwudai}</b><a href="__ROOT__/goods/cartlist">{$Think.lang.web_user_fullscreen}</a></dt><div id="cartListDiv" class="right-hide-scroll">';
 			row = headJosn.cartList.length;
 			if(headJosn.cartList.length > 0){
 				for(i=0;i<headJosn.cartList.length;i++){
@@ -203,16 +203,16 @@ function loadCart(){
 					
 					if(headJosn.cartList[i].type!=3){
 						str += '<div class="yfixed-divs-r"> <div class="yfixed-divs-rfsss">';     
-						str += '<p>云购人次 <em id="htime_'+i+'">'+headJosn.cartList[i].times+'</em></p>'; 
+						str += '<p>{$Think.lang.web_user_cloud}<em id="htime_'+i+'">'+headJosn.cartList[i].times+'</em></p>';
 						var price = headJosn.cartList[i].times*(headJosn.cartList[i].buyPeriod);
-						str += '<p>小计 <em id="hprice_'+i+'">￥'+price+'</em></p>';  
+						str += '<p>{$Think.lang.web_user_subtotal}<em id="hprice_'+i+'">￥'+price+'</em></p>';
 						str += '</div><div class="yfixed-divs-rtsss"><p> </p>';    
 						str += '</p><i onclick="delshop('+headJosn.cartList[i].gid+','+i+')"></i></div></div>';
 					}else{
 						str += '<div class="yfixed-divs-r">';     
 						str +='<input  type="hidden" id="htimes_'+i+'" value="'+headJosn.cartList[i].online.priceAll+'"/>';     
-						str += '<p>云购人次 <em id="htimes_'+i+'">'+headJosn.cartList[i].online.priceAll+'</em></p>';  
-						str += '<p>小计 <em id="hprice_'+i+'">￥'+headJosn.cartList[i].online.priceAll+'</em></p><i onclick="delshop('+headJosn.cartList[i].gid+','+i+')"></i></div>';  
+						str += '<p>{$Think.lang.web_user_cloud}<em id="htimes_'+i+'">'+headJosn.cartList[i].online.priceAll+'</em></p>';
+						str += '<p>{$Think.lang.web_user_subtotal}<em id="hprice_'+i+'">￥'+headJosn.cartList[i].online.priceAll+'</em></p><i onclick="delshop('+headJosn.cartList[i].gid+','+i+')"></i></div>';
 					}
 					str +='<input  type="hidden" id="harea_'+i+'" value="'+headJosn.cartList[i].online.priceArea+'"/>';     
 					str +='<input  type="hidden" id="gid_'+i+'" value="'+headJosn.cartList[i].gid+'"/>'; 

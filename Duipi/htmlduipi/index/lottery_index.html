@@ -10,7 +10,7 @@
 					<div id="marqueebox1" style="color: #FFC;">
 						<ul>
                                                         <foreach name="LotteryList" item="item" >
-								<li>【{:R("Base/userid",array($item['uid'],'username'))}***】：抽中{$item['title']}，获得{$item['desc']}；</li>
+								<li>【{:R("Base/userid",array($item['uid'],'username'))}***】：{$Think.lang.web_lottery_win}{$item['title']}，{$Think.lang.web_lottery_acquire}{$item['desc']}；</li>
 							</foreach>
 							<?php
 							for($i=19;$i>count($LotteryList);$i--){
@@ -58,7 +58,7 @@
 
 </style>
 	<div id="userrecharge">
-		<a href="__ROOT__/user/qiandao">去得福分</a>
+		<a href="__ROOT__/user/qiandao">{$Think.lang.web_lottery_happy_lot}</a>
 	</div>
 
 
@@ -67,21 +67,21 @@
 <div class="part4 ">
 	<div class="wrap">
 	<dl class="activeRegulation fl">
-		<dt>活动规则：</dt>
+		<dt>{$Think.lang.web_pleasereg_rule}：</dt>
 		<dd>
-			<i>1</i>活动时间:结束时间以网站公告为准（应广大会员要求，活动时间再次延长）
+			<i>{$Think.lang.web_lottery_one}</i>{$Think.lang.web_lottery_rule_one}
 		</dd>
 		<dd>
-			<i>2</i>活动内容：在活动时间内，所有注册会员购买商品，做任务得到福分满1000获得一次抽奖机会哦！
+			<i>{$Think.lang.web_lottery_two}</i>{$Think.lang.web_lottery_rule_two}
 					</dd>
 		<dd>
-			<i>3</i>活动奖品：一等奖10元商城红包，二等奖8元商城红包，三等奖6元商城红包，四等奖4元商城红包，五等奖3元商城红包，六等奖2元商城红包，七等奖1元商城红包。
+			<i>{$Think.lang.web_lottery_three}</i>{$Think.lang.web_lottery_rule_three}
 		</dd>
 		<dd>
-			<i>4</i>活动说明：响应广大会员要求，活动时间再次延长，本次活动中奖率100%，获得对应红包后会即时到您的{fun:_yys('web_name_two')}帐户，红包金额不得提现。
+			<i>{$Think.lang.web_lottery_four}</i>{$Think.lang.web_lottery_rule_four_one}{fun:_yys('web_name_two')}{$Think.lang.web_lottery_rule_four_two}
 		</dd>
 		<dd>
-			<i>5</i>对于查实的作弊行为，扣除一切红包，取消抽奖资格。借助网站及其他平台，恶意获取红包，一经查实，扣除一切红包金额，清除云币账户且封号。
+			<i>{$Think.lang.web_lottery_five}</i>{$Think.lang.web_lottery_rule_five}
 		</dd>
 	</dl>
     </div>

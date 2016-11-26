@@ -228,20 +228,20 @@
                 <li class="MyzhLi"> <a href="__ROOT__/user/home">{$Think.lang.web_user_me}{:C('web_name_two')}<i class="top"></i></a>
                     <dl class="Myzh"> 
                         <dd>
-                            <a href="__ROOT__/user/userbuylist">购买记录</a>
+                            <a href="__ROOT__/user/userbuylist">{$Think.lang.web_user_purchase}</a>
                         </dd> 
                         <dd>
-                            <a href="__ROOT__/user/orderlist">获得的商品</a>
+                            <a href="__ROOT__/user/orderlist">{$Think.lang.web_user_order_list}</a>
                         </dd> 
                         <dd>
-                            <a href="__ROOT__/user/userModify">个人设置</a>
+                            <a href="__ROOT__/user/userModify">{$Think.lang.web_user_user_modify}</a>
                         </dd> 
                         <!--<dd>-->
                             <!--<a href="__ROOT__/user/wangpan">我的网盘</a>-->
                         <!--</dd> -->
-                    </dl> </li> 
-                <li><a href="__ROOT__/user/userrecharge">充值</a></li> 
-                <li><a href="__ROOT__/index/about">帮助</a></li> 
+                    </dl> </li>
+                <li><a href="__ROOT__/user/userrecharge">{$Think.lang.web_user_user_recharge}</a></li>
+                <li><a href="__ROOT__/index/about">{$Think.lang.web_user_about}</a></li>
                 <!--<li><a style="border-right:none;" href="__ROOT__/index/group_qq">官方QQ群</a></li> -->
             </ul> 
         </div> 
@@ -254,7 +254,7 @@
         <div class="yJoinNum" style='margin-left:190px'>
             <input type="hidden" value="{:R('base/go_count_renci',array())}">
             <a href="__ROOT__/index/buyrecord" target="_blank" class="allNums">
-                <span class="yBefore">已有</span>
+                <span class="yBefore">{$Think.lang.web_user_has}</span>
                 <span class="yNumList">
                     <ul style="margin-top: -270px;">
                         <li t="9">9</li>
@@ -270,21 +270,20 @@
                     </ul>
                 </span>
                 <span class="w_ci_bg"></span>
-                <span>人次参加</span>
+                <span>{$Think.lang.web_user_part_in}</span>
             </a>
         </div>
 
 
         <!-- 2015 6 9 start--> 
         <div class="search_header2"> 
-            <s></s> 
-            <input type="text" placeholder="搜索您需要的商品" value="" id="q" /> 
-            <a href="javascript:;" class="btnHSearch">搜索</a> 
+            <s></s>
+            <input type="text" placeholder={$Think.lang.web_user_search_has} value="" id="q" />
+            <a href="javascript:;" class="btnHSearch">{$Think.lang.web_user_search}</a>
             <span class="search_span_a">
-                <a href="__ROOT__/index/s_tag/val/手机">手机</a>
-                <a href="__ROOT__/index/s_tag/val/电脑">电脑</a>
-                <a href="__ROOT__/index/s_tag/val/手机">手机</a>
-                <a href="__ROOT__/index/s_tag/val/笔记本">笔记本</a>
+                <a href="__ROOT__/index/s_tag/val/{$Think.lang.web_user_phone}">{$Think.lang.web_user_phone}</a>
+                <a href="__ROOT__/index/s_tag/val/{$Think.lang.web_user_computer}">{$Think.lang.web_user_computer}</a>
+                <a href="__ROOT__/index/s_tag/val/{$Think.lang.web_user_notebook}">{$Think.lang.web_user_notebook}</a>
             </span>
         </div> 
 
@@ -299,7 +298,7 @@
     <div class="yNavIndex">
         <div class="pullDown">
             <h4 class="pullDownTitle">
-                <a target="" href="__ROOT__/goods/glist">所有商品分类</a>
+                <a target="" href="__ROOT__/goods/glist">{$Think.lang.web_user_classification}</a>
             </h4>
             <ul class="pullDownList" style="<if condition="($isindex eq 'Y')">display:block;overflow: hidden;<else />display:none;</if>">
                 <foreach name="daodao" item="categoryx" >
@@ -318,7 +317,7 @@
                             <div class="yMenuLCinList">
                                 <h3>
                                     <a class="yListName" href="__ROOT__/goods/glist/type/{$categoryy['cateid']}.html">{$categoryy['name']}</a>
-                                    <a class="yListMore" href="__ROOT__/goods/glist/type/{$categoryy['cateid']}.html">更多 ></a>
+                                    <a class="yListMore" href="__ROOT__/goods/glist/type/{$categoryy['cateid']}.html">{$Think.lang.web_user_more}</a>
                                 </h3>
                                 <p>
                                 <foreach name="pinpin" item="vo" >
@@ -343,7 +342,7 @@
             {:R('base/Getheader',array('index'))}
             <li class="hide-menu-nav" style="padding: 0 13px 0px 15px;">
                 <span></span>
-                <a class="hide-menu-nava" href="javascript:void(0)">发现</a>
+                <a class="hide-menu-nava" href="javascript:void(0)">{$Think.lang.web_user_find}</a>
                 <dl>
                     {:R('base/Getheader',array('faxian'))}
                 </dl>
@@ -358,29 +357,29 @@
 <!-- 滑过右侧购物车时未登录时的登陆框 --> 
 
 <!-- 滑过右侧购物车时登录后的列表 --> 
-<div class="Left-fixed-divs2 Left-fixed-divs3"> 
+<div class="Left-fixed-divs2 Left-fixed-divs3">
     <!-- 无商品时 --> 
-    <p id="noCart" class="yNocommodity">你的购物袋还是空的赶紧行动吧！</p> 
+    <p id="noCart" class="yNocommodity">{$Think.lang.web_user_shopping_bag}</p>
     <!-- 购物袋有商品 start --> 
     <dl id="list"> 
-    </dl> 
-    <div class="fixed-divbottom"> 
-        <p>已选<span id="row">0</span>件商品 <span class="yflr">￥<em id="hpriceTotal">0</em>元</span></p> 
-        <a href="__ROOT__/goods/cartlist">结 算</a> 
+    </dl> web_user_shopping
+    <div class="fixed-divbottom">
+        <p>{$Think.lang.web_user_select}<span id="row">0</span>{$Think.lang.web_user_select}<span class="yflr">{$Think.lang.web_lottery_mark}<em id="hpriceTotal">0</em>{$Think.lang.web_user_money}</span></p>
+        <a href="__ROOT__/goods/cartlist">{$Think.lang.web_user_account}</a>
     </div> 
 </div> 
 <!-- 购物袋有商品 end --> 
 <div class="Left-fixed-divs" style="display: none"> 
     <!--<img src="__PUBLIC__/style/images/ce.png" style="top:5%;position:relative;">-->
     <ul> 
-        <li class="shoppingCartRightFix Left-fixed-divs3"> <a href="__ROOT__/goods/cartlist"> <i></i> <em>购</em> <em>物</em> <em>袋</em> <em id="cartCount"></em> </a> </li> 
+        <li class="shoppingCartRightFix Left-fixed-divs3"> <a href="__ROOT__/goods/cartlist"> <i></i> <em>{$Think.lang.web_user_gou}</em> <em>{$Think.lang.web_user_wu}</em> <em>{$Think.lang.web_user_dai}</em> <em id="cartCount"></em> </a> </li>
         <!--<li class="YonlineService otherlifix"><a hidefocus="true" href="http://wpa.qq.com/msgrd?V=1&uin={:C('qq')}&Menu=yes" target="_blank"><i style="margin-left:12px;"></i><em>在线</em><em>客服</em></a></li> -->
         <!--<li class="otherlifix otherlifixw"> <a hidefocus="true" href="javascript:void 0"> <i style="background-position:-168px -176px;"></i> <em>官方</em> <em>微信</em> </a> <img width="188" height="216" src="__PUBLIC__/uploads/{:C('web_logo1')}" /> -->
             <!--<s></s> </li> -->
         <!--<li class="otherlifix otherlifixw"> <a hidefocus="true" href="https://www.pgyer.com/dzmM" target="_blank"> <i style="margin-left:12px;margin-top:0;background-position:-203px -172px;height: 27px;margin-bottom:0;"></i> <em>手机</em><em>App</em> </a> -->
             <!--&lt;!&ndash; <img width="188" height="188" src="__PUBLIC__/style/images/weixinlogo.png" style="border:1px solid #adadad;"> &ndash;&gt; </li> -->
         <!--<li class="otherlifix"> <a hidefocus="true" href="__ROOT__/user/userrecharge"> <i style="margin-left:12px;background-position:-236px -176px;"></i> <em>快速</em><em>充值</em> </a> </li> -->
-        <li class="otherlifix lifixTop"> <i style="background-position:-276px -170px"></i> <em>置</em><em>顶</em> </li> 
+        <li class="otherlifix lifixTop"> <i style="background-position:-276px -170px"></i> <em>$Think.lang.web_user_zhi}</em><em>$Think.lang.web_user_ding}</em> </li>
     </ul> 
 </div> 
 <!-- 右侧悬浮 end --> 

@@ -121,15 +121,15 @@ function SetImgphoto(data){
 	<div id="urlxx"></div>
 	<div class="uploadCon" style="margin-top:20px;">
 		<div class="upLeft">
-            <div class="gray02">支持  png,  jpg,  jpeg 图片上传</div>
+            <div class="gray02">{$Think.lang.web_setting_upload}</div>
 			<div class="upload" style="float:left; width:300px;"><input type="file" name="file_upload"  id="file_upload" multiple="true" /></div>
 			<div class="frameCut">
 				<div class="zhix"></div>
-				<div id="divImgTip" class="text">选择一张本地的图片编辑后上传成为头像</div>
+				<div id="divImgTip" class="text">{$Think.lang.web_setting_select_pic}</div>
 				<div class="pic">					
 				</div>
 			</div>
-			<span class="tishi gray02">点击图片并拉动以选择需要裁剪的区域</span>
+			<span class="tishi gray02">{$Think.lang.web_setting_shears_pic}</span>
 			<div class="savePhoto">
 				<form action="__ROOT__/user/userphotoinsert" method="post" id="crop_form">
 					<input type="hidden" id="x" name="x" />
@@ -137,22 +137,22 @@ function SetImgphoto(data){
 					<input type="hidden" id="w" name="w" />
 					<input type="hidden" id="h" name="h" />
 					<input type="hidden" id="membimg" name="img" />
-					<input id="crop_submit" type="submit"name="submit" class="bluebut" value="保存头像" title="保存头像"/>
+					<input id="crop_submit" type="submit"name="submit" class="bluebut" value={$Think.lang.web_setting_save_icon} title={$Think.lang.web_setting_save_icon}/>
 				</form>
 			</div>
 		</div>
 		<div class="upRight">
-			<p class="gray02">您上传的头像将会自动生成三种尺寸，请注意头像是否清晰：</p>
+			<p class="gray02">{$Think.lang.web_setting_upload_icon}</p>
 			<div class="photo gray02">
 				<ul>
                                         <if condition="(empty($huiyuan['img'])) OR ($huiyuan['img'] eq 'photo/member.jpg') ">			
-					<li class="li160"><div class="w160"><div id="w160"><img id="crop_preview" src="__PUBLIC__/uploads/photo/member.jpg_160160.jpg" width="160" height="160"  /></div></div>160X160 像素</li>
-					<li class="li80"><div class="w80"><div id="w80"><img id="crop_preview2" src="__PUBLIC__/uploads/photo/member.jpg_8080.jpg" width="80" height="80"  /></div></div>80X80 像素</li>
-					<li class="li30"><div class="w30"><div id="w30"><img id="crop_preview3" src="__PUBLIC__/uploads/photo/member.jpg_3030.jpg" width="30" height="30"  /></div></div>30X30 像素</li>					
+					<li class="li160"><div class="w160"><div id="w160"><img id="crop_preview" src="__PUBLIC__/uploads/photo/member.jpg_160160.jpg" width="160" height="160"  /></div></div>160X160 {$Think.lang.web_setting_pixel}</li>
+					<li class="li80"><div class="w80"><div id="w80"><img id="crop_preview2" src="__PUBLIC__/uploads/photo/member.jpg_8080.jpg" width="80" height="80"  /></div></div>80X80 {$Think.lang.web_setting_pixel}</li>
+					<li class="li30"><div class="w30"><div id="w30"><img id="crop_preview3" src="__PUBLIC__/uploads/photo/member.jpg_3030.jpg" width="30" height="30"  /></div></div>30X30 {$Think.lang.web_setting_pixel}</li>
 					<else />			
-					<li class="li160"><div class="w160"><div id="w160"><img id="crop_preview" src="__PUBLIC__/uploads/{$huiyuan['img']}_160160.{:img($huiyuan['img'])}" /></div></div>160X160 像素</li>
-					<li class="li80"><div class="w80"><div id="w80"><img id="crop_preview2" src="__PUBLIC__/uploads/{$huiyuan['img']}_8080.{:img($huiyuan['img'])}" /></div></div>80X80 像素</li>
-					<li class="li30"><div class="w30"><div id="w30"><img id="crop_preview3" src="__PUBLIC__/uploads/{$huiyuan['img']}_3030.{:img($huiyuan['img'])}" /></div></div>30X30 像素</li>					
+					<li class="li160"><div class="w160"><div id="w160"><img id="crop_preview" src="__PUBLIC__/uploads/{$huiyuan['img']}_160160.{:img($huiyuan['img'])}" /></div></div>160X160 {$Think.lang.web_setting_pixel}</li>
+					<li class="li80"><div class="w80"><div id="w80"><img id="crop_preview2" src="__PUBLIC__/uploads/{$huiyuan['img']}_8080.{:img($huiyuan['img'])}" /></div></div>80X80 {$Think.lang.web_setting_pixel}</li>
+					<li class="li30"><div class="w30"><div id="w30"><img id="crop_preview3" src="__PUBLIC__/uploads/{$huiyuan['img']}_3030.{:img($huiyuan['img'])}" /></div></div>30X30 {$Think.lang.web_setting_pixel}</li>
 					</if>
 				</ul>
 			</div>

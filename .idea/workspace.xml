@@ -2,10 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62f0d558-1e3c-4dc2-b0d4-450a34d22f5a" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Duipi/Common/Lang/zh-cn.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/Conf/config.php" afterPath="$PROJECT_DIR$/Duipi/Conf/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/Controller/IndexController.class.php" afterPath="$PROJECT_DIR$/Duipi/Controller/IndexController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/htmlduipi/index/article_show.help.html" afterPath="$PROJECT_DIR$/Duipi/htmlduipi/index/article_show.help.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/htmlduipi/index/cartlist.html" afterPath="$PROJECT_DIR$/Duipi/htmlduipi/index/cartlist.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/htmlduipi/index/index.buyrecord.html" afterPath="$PROJECT_DIR$/Duipi/htmlduipi/index/index.buyrecord.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/htmlduipi/index/index.buyrecordbai.html" afterPath="$PROJECT_DIR$/Duipi/htmlduipi/index/index.buyrecordbai.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/htmlduipi/index/index.footer.html" afterPath="$PROJECT_DIR$/Duipi/htmlduipi/index/index.footer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/htmlduipi/index/index.glist.html" afterPath="$PROJECT_DIR$/Duipi/htmlduipi/index/index.glist.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/htmlduipi/index/index.glistzg.html" afterPath="$PROJECT_DIR$/Duipi/htmlduipi/index/index.glistzg.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/htmlduipi/index/index.header.html" afterPath="$PROJECT_DIR$/Duipi/htmlduipi/index/index.header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/htmlduipi/index/index.index.html" afterPath="$PROJECT_DIR$/Duipi/htmlduipi/index/index.index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/htmlduipi/index/index.lottery.html" afterPath="$PROJECT_DIR$/Duipi/htmlduipi/index/index.lottery.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/htmlduipi/index/index.shaidan.html" afterPath="$PROJECT_DIR$/Duipi/htmlduipi/index/index.shaidan.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/htmlduipi/index/lottery_index.html" afterPath="$PROJECT_DIR$/Duipi/htmlduipi/index/lottery_index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/htmlduipi/index/member.left.html" afterPath="$PROJECT_DIR$/Duipi/htmlduipi/index/member.left.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/htmlduipi/index/pleasereg.html" afterPath="$PROJECT_DIR$/Duipi/htmlduipi/index/pleasereg.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/htmlduipi/index/search.search.html" afterPath="$PROJECT_DIR$/Duipi/htmlduipi/index/search.search.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/htmlduipi/index/user.address.html" afterPath="$PROJECT_DIR$/Duipi/htmlduipi/index/user.address.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/htmlduipi/index/user.index.html" afterPath="$PROJECT_DIR$/Duipi/htmlduipi/index/user.index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/htmlduipi/index/user.login.html" afterPath="$PROJECT_DIR$/Duipi/htmlduipi/index/user.login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/htmlduipi/index/user.modify.html" afterPath="$PROJECT_DIR$/Duipi/htmlduipi/index/user.modify.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/htmlduipi/index/user.orderlist.html" afterPath="$PROJECT_DIR$/Duipi/htmlduipi/index/user.orderlist.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/htmlduipi/index/user.password.html" afterPath="$PROJECT_DIR$/Duipi/htmlduipi/index/user.password.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/htmlduipi/index/user.photo.html" afterPath="$PROJECT_DIR$/Duipi/htmlduipi/index/user.photo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/htmlduipi/index/user.register.html" afterPath="$PROJECT_DIR$/Duipi/htmlduipi/index/user.register.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/htmlduipi/index/user.shezhi.html" afterPath="$PROJECT_DIR$/Duipi/htmlduipi/index/user.shezhi.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/htmlduipi/index/user.singlelist.html" afterPath="$PROJECT_DIR$/Duipi/htmlduipi/index/user.singlelist.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/htmlduipi/index/user.userbuylist.html" afterPath="$PROJECT_DIR$/Duipi/htmlduipi/index/user.userbuylist.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Duipi/htmlduipi/index/user.userbuylistzg.html" afterPath="$PROJECT_DIR$/Duipi/htmlduipi/index/user.userbuylistzg.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thinkphp/Lang/zh-cn.php" afterPath="$PROJECT_DIR$/thinkphp/Lang/zh-cn.php" />
     </list>
     <ignored path="yyg.iws" />
@@ -31,34 +55,51 @@
       <file leaf-file-name="zh-cn.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/thinkphp/Lang/zh-cn.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-24.833334">
-              <caret line="55" column="16" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="16" />
+            <state vertical-scroll-proportion="-4.392157">
+              <caret line="292" column="23" selection-start-line="292" selection-start-column="5" selection-end-line="292" selection-end-column="23" />
+              <folding>
+                <element signature="e#6#80#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GoodsController.class.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Duipi/Controller/GoodsController.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.1568627">
+              <caret line="576" column="41" selection-start-line="576" selection-start-column="41" selection-end-line="576" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.index.html">
+      <file leaf-file-name="UserController.class.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Duipi/Controller/UserController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.0">
-              <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
-              <folding>
-                <marker date="1479310717000" expanded="true" signature="20859:20910" placeholder="..." />
-              </folding>
+            <state vertical-scroll-proportion="-4.098039">
+              <caret line="2627" column="33" selection-start-line="2627" selection-start-column="20" selection-end-line="2627" selection-end-column="33" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.header.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.header.html">
+      <file leaf-file-name="user.userbuylistzg.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/user.userbuylistzg.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38516405">
-              <caret line="223" column="33" selection-start-line="223" selection-start-column="33" selection-end-line="223" selection-end-column="33" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1480086722000" expanded="true" signature="22879:22904" placeholder="..." />
-              </folding>
+            <state vertical-scroll-proportion="0.46504992">
+              <caret line="94" column="11" selection-start-line="94" selection-start-column="11" selection-end-line="94" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.userbuylist.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/user.userbuylist.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-21.708334">
+              <caret line="59" column="92" selection-start-line="59" selection-start-column="92" selection-end-line="59" selection-end-column="120" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -71,21 +112,40 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/user.register.html" />
-        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/index.index.html" />
-        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/index.footer.html" />
-        <option value="$PROJECT_DIR$/Duipi/Controller/IndexController.class.php" />
-        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/article_show.help.html" />
-        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/lottery_index.html" />
         <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/index.item_contents.html" />
-        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/member.left.html" />
-        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/user.index.html" />
-        <option value="$PROJECT_DIR$/Duipi/Controller/UserController.class.php" />
         <option value="$PROJECT_DIR$/Duipi/Conf/config.php" />
         <option value="$PROJECT_DIR$/Duipi/Lang/zh-cn.php" />
         <option value="$PROJECT_DIR$/Duipi/Common/Lang/zh-cn.php" />
-        <option value="$PROJECT_DIR$/thinkphp/Lang/zh-cn.php" />
+        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/index.footer.html" />
+        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/pleasereg.html" />
+        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/index.shaidan.html" />
         <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/index.header.html" />
+        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/index.lottery.html" />
+        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/index.glist.html" />
+        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/index.glistzg.html" />
+        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/lottery_index.html" />
+        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/article_show.help.html" />
+        <option value="$PROJECT_DIR$/Duipi/Controller/IndexController.class.php" />
+        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/index.buyrecord.html" />
+        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/index.buyrecordbai.html" />
+        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/search.search.html" />
+        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/index.index.html" />
+        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/cartlist.html" />
+        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/user.login.html" />
+        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/user.register.html" />
+        <option value="$PROJECT_DIR$/Duipi/Controller/UserController.class.php" />
+        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/member.left.html" />
+        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/user.index.html" />
+        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/user.photo.html" />
+        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/user.shezhi.html" />
+        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/user.modify.html" />
+        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/user.address.html" />
+        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/user.password.html" />
+        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/user.userbuylist.html" />
+        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/user.orderlist.html" />
+        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/user.singlelist.html" />
+        <option value="$PROJECT_DIR$/thinkphp/Lang/zh-cn.php" />
+        <option value="$PROJECT_DIR$/Duipi/htmlduipi/index/user.userbuylistzg.html" />
       </list>
     </option>
   </component>
@@ -176,6 +236,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Lang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yyg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yyg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Duipi" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -274,217 +348,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="221" column="56" selection-start-line="221" selection-start-column="56" selection-end-line="221" selection-end-column="56" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1480086722000" expanded="true" signature="22879:22904" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Duipi/Controller/UserController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/user.register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="87" column="32" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="372" column="42" selection-start-line="372" selection-start-column="42" selection-end-line="372" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Duipi/Controller/IndexController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="221" column="56" selection-start-line="221" selection-start-column="56" selection-end-line="221" selection-end-column="56" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1480086722000" expanded="true" signature="22879:22904" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Duipi/Controller/UserController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/user.register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="87" column="32" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="372" column="42" selection-start-line="372" selection-start-column="42" selection-end-line="372" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Duipi/Controller/IndexController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="307" column="0" selection-start-line="307" selection-start-column="0" selection-end-line="307" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Duipi/Controller/IndexController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Duipi/Controller/IndexController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thinkphp/Library/Claduipi/Tools/sendmobile.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23399559">
-          <caret line="332" column="33" selection-start-line="332" selection-start-column="20" selection-end-line="332" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Common/function.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27960056">
-          <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_4.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34379458">
-          <caret line="175" column="9" selection-start-line="175" selection-start-column="9" selection-end-line="175" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/index_1.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="418" column="175" selection-start-line="418" selection-start-column="166" selection-end-line="418" selection-end-column="175" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/user.register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.5">
-          <caret line="12" column="50" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thinkphp/Library/Think/Storage/Driver/File.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66333807">
-          <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/article_show.help.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.75">
-          <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/single_web.newbie.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17118402">
-          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.footer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="96" column="4" selection-start-line="96" selection-start-column="8" selection-end-line="98" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/lottery_index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="93" column="35" selection-start-line="93" selection-start-column="35" selection-end-line="93" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Duipi/Controller/GoodszgController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="654" column="27" selection-start-line="654" selection-start-column="20" selection-end-line="654" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.glistzg.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Duipi/Controller/MobileController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3323442">
-          <caret line="371" column="27" selection-start-line="371" selection-start-column="23" selection-end-line="371" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/public/moblie.message.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.4336662">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/mobile/new/jweixin-1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="8497" selection-start-line="0" selection-start-column="8497" selection-end-line="0" selection-end-column="8497" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/lib/font-awesome/docs/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="7.4834437">
@@ -499,38 +362,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Duipi/Controller/LotteryController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.03311258">
-          <caret line="45" column="25" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.shaidan.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.25">
-          <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Duipi/Controller/IndexController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="24.375">
-          <caret line="166" column="27" selection-start-line="166" selection-start-column="20" selection-end-line="166" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.8807945">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Duipi/Controller/GoodsController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="20.607843">
-          <caret line="455" column="95" selection-start-line="455" selection-start-column="88" selection-end-line="455" selection-end-column="95" />
         </state>
       </provider>
     </entry>
@@ -541,29 +376,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.headerl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Common/Conf/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36376604">
           <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/user.index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2196862">
-          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding>
-            <marker date="1479481707000" expanded="true" signature="2740:3010" placeholder="..." />
-            <marker date="1479481707000" expanded="true" signature="2756:2989" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -571,7 +387,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -579,7 +394,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.10699002">
           <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -587,23 +401,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.54304636">
           <caret line="285" column="18" selection-start-line="285" selection-start-column="18" selection-end-line="285" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/member.left.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.03311258">
-          <caret line="17" column="110" selection-start-line="16" selection-start-column="12" selection-end-line="17" selection-end-column="110" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Duipi/Controller/UserController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.03311258">
-          <caret line="1838" column="44" selection-start-line="1838" selection-start-column="44" selection-end-line="1838" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -611,36 +408,381 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.03311258">
           <caret line="1084" column="41" selection-start-line="1084" selection-start-column="41" selection-end-line="1084" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.headerl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.623395">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.index.html">
+    <entry file="file://$PROJECT_DIR$/public/css/newbie.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.0">
-          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
-          <folding>
-            <marker date="1479310717000" expanded="true" signature="20859:20910" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="0.38516405">
+          <caret line="18" column="56" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="56" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/thinkphp/Lang/zh-cn.php">
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/single_web.newbie.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.833334">
-          <caret line="55" column="16" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.021398002">
+          <caret line="1" column="61" selection-start-line="1" selection-start-column="61" selection-end-line="1" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/pager1.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.4393723">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/new_join.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.4122682">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/pleasereg.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.52924395">
+          <caret line="225" column="170" selection-start-line="225" selection-start-column="170" selection-end-line="225" selection-end-column="170" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.header.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38516405">
-          <caret line="223" column="33" selection-start-line="223" selection-start-column="33" selection-end-line="223" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.3323442">
+          <caret line="366" column="141" selection-start-line="366" selection-start-column="141" selection-end-line="366" selection-end-column="141" />
           <folding>
+            <element signature="n#style#0;n#ul#0;n#span#1;n#a#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1480086722000" expanded="true" signature="22879:22904" placeholder="..." />
+            <element signature="n#style#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1480136397000" expanded="true" signature="23469:23494" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.shaidan.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37833828">
+          <caret line="17" column="86" selection-start-line="17" selection-start-column="86" selection-end-line="17" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.lottery.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.57203996">
+          <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.022824537">
+          <caret line="214" column="66" selection-start-line="214" selection-start-column="35" selection-end-line="214" selection-end-column="66" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#dd#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.glistzg.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.57203996">
+          <caret line="220" column="194" selection-start-line="220" selection-start-column="194" selection-end-line="220" selection-end-column="194" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/Controller/GoodszgController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3580599">
+          <caret line="772" column="46" selection-start-line="772" selection-start-column="46" selection-end-line="772" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/lottery_index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59343797">
+          <caret line="80" column="152" selection-start-line="80" selection-start-column="152" selection-end-line="80" selection-end-column="152" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#td#1;n#tr#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/Controller/LotteryController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.035663337">
+          <caret line="45" column="25" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/Controller/GroupController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.10699002">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/style/css/c_cloud.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35099337">
+          <caret line="749" column="0" selection-start-line="749" selection-start-column="0" selection-end-line="750" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/c_cloud.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35099337">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/c_cloud_1.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35099337">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/article_show.help.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.7647059">
+          <caret line="6" column="37" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.buyrecordbai.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.0">
+          <caret line="8" column="83" selection-start-line="8" selection-start-column="83" selection-end-line="8" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.buyrecord.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.627451">
+          <caret line="115" column="119" selection-start-line="115" selection-start-column="94" selection-end-line="115" selection-end-column="119" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/search.search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-23.125">
+          <caret line="41" column="130" selection-start-line="41" selection-start-column="130" selection-end-line="41" selection-end-column="130" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.glist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39229673">
+          <caret line="211" column="190" selection-start-line="211" selection-start-column="155" selection-end-line="211" selection-end-column="190" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/index.index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="293" column="118" selection-start-line="293" selection-start-column="118" selection-end-line="293" selection-end-column="118" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <marker date="1480145635000" expanded="true" signature="21735:21786" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/cartlist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.26248217">
+          <caret line="166" column="25" selection-start-line="166" selection-start-column="20" selection-end-line="166" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/user.login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.833334">
+          <caret line="66" column="8" selection-start-line="66" selection-start-column="8" selection-end-line="70" selection-end-column="100" />
+          <folding>
+            <marker date="1480147548000" expanded="true" signature="491:568" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/user.register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46504992">
+          <caret line="92" column="199" selection-start-line="92" selection-start-column="199" selection-end-line="92" selection-end-column="199" />
+          <folding>
+            <marker date="1480148451000" expanded="true" signature="667:744" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/Controller/IndexController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.392157">
+          <caret line="119" column="25" selection-start-line="119" selection-start-column="20" selection-end-line="119" selection-end-column="25" />
+          <folding>
+            <marker date="1480142563000" expanded="true" signature="11243:11313" placeholder="select id,si... @#_shangpin" />
+            <marker date="1480142563000" expanded="true" signature="11501:11560" placeholder="select id fr... @#_shai" />
+            <marker date="1480142563000" expanded="true" signature="11904:11985" placeholder="select * fro... @#_shai" />
+            <marker date="1480142563000" expanded="true" signature="12162:12217" placeholder="select * fro... @#_yonghu" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/member.left.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.8188303">
+          <caret line="85" column="102" selection-start-line="85" selection-start-column="102" selection-end-line="85" selection-end-column="102" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/user.index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0271041">
+          <caret line="48" column="64" selection-start-line="48" selection-start-column="64" selection-end-line="48" selection-end-column="64" />
+          <folding>
+            <marker date="1480150217000" expanded="true" signature="2930:3200" placeholder="..." />
+            <marker date="1480150217000" expanded="true" signature="2946:3179" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/user.shezhi.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23537803">
+          <caret line="11" column="174" selection-start-line="11" selection-start-column="174" selection-end-line="11" selection-end-column="174" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/user.photo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2838801">
+          <caret line="154" column="215" selection-start-line="154" selection-start-column="215" selection-end-line="154" selection-end-column="215" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/user.modify.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55064195">
+          <caret line="301" column="103" selection-start-line="301" selection-start-column="103" selection-end-line="301" selection-end-column="103" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/user.address.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.94721824">
+          <caret line="246" column="24" selection-start-line="246" selection-start-column="28" selection-end-line="253" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/user.password.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43916914">
+          <caret line="35" column="39" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
+          <folding>
+            <element signature="n#style#0;n#lable#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#div#0;n#td#1;n#tr#3;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/user.orderlist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.66333807">
+          <caret line="87" column="67" selection-start-line="87" selection-start-column="67" selection-end-line="87" selection-end-column="67" />
+          <folding>
+            <element signature="n#style#0;n#li#3;n#ul#0;n#foreach#0;n#if#0;n#div#4;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/user.singlelist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.9372325">
+          <caret line="93" column="103" selection-start-line="93" selection-start-column="103" selection-end-line="93" selection-end-column="103" />
+          <folding>
+            <marker date="1480157064000" expanded="true" signature="6902:6915" placeholder="..." />
+            <marker date="1480157064000" expanded="true" signature="6986:6999" placeholder="..." />
+            <marker date="1480157064000" expanded="true" signature="7066:7079" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/Controller/UserController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.098039">
+          <caret line="2627" column="33" selection-start-line="2627" selection-start-column="20" selection-end-line="2627" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/Controller/GoodsController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.1568627">
+          <caret line="576" column="41" selection-start-line="576" selection-start-column="41" selection-end-line="576" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thinkphp/Lang/zh-cn.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.392157">
+          <caret line="292" column="23" selection-start-line="292" selection-start-column="5" selection-end-line="292" selection-end-column="23" />
+          <folding>
+            <element signature="e#6#80#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/user.userbuylist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.708334">
+          <caret line="59" column="92" selection-start-line="59" selection-start-column="92" selection-end-line="59" selection-end-column="120" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Duipi/htmlduipi/index/user.userbuylistzg.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46504992">
+          <caret line="94" column="11" selection-start-line="94" selection-start-column="11" selection-end-line="94" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -388,13 +388,13 @@ class IndexController extends BaseController {
             $start_time = strtotime($start_time);
             $end_time = strtotime($end_time);
             if (strlen($start_time) != 10 && strlen($end_time) != 10) {
-                $this->note("参数不正确!");
+                $this->note(L('web_tip_parameter'));
             }
             if ($end_time < $start_time) {
-                $this->note("对不起！查询开始时间不得大于结束时间");
+                $this->note(L('web_tip_time'));
             }
             if (($end_time - 7200) > $start_time) {
-                $this->note("对不起！查询时间跨度不得超过2小时");
+                $this->note(L('web_exceed_time'));
             }
             $start_time.='.000';
             $end_time .='.000';

@@ -6,24 +6,24 @@
 		</a>
 	</div>
 	<div class="head-but">
-		<a href="__ROOT__/user/userphoto" class="blue">修改头像</a>
-		<a href="__ROOT__/user/userModify" class="blue fr">编辑资料</a>
+		<a href="__ROOT__/user/userphoto" class="blue">{$Think.lang.web_user_change_icon}</a>
+		<a href="__ROOT__/user/userModify" class="blue fr">{$Think.lang.web_user_profile}</a>
 	</div>
 	<div class="sidebar-nav">
 		<p class="sid-line"></p>
-		<h2 id="wdwzg" class="sid-icon01"><a href="__ROOT__/user/home"><b></b>我的{:C('web_name_two')}</a></h2>
+		<h2 id="wdwzg" class="sid-icon01"><a href="__ROOT__/user/home"><b></b>{$Think.lang.web_user_me}{:C('web_name_two')}</a></h2>
 		<p class="sid-line"></p>
-		<h3 id="grsz" class="sid-icon09" hasChild="1"><a href="__ROOT__/user/userModify"><b></b>个人设置</a></h3>		
+		<h3 id="grsz" class="sid-icon09" hasChild="1"><a href="__ROOT__/user/userModify"><b></b>{$Think.lang.web_user_setting}</a></h3>
 		<!--<p class="sid-line"></p>-->
 		<!--<h3 id="grsz" class="sid-icon09" hasChild="1"><a href="__ROOT__/user/qiandao"><b></b>每日签到</a></h3>		-->
 		<p class="sid-line"></p>
 		<h3 class="sid-icon02" hasChild="1">
-			<a href="javascript:void();"><b></b>我的云购 <s title="收起"></s></a>
+			<a href="javascript:void();"><b></b>{$Think.lang.web_user_me_cloud} <s title={$Think.lang.web_glist_all_pack_up}></s></a>
 		</h3>
 		<ul>
-			<li id="zgjl" class=""><a href="__ROOT__/user/userbuylist">云购记录</a></li>
-			<li id="hddsp" class=""><a href="__ROOT__/user/orderlist">获得的商品</a></li>
-			<li id="sd" class=""><a href="__ROOT__/user/singlelist">晒单</a></li>
+			<li id="zgjl" class=""><a href="__ROOT__/user/userbuylist">{$Think.lang.web_user_cloud_history}</a></li>
+			<li id="hddsp" class=""><a href="__ROOT__/user/orderlist">{$Think.lang.web_user_has_goods}</a></li>
+			<li id="sd" class=""><a href="__ROOT__/user/singlelist">{$Think.lang.web_user_share_order}</a></li>
 		</ul>
 		<p class="sid-line"></p>
 
@@ -48,10 +48,10 @@
 			<!---->
 		<!--</ul>-->
 		<h3 class="sid-icon02" hasChild="1">
-			<a href="javascript:void();"><b></b>直购管理 <s title="收起"></s></a>
+			<a href="javascript:void();"><b></b>{$Think.lang.web_user_manage} <s title={$Think.lang.web_glist_all_pack_up}></s></a>
 		</h3>
 		<ul>
-			<li id="zgjl" class=""><a href="__ROOT__/user/userbuylistzg">直购记录</a></li>
+			<li id="zgjl" class=""><a href="__ROOT__/user/userbuylistzg">{$Think.lang.web_user_notes}</a></li>
 		</ul>
 		<p class="sid-line"></p>
 		<!--<h3 class="sid-icon03 " hasChild="1">-->
@@ -79,11 +79,11 @@
 		<!--</ul>-->
 		<p class="sid-line"></p>		
 		<h3 class="sid-icon05 " hasChild="1">
-			<a href="javascript:void();"><b></b>账户管理 <s title="收起"></s></a>
+			<a href="javascript:void();"><b></b>{$Think.lang.web_user_accounts} <s title={$Think.lang.web_glist_all_pack_up}></s></a>
 		</h3>
 		<ul>
-			<li id="zhmx" class=""><a href="__ROOT__/user/userbalance">账户明细</a></li>
-			<li id="zhcz" class=""><a href="__ROOT__/user/userrecharge">账户充值</a></li>
+			<li id="zhmx" class=""><a href="__ROOT__/user/userbalance">{$Think.lang.web_user_particulars}</a></li>
+			<li id="zhcz" class=""><a href="__ROOT__/user/userrecharge">{$Think.lang.web_user_recharge}</a></li>
 		</ul>
 		<p class="sid-line"></p>
 		

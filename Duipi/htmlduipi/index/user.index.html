@@ -31,24 +31,24 @@
 <!--				<span><a href="__ROOT__/uname/{:R('base/idjia',array($huiyuan['uid']))}.html" target="_blank" class="blue"><s></s>查看个人主页</a></span>-->
 			</li>
                         
+			<!--<li class="account-money">-->
+				<!--<em class = "gray02">经验值：{$huiyuan['jingyan']}</em> -->
+				<!--<span class="class-icon0{$dengji_1['groupid']} gray01"><s></s>{$dengji_1['name']}</span>-->
+			        <!--<if condition="($dengji_2) ">-->
+					<!--<span class = "gray02">（还差{$dengji_x}经验值升级到{$dengji_2['name']}）</span>-->
+				<!--<else />-->
+					<!--<span class = "gray02">（还差{$dengji_x}经验值升级到最高等级）</span>-->
+				<!--</if>-->
+			<!--</li>-->
+			<!--<li class="account-money">-->
+				<!--<em class="gray02">福分：</em>-->
+				<!--<span class="money-red"><s></s>{$huiyuan['score']}</span>&nbsp;&nbsp;-->
+				<!---->
+			<!--</li>-->
 			<li class="account-money">
-				<em class = "gray02">经验值：{$huiyuan['jingyan']}</em> 
-				<span class="class-icon0{$dengji_1['groupid']} gray01"><s></s>{$dengji_1['name']}</span>
-			        <if condition="($dengji_2) ">
-					<span class = "gray02">（还差{$dengji_x}经验值升级到{$dengji_2['name']}）</span>
-				<else />
-					<span class = "gray02">（还差{$dengji_x}经验值升级到最高等级）</span>
-				</if>
-			</li>
-			<li class="account-money">
-				<em class="gray02">福分：</em>
-				<span class="money-red"><s></s>{$huiyuan['score']}</span>&nbsp;&nbsp;
-				
-			</li>
-			<li class="account-money">
-				<em class="gray02">帐户余额：</em>
+				<em class="gray02">{$Think.lang.web_user_balance}：</em>
 				<span class="money-red"><s></s>{:R("base/uidcookie",array("money"))}</span>&nbsp;&nbsp;
-				<a href="__ROOT__/user/userrecharge" title="充值" class="blue">充值</a>
+				<a href="__ROOT__/user/userrecharge" title={$Think.lang.web_user_user_recharge} class="blue">{$Think.lang.web_user_user_recharge}</a>
 			</li>
 			 <!--佣金邀请二维码<br>	-->
 		 <!--<img src=__ROOT__/index/ers width=320 height=480>  -->

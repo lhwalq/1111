@@ -51,7 +51,7 @@ $(function(){
 
 <div class="log_reg_wrap"  style="background-image:url(/Public/App/img/register_bg.jpg);">
 	<div class="log_reg_box">
-    	<h2 class="reg_tt">注册<?php echo C('web_name_two');?>网</h2>
+    	<h2 class="reg_tt"><?php echo (L("web_user_user_register")); echo C('web_name_two'); echo (L("web_user_web")); ?></h2>
         <p class="blank30"></p>
         <form method="post" action="" enctype="application/x-www-form-urlencoded">
            <input type="hidden" name="regcount" value="1" />
@@ -59,48 +59,48 @@ $(function(){
               <tr>
                 <td >
                 		<div class="form_input_wrap">
-							<input id="ipyanz" datatype="m | e" sucmsg="帐号验证通过！" placeholder="手机号或邮箱" nullmsg="请填写帐号！" errormsg="手机号或邮箱！" type="text" name="name" class="form_input" />
+							<input id="ipyanz" datatype="m | e" sucmsg=<?php echo (L("web_user_account_yes")); ?> placeholder=<?php echo (L("web_user_phone_web")); ?> nullmsg=<?php echo (L("web_user_add_account")); ?> errormsg=<?php echo (L("web_user_phone_web")); ?> type="text" name="name" class="form_input" />
                             <div class="Validform_checktip"></div>
-                            <div class="info">请输入您的邮箱或手机号码！<span class="dec"></span></div>
+                            <div class="info"><?php echo (L("web_user_please")); ?><span class="dec"></span></div>
                         </div>
                  </td>
               </tr>
               <tr>
                 <td>
                 		<div class="form_input_wrap">
-							<input datatype="*6-20" plugin="passwordStrength" nullmsg="请设置密码！" placeholder="密码" errormsg="密码范围在6~20位之间！" type="password" name="userpassword" class="form_input strength_input" maxlength="20"/>
+							<input datatype="*6-20" plugin="passwordStrength" nullmsg=<?php echo (L("web_user_set_password")); ?> placeholder=<?php echo (L("web_user_password")); ?> errormsg=<?php echo (L("web_user_hini_password")); ?> type="password" name="userpassword" class="form_input strength_input" maxlength="20"/>
                             <div class="Validform_checktip"></div>
-                            <div class="passwordStrength" style="display:none"><b>密码强度：</b><span>弱</span><span>中</span><span class="last">强</span><span class="dec"><s class="dec1">&#9670;</s><s class="dec2">&#9670;</s></span></div>
-                            <div class="info">请输入6-18位字母和数字的组合。<br>不推荐使用纯数字、纯字母、纯符号做密码<span class="dec"></span></div>
+                            <div class="passwordStrength" style="display:none"><b><?php echo (L("web_user_password_intensity")); ?>：</b><span><?php echo (L("web_user_weak")); ?></span><span><?php echo (L("web_user_centre")); ?></span><span class="last"><?php echo (L("web_user_stubborn")); ?></span><span class="dec"></span></div>
+                            <div class="info"><?php echo (L("web_user_password_content")); ?><br><?php echo (L("web_user_password_suggest")); ?><span class="dec"></span></div>
                         </div>
                  </td>
               </tr>
               <tr>
                 <td>
                 		<div class="form_input_wrap">
-							<input tip="test"  datatype="*" recheck="userpassword"  placeholder="确认密码" nullmsg="请再输入一次密码！" errormsg="您两次输入的账号密码不一致！" type="password" name="userpassword2" class="form_input" maxlength="20"/>
+							<input tip="test"  datatype="*" recheck="userpassword"  placeholder=<?php echo (L("web_user_password_again_two")); ?> nullmsg=<?php echo (L("web_user_password_again")); ?> errormsg=<?php echo (L("web_user_password_again_two_no")); ?> type="password" name="userpassword2" class="form_input" maxlength="20"/>
                             <div class="Validform_checktip"></div>
-                            <div class="info">请再输入一次密码！<span class="dec"></span></div>
+                            <div class="info"><?php echo (L("web_user_password_again")); ?><span class="dec"></span></div>
                         </div>
                  </td>
               </tr>
 
 			                <tr>
-                <td><input name="submit" type="submit" class="reg_btn" value="注册"></td>
+                <td><input name="submit" type="submit" class="reg_btn" value=<?php echo (L("web_user_user_register")); ?>></td>
               </tr>
             </table>
-        <div class="text_bar">已有账号，<a href="/user/login" class="blue_link">[请登录]</a></div>
-    <div class="agree_to_the_terms form_input_wrap"><input name="haveread" id="haveread" type="checkbox" value="1" checked class="check_input" datatype="*"  nullmsg="请先阅读并接受本网服务条款！" errormsg="请先阅读并接受本网服务条款！" /><a href="/help/3" target="_blank">&nbsp;我已阅读并接受本网服务条款</a> <div class="info">请先阅读并接受本网服务条款！<span class="dec"><s class="dec1">&#9670;</s><s class="dec2">&#9670;</s></span></div><div class="Validform_checktip"></div></div>
+        <div class="text_bar"><?php echo (L("web_user_has_account")); ?>，<a href="/user/login" class="blue_link">[<?php echo (L("web_user_please_login")); ?>]</a></div>
+    <div class="agree_to_the_terms form_input_wrap"><input name="haveread" id="haveread" type="checkbox" value="1" checked class="check_input" datatype="*"  nullmsg=<?php echo (L("web_user_please_read")); ?> errormsg=<?php echo (L("web_user_please_read")); ?> /><a href="/help/3" target="_blank">&nbsp;<?php echo (L("web_user_please_read")); ?></a> <div class="info"><?php echo (L("web_user_please_read")); ?><span class="dec"></span></div><div class="Validform_checktip"></div></div>
          </form>
     </div>
 </div>
 <div class="footer_jian_wrap footer_jian_nbg">
 	<div class="footer_jian">
-		<p><a target="_blank" href="/help/15">关于我们</a><em class="line"></em>
-		<a target="_blank" href="/help/16">加入我们</a><em class="line"></em>
-		<a target="_blank" href="/help/13">投诉建议</a><em class="line"></em>
-		<a target="_blank" href="/help/3">服务协议</a><em class="line"></em>
-		<a target="_blank" href="/help/18">联系我们</a></p>
+        <p><a target="_blank" href="/index/help/code/15"><?php echo (L("web_user_about_me")); ?></a><em class="line"></em>
+            <a target="_blank" href="/index/help/code/16"><?php echo (L("web_user_add_me")); ?></a><em class="line"></em>
+            <a target="_blank" href="/index/help/code/13"><?php echo (L("web_user_suggest")); ?></a><em class="line"></em>
+            <a target="_blank" href="/index/help/code/3"><?php echo (L("web_user_agreement")); ?></a><em class="line"></em>
+            <a target="_blank" href="/index/help/code/18"><?php echo (L("web_user_contact")); ?></a></p>
              <p><a href="" target="_blank" title="wangzhi"><?php echo C("web_name");?></a> &nbsp;<?php echo C('web_copyright');?></p>
     </div>
 </div>

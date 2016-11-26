@@ -3,12 +3,12 @@
 <div class="w_con">
     <div class="w_latest_title">
     <h2 class="w_title w_title_one">
-	<a class="<if condition="empty($_GET[type])">w_waiting</if>" href="__ROOT__/index/lottery">最新揭晓</a>
-<a class="<if condition="$_GET[type] eq 'd'">w_waiting</if> w_last_waiting" href="__ROOT__/index/lottery/type/d">等待揭晓</a>
-<a class="<if condition="$_GET[type] eq 'y'">w_waiting</if> w_last_waiting" href="__ROOT__/index/lottery/type/y">已经揭晓</a>
- <b>（到目前为止最新揭晓<c id="nameType">商品</c><output id="total">{$zongji}</output>件）</b>
+	<a class="<if condition="empty($_GET[type])">w_waiting</if>" href="__ROOT__/index/lottery">{$Think.lang.web_lottery_new}</a>
+<a class="<if condition="$_GET[type] eq 'd'">w_waiting</if> w_last_waiting" href="__ROOT__/index/lottery/type/d">{$Think.lang.web_lottery_wait}</a>
+<a class="<if condition="$_GET[type] eq 'y'">w_waiting</if> w_last_waiting" href="__ROOT__/index/lottery/type/y">{$Think.lang.web_lottery_already}</a>
+ <b>（{$Think.lang.web_lottery_so_far}<c id="nameType">{$Think.lang.web_lottery_goods}</c><output id="total">{$zongji}</output>{$Think.lang.web_lottery_jian}）</b>
     </h2>
-    <h2 class="w_title w_title_two">即将揭晓<b></b></h2>
+    <h2 class="w_title w_title_two">{$Think.lang.web_lottery_unveiled}<b></b></h2>
     </div>
     <div class="w_announced">
     	<div class="w_announced_one">
@@ -28,7 +28,7 @@
      <noscript>
       <img src="__PUBLIC__/uploads/{$qishu['thumb']}" />
      </noscript></a>
-   </div><a class="w_goods_three" href="__ROOT__/goods/dataserverForPc/goodsId/{$qishu['id']}.html" target="_blank">(第{$qishu['qishu']}期){$qishu['title']}</a><b>商品价值：￥{$qishu['money']}</b>
+   </div><a class="w_goods_three" href="__ROOT__/goods/dataserverForPc/goodsId/{$qishu['id']}.html" target="_blank">({$Think.lang.web_user_di}{$qishu['qishu']}{$Think.lang.web_user_qi}){$qishu['title']}</a><b>{$Think.lang.web_lottery_value}：{$Think.lang.web_lottery_mark}{$qishu['money']}</b>
    <div class="w_different w_different_add">
     <div class="w_figure">
      <img style="display: inline;" src="__PUBLIC__/uploads/{$qishu['q_user']['img']}" class="lazy20" data-original="__PUBLIC__/uploads/{$qishu['q_user']['img']}" />
@@ -38,28 +38,28 @@
     </div>
     <dl class="w_text">
      <dd>
-      获得者：
+         {$Think.lang.web_lottery_gainer}：
       <a href="__ROOT__/user/uname/d/{:R('base/idjia',array($qishu['q_uid']))}.html">{:R('base/huode_user_name',array($qishu['q_user']))}</a>
      </dd>
      
      <dd>
-      幸运号码：
+         {$Think.lang.web_lottery_lucky_num}：
       <i>{$qishu['q_user_code']}</i>
      </dd>
      <dd>
-      本期参与：
+         {$Think.lang.web_lottery_partake}：
       <i>{:R('base/huode_user_goods_num',array($qishu['q_uid'],$qishu['id']))}</i>人次
      </dd>
      <dd>
-      揭晓时间：{:R('base/microt',array($qishu['q_end_time'],'r'))}
+         {$Think.lang.web_lottery_time}：{:R('base/microt',array($qishu['q_end_time'],'r'))}
      </dd>
      <dd class="w_add_multiple_box">
-      <span class="w_add_multiple">回报率：<?php 
+      <span class="w_add_multiple">{$Think.lang.web_lottery_roa}：<?php
                        $shuzi= R('base/huode_user_goods_num',array($qishu['q_uid'],$qishu['id']));
                     	echo $qishu['zongrenshu']/$shuzi;
                      ?>
-		   倍</span>
-      <a class="w_span w_span_other" href="__ROOT__/goods/dataserverForPc/goodsId/{$qishu['id']}.html" target="_blank">查看详情</a>
+          {$Think.lang.web_lottery_bei}</span>
+      <a class="w_span w_span_other" href="__ROOT__/goods/dataserverForPc/goodsId/{$qishu['id']}.html" target="_blank">{$Think.lang.web_lottery_detail}</a>
      </dd>
     </dl>
    </div>
@@ -82,16 +82,16 @@
      <noscript>
       <img id="img_0" src="__PUBLIC__/uploads/{:R('base/shopimg',array($list['id']))}" />
      </noscript> </a> 
-   </div> <a class="w_goods_three" href="__ROOT__/goods/items/goodsId/{$list['id']}.html" target="_blank">(第{$list['qishu']}期){$list['title']}</a> <b>总需：{$list['zongrenshu']} 人次</b> 
+   </div> <a class="w_goods_three" href="__ROOT__/goods/items/goodsId/{$list['id']}.html" target="_blank">({$Think.lang.web_user_di}{$list['qishu']}{$Think.lang.web_user_qi}){$list['title']}</a> <b>{$Think.lang.web_lottery_all_has}：{$list['zongrenshu']} {$Think.lang.web_lottery_person}</b>
    <div class="w_line">
     <span style="width:{:R('base/width',array($list['canyurenshu'],$list['zongrenshu'],203))}px;"></span>
    </div> 
    <ul class="w_number"> 
     <li class="w_amount">{$list['canyurenshu']}</li> 
     <li class="w_amount w_amount_right">{$list['zongrenshu']-$list['canyurenshu']}</li> 
-    <li>已参与人次</li> 
-    <li class="w_amount_right">剩余人次</li> 
-   </ul> <input id="gid_0" value="628" type="hidden" /> <input id="pid_0" value="3" type="hidden" /> <input id="priceArea_0" value="1" type="hidden" /> <input id="period_0" value="" type="hidden" /> <input id="priceTotal_0" value="2969" type="hidden" /> <input id="surplus_0" value="294" type="hidden" /> <input id="thumbPath_0" value="20150727/2_1437990510407.jpg,20150727/2_1437990518024.jpg,20150727/2_1437990518528.jpg" type="hidden" /> <input id="title_0" value="{$list['title']}" type="hidden" /> <a class="w_package" href="__ROOT__/goods/items/goodsId/{$list['id']}.html">我来云购</a> 
+    <li>{$Think.lang.web_lottery_person_al}</li>
+    <li class="w_amount_right">{$Think.lang.web_lottery_residue}</li>
+   </ul> <input id="gid_0" value="628" type="hidden" /> <input id="pid_0" value="3" type="hidden" /> <input id="priceArea_0" value="1" type="hidden" /> <input id="period_0" value="" type="hidden" /> <input id="priceTotal_0" value="2969" type="hidden" /> <input id="surplus_0" value="294" type="hidden" /> <input id="thumbPath_0" value="20150727/2_1437990510407.jpg,20150727/2_1437990518024.jpg,20150727/2_1437990518528.jpg" type="hidden" /> <input id="title_0" value="{$list['title']}" type="hidden" /> <a class="w_package" href="__ROOT__/goods/items/goodsId/{$list['id']}.html">{$Think.lang.web_lottery_cloud}</a>
    </li> 
 	</foreach>
 
